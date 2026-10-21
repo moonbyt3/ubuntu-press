@@ -9,6 +9,7 @@ namespace WPSkin\Admin;
 
 use WPSkin\Contracts\Hookable;
 use WPSkin\Loader;
+use WPSkin\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -35,14 +36,14 @@ class Admin implements Hookable {
 			'wpskin-admin',
 			WPSKIN_URL . 'assets/css/admin.css',
 			array(),
-			WPSKIN_VERSION
+			Plugin::asset_version( 'assets/css/admin.css' )
 		);
 
 		wp_enqueue_script(
 			'wpskin-admin',
 			WPSKIN_URL . 'assets/js/admin.js',
 			array(),
-			WPSKIN_VERSION,
+			Plugin::asset_version( 'assets/js/admin.js' ),
 			true
 		);
 	}

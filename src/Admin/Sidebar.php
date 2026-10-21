@@ -9,6 +9,7 @@ namespace WPSkin\Admin;
 
 use WPSkin\Contracts\Hookable;
 use WPSkin\Loader;
+use WPSkin\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -67,7 +68,7 @@ class Sidebar implements Hookable {
 			'wpskin-sidebar',
 			WPSKIN_URL . 'assets/css/sidebar.css',
 			array(),
-			WPSKIN_VERSION
+			Plugin::asset_version( 'assets/css/sidebar.css' )
 		);
 	}
 

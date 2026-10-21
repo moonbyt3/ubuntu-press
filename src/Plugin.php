@@ -126,4 +126,16 @@ final class Plugin {
 	public function version() {
 		return WPSKIN_VERSION;
 	}
+
+	/**
+	 * Cache-busting version for a plugin asset: the file's modification time,
+	 * so browsers refetch it whenever it changes.
+	 *
+	 * @param string $path Asset path relative to the plugin root.
+	 * @return string
+	 */
+	public static function asset_version( $path ) {
+		$mtime = @filemtime( WPSKIN_PATH . $path ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+		return $mtime ? (string) $mtime : WPSKIN_VERSION;
+	}
 }

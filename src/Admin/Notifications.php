@@ -9,6 +9,7 @@ namespace WPSkin\Admin;
 
 use WPSkin\Contracts\Hookable;
 use WPSkin\Loader;
+use WPSkin\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -44,7 +45,7 @@ class Notifications implements Hookable {
 			'wpskin-notifications',
 			WPSKIN_URL . 'assets/css/notifications.css',
 			array( 'dashicons' ),
-			WPSKIN_VERSION
+			Plugin::asset_version( 'assets/css/notifications.css' )
 		);
 
 		// Must load after "common": it relocates every notice on DOM ready.
@@ -52,7 +53,7 @@ class Notifications implements Hookable {
 			'wpskin-notifications',
 			WPSKIN_URL . 'assets/js/notifications.js',
 			array( 'jquery', 'common' ),
-			WPSKIN_VERSION,
+			Plugin::asset_version( 'assets/js/notifications.js' ),
 			true
 		);
 

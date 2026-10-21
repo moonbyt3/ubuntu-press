@@ -80,45 +80,6 @@ class Settings implements Hookable {
 				'default'           => self::defaults(),
 			)
 		);
-
-		add_settings_section(
-			'wpskin_general',
-			__( 'General', 'wpskin' ),
-			'__return_false',
-			self::PAGE
-		);
-
-		add_settings_field(
-			'theme',
-			__( 'Theme', 'wpskin' ),
-			array( $this, 'render_theme_field' ),
-			self::PAGE,
-			'wpskin_general'
-		);
-
-		add_settings_field(
-			'dashboard_cards',
-			__( 'Dashboard cards', 'wpskin' ),
-			array( $this, 'render_dashboard_cards_field' ),
-			self::PAGE,
-			'wpskin_general'
-		);
-
-		add_settings_field(
-			'hide_sidebar',
-			__( 'Hide admin sidebar', 'wpskin' ),
-			array( $this, 'render_hide_sidebar_field' ),
-			self::PAGE,
-			'wpskin_general'
-		);
-
-		add_settings_field(
-			'notification_center',
-			__( 'Notification center', 'wpskin' ),
-			array( $this, 'render_notification_center_field' ),
-			self::PAGE,
-			'wpskin_general'
-		);
 	}
 
 	/**
@@ -140,67 +101,96 @@ class Settings implements Hookable {
 		);
 	}
 
-	public function render_theme_field() {
-		$choices = array(
-			'light' => __( 'Light', 'wpskin' ),
-			'dark'  => __( 'Dark', 'wpskin' ),
-		);
-
-		printf( '<select name="%s[theme]">', esc_attr( self::OPTION ) );
-		foreach ( $choices as $value => $label ) {
-			printf(
-				'<option value="%1$s" %2$s>%3$s</option>',
-				esc_attr( $value ),
-				selected( self::get( 'theme' ), $value, false ),
-				esc_html( $label )
-			);
-		}
-		echo '</select>';
-		printf(
-			'<p class="description">%s</p>',
-			esc_html__( 'Applies to the Dashboard and all admin screens, including the block editor.', 'wpskin' )
+	/**
+	 * Settings rows, grouped like a GNOME Settings panel.
+	 *
+	 * @return array[] Groups of rows: key, title, subtitle, control type and choices.
+	 */
+	private function groups() {
+		return array(
+			array(
+				'title' => __( 'Appearance', 'wpskin' ),
+				'rows'  => array(
+					array(
+						'key'      => 'theme',
+						'title'    => __( 'Style', 'wpskin' ),
+						'subtitle' => __( 'Applies to the Dashboard and all admin screens, including the block editor.', 'wpskin' ),
+						'choices'  => array(
+							'light' => __( 'Light', 'wpskin' ),
+							'dark'  => __( 'Dark', 'wpskin' ),
+						),
+					),
+				),
+			),
+			array(
+				'title' => __( 'Dashboard', 'wpskin' ),
+				'rows'  => array(
+					array(
+						'key'      => 'dashboard_cards',
+						'title'    => __( 'Dashboard cards', 'wpskin' ),
+						'subtitle' => __( 'Replace the Dashboard with large cards built from the admin menu.', 'wpskin' ),
+					),
+					array(
+						'key'      => 'hide_sidebar',
+						'title'    => __( 'Hide admin sidebar', 'wpskin' ),
+						'subtitle' => __( 'Only applies while Dashboard cards are enabled. A "Dashboard" link is added to the toolbar for navigation.', 'wpskin' ),
+						'choices'  => array(
+							'everywhere' => __( 'On all admin screens', 'wpskin' ),
+							'dashboard'  => __( 'On the Dashboard only', 'wpskin' ),
+							'never'      => __( 'Never', 'wpskin' ),
+						),
+					),
+				),
+			),
+			array(
+				'title' => __( 'Notifications', 'wpskin' ),
+				'rows'  => array(
+					array(
+						'key'      => 'notification_center',
+						'title'    => __( 'Notification center', 'wpskin' ),
+						'subtitle' => __( 'Collect admin notices into a toolbar popup with a counter.', 'wpskin' ),
+					),
+				),
+			),
 		);
 	}
 
-	public function render_notification_center_field() {
-		printf(
-			'<label><input type="checkbox" name="%1$s[notification_center]" value="1" %2$s /> %3$s</label>',
-			esc_attr( self::OPTION ),
-			checked( 1, (int) self::get( 'notification_center' ), false ),
-			esc_html__( 'Collect admin notices into a toolbar popup with a counter.', 'wpskin' )
-		);
-	}
-
-	public function render_hide_sidebar_field() {
-		$choices = array(
-			'everywhere' => __( 'On all admin screens', 'wpskin' ),
-			'dashboard'  => __( 'On the Dashboard only', 'wpskin' ),
-			'never'      => __( 'Never', 'wpskin' ),
-		);
-
-		printf( '<select name="%s[hide_sidebar]">', esc_attr( self::OPTION ) );
-		foreach ( $choices as $value => $label ) {
-			printf(
-				'<option value="%1$s" %2$s>%3$s</option>',
-				esc_attr( $value ),
-				selected( self::get( 'hide_sidebar' ), $value, false ),
-				esc_html( $label )
-			);
-		}
-		echo '</select>';
-		printf(
-			'<p class="description">%s</p>',
-			esc_html__( 'Only applies while Dashboard cards are enabled. A "Dashboard" link is added to the toolbar for navigation.', 'wpskin' )
-		);
-	}
-
-	public function render_dashboard_cards_field() {
-		printf(
-			'<label><input type="checkbox" name="%1$s[dashboard_cards]" value="1" %2$s /> %3$s</label>',
-			esc_attr( self::OPTION ),
-			checked( 1, (int) self::get( 'dashboard_cards' ), false ),
-			esc_html__( 'Replace the Dashboard with large cards built from the admin menu.', 'wpskin' )
-		);
+	/**
+	 * Outputs one row: label and description on the left, a dropdown or switch on the right.
+	 *
+	 * @param array $row Row definition from groups().
+	 */
+	private function render_row( array $row ) {
+		$id   = 'wpskin-setting-' . $row['key'];
+		$name = self::OPTION . '[' . $row['key'] . ']';
+		?>
+		<div class="wpskin-prefs-row">
+			<div class="wpskin-prefs-row__text">
+				<label class="wpskin-prefs-row__title" for="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $row['title'] ); ?></label>
+				<p class="wpskin-prefs-row__subtitle" id="<?php echo esc_attr( $id ); ?>-description"><?php echo esc_html( $row['subtitle'] ); ?></p>
+			</div>
+			<div class="wpskin-prefs-row__control">
+				<?php if ( isset( $row['choices'] ) ) : ?>
+					<select class="wpskin-prefs-row__select" id="<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $name ); ?>" aria-describedby="<?php echo esc_attr( $id ); ?>-description">
+						<?php foreach ( $row['choices'] as $value => $label ) : ?>
+							<option value="<?php echo esc_attr( $value ); ?>" <?php selected( self::get( $row['key'] ), $value ); ?>><?php echo esc_html( $label ); ?></option>
+						<?php endforeach; ?>
+					</select>
+				<?php else : ?>
+					<input
+						type="checkbox"
+						role="switch"
+						class="wpskin-switch"
+						id="<?php echo esc_attr( $id ); ?>"
+						name="<?php echo esc_attr( $name ); ?>"
+						value="1"
+						aria-describedby="<?php echo esc_attr( $id ); ?>-description"
+						<?php checked( 1, (int) self::get( $row['key'] ) ); ?>
+					/>
+				<?php endif; ?>
+			</div>
+		</div>
+		<?php
 	}
 
 	public function render_page() {
@@ -209,13 +199,27 @@ class Settings implements Hookable {
 		}
 		?>
 		<div class="wrap wpskin-settings">
-			<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
-			<form action="options.php" method="post">
-				<?php
-				settings_fields( self::GROUP );
-				do_settings_sections( self::PAGE );
-				submit_button();
-				?>
+			<h1 class="wpskin-settings__title"><?php echo esc_html( get_admin_page_title() ); ?></h1>
+			<?php settings_errors(); ?>
+			<form class="wpskin-settings__form" action="options.php" method="post">
+				<?php settings_fields( self::GROUP ); ?>
+
+				<?php foreach ( $this->groups() as $group ) : ?>
+					<section class="wpskin-prefs-group">
+						<h2 class="wpskin-prefs-group__title"><?php echo esc_html( $group['title'] ); ?></h2>
+						<div class="wpskin-prefs-group__list">
+							<?php
+							foreach ( $group['rows'] as $row ) {
+								$this->render_row( $row );
+							}
+							?>
+						</div>
+					</section>
+				<?php endforeach; ?>
+
+				<div class="wpskin-settings__actions">
+					<?php submit_button( __( 'Save Changes', 'wpskin' ), 'primary wpskin-settings__save', 'submit', false ); ?>
+				</div>
 			</form>
 		</div>
 		<?php

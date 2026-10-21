@@ -9,6 +9,7 @@ namespace WPSkin\Admin;
 
 use WPSkin\Contracts\Hookable;
 use WPSkin\Loader;
+use WPSkin\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -56,7 +57,7 @@ class Theme implements Hookable {
 			'wpskin-theme-dark',
 			WPSKIN_URL . 'assets/css/theme-dark.css',
 			array(),
-			WPSKIN_VERSION
+			Plugin::asset_version( 'assets/css/theme-dark.css' )
 		);
 
 		if ( $this->is_block_editor() ) {
@@ -65,7 +66,7 @@ class Theme implements Hookable {
 				'wpskin-editor-dark',
 				WPSKIN_URL . 'assets/css/editor-dark.css',
 				array( 'wpskin-theme-dark', 'wp-components', 'wp-block-editor', 'wp-editor', 'wp-edit-post' ),
-				WPSKIN_VERSION
+				Plugin::asset_version( 'assets/css/editor-dark.css' )
 			);
 		}
 	}
@@ -82,7 +83,7 @@ class Theme implements Hookable {
 			'wpskin-editor-canvas-dark',
 			WPSKIN_URL . 'assets/css/editor-canvas-dark.css',
 			array(),
-			WPSKIN_VERSION
+			Plugin::asset_version( 'assets/css/editor-canvas-dark.css' )
 		);
 	}
 }
