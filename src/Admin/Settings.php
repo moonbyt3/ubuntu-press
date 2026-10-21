@@ -27,9 +27,10 @@ class Settings implements Hookable {
 	 */
 	public static function defaults() {
 		return array(
-			'enabled'         => 1,
-			'dashboard_tiles' => 1,
-			'hide_sidebar'    => 'everywhere',
+			'enabled'             => 1,
+			'dashboard_tiles'     => 1,
+			'hide_sidebar'        => 'everywhere',
+			'notification_center' => 1,
 		);
 	}
 
@@ -101,6 +102,14 @@ class Settings implements Hookable {
 			self::PAGE,
 			'wpskin_general'
 		);
+
+		add_settings_field(
+			'notification_center',
+			__( 'Notification center', 'wpskin' ),
+			array( $this, 'render_notification_center_field' ),
+			self::PAGE,
+			'wpskin_general'
+		);
 	}
 
 	/**
@@ -111,11 +120,21 @@ class Settings implements Hookable {
 		$input = is_array( $input ) ? $input : array();
 
 		return array(
-			'enabled'         => empty( $input['enabled'] ) ? 0 : 1,
-			'dashboard_tiles' => empty( $input['dashboard_tiles'] ) ? 0 : 1,
-			'hide_sidebar'    => isset( $input['hide_sidebar'] ) && in_array( $input['hide_sidebar'], Sidebar::MODES, true )
+			'enabled'             => empty( $input['enabled'] ) ? 0 : 1,
+			'dashboard_tiles'     => empty( $input['dashboard_tiles'] ) ? 0 : 1,
+			'hide_sidebar'        => isset( $input['hide_sidebar'] ) && in_array( $input['hide_sidebar'], Sidebar::MODES, true )
 				? $input['hide_sidebar']
 				: self::defaults()['hide_sidebar'],
+			'notification_center' => empty( $input['notification_center'] ) ? 0 : 1,
+		);
+	}
+
+	public function render_notification_center_field() {
+		printf(
+			'<label><input type="checkbox" name="%1$s[notification_center]" value="1" %2$s /> %3$s</label>',
+			esc_attr( self::OPTION ),
+			checked( 1, (int) self::get( 'notification_center' ), false ),
+			esc_html__( 'Collect admin notices into a toolbar popup with a counter.', 'wpskin' )
 		);
 	}
 

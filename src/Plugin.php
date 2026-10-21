@@ -9,6 +9,7 @@ namespace WPSkin;
 
 use WPSkin\Admin\Admin;
 use WPSkin\Admin\DashboardTiles;
+use WPSkin\Admin\Notifications;
 use WPSkin\Admin\Settings;
 use WPSkin\Admin\Sidebar;
 use WPSkin\Contracts\Hookable;
@@ -97,6 +98,7 @@ final class Plugin {
 			$services[] = Settings::class;
 			$services[] = DashboardTiles::class;
 			$services[] = Sidebar::class;
+			$services[] = Notifications::class;
 		}
 
 		/**

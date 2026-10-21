@@ -1,0 +1,234 @@
+/* WPSkin notification center. */
+
+/* Keep notices out of the page until JS moves them into the panel (avoids a flash). */
+body.js.wpskin-notices #wpbody-content div.notice:not(.inline):not(.below-h2),
+body.js.wpskin-notices #wpbody-content div.updated:not(.inline):not(.below-h2),
+body.js.wpskin-notices #wpbody-content div.error:not(.inline):not(.below-h2),
+body.js.wpskin-notices #wpbody-content div.update-nag {
+	display: none !important;
+}
+
+/* Toolbar button. */
+#wpadminbar #wp-admin-bar-wpskin-notices > .ab-item {
+	position: relative;
+	padding: 0 10px;
+}
+
+#wpadminbar #wp-admin-bar-wpskin-notices .ab-icon {
+	margin-right: 0;
+}
+
+#wpadminbar #wp-admin-bar-wpskin-notices .ab-icon:before {
+	content: "\f16d"; /* dashicons-bell */
+	top: 2px;
+}
+
+#wpadminbar #wp-admin-bar-wpskin-notices.is-open > .ab-item {
+	background: #2c3338;
+	color: #72aee6;
+}
+
+#wpadminbar .wpskin-notices-count {
+	position: absolute;
+	top: 3px;
+	right: 2px;
+	min-width: 16px;
+	height: 16px;
+	padding: 0 4px;
+	border-radius: 8px;
+	background: #72aee6;
+	color: #fff;
+	font-size: 10px;
+	font-weight: 600;
+	line-height: 16px;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+#wpadminbar .wpskin-notices-count[hidden] {
+	display: none;
+}
+
+#wpadminbar #wp-admin-bar-wpskin-notices[data-level="error"] .wpskin-notices-count { background: #d63638; }
+#wpadminbar #wp-admin-bar-wpskin-notices[data-level="warning"] .wpskin-notices-count { background: #dba617; color: #1d2327; }
+#wpadminbar #wp-admin-bar-wpskin-notices[data-level="success"] .wpskin-notices-count { background: #00a32a; }
+
+/* Popup panel. */
+/* Full-width drop-down directly under the toolbar. */
+.wpskin-notices-panel {
+	position: fixed;
+	top: 32px;
+	right: 0;
+	left: 0;
+	z-index: 100000;
+	display: flex;
+	flex-direction: column;
+	max-height: calc(100vh - 32px);
+	background: #fff;
+	border-bottom: 1px solid #dcdcde;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.wpskin-notices-panel[hidden] {
+	display: none;
+}
+
+.wpskin-notices-panel__header {
+	display: flex;
+	flex: none;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 16px 10px 20px;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.wpskin-notices-panel__header h2 {
+	margin: 0;
+	font-size: 14px;
+}
+
+.wpskin-notices-panel__close {
+	display: flex;
+	padding: 4px;
+	border: 0;
+	border-radius: 4px;
+	background: none;
+	color: #50575e;
+	cursor: pointer;
+}
+
+.wpskin-notices-panel__close:hover,
+.wpskin-notices-panel__close:focus {
+	background: #f0f0f1;
+	color: #1d2327;
+}
+
+.wpskin-notices-panel__list {
+	flex: 1 1 auto;
+	min-height: 0;
+	padding: 12px 20px 16px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+}
+
+/*
+ * Plugin notices contain arbitrary markup: long words/URLs, rows of buttons,
+ * fixed-width wrappers, images, tables. Make all of it fit the panel width.
+ */
+.wpskin-notices-panel__list > div {
+	min-width: 0;
+	max-width: 100%;
+	box-sizing: border-box;
+	overflow-wrap: anywhere;
+	word-break: normal;
+	overflow-x: auto; /* last resort for content that cannot shrink, e.g. wide tables */
+}
+
+.wpskin-notices-panel__list > div * {
+	max-width: 100%;
+	min-width: 0;
+}
+
+.wpskin-notices-panel__list > div img,
+.wpskin-notices-panel__list > div video,
+.wpskin-notices-panel__list > div iframe {
+	height: auto;
+}
+
+.wpskin-notices-panel__list > div pre,
+.wpskin-notices-panel__list > div code {
+	white-space: pre-wrap;
+}
+
+/* Buttons stay inline but may wrap their label and drop to the next line. */
+.wpskin-notices-panel__list > div .button,
+.wpskin-notices-panel__list > div .button-primary,
+.wpskin-notices-panel__list > div .button-secondary {
+	height: auto;
+	min-height: 30px;
+	margin: 2px 6px 2px 0;
+	white-space: normal;
+	vertical-align: middle;
+	text-align: center;
+	line-height: 1.4;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.wpskin-notices-panel__list > div [style*="display:flex"],
+.wpskin-notices-panel__list > div [style*="display: flex"] {
+	flex-wrap: wrap;
+}
+
+.wpskin-notices-panel.is-empty .wpskin-notices-panel__list {
+	display: none;
+}
+
+.wpskin-notices-panel__list > div {
+	display: block;
+	margin: 0 0 8px;
+	box-shadow: none;
+	border-top: 1px solid #f0f0f1;
+	border-right: 1px solid #f0f0f1;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.wpskin-notices-panel__list > div:last-child {
+	margin-bottom: 0;
+}
+
+.wpskin-notices-panel__list > div.hidden {
+	display: none;
+}
+
+.wpskin-notices-panel__empty {
+	display: none;
+	margin: 0;
+	padding: 24px 16px;
+	color: #646970;
+	text-align: center;
+}
+
+.wpskin-notices-panel.is-empty .wpskin-notices-panel__empty {
+	display: block;
+}
+
+@media screen and (max-width: 782px) {
+	#wpadminbar #wp-toolbar > ul > li#wp-admin-bar-wpskin-notices {
+		display: block;
+	}
+
+	#wpadminbar #wp-admin-bar-wpskin-notices > .ab-item {
+		width: 52px;
+		padding: 0;
+		text-align: center;
+	}
+
+	#wpadminbar #wp-admin-bar-wpskin-notices .ab-icon:before {
+		top: 0;
+	}
+
+	#wpadminbar .wpskin-notices-count {
+		top: 6px;
+		right: 6px;
+	}
+
+	.wpskin-notices-panel {
+		top: 46px;
+		max-height: calc(100vh - 46px);
+	}
+
+	.wpskin-notices-panel__list {
+		padding: 10px 12px 12px;
+	}
+}
+
+/* Below 600px core un-fixes the toolbar, so the panel scrolls with it. */
+@media screen and (max-width: 600px) {
+	.wpskin-notices-panel {
+		position: absolute;
+	}
+}
