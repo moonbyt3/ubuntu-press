@@ -1,7 +1,12 @@
 /* WPSkin settings screen: GNOME Settings (libadwaita / Yaru) preference groups. */
 
-/* Block: wpskin-settings (.wrap.* to beat core's .wrap and form-control rules) */
-.wrap.wpskin-settings {
+/*
+ * Block: wpskin-settings (.wrap.* to beat core's .wrap and form-control rules).
+ * Core Settings screens share these tokens and layout when "Ubuntu style for Settings screens" is on
+ * (body.wpskin-admin--prefs, see settings-pages.css).
+ */
+.wrap.wpskin-settings,
+.wpskin-admin--prefs .wrap {
 	--wpskin-accent: #e95420;
 	--wpskin-accent-hover: #f0663a;
 	--wpskin-prefs-fg: #2e2e2e;
@@ -21,7 +26,8 @@
 	font-family: Ubuntu, "Ubuntu Sans", Cantarell, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-.wpskin-admin--dark .wrap.wpskin-settings {
+.wpskin-admin--dark .wrap.wpskin-settings,
+.wpskin-admin--dark.wpskin-admin--prefs .wrap {
 	--wpskin-prefs-fg: #fff;
 	--wpskin-prefs-fg-muted: rgba(255, 255, 255, 0.6);
 	--wpskin-prefs-card: #2e2e2e;

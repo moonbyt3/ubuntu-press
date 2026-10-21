@@ -28,6 +28,7 @@ class Settings implements Hookable {
 	public static function defaults() {
 		return array(
 			'theme'               => 'light',
+			'settings_pages'      => 0,
 			'dashboard_cards'     => 1,
 			'hide_sidebar'        => 'everywhere',
 			'notification_center' => 1,
@@ -93,6 +94,7 @@ class Settings implements Hookable {
 			'theme'               => isset( $input['theme'] ) && in_array( $input['theme'], Theme::MODES, true )
 				? $input['theme']
 				: self::defaults()['theme'],
+			'settings_pages'      => empty( $input['settings_pages'] ) ? 0 : 1,
 			'dashboard_cards'     => empty( $input['dashboard_cards'] ) ? 0 : 1,
 			'hide_sidebar'        => isset( $input['hide_sidebar'] ) && in_array( $input['hide_sidebar'], Sidebar::MODES, true )
 				? $input['hide_sidebar']
@@ -119,6 +121,11 @@ class Settings implements Hookable {
 							'light' => __( 'Light', 'wpskin' ),
 							'dark'  => __( 'Dark', 'wpskin' ),
 						),
+					),
+					array(
+						'key'      => 'settings_pages',
+						'title'    => __( 'Ubuntu style for Settings screens', 'wpskin' ),
+						'subtitle' => __( 'Give General, Writing, Reading, Discussion, Media and Permalinks the same look as this screen.', 'wpskin' ),
 					),
 				),
 			),

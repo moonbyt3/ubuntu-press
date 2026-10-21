@@ -11,6 +11,7 @@ use WPSkin\Admin\Admin;
 use WPSkin\Admin\DashboardCards;
 use WPSkin\Admin\Notifications;
 use WPSkin\Admin\Settings;
+use WPSkin\Admin\SettingsPages;
 use WPSkin\Admin\Sidebar;
 use WPSkin\Admin\Theme;
 use WPSkin\Contracts\Hookable;
@@ -96,6 +97,7 @@ final class Plugin {
 			$services[] = Admin::class;
 			$services[] = Settings::class;
 			$services[] = Theme::class;
+			$services[] = SettingsPages::class;
 			$services[] = DashboardCards::class;
 			$services[] = Sidebar::class;
 			$services[] = Notifications::class;
