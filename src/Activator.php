@@ -16,14 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Activator {
 
 	public static function activate() {
-		// Carry settings over from when the plugin was called WPSkin.
-		$legacy = get_option( 'wpskin_settings' );
-		if ( false !== $legacy && false === get_option( Settings::OPTION ) ) {
-			add_option( Settings::OPTION, $legacy );
-		}
-		delete_option( 'wpskin_settings' );
-		delete_option( 'wpskin_version' );
-
 		if ( false === get_option( Settings::OPTION ) ) {
 			add_option( Settings::OPTION, Settings::defaults() );
 		}
