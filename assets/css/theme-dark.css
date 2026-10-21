@@ -245,6 +245,61 @@ body.wpskin-admin--dark,
 	box-shadow: inset 0 -1px 0 var(--wpskin-dark-border);
 }
 
+/* Filter tabs (Featured, Popular, ...): core paints the current tab near-black */
+.wpskin-admin--dark .wp-filter .filter-links .current {
+	color: var(--wp-admin-theme-color, #3858e9);
+}
+
+/* Add Plugins screen cards (core paints the card white and its footer light grey) */
+.wpskin-admin--dark .plugin-card {
+	border-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface);
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .plugin-card-bottom {
+	border-top-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface-alt);
+}
+
+.wpskin-admin--dark .plugin-card .name,
+.wpskin-admin--dark .plugin-card .desc p {
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .plugin-card .authors,
+.wpskin-admin--dark .plugin-card .num-ratings,
+.wpskin-admin--dark .plugin-card .column-updated,
+.wpskin-admin--dark .plugin-card .column-downloaded,
+.wpskin-admin--dark .plugin-card .column-compatibility {
+	color: var(--wpskin-dark-fg-muted);
+}
+
+/* Connectors screen items (core paints them white with a light border) */
+.wpskin-admin--dark .connectors-page .components-item {
+	border-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface);
+	color: var(--wpskin-dark-fg);
+}
+
+/* Connectors "Install the AI plugin" callout: same purple glow as core, on a dark base */
+.wpskin-admin--dark .connectors-page .ai-plugin-callout {
+	background-color: #2b2230;
+	background-image:
+		radial-gradient(ellipse 70% 120% at 18% 115%, rgba(122, 78, 128, 0.55) 0, rgba(122, 78, 128, 0) 60%),
+		radial-gradient(ellipse 55% 110% at 92% -15%, rgba(110, 76, 128, 0.5) 0, rgba(110, 76, 128, 0) 65%),
+		radial-gradient(ellipse 40% 85% at 58% -10%, rgba(90, 60, 110, 0.4) 0, rgba(90, 60, 110, 0) 70%);
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark[dir="rtl"] .connectors-page .ai-plugin-callout,
+[dir="rtl"] .wpskin-admin--dark .connectors-page .ai-plugin-callout {
+	background-image:
+		radial-gradient(ellipse 70% 120% at 82% 115%, rgba(122, 78, 128, 0.55) 0, rgba(122, 78, 128, 0) 60%),
+		radial-gradient(ellipse 55% 110% at 8% -15%, rgba(110, 76, 128, 0.5) 0, rgba(110, 76, 128, 0) 65%),
+		radial-gradient(ellipse 40% 85% at 42% -10%, rgba(90, 60, 110, 0.4) 0, rgba(90, 60, 110, 0) 70%);
+}
+
 .wpskin-admin--dark .notice,
 .wpskin-admin--dark div.updated,
 .wpskin-admin--dark div.error,
