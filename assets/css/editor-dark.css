@@ -1452,3 +1452,41 @@ body:where(.wpskin-admin--dark).js.block-editor-page ul#adminmenu a.wp-has-curre
 body:where(.wpskin-admin--dark).js.block-editor-page ul#adminmenu > li.current > a.current::after {
 	border-right-color: #1e1e1e;
 }
+
+/* customize-widgets */
+:where(.wpskin-admin--dark) #customize-theme-controls .customize-pane-child.accordion-section-content.customize-widgets-layout__inspector {
+	background: #1e1e1e;
+}
+
+:where(.wpskin-admin--dark) .customize-widgets-header {
+	background: #2a2a2a;
+	border-bottom: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) .customize-widgets-header-toolbar .customize-widgets-header-toolbar__inserter-toggle.components-button.has-icon.is-pressed {
+	background: #454545;
+}
+
+:where(.wpskin-admin--dark) .customize-widgets-layout__inserter-panel {
+	background: #1e1e1e;
+}
+
+:where(.wpskin-admin--dark) .customize-widgets-layout__inserter-panel-header {
+	border-bottom: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) .block-editor-inserter__quick-inserter .block-editor-inserter__panel-content {
+	background: #1e1e1e;
+}
+
+:where(.wpskin-admin--dark) .customize-widgets-keyboard-shortcut-help-modal__shortcut {
+	border-top: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) .customize-widgets-keyboard-shortcut-help-modal__shortcut:last-child {
+	border-bottom: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) #customize-theme-controls .customize-pane-child.customize-widgets__sidebar-section {
+	background-color: #1e1e1e;
+}

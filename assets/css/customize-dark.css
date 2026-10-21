@@ -1,0 +1,607 @@
+/*
+ * WPSkin dark theme for the Customizer controls. Generated from WordPress 7.1.3
+ * by bin/build-editor-dark.py; do not edit by hand.
+ */
+
+/* customize-controls */
+:where(.wpskin-admin--dark) #customize-controls #customize-notifications-area .notice.notification-overlay.notification-changeset-locked .customize-changeset-locked-message {
+	background: #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) #customize-controls .description {
+	color: #bdbdbd;
+}
+
+:where(.wpskin-admin--dark) #customize-sidebar-outer-content {
+	background: #1e1e1e;
+	border-right: 1px solid #3d3d3d;
+	border-left: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) #customize-header-actions {
+	border-bottom: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) .outer-section-open #customize-controls .wp-full-overlay-sidebar-content {
+	background: #1e1e1e;
+}
+
+:where(.wpskin-admin--dark) #customize-controls .customize-info {
+	border-bottom: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) #customize-control-changeset_status .customize-inside-control-row,
+:where(.wpskin-admin--dark) #customize-control-changeset_preview_link input {
+	background-color: #2a2a2a;
+	border-bottom: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) #customize-control-changeset_status .customize-inside-control-row:first-of-type {
+	border-top: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) .preview-link-wrapper .customize-copy-preview-link.preview-control-element.button {
+	background: #2a2a2a !important;
+}
+
+:where(.wpskin-admin--dark) .customize-copy-preview-link:before,
+:where(.wpskin-admin--dark) .customize-copy-preview-link:after {
+	background: #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) #customize-control-changeset_preview_link input {
+	border-top: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) #customize-control-changeset_preview_link a.disabled,
+:where(.wpskin-admin--dark) #customize-control-changeset_preview_link a.disabled:active,
+:where(.wpskin-admin--dark) #customize-control-changeset_preview_link a.disabled:focus,
+:where(.wpskin-admin--dark) #customize-control-changeset_preview_link a.disabled:visited {
+	color: #e6e6e6;
+}
+
+:where(.wpskin-admin--dark) #customize-control-changeset_scheduled_date {
+	background: #2a2a2a;
+	border-bottom: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) #customize-controls .customize-info .accordion-section-title {
+	background: #2a2a2a;
+	color: #bdbdbd;
+}
+
+:where(.wpskin-admin--dark) #customize-controls .customize-info.open .accordion-section-title:after,
+:where(.wpskin-admin--dark) #customize-controls .customize-info .accordion-section-title:hover:after,
+:where(.wpskin-admin--dark) #customize-controls .customize-info .accordion-section-title:focus:after {
+	color: #e0e0e0;
+}
+
+:where(.wpskin-admin--dark) #customize-controls .customize-info .preview-notice {
+	color: #bdbdbd;
+}
+
+:where(.wpskin-admin--dark) #customize-controls .customize-info .customize-help-toggle {
+	color: #bdbdbd;
+}
+
+:where(.wpskin-admin--dark) #customize-controls .customize-info .customize-panel-description,
+:where(.wpskin-admin--dark) #customize-controls .customize-info .customize-section-description,
+:where(.wpskin-admin--dark) #customize-outer-theme-controls .customize-info .customize-section-description,
+:where(.wpskin-admin--dark) #customize-controls .no-widget-areas-rendered-notice {
+	color: #bdbdbd;
+	background: #2a2a2a;
+	border-top: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) #customize-theme-controls .accordion-section-title,
+:where(.wpskin-admin--dark) #customize-outer-theme-controls .accordion-section-title {
+	color: #bdbdbd;
+	background-color: #2a2a2a;
+	border-bottom: 1px solid #3d3d3d;
+	border-left: 4px solid #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) #customize-controls #customize-theme-controls .customize-themes-panel .accordion-section-title {
+	color: #bdbdbd;
+	background-color: #2a2a2a;
+	border-left: 4px solid #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) #customize-theme-controls .accordion-section-content,
+:where(.wpskin-admin--dark) #customize-outer-theme-controls .accordion-section-content {
+	color: #bdbdbd;
+}
+
+:where(.wpskin-admin--dark) #accordion-section-themes + .control-section {
+	border-top: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) .js .control-section:hover .accordion-section-title,
+:where(.wpskin-admin--dark) .js .control-section .accordion-section-title:hover,
+:where(.wpskin-admin--dark) .js .control-section.open .accordion-section-title,
+:where(.wpskin-admin--dark) .js .control-section .accordion-section-title:focus {
+	background: #262626;
+}
+
+:where(.wpskin-admin--dark) #customize-theme-controls .control-section.open {
+	border-bottom: 1px solid #2f2f2f;
+}
+
+:where(.wpskin-admin--dark) #customize-theme-controls .control-section.open .accordion-section-title,
+:where(.wpskin-admin--dark) #customize-outer-theme-controls .control-section.open .accordion-section-title {
+	border-bottom-color: #2f2f2f !important;
+}
+
+:where(.wpskin-admin--dark) #customize-theme-controls .control-section:last-of-type.open,
+:where(.wpskin-admin--dark) #customize-theme-controls .control-section:last-of-type > .accordion-section-title {
+	border-bottom-color: #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) #customize-theme-controls .control-panel-content:not(.control-panel-nav_menus) .control-section:nth-child(2),
+:where(.wpskin-admin--dark) #customize-theme-controls .control-panel-nav_menus .control-section-nav_menu,
+:where(.wpskin-admin--dark) #customize-theme-controls .control-section-nav_menu_locations .accordion-section-title {
+	border-top: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) .customize-section-title {
+	border-bottom: 1px solid #3d3d3d;
+	background: #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) #customize-theme-controls .customize-themes-panel h3.customize-section-title:first-child {
+	border-bottom: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) .customize-section-title h3,
+:where(.wpskin-admin--dark) h3.customize-section-title {
+	color: #bdbdbd;
+}
+
+:where(.wpskin-admin--dark) .customize-controls-close {
+	background: #1e1e1e;
+	border-top: 4px solid #2f2f2f;
+	border-right: 1px solid #3d3d3d;
+	color: #d0d0d0;
+}
+
+:where(.wpskin-admin--dark) .customize-panel-back,
+:where(.wpskin-admin--dark) .customize-section-back {
+	background: #2a2a2a;
+	border-right: 1px solid #3d3d3d;
+	border-left: 4px solid #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) #customize-controls .panel-meta.customize-info .accordion-section-title:hover,
+:where(.wpskin-admin--dark) #customize-controls .cannot-expand:hover .accordion-section-title {
+	background: #2a2a2a;
+	color: #bdbdbd;
+	border-left-color: #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) .customize-controls-close:focus,
+:where(.wpskin-admin--dark) .customize-controls-close:hover,
+:where(.wpskin-admin--dark) .customize-controls-preview-toggle:focus,
+:where(.wpskin-admin--dark) .customize-controls-preview-toggle:hover {
+	background: #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) .customize-panel-back:hover,
+:where(.wpskin-admin--dark) .customize-panel-back:focus,
+:where(.wpskin-admin--dark) .customize-section-back:hover,
+:where(.wpskin-admin--dark) .customize-section-back:focus {
+	background: #262626;
+}
+
+:where(.wpskin-admin--dark) .wp-full-overlay-sidebar .wp-full-overlay-header {
+	background-color: #1e1e1e;
+}
+
+:where(.wpskin-admin--dark) #available-menu-items .accordion-section-content .new-content-item-wrapper,
+:where(.wpskin-admin--dark) .customize-control-dropdown-pages .new-content-item-wrapper {
+	background: #1e1e1e;
+}
+
+:where(.wpskin-admin--dark) .wp-full-overlay-sidebar {
+	background: #1e1e1e;
+	border-right: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) #customize-controls #customize-notifications-area {
+	border-bottom: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) #customize-controls .panel-meta > .customize-control-notifications-container,
+:where(.wpskin-admin--dark) #customize-controls .customize-section-title > .customize-control-notifications-container {
+	border-top: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) #customize-controls #customize-notifications-area .notice.notification-overlay .notification-message {
+	color: #e6e6e6;
+}
+
+:where(.wpskin-admin--dark) .accordion-section .dropdown-content {
+	border: 2px solid #2f2f2f;
+}
+
+:where(.wpskin-admin--dark) .customize-control .dropdown-arrow {
+	background: #1e1e1e;
+}
+
+:where(.wpskin-admin--dark) .customize-control .dropdown-arrow:after {
+	color: #e0e0e0;
+}
+
+:where(.wpskin-admin--dark) .customize-control .dropdown-status {
+	color: #e0e0e0;
+	background: #1e1e1e;
+}
+
+:where(.wpskin-admin--dark) .customize-control .attachment-media-view .placeholder,
+:where(.wpskin-admin--dark) .customize-control .attachment-media-view .button-add-media,
+:where(.wpskin-admin--dark) .customize-control-header .placeholder {
+	border: 1px dashed #4a4a4a;
+}
+
+:where(.wpskin-admin--dark) .customize-control .attachment-media-view .button-add-media {
+	background-color: #1e1e1e;
+	color: #e0e0e0;
+}
+
+:where(.wpskin-admin--dark) .customize-control .attachment-media-view .button-add-media:hover {
+	background-color: #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) .customize-control .attachment-media-view .button-add-media:focus {
+	background-color: #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) .customize-control-header .inner {
+	color: #bdbdbd;
+}
+
+:where(.wpskin-admin--dark) #customize-theme-controls .control-panel-themes > .accordion-section-title:hover,
+:where(.wpskin-admin--dark) #customize-theme-controls .control-panel-themes > .accordion-section-title {
+	background: #2a2a2a;
+	color: #bdbdbd;
+	border-top: 1px solid #3d3d3d;
+	border-bottom: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) .control-panel-themes .customize-themes-full-container {
+	background: #1e1e1e;
+}
+
+:where(.wpskin-admin--dark) .wp-full-overlay.in-themes-panel {
+	background: #1e1e1e;
+}
+
+:where(.wpskin-admin--dark) .themes-filter-bar .feature-filter-toggle.open {
+	background: #1e1e1e;
+	border-color: #5c5c5c;
+}
+
+:where(.wpskin-admin--dark) .filter-drawer {
+	background: #1e1e1e;
+	border-bottom: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) .control-panel-themes .filter-themes-count .themes-displayed {
+	color: #bdbdbd;
+}
+
+:where(.wpskin-admin--dark) .control-section .customize-section-text-before {
+	border-bottom: 1px solid #3d3d3d;
+	color: #bdbdbd;
+}
+
+:where(.wpskin-admin--dark) .control-panel-themes .customize-themes-section-title {
+	background: #2a2a2a;
+	border-bottom: 1px solid #3d3d3d;
+	border-left: 4px solid #2a2a2a;
+	color: #bdbdbd;
+}
+
+:where(.wpskin-admin--dark) .control-panel-themes #accordion-section-installed_themes {
+	border-top: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) .control-panel-themes .customize-themes-section-title:focus,
+:where(.wpskin-admin--dark) .control-panel-themes .customize-themes-section-title:hover {
+	background: #262626;
+}
+
+:where(.wpskin-admin--dark) .customize-themes-section-title:not(.selected):after {
+	border: 1px solid #4a4a4a;
+	background: #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) .customize-control-theme .theme {
+	border: 1px solid #3d3d3d;
+	background: #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) .customize-control-theme .theme .theme-name,
+:where(.wpskin-admin--dark) .customize-control-theme .theme .theme-actions {
+	background: #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) .customize-preview-header.themes-filter-bar {
+	background: #1e1e1e;
+	border-bottom: 1px solid #3d3d3d;
+}
+
+@media screen and (max-width: 600px) {
+:where(.wpskin-admin--dark) .wp-customizer .showing-themes .control-panel-themes .customize-themes-mobile-back {
+	background: #1e1e1e;
+	color: #d0d0d0;
+	border-bottom: 1px solid #3d3d3d;
+}
+:where(.wpskin-admin--dark) .wp-customizer .showing-themes .control-panel-themes .customize-themes-mobile-back:before {
+	border-right: 1px solid #3d3d3d;
+}
+:where(.wpskin-admin--dark) .wp-customizer .showing-themes .control-panel-themes .customize-themes-mobile-back:hover,
+:where(.wpskin-admin--dark) .wp-customizer .showing-themes .control-panel-themes .customize-themes-mobile-back:focus {
+	background: #262626;
+}
+}
+
+:where(.wpskin-admin--dark) .wp-customizer .theme-overlay .theme-actions {
+	background: #1e1e1e;
+	border-top: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) .wp-customizer .theme-header {
+	background: #1e1e1e;
+}
+
+:where(.wpskin-admin--dark) .wp-customizer .theme-overlay .theme-header button,
+:where(.wpskin-admin--dark) .wp-customizer .theme-overlay .theme-header .close:before {
+	color: #d0d0d0;
+}
+
+:where(.wpskin-admin--dark) .wp-customizer .theme-overlay .theme-header .close:focus,
+:where(.wpskin-admin--dark) .wp-customizer .theme-overlay .theme-header .close:hover,
+:where(.wpskin-admin--dark) .wp-customizer .theme-overlay .theme-header .right:focus,
+:where(.wpskin-admin--dark) .wp-customizer .theme-overlay .theme-header .right:hover,
+:where(.wpskin-admin--dark) .wp-customizer .theme-overlay .theme-header .left:focus,
+:where(.wpskin-admin--dark) .wp-customizer .theme-overlay .theme-header .left:hover {
+	background: #2a2a2a;
+}
+
+body:where(.wpskin-admin--dark).cheatin {
+	background: #2a2a2a;
+	border: 1px solid #4a4a4a;
+}
+
+body:where(.wpskin-admin--dark).cheatin h1 {
+	border-bottom: 1px solid #3d3d3d;
+	color: #bdbdbd;
+}
+
+:where(.wpskin-admin--dark) .widget-reorder-nav span:hover,
+:where(.wpskin-admin--dark) .widget-reorder-nav span:focus,
+:where(.wpskin-admin--dark) .menu-item-reorder-nav button:hover,
+:where(.wpskin-admin--dark) .menu-item-reorder-nav button:focus {
+	color: #e6e6e6;
+	background: #1e1e1e;
+}
+
+:where(.wpskin-admin--dark) #customize-theme-controls .first-widget .move-widget-up,
+:where(.wpskin-admin--dark) #customize-theme-controls .last-widget .move-widget-down,
+:where(.wpskin-admin--dark) .move-up-disabled .menus-move-up,
+:where(.wpskin-admin--dark) .move-down-disabled .menus-move-down,
+:where(.wpskin-admin--dark) .move-right-disabled .menus-move-right,
+:where(.wpskin-admin--dark) .move-left-disabled .menus-move-left {
+	background-color: #2a2a2a;
+}
+
+body:where(.wpskin-admin--dark).adding-widget .add-new-widget,
+body:where(.wpskin-admin--dark).adding-widget .add-new-widget:hover,
+:where(.wpskin-admin--dark) .adding-menu-items .add-new-menu-item,
+:where(.wpskin-admin--dark) .adding-menu-items .add-new-menu-item:hover,
+:where(.wpskin-admin--dark) .add-menu-toggle.open,
+:where(.wpskin-admin--dark) .add-menu-toggle.open:hover {
+	background: #1e1e1e;
+	border-color: #5c5c5c;
+	color: #e0e0e0;
+}
+
+:where(.wpskin-admin--dark) #available-widgets,
+:where(.wpskin-admin--dark) #available-menu-items {
+	background: #1e1e1e;
+	border-right: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) #available-widgets-list {
+	border-top: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) #available-widgets-filter {
+	background: #1e1e1e;
+}
+
+:where(.wpskin-admin--dark) #available-menu-items-search .search-icon,
+:where(.wpskin-admin--dark) #available-widgets-filter .search-icon {
+	color: #a7a7a7;
+}
+
+:where(.wpskin-admin--dark) .themes-filter-bar .search-icon {
+	color: #a7a7a7;
+}
+
+:where(.wpskin-admin--dark) #available-widgets .widget-tpl,
+:where(.wpskin-admin--dark) #available-menu-items .item-tpl {
+	background: #2a2a2a;
+	border-bottom: 1px solid #3d3d3d;
+	border-left: 4px solid #2a2a2a;
+}
+
+@media screen and (max-width: 640px) {
+:where(.wpskin-admin--dark) .customize-controls-preview-toggle {
+	background: #1e1e1e;
+	border-right: 1px solid #3d3d3d;
+	border-top: 4px solid #2f2f2f;
+	color: #bdbdbd;
+}
+:where(.wpskin-admin--dark) #available-widgets .customize-section-title h3,
+:where(.wpskin-admin--dark) #available-menu-items .customize-section-title h3 {
+	color: #bdbdbd;
+}
+}
+
+/* customize-nav-menus */
+:where(.wpskin-admin--dark) #customize-theme-controls #accordion-section-menu_locations > .accordion-section-title {
+	border-bottom-color: #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) #customize-controls .theme-location-set,
+:where(.wpskin-admin--dark) #customize-controls .control-section .accordion-section-title:focus .menu-in-location,
+:where(.wpskin-admin--dark) #customize-controls .control-section .accordion-section-title:hover .menu-in-location {
+	color: #bdbdbd;
+}
+
+:where(.wpskin-admin--dark) .wp-customizer .menu-item-bar .menu-item-handle {
+	background: #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) .wp-customizer .menu-item-settings {
+	background: #1e1e1e;
+	border: 1px solid #5c5c5c;
+}
+
+:where(.wpskin-admin--dark) .menu-item-reorder-nav {
+	background-color: #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) .wp-customizer .menu-settings .menu-theme-locations {
+	border-top: 1px solid #4a4a4a;
+}
+
+:where(.wpskin-admin--dark) .wp-customizer .control-section-nav_menu .menu-location-settings {
+	border-top: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) #customize-controls .customize-info.open.active-menu-screen-options .customize-help-toggle {
+	color: #bdbdbd;
+}
+
+:where(.wpskin-admin--dark) .customize-screen-options-toggle {
+	color: #bdbdbd;
+}
+
+:where(.wpskin-admin--dark) .wp-customizer #screen-options-wrap {
+	background: #2a2a2a;
+	border-top: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) .wp-customizer .menu-item .item-edit .toggle-indicator:before,
+:where(.wpskin-admin--dark) #available-menu-items .accordion-section-title .toggle-indicator:before {
+	color: #a7a7a7;
+}
+
+:where(.wpskin-admin--dark) .control-section-nav_menu.menu .sortable-placeholder {
+	border-color: #5c5c5c;
+}
+
+:where(.wpskin-admin--dark) #available-menu-items .accordion-section-title {
+	background: #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) #available-menu-items .open .accordion-section-title,
+:where(.wpskin-admin--dark) #available-menu-items #available-menu-items-search .accordion-section-title {
+	background: #1e1e1e;
+}
+
+:where(.wpskin-admin--dark) #available-menu-items .accordion-section-title:hover .toggle-indicator:before,
+:where(.wpskin-admin--dark) #available-menu-items .button-link:hover .toggle-indicator:before,
+:where(.wpskin-admin--dark) #available-menu-items .button-link:focus .toggle-indicator:before {
+	color: #e6e6e6;
+}
+
+:where(.wpskin-admin--dark) #available-menu-items .open .accordion-section-title .toggle-indicator:before {
+	color: #e6e6e6;
+}
+
+:where(.wpskin-admin--dark) #available-menu-items .cannot-expand .accordion-section-title .no-items {
+	color: #bdbdbd;
+}
+
+:where(.wpskin-admin--dark) #available-menu-items .menu-item-handle .item-add:focus {
+	color: #e6e6e6;
+}
+
+:where(.wpskin-admin--dark) #available-menu-items .menu-item-handle.item-added .item-type,
+:where(.wpskin-admin--dark) #available-menu-items .menu-item-handle.item-added .item-title,
+:where(.wpskin-admin--dark) #available-menu-items .menu-item-handle.item-added:hover .item-add,
+:where(.wpskin-admin--dark) #available-menu-items .menu-item-handle.item-added .item-add:focus {
+	color: #a7a7a7;
+}
+
+:where(.wpskin-admin--dark) .nav-menu-inserted-item-loading .menu-item-handle,
+:where(.wpskin-admin--dark) .added-menu-item .menu-item-handle.loading {
+	background: #2a2a2a;
+	color: #a7a7a7;
+}
+
+:where(.wpskin-admin--dark) #customize-theme-controls .control-panel-content .control-section-nav_menu:nth-last-child(2) .accordion-section-title {
+	border-bottom-color: #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) .menu-item-edit-active .menu-item-handle {
+	border-color: #5c5c5c;
+}
+
+/* customize-widgets */
+:where(.wpskin-admin--dark) .customize-control-widget_form .widget-top {
+	background: #2a2a2a;
+}
+
+:where(.wpskin-admin--dark) .customize-control .widget-action {
+	color: #a7a7a7;
+}
+
+:where(.wpskin-admin--dark) .customize-control .widget-top:hover .widget-action,
+:where(.wpskin-admin--dark) .customize-control .widget-action:focus {
+	color: #e6e6e6;
+}
+
+:where(.wpskin-admin--dark) .customize-control-widget_form.wide-widget-control .widget-inside {
+	border: 1px solid #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) .customize-control-widget_form.wide-widget-control.expanding .widget-top,
+:where(.wpskin-admin--dark) .customize-control-widget_form.wide-widget-control.expanded:not(.collapsing) .widget-top {
+	background-color: #3d3d3d;
+}
+
+:where(.wpskin-admin--dark) #customize-theme-controls .widget-reorder-nav {
+	background-color: #262626;
+}
+
+:where(.wpskin-admin--dark) #customize-theme-controls .move-widget-area {
+	background: #2a2a2a;
+	border: 1px solid #4a4a4a;
+}
+
+:where(.wpskin-admin--dark) #customize-theme-controls .widget-area-select li {
+	color: #bdbdbd;
+	border-top: 1px solid #4a4a4a;
+}
+
+:where(.wpskin-admin--dark) #customize-theme-controls .widget-area-select li:last-child {
+	border-bottom: 1px solid #4a4a4a;
+}
+
+:where(.wpskin-admin--dark) #available-widgets .widget-tpl:hover,
+:where(.wpskin-admin--dark) #available-widgets .widget-tpl.selected {
+	background: #262626;
+	border-bottom-color: #4a4a4a;
+}
+
+:where(.wpskin-admin--dark) #available-widgets .widget .widget-description {
+	color: #a7a7a7;
+}
+
+:where(.wpskin-admin--dark) #available-widgets .widget-title:before {
+	color: #e0e0e0;
+}

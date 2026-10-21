@@ -23,6 +23,9 @@ class Theme implements Hookable {
 		$loader->add_filter( 'admin_body_class', array( $this, 'body_class' ) );
 		$loader->add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 		$loader->add_action( 'enqueue_block_assets', array( $this, 'enqueue_canvas_assets' ) );
+		// After core's Customizer styles (nav menus, widgets) are enqueued at the default priority.
+		$loader->add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue_customize_assets' ), 20 );
+		$loader->add_action( 'customize_controls_head', array( $this, 'print_customize_body_class' ) );
 	}
 
 	/**
@@ -69,6 +72,56 @@ class Theme implements Hookable {
 				Plugin::asset_version( 'assets/css/editor-dark.css' )
 			);
 		}
+	}
+
+	public function enqueue_customize_assets() {
+		if ( ! self::is_dark() ) {
+			return;
+		}
+
+		wp_enqueue_style(
+			'wpskin-theme-dark',
+			WPSKIN_URL . 'assets/css/theme-dark.css',
+			array(),
+			Plugin::asset_version( 'assets/css/theme-dark.css' )
+		);
+
+		wp_enqueue_style(
+			'wpskin-customize-dark',
+			WPSKIN_URL . 'assets/css/customize-dark.css',
+			array( 'wpskin-theme-dark', 'customize-controls' ),
+			Plugin::asset_version( 'assets/css/customize-dark.css' )
+		);
+
+		// The block-based widgets editor runs inside the Customizer when it is enabled.
+		if ( wp_style_is( 'wp-customize-widgets' ) ) {
+			wp_enqueue_style(
+				'wpskin-editor-dark',
+				WPSKIN_URL . 'assets/css/editor-dark.css',
+				array( 'wpskin-theme-dark', 'wp-customize-widgets' ),
+				Plugin::asset_version( 'assets/css/editor-dark.css' )
+			);
+		}
+	}
+
+	/**
+	 * customize.php has no body class filter, so the class is added as soon as <body> is parsed,
+	 * before the first paint.
+	 */
+	public function print_customize_body_class() {
+		if ( ! self::is_dark() ) {
+			return;
+		}
+		?>
+		<script>
+		new MutationObserver( function ( mutations, observer ) {
+			if ( document.body ) {
+				document.body.classList.add( 'wpskin-admin--dark' );
+				observer.disconnect();
+			}
+		} ).observe( document.documentElement, { childList: true } );
+		</script>
+		<?php
 	}
 
 	/**

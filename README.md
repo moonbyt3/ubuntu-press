@@ -17,7 +17,7 @@ src/
   Admin/Admin.php       Admin assets + "Settings" link on Plugins screen
   Admin/Settings.php    WPSkin settings page, last in the admin menu (Settings API)
 assets/                 css/ and js/ for the admin
-bin/build-editor-dark.py  Regenerates assets/css/editor-dark.css from core's editor CSS
+bin/build-editor-dark.py  Regenerates assets/css/editor-dark.css and customize-dark.css from core's editor / Customizer CSS
 languages/
 ```
 

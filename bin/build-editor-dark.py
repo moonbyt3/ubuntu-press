@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-Generates assets/css/editor-dark.css from WordPress core's block editor styles.
+Generates assets/css/editor-dark.css from WordPress core's block editor styles
+and assets/css/customize-dark.css from core's Customizer styles.
 
-Most of the editor UI hardcodes light greys instead of using CSS variables, so
-this copies every rule that sets one of those colours, swaps the colour for its
-dark counterpart and scopes the rule to body.wpskin-admin--dark with :where(),
+Both UIs hardcode light greys instead of using CSS variables, so this copies
+every rule that sets one of those colours, swaps the colour for its dark
+counterpart and scopes the rule to body.wpskin-admin--dark with :where(),
 which keeps core's specificity (hover / pressed states still win).
 
 Usage (re-run after WordPress updates):
@@ -15,7 +16,6 @@ import re
 import sys
 from pathlib import Path
 
-SOURCES = ['components', 'block-editor', 'editor', 'edit-post']
 SCOPE = ':where(.wpskin-admin--dark)'
 
 # Light editor greys -> dark equivalents, per property group.
@@ -59,13 +59,61 @@ BORDERS = {
 	'#2f2f2f': '#6b6b6b',
 }
 
-def group(prop):
+# Customizer: classic admin greys -> the dark tokens used by theme-dark.css.
+CUSTOMIZE_BACKGROUNDS = {
+	'#fff': '#2a2a2a',
+	'#ffffff': '#2a2a2a',
+	'white': '#2a2a2a',
+	'#f6f7f7': '#262626',
+	'#f0f0f1': '#1e1e1e',
+	'#dcdcde': '#3d3d3d',
+	'#c3c4c7': '#4a4a4a',
+}
+
+CUSTOMIZE_TEXT = {
+	'#000': '#e6e6e6',
+	'#1d2327': '#e6e6e6',
+	'#2c3338': '#e0e0e0',
+	'#3c434a': '#d0d0d0',
+	'#50575e': '#bdbdbd',
+	'#646970': '#a7a7a7',
+	'#787c82': '#a7a7a7',
+}
+
+CUSTOMIZE_BORDERS = {
+	'#fff': '#2a2a2a',
+	'#f0f0f1': '#2f2f2f',
+	'#dcdcde': '#3d3d3d',
+	'#ddd': '#3d3d3d',
+	'#c3c4c7': '#4a4a4a',
+	'#a7aaad': '#5c5c5c',
+	'#8c8f94': '#5c5c5c',
+}
+
+TARGETS = [
+	{
+		'file': 'assets/css/editor-dark.css',
+		'title': 'the block editor UI',
+		'sources': {name: f'wp-includes/css/dist/{name}/style.css' for name in ('components', 'block-editor', 'editor', 'edit-post', 'customize-widgets')},
+		'tables': (BACKGROUNDS, TEXT, BORDERS),
+	},
+	{
+		'file': 'assets/css/customize-dark.css',
+		'title': 'the Customizer controls',
+		'sources': {name: f'wp-admin/css/{name}.css' for name in ('customize-controls', 'customize-nav-menus', 'customize-widgets')},
+		'tables': (CUSTOMIZE_BACKGROUNDS, CUSTOMIZE_TEXT, CUSTOMIZE_BORDERS),
+	},
+]
+
+
+def group(prop, tables):
+	backgrounds, text, borders = tables
 	if prop in ('background', 'background-color'):
-		return BACKGROUNDS
+		return backgrounds
 	if prop in ('color', 'fill', 'outline-color'):
-		return TEXT
+		return text
 	if prop.startswith('border') or prop in ('box-shadow', 'outline'):
-		return BORDERS
+		return borders
 	return None
 
 
@@ -87,7 +135,7 @@ def scope(selector):
 	return SCOPE + ' ' + selector
 
 
-def convert_block(css):
+def convert_block(css, tables):
 	"""Returns converted rules for a flat block of CSS (no nested at-rules)."""
 	out = []
 	for m in re.finditer(r'([^{}]+)\{([^{}]*)\}', css):
@@ -98,7 +146,7 @@ def convert_block(css):
 				continue
 			prop, value = decl.split(':', 1)
 			prop = prop.strip().lower()
-			table = group(prop)
+			table = group(prop, tables)
 			if not table:
 				continue
 			new = swap(value.strip(), table)
@@ -129,24 +177,24 @@ def split_selectors(selectors):
 	return [p.strip() for p in parts if p.strip()]
 
 
-def convert(css):
+def convert(css, tables):
 	css = re.sub(r'/\*.*?\*/', '', css, flags=re.S)
 	out, pos = [], 0
 	# Walk top level, recursing into @media / @supports and skipping @keyframes / @font-face.
 	for m in re.finditer(r'@(media|supports|keyframes|-webkit-keyframes|font-face|container)[^{]*\{', css):
 		if m.start() < pos:
 			continue
-		out += convert_block(css[pos:m.start()])
+		out += convert_block(css[pos:m.start()], tables)
 		depth, i = 1, m.end()
 		while depth:
 			depth += {'{': 1, '}': -1}.get(css[i], 0)
 			i += 1
 		if m.group(1) in ('media', 'supports', 'container'):
-			inner = convert(css[m.end():i - 1])
+			inner = convert(css[m.end():i - 1], tables)
 			if inner:
 				out.append(m.group(0).strip() + '\n' + '\n'.join(inner) + '\n}')
 		pos = i
-	out += convert_block(css[pos:])
+	out += convert_block(css[pos:], tables)
 	return out
 
 
@@ -157,19 +205,20 @@ def main():
 	version = re.search(r"\$wp_version = '([^']+)'", (wp / 'wp-includes/version.php').read_text()).group(1)
 	plugin = Path(__file__).resolve().parent.parent
 
-	parts = [
-		'/*',
-		f' * WPSkin dark theme for the block editor UI. Generated from WordPress {version}',
-		' * by bin/build-editor-dark.py; do not edit by hand.',
-		' */',
-	]
-	for name in SOURCES:
-		rules = convert((wp / f'wp-includes/css/dist/{name}/style.css').read_text())
-		parts.append(f'\n/* {name} */\n' + '\n\n'.join(rules))
+	for spec in TARGETS:
+		parts = [
+			'/*',
+			f' * WPSkin dark theme for {spec["title"]}. Generated from WordPress {version}',
+			' * by bin/build-editor-dark.py; do not edit by hand.',
+			' */',
+		]
+		for name, source in spec['sources'].items():
+			rules = convert((wp / source).read_text(), spec['tables'])
+			parts.append(f'\n/* {name} */\n' + '\n\n'.join(rules))
 
-	target = plugin / 'assets/css/editor-dark.css'
-	target.write_text('\n'.join(parts) + '\n')
-	print(f'Wrote {target} ({sum(1 for _ in target.open())} lines)')
+		target = plugin / spec['file']
+		target.write_text('\n'.join(parts) + '\n')
+		print(f'Wrote {target} ({sum(1 for _ in target.open())} lines)')
 
 
 if __name__ == '__main__':

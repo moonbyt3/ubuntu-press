@@ -624,6 +624,50 @@ body.wpskin-admin--dark,
 	color: #6b6b6b !important;
 }
 
+.wpskin-admin--dark.wp-core-ui .button-primary.disabled,
+.wpskin-admin--dark.wp-core-ui .button-primary:disabled {
+	border-color: var(--wpskin-dark-border) !important;
+	background: var(--wpskin-dark-surface) !important;
+	color: #6b6b6b !important;
+}
+
+/* Colour picker swatch label */
+.wpskin-admin--dark .wp-color-result-text {
+	border-left-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface-alt);
+	color: var(--wpskin-dark-fg);
+}
+
+/* Customizer footer (styles from themes.css; the rest is in customize-dark.css) */
+.wpskin-admin--dark .wp-full-overlay-footer,
+.wpskin-admin--dark.expanded .wp-full-overlay-footer,
+.wpskin-admin--dark .expanded .wp-full-overlay-footer,
+.wpskin-admin--dark .wp-full-overlay-footer .devices {
+	border-top-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-bg);
+}
+
+.wpskin-admin--dark .wp-full-overlay-footer .devices {
+	box-shadow: -20px 0 10px -5px var(--wpskin-dark-bg);
+}
+
+.wpskin-admin--dark .wp-full-overlay-footer .devices button:before,
+.wpskin-admin--dark .wp-full-overlay-footer .devices .devices__preview-label {
+	color: var(--wpskin-dark-fg-muted);
+}
+
+.wpskin-admin--dark .wp-full-overlay-footer .devices button.active:before {
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .wp-full-overlay-footer .devices button.active {
+	border-bottom-color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .wp-full-overlay-footer .devices button:focus {
+	background-color: var(--wpskin-dark-surface-hover);
+}
+
 /* WPSkin notification panel */
 .wpskin-admin--dark .wpskin-notices-panel {
 	border-bottom-color: var(--wpskin-dark-border);
