@@ -13,7 +13,6 @@ use WPSkin\Admin\Notifications;
 use WPSkin\Admin\Settings;
 use WPSkin\Admin\Sidebar;
 use WPSkin\Contracts\Hookable;
-use WPSkin\Frontend\Frontend;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -90,7 +89,6 @@ final class Plugin {
 	private function get_service_classes() {
 		$services = array(
 			I18n::class,
-			Frontend::class,
 		);
 
 		if ( is_admin() ) {

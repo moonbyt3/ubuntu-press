@@ -27,7 +27,6 @@ class Settings implements Hookable {
 	 */
 	public static function defaults() {
 		return array(
-			'enabled'             => 1,
 			'dashboard_cards'     => 1,
 			'hide_sidebar'        => 'everywhere',
 			'notification_center' => 1,
@@ -80,14 +79,6 @@ class Settings implements Hookable {
 		);
 
 		add_settings_field(
-			'enabled',
-			__( 'Enable WPSkin', 'wpskin' ),
-			array( $this, 'render_enabled_field' ),
-			self::PAGE,
-			'wpskin_general'
-		);
-
-		add_settings_field(
 			'dashboard_cards',
 			__( 'Dashboard cards', 'wpskin' ),
 			array( $this, 'render_dashboard_cards_field' ),
@@ -120,7 +111,6 @@ class Settings implements Hookable {
 		$input = is_array( $input ) ? $input : array();
 
 		return array(
-			'enabled'             => empty( $input['enabled'] ) ? 0 : 1,
 			'dashboard_cards'     => empty( $input['dashboard_cards'] ) ? 0 : 1,
 			'hide_sidebar'        => isset( $input['hide_sidebar'] ) && in_array( $input['hide_sidebar'], Sidebar::MODES, true )
 				? $input['hide_sidebar']
@@ -167,15 +157,6 @@ class Settings implements Hookable {
 			esc_attr( self::OPTION ),
 			checked( 1, (int) self::get( 'dashboard_cards' ), false ),
 			esc_html__( 'Replace the Dashboard with large cards built from the admin menu.', 'wpskin' )
-		);
-	}
-
-	public function render_enabled_field() {
-		printf(
-			'<label><input type="checkbox" name="%1$s[enabled]" value="1" %2$s /> %3$s</label>',
-			esc_attr( self::OPTION ),
-			checked( 1, (int) self::get( 'enabled' ), false ),
-			esc_html__( 'Load WPSkin on the frontend.', 'wpskin' )
 		);
 	}
 

@@ -312,7 +312,31 @@ class DashboardCards implements Hookable {
 		 *
 		 * @param array[] $cards Card data.
 		 */
-		return apply_filters( 'wpskin_dashboard_cards', $cards );
+		$cards = apply_filters( 'wpskin_dashboard_cards', $cards );
+
+		// Added after the filter so the settings shortcut always stays last.
+		if ( current_user_can( 'manage_options' ) ) {
+			$cards[] = $this->settings_card();
+		}
+
+		return $cards;
+	}
+
+	/**
+	 * Shortcut card to the WPSkin settings page.
+	 *
+	 * @return array
+	 */
+	private function settings_card() {
+		return array(
+			'id'       => 'wpskin-settings',
+			'name'     => __( 'WPSkin', 'wpskin' ),
+			'url'      => add_query_arg( 'page', Settings::PAGE, admin_url( 'options-general.php' ) ),
+			'icon'     => 'dashicons-admin-appearance',
+			'color'    => self::PALETTE[0],
+			'count'    => 0,
+			'children' => array(),
+		);
 	}
 
 	/**

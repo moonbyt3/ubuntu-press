@@ -16,8 +16,7 @@ src/
   Activator.php / Deactivator.php
   Admin/Admin.php       Admin assets + "Settings" link on Plugins screen
   Admin/Settings.php    Settings > WPSkin page (Settings API)
-  Frontend/Frontend.php Public assets
-assets/                 css/ and js/ for admin + frontend
+assets/                 css/ and js/ for the admin
 languages/
 ```
 
@@ -48,5 +47,5 @@ class Shortcode implements Hookable {
 
 - `wpskin()` — plugin instance
 - `wpskin()->get( SomeClass::class )` — booted service instance
-- `WPSkin\Admin\Settings::get( 'enabled' )` — read a setting
+- `WPSkin\Admin\Settings::get( 'dashboard_cards' )` — read a setting
 - Action `wpskin_booted` fires after all services are registered
