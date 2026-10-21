@@ -29,6 +29,7 @@ class Settings implements Hookable {
 		return array(
 			'enabled'         => 1,
 			'dashboard_tiles' => 1,
+			'hide_sidebar'    => 'everywhere',
 		);
 	}
 
@@ -92,6 +93,14 @@ class Settings implements Hookable {
 			self::PAGE,
 			'wpskin_general'
 		);
+
+		add_settings_field(
+			'hide_sidebar',
+			__( 'Hide admin sidebar', 'wpskin' ),
+			array( $this, 'render_hide_sidebar_field' ),
+			self::PAGE,
+			'wpskin_general'
+		);
 	}
 
 	/**
@@ -104,6 +113,32 @@ class Settings implements Hookable {
 		return array(
 			'enabled'         => empty( $input['enabled'] ) ? 0 : 1,
 			'dashboard_tiles' => empty( $input['dashboard_tiles'] ) ? 0 : 1,
+			'hide_sidebar'    => isset( $input['hide_sidebar'] ) && in_array( $input['hide_sidebar'], Sidebar::MODES, true )
+				? $input['hide_sidebar']
+				: self::defaults()['hide_sidebar'],
+		);
+	}
+
+	public function render_hide_sidebar_field() {
+		$choices = array(
+			'everywhere' => __( 'On all admin screens', 'wpskin' ),
+			'dashboard'  => __( 'On the Dashboard only', 'wpskin' ),
+			'never'      => __( 'Never', 'wpskin' ),
+		);
+
+		printf( '<select name="%s[hide_sidebar]">', esc_attr( self::OPTION ) );
+		foreach ( $choices as $value => $label ) {
+			printf(
+				'<option value="%1$s" %2$s>%3$s</option>',
+				esc_attr( $value ),
+				selected( self::get( 'hide_sidebar' ), $value, false ),
+				esc_html( $label )
+			);
+		}
+		echo '</select>';
+		printf(
+			'<p class="description">%s</p>',
+			esc_html__( 'Only applies while Dashboard tiles are enabled. A "Dashboard" link is added to the toolbar for navigation.', 'wpskin' )
 		);
 	}
 

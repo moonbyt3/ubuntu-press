@@ -10,6 +10,7 @@ namespace WPSkin;
 use WPSkin\Admin\Admin;
 use WPSkin\Admin\DashboardTiles;
 use WPSkin\Admin\Settings;
+use WPSkin\Admin\Sidebar;
 use WPSkin\Contracts\Hookable;
 use WPSkin\Frontend\Frontend;
 
@@ -95,6 +96,7 @@ final class Plugin {
 			$services[] = Admin::class;
 			$services[] = Settings::class;
 			$services[] = DashboardTiles::class;
+			$services[] = Sidebar::class;
 		}
 
 		/**

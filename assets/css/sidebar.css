@@ -1,0 +1,38 @@
+/* WPSkin: hide the default admin sidebar. */
+
+body.wpskin-no-sidebar #adminmenumain,
+body.wpskin-no-sidebar #wpadminbar #wp-admin-bar-menu-toggle {
+	display: none;
+}
+
+body.wpskin-no-sidebar #wpcontent,
+body.wpskin-no-sidebar #wpfooter {
+	margin-left: 0;
+}
+
+/* Block editor / site editor frame. */
+body.wpskin-no-sidebar .interface-interface-skeleton {
+	left: 0;
+}
+
+/* Toolbar "Dashboard" link (dashicons-screenoptions). */
+#wpadminbar #wp-admin-bar-wpskin-home .ab-icon:before {
+	content: "\f180";
+	top: 2px;
+}
+
+@media screen and (max-width: 782px) {
+	#wpadminbar #wp-toolbar > ul > li#wp-admin-bar-wpskin-home {
+		display: block;
+	}
+
+	#wpadminbar #wp-admin-bar-wpskin-home > .ab-item {
+		width: 52px;
+		padding: 0;
+		text-align: center;
+	}
+
+	#wpadminbar #wp-admin-bar-wpskin-home .ab-icon:before {
+		top: 0;
+	}
+}
