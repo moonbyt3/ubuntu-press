@@ -264,7 +264,8 @@ class DashboardCards implements Hookable {
 		foreach ( (array) $menu as $item ) {
 			$slug = isset( $item[2] ) ? $item[2] : '';
 
-			if ( '' === $slug || 'index.php' === $slug || false !== strpos( $item[4], 'wp-menu-separator' ) ) {
+			// WPSkin's own menu item is skipped: settings_card() adds it last instead.
+			if ( '' === $slug || 'index.php' === $slug || Settings::PAGE === $slug || false !== strpos( $item[4], 'wp-menu-separator' ) ) {
 				continue;
 			}
 			if ( ! current_user_can( $item[1] ) ) {
@@ -331,7 +332,7 @@ class DashboardCards implements Hookable {
 		return array(
 			'id'       => 'wpskin-settings',
 			'name'     => __( 'WPSkin', 'wpskin' ),
-			'url'      => add_query_arg( 'page', Settings::PAGE, admin_url( 'options-general.php' ) ),
+			'url'      => Settings::url(),
 			'icon'     => 'dashicons-admin-appearance',
 			'color'    => self::PALETTE[0],
 			'count'    => 0,

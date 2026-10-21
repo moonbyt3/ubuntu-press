@@ -27,7 +27,7 @@ class Admin implements Hookable {
 	 * @param string $hook Current admin page hook suffix.
 	 */
 	public function enqueue_assets( $hook ) {
-		if ( 'settings_page_' . Settings::PAGE !== $hook ) {
+		if ( 'toplevel_page_' . Settings::PAGE !== $hook ) {
 			return;
 		}
 
@@ -54,8 +54,7 @@ class Admin implements Hookable {
 	 * @return string[]
 	 */
 	public function action_links( $links ) {
-		$url = admin_url( 'options-general.php?page=' . Settings::PAGE );
-		array_unshift( $links, sprintf( '<a href="%s">%s</a>', esc_url( $url ), esc_html__( 'Settings', 'wpskin' ) ) );
+		array_unshift( $links, sprintf( '<a href="%s">%s</a>', esc_url( Settings::url() ), esc_html__( 'Settings', 'wpskin' ) ) );
 		return $links;
 	}
 }

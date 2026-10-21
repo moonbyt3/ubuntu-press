@@ -47,18 +47,27 @@ class Settings implements Hookable {
 	}
 
 	public function register_hooks( Loader $loader ) {
-		$loader->add_action( 'admin_menu', array( $this, 'add_page' ) );
+		// Late priority: a menu item without a position is appended, so this keeps WPSkin last.
+		$loader->add_action( 'admin_menu', array( $this, 'add_page' ), PHP_INT_MAX );
 		$loader->add_action( 'admin_init', array( $this, 'register_settings' ) );
 	}
 
 	public function add_page() {
-		add_options_page(
+		add_menu_page(
 			__( 'WPSkin', 'wpskin' ),
 			__( 'WPSkin', 'wpskin' ),
 			'manage_options',
 			self::PAGE,
-			array( $this, 'render_page' )
+			array( $this, 'render_page' ),
+			'dashicons-admin-appearance'
 		);
+	}
+
+	/**
+	 * @return string Settings page URL.
+	 */
+	public static function url() {
+		return admin_url( 'admin.php?page=' . self::PAGE );
 	}
 
 	public function register_settings() {
