@@ -1,0 +1,294 @@
+/* WPSkin dark theme for classic admin screens (Yaru dark greys, WordPress blue accents). */
+
+/* Block: wpskin-admin (dark modifier) */
+body.wpskin-admin--dark {
+	--wpskin-dark-bg: #1e1e1e;
+	--wpskin-dark-surface: #2a2a2a;
+	--wpskin-dark-surface-alt: #262626;
+	--wpskin-dark-surface-hover: #333;
+	--wpskin-dark-field: #1a1a1a;
+	--wpskin-dark-border: #3d3d3d;
+	--wpskin-dark-field-border: #5c5c5c;
+	--wpskin-dark-fg: #e6e6e6;
+	--wpskin-dark-fg-muted: #a7a7a7;
+	--wpskin-dark-link: #72aee6;
+	--wpskin-dark-link-hover: #9ec2e6;
+	--wpskin-dark-danger: #f86368;
+	background: var(--wpskin-dark-bg);
+	color: var(--wpskin-dark-fg);
+	color-scheme: dark;
+}
+
+/* Text */
+.wpskin-admin--dark h1,
+.wpskin-admin--dark h2,
+.wpskin-admin--dark h3,
+.wpskin-admin--dark h4,
+.wpskin-admin--dark h5,
+.wpskin-admin--dark h6,
+.wpskin-admin--dark .form-table th,
+.wpskin-admin--dark .form-wrap label,
+.wpskin-admin--dark .subsubsub a.current {
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .description,
+.wpskin-admin--dark .subsubsub,
+.wpskin-admin--dark .subsubsub a .count,
+.wpskin-admin--dark .tablenav .displaying-num,
+.wpskin-admin--dark #wpfooter {
+	color: var(--wpskin-dark-fg-muted);
+}
+
+.wpskin-admin--dark a,
+.wpskin-admin--dark a:focus {
+	color: var(--wpskin-dark-link);
+}
+
+.wpskin-admin--dark a:hover,
+.wpskin-admin--dark a:active {
+	color: var(--wpskin-dark-link-hover);
+}
+
+.wpskin-admin--dark.wp-core-ui .button-link {
+	color: var(--wpskin-dark-link);
+}
+
+.wpskin-admin--dark.wp-core-ui .button-link-delete,
+.wpskin-admin--dark .row-actions .trash a,
+.wpskin-admin--dark .row-actions .delete a,
+.wpskin-admin--dark .row-actions .spam a,
+.wpskin-admin--dark a.submitdelete {
+	color: var(--wpskin-dark-danger);
+}
+
+.wpskin-admin--dark code,
+.wpskin-admin--dark kbd {
+	background: rgba(255, 255, 255, 0.08);
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark hr {
+	border-top-color: var(--wpskin-dark-border);
+	border-bottom-color: transparent;
+}
+
+/* Surfaces: boxes, tables, notices */
+.wpskin-admin--dark .postbox,
+.wpskin-admin--dark .stuffbox,
+.wpskin-admin--dark .card,
+.wpskin-admin--dark .widefat,
+.wpskin-admin--dark .wp-filter,
+.wpskin-admin--dark .wp-tab-panel,
+.wpskin-admin--dark .categorydiv div.tabs-panel,
+.wpskin-admin--dark ul.cat-checklist {
+	border-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface);
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .postbox .postbox-header,
+.wpskin-admin--dark .postbox .inside .hndle {
+	border-color: var(--wpskin-dark-border);
+}
+
+.wpskin-admin--dark .widefat td,
+.wpskin-admin--dark .widefat th,
+.wpskin-admin--dark .widefat thead td,
+.wpskin-admin--dark .widefat thead th,
+.wpskin-admin--dark .widefat tfoot td,
+.wpskin-admin--dark .widefat tfoot th {
+	border-color: var(--wpskin-dark-border);
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .striped > tbody > :nth-child(odd),
+.wpskin-admin--dark ul.striped > :nth-child(odd),
+.wpskin-admin--dark .alternate {
+	background: var(--wpskin-dark-surface-alt);
+}
+
+/* Plugins screen row states */
+.wpskin-admin--dark .plugins .active td,
+.wpskin-admin--dark .plugins .active th,
+.wpskin-admin--dark .plugin-update-tr.active td {
+	background: #263039;
+}
+
+.wpskin-admin--dark .plugins .inactive td,
+.wpskin-admin--dark .plugins .inactive th,
+.wpskin-admin--dark .plugin-update-tr td {
+	background: var(--wpskin-dark-surface);
+}
+
+.wpskin-admin--dark .plugins td,
+.wpskin-admin--dark .plugins th {
+	box-shadow: inset 0 -1px 0 var(--wpskin-dark-border);
+}
+
+.wpskin-admin--dark .notice,
+.wpskin-admin--dark div.updated,
+.wpskin-admin--dark div.error,
+.wpskin-admin--dark .update-nag {
+	border-top-color: var(--wpskin-dark-border);
+	border-right-color: var(--wpskin-dark-border);
+	border-bottom-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface);
+	box-shadow: none;
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .notice.notice-alt {
+	background: var(--wpskin-dark-surface-alt);
+}
+
+/* Screen Options / Help */
+.wpskin-admin--dark #screen-meta {
+	border-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface);
+	box-shadow: none;
+}
+
+.wpskin-admin--dark #screen-meta-links .show-settings {
+	border-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface);
+	color: var(--wpskin-dark-fg-muted);
+}
+
+.wpskin-admin--dark #screen-meta-links .show-settings:hover,
+.wpskin-admin--dark #screen-meta-links .show-settings:focus {
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .contextual-help-tabs .active {
+	border-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface-hover);
+}
+
+/* Tabs */
+.wpskin-admin--dark .nav-tab-wrapper,
+.wpskin-admin--dark .wrap h2.nav-tab-wrapper {
+	border-bottom-color: var(--wpskin-dark-border);
+}
+
+.wpskin-admin--dark .nav-tab {
+	border-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface);
+	color: var(--wpskin-dark-fg-muted);
+}
+
+.wpskin-admin--dark .nav-tab:hover,
+.wpskin-admin--dark .nav-tab:focus {
+	background: var(--wpskin-dark-surface-hover);
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .nav-tab-active,
+.wpskin-admin--dark .nav-tab-active:hover,
+.wpskin-admin--dark .nav-tab-active:focus {
+	border-bottom-color: var(--wpskin-dark-bg);
+	background: var(--wpskin-dark-bg);
+	color: var(--wpskin-dark-fg);
+}
+
+/* Form fields */
+.wpskin-admin--dark input[type="text"],
+.wpskin-admin--dark input[type="search"],
+.wpskin-admin--dark input[type="email"],
+.wpskin-admin--dark input[type="url"],
+.wpskin-admin--dark input[type="password"],
+.wpskin-admin--dark input[type="number"],
+.wpskin-admin--dark input[type="tel"],
+.wpskin-admin--dark input[type="date"],
+.wpskin-admin--dark input[type="datetime-local"],
+.wpskin-admin--dark input[type="month"],
+.wpskin-admin--dark input[type="time"],
+.wpskin-admin--dark input[type="week"],
+.wpskin-admin--dark input[type="checkbox"],
+.wpskin-admin--dark input[type="radio"],
+.wpskin-admin--dark textarea,
+.wpskin-admin--dark.wp-core-ui select {
+	border-color: var(--wpskin-dark-field-border);
+	background-color: var(--wpskin-dark-field);
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark.wp-core-ui select {
+	/* Core's arrow is dark grey; same shape, light grey. */
+	background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23a7a7a7%22%2F%3E%3C%2Fsvg%3E");
+}
+
+.wpskin-admin--dark.wp-core-ui select:hover {
+	color: var(--wpskin-dark-link);
+}
+
+.wpskin-admin--dark input:focus,
+.wpskin-admin--dark textarea:focus,
+.wpskin-admin--dark.wp-core-ui select:focus {
+	border-color: var(--wpskin-dark-link);
+	box-shadow: 0 0 0 1px var(--wpskin-dark-link);
+}
+
+.wpskin-admin--dark input[disabled],
+.wpskin-admin--dark input[readonly],
+.wpskin-admin--dark textarea[disabled],
+.wpskin-admin--dark textarea[readonly],
+.wpskin-admin--dark.wp-core-ui select:disabled {
+	border-color: var(--wpskin-dark-border);
+	background-color: var(--wpskin-dark-surface);
+	color: var(--wpskin-dark-fg-muted);
+}
+
+/* Secondary buttons (primary buttons keep WordPress blue) */
+.wpskin-admin--dark .button:not(.button-primary):not(.button-link),
+.wpskin-admin--dark .wrap .page-title-action {
+	border-color: var(--wpskin-dark-link);
+	background: var(--wpskin-dark-surface);
+	color: var(--wpskin-dark-link);
+}
+
+.wpskin-admin--dark .button:not(.button-primary):not(.button-link):hover,
+.wpskin-admin--dark .button:not(.button-primary):not(.button-link):focus,
+.wpskin-admin--dark .wrap .page-title-action:hover,
+.wpskin-admin--dark .wrap .page-title-action:focus {
+	border-color: var(--wpskin-dark-link-hover);
+	background: var(--wpskin-dark-surface-hover);
+	color: var(--wpskin-dark-link-hover);
+}
+
+.wpskin-admin--dark .button:not(.button-primary):not(.button-link).disabled,
+.wpskin-admin--dark .button:not(.button-primary):not(.button-link):disabled {
+	border-color: var(--wpskin-dark-border) !important;
+	background: var(--wpskin-dark-surface) !important;
+	color: #6b6b6b !important;
+}
+
+/* WPSkin notification panel */
+.wpskin-admin--dark .wpskin-notices-panel {
+	border-bottom-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface);
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.wpskin-admin--dark .wpskin-notices-panel__header {
+	border-bottom-color: var(--wpskin-dark-border);
+}
+
+/* Left border keeps the notice type colour. */
+.wpskin-admin--dark .wpskin-notices-panel__list > div {
+	border-top-color: var(--wpskin-dark-border);
+	border-right-color: var(--wpskin-dark-border);
+	border-bottom-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface-alt);
+}
+
+.wpskin-admin--dark .wpskin-notices-panel__close,
+.wpskin-admin--dark .wpskin-notices-panel__empty {
+	color: var(--wpskin-dark-fg-muted);
+}
+
+.wpskin-admin--dark .wpskin-notices-panel__close:hover,
+.wpskin-admin--dark .wpskin-notices-panel__close:focus {
+	background: var(--wpskin-dark-surface-hover);
+	color: var(--wpskin-dark-fg);
+}

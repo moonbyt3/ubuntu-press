@@ -2,10 +2,24 @@
 
 /* Block: wpskin-admin (page-level modifier) */
 body.wpskin-admin--dashboard {
-	background: #1d1d1d;
+	background: #fafafa;
 }
 
 body.wpskin-admin--dashboard #wpwrap {
+	/* Ubuntu wallpaper washed out to white: light theme overview background. */
+	background:
+		linear-gradient(rgba(250, 250, 250, 0.82), rgba(250, 250, 250, 0.82)),
+		radial-gradient(ellipse 70% 60% at 85% 100%, #e95420 0%, rgba(233, 84, 32, 0) 70%),
+		radial-gradient(ellipse 80% 70% at 10% 0%, #77216f 0%, rgba(119, 33, 111, 0) 70%),
+		#fafafa;
+	background-attachment: fixed;
+}
+
+body.wpskin-admin--dashboard.wpskin-admin--dark {
+	background: #1d1d1d;
+}
+
+body.wpskin-admin--dashboard.wpskin-admin--dark #wpwrap {
 	/* Dimmed Ubuntu wallpaper: aubergine with an orange glow, like the blurred overview background. */
 	background:
 		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -25,12 +39,49 @@ body.wpskin-admin--dashboard #screen-meta-links {
 	--wpskin-icon-size: 88px;
 	--wpskin-card-radius: 20px;
 	--wpskin-card-name-size: 14px;
-	--wpskin-fg: #fff;
+	/* Light theme (Yaru) colours. */
+	--wpskin-fg: #3d3d3d;
+	--wpskin-fg-muted: rgba(0, 0, 0, 0.6);
+	--wpskin-fg-subtle: rgba(0, 0, 0, 0.45);
+	--wpskin-hover-bg: rgba(0, 0, 0, 0.07);
+	--wpskin-focus-bg: rgba(0, 0, 0, 0.11);
+	--wpskin-active-bg: rgba(0, 0, 0, 0.15);
+	--wpskin-field-bg: rgba(0, 0, 0, 0.06);
+	--wpskin-field-hover-bg: rgba(0, 0, 0, 0.09);
+	--wpskin-field-focus-bg: #fff;
+	--wpskin-field-border: rgba(0, 0, 0, 0.08);
+	--wpskin-folder-bg: rgba(0, 0, 0, 0.08);
+	--wpskin-folder-border: rgba(0, 0, 0, 0.04);
+	--wpskin-dialog-bg: rgba(250, 250, 250, 0.97);
+	--wpskin-dialog-border: rgba(0, 0, 0, 0.08);
+	--wpskin-backdrop: rgba(0, 0, 0, 0.25);
+	--wpskin-label-shadow: none;
+	--wpskin-cancel-filter: none;
 	max-width: 1180px;
 	margin: 0 auto;
 	padding: 28px 0 48px;
 	color: var(--wpskin-fg);
 	font-family: Ubuntu, "Ubuntu Sans", Cantarell, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.wpskin-admin--dark .wrap.wpskin-dashboard {
+	--wpskin-fg: #fff;
+	--wpskin-fg-muted: rgba(255, 255, 255, 0.7);
+	--wpskin-fg-subtle: rgba(255, 255, 255, 0.55);
+	--wpskin-hover-bg: rgba(255, 255, 255, 0.1);
+	--wpskin-focus-bg: rgba(255, 255, 255, 0.17);
+	--wpskin-active-bg: rgba(255, 255, 255, 0.22);
+	--wpskin-field-bg: rgba(255, 255, 255, 0.1);
+	--wpskin-field-hover-bg: rgba(255, 255, 255, 0.14);
+	--wpskin-field-focus-bg: rgba(255, 255, 255, 0.16);
+	--wpskin-field-border: rgba(255, 255, 255, 0.06);
+	--wpskin-folder-bg: rgba(255, 255, 255, 0.12);
+	--wpskin-folder-border: rgba(255, 255, 255, 0.05);
+	--wpskin-dialog-bg: rgba(54, 54, 54, 0.96);
+	--wpskin-dialog-border: rgba(255, 255, 255, 0.06);
+	--wpskin-backdrop: rgba(0, 0, 0, 0.45);
+	--wpskin-label-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+	--wpskin-cancel-filter: invert(1);
 }
 
 .wpskin-dashboard__search {
@@ -39,7 +90,7 @@ body.wpskin-admin--dashboard #screen-meta-links {
 
 .wpskin-dashboard__no-results {
 	margin: 48px 0;
-	color: rgba(255, 255, 255, 0.7);
+	color: var(--wpskin-fg-muted);
 	font-size: 18px;
 	text-align: center;
 }
@@ -55,42 +106,42 @@ body.wpskin-admin--dashboard #screen-meta-links {
 	position: absolute;
 	top: 50%;
 	left: 12px;
-	color: rgba(255, 255, 255, 0.7);
+	color: var(--wpskin-fg-muted);
 	transform: translateY(-50%);
 	pointer-events: none;
 }
 
-.wpskin-dashboard .wpskin-search__input {
+.wrap.wpskin-dashboard .wpskin-search__input {
 	width: 100%;
 	min-height: 38px;
 	margin: 0;
 	padding: 6px 16px 6px 40px;
 	border: 0;
 	border-radius: 19px;
-	background: rgba(255, 255, 255, 0.1);
-	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+	background: var(--wpskin-field-bg);
+	box-shadow: inset 0 0 0 1px var(--wpskin-field-border);
 	color: var(--wpskin-fg);
 	font-family: inherit;
 	font-size: 15px;
 	transition: background-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.wpskin-dashboard .wpskin-search__input::placeholder {
-	color: rgba(255, 255, 255, 0.55);
+.wrap.wpskin-dashboard .wpskin-search__input::placeholder {
+	color: var(--wpskin-fg-subtle);
 }
 
-.wpskin-dashboard .wpskin-search__input:hover {
-	background: rgba(255, 255, 255, 0.14);
+.wrap.wpskin-dashboard .wpskin-search__input:hover {
+	background: var(--wpskin-field-hover-bg);
 }
 
-.wpskin-dashboard .wpskin-search__input:focus {
-	background: rgba(255, 255, 255, 0.16);
+.wrap.wpskin-dashboard .wpskin-search__input:focus {
+	background: var(--wpskin-field-focus-bg);
 	box-shadow: inset 0 0 0 2px #e95420;
 	outline: none;
 }
 
-.wpskin-dashboard .wpskin-search__input::-webkit-search-cancel-button {
-	filter: invert(1);
+.wrap.wpskin-dashboard .wpskin-search__input::-webkit-search-cancel-button {
+	filter: var(--wpskin-cancel-filter);
 }
 
 /* Block: wpskin-cards (grid) */
@@ -135,23 +186,28 @@ body.wpskin-admin--dashboard #screen-meta-links {
 	display: none;
 }
 
+/* Beats generic link colours (core, dark theme) without overriding the size rules above. */
+.wpskin-dashboard .wpskin-card {
+	color: var(--wpskin-fg);
+}
+
 /* Focus looks like hover; also undoes core's a:focus (color, radius, ring). */
 .wpskin-dashboard .wpskin-card:hover,
 .wpskin-dashboard .wpskin-card:focus {
 	border-radius: var(--wpskin-card-radius);
-	background: rgba(255, 255, 255, 0.1);
+	background: var(--wpskin-hover-bg);
 	box-shadow: none;
 	color: var(--wpskin-fg);
 	outline: none;
 }
 
 .wpskin-dashboard .wpskin-card:focus-visible {
-	background: rgba(255, 255, 255, 0.17);
+	background: var(--wpskin-focus-bg);
 	color: var(--wpskin-fg);
 }
 
 .wpskin-dashboard .wpskin-card:active {
-	background: rgba(255, 255, 255, 0.22);
+	background: var(--wpskin-active-bg);
 }
 
 .wpskin-card__icon {
@@ -214,8 +270,8 @@ body.wpskin-admin--dashboard #screen-meta-links {
 	gap: 8%;
 	padding: 12%;
 	border-radius: 24%;
-	background: rgba(255, 255, 255, 0.12);
-	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+	background: var(--wpskin-folder-bg);
+	box-shadow: inset 0 0 0 1px var(--wpskin-folder-border);
 	box-sizing: border-box;
 }
 
@@ -261,7 +317,7 @@ body.wpskin-admin--dashboard #screen-meta-links {
 	font-size: var(--wpskin-card-name-size);
 	font-weight: 400;
 	line-height: 1.3;
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+	text-shadow: var(--wpskin-label-shadow);
 	overflow-wrap: anywhere;
 }
 
@@ -270,7 +326,7 @@ body.wpskin-admin--dashboard #screen-meta-links {
 	max-width: 100%;
 	margin-top: -6px;
 	overflow: hidden;
-	color: rgba(255, 255, 255, 0.6);
+	color: var(--wpskin-fg-muted);
 	font-size: 12px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -313,7 +369,7 @@ body.wpskin-admin--dashboard #screen-meta-links {
 .wpskin-folder__backdrop {
 	position: absolute;
 	inset: 0;
-	background: rgba(0, 0, 0, 0.45);
+	background: var(--wpskin-backdrop);
 	animation: wpskin-fade-in 0.2s ease;
 }
 
@@ -324,14 +380,14 @@ body.wpskin-admin--dashboard #screen-meta-links {
 	max-height: calc(100vh - 96px);
 	padding: 20px 20px 24px;
 	border-radius: 32px;
-	background: rgba(54, 54, 54, 0.96);
-	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+	background: var(--wpskin-dialog-bg);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 0 0 1px var(--wpskin-dialog-border);
 	box-sizing: border-box;
 	overflow-y: auto;
 	animation: wpskin-zoom-in 0.2s ease;
 }
 
-.wpskin-folder__title {
+.wpskin-dashboard .wpskin-folder__title {
 	margin: 0 0 16px;
 	color: var(--wpskin-fg);
 	font-family: inherit;

@@ -27,6 +27,7 @@ class Settings implements Hookable {
 	 */
 	public static function defaults() {
 		return array(
+			'theme'               => 'light',
 			'dashboard_cards'     => 1,
 			'hide_sidebar'        => 'everywhere',
 			'notification_center' => 1,
@@ -79,6 +80,14 @@ class Settings implements Hookable {
 		);
 
 		add_settings_field(
+			'theme',
+			__( 'Theme', 'wpskin' ),
+			array( $this, 'render_theme_field' ),
+			self::PAGE,
+			'wpskin_general'
+		);
+
+		add_settings_field(
 			'dashboard_cards',
 			__( 'Dashboard cards', 'wpskin' ),
 			array( $this, 'render_dashboard_cards_field' ),
@@ -111,11 +120,36 @@ class Settings implements Hookable {
 		$input = is_array( $input ) ? $input : array();
 
 		return array(
+			'theme'               => isset( $input['theme'] ) && in_array( $input['theme'], Theme::MODES, true )
+				? $input['theme']
+				: self::defaults()['theme'],
 			'dashboard_cards'     => empty( $input['dashboard_cards'] ) ? 0 : 1,
 			'hide_sidebar'        => isset( $input['hide_sidebar'] ) && in_array( $input['hide_sidebar'], Sidebar::MODES, true )
 				? $input['hide_sidebar']
 				: self::defaults()['hide_sidebar'],
 			'notification_center' => empty( $input['notification_center'] ) ? 0 : 1,
+		);
+	}
+
+	public function render_theme_field() {
+		$choices = array(
+			'light' => __( 'Light', 'wpskin' ),
+			'dark'  => __( 'Dark', 'wpskin' ),
+		);
+
+		printf( '<select name="%s[theme]">', esc_attr( self::OPTION ) );
+		foreach ( $choices as $value => $label ) {
+			printf(
+				'<option value="%1$s" %2$s>%3$s</option>',
+				esc_attr( $value ),
+				selected( self::get( 'theme' ), $value, false ),
+				esc_html( $label )
+			);
+		}
+		echo '</select>';
+		printf(
+			'<p class="description">%s</p>',
+			esc_html__( 'Applies to the Dashboard and all admin screens except the block editor.', 'wpskin' )
 		);
 	}
 

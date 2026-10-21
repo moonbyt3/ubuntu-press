@@ -12,6 +12,7 @@ use WPSkin\Admin\DashboardCards;
 use WPSkin\Admin\Notifications;
 use WPSkin\Admin\Settings;
 use WPSkin\Admin\Sidebar;
+use WPSkin\Admin\Theme;
 use WPSkin\Contracts\Hookable;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -94,6 +95,7 @@ final class Plugin {
 		if ( is_admin() ) {
 			$services[] = Admin::class;
 			$services[] = Settings::class;
+			$services[] = Theme::class;
 			$services[] = DashboardCards::class;
 			$services[] = Sidebar::class;
 			$services[] = Notifications::class;
