@@ -1,34 +1,34 @@
-/* WPSkin notification center. */
+/* UbuntuPress notification center. */
 
 /* Keep notices out of the page until JS moves them into the panel (avoids a flash). */
-body.js.wpskin-admin--notices #wpbody-content div.notice:not(.inline):not(.below-h2),
-body.js.wpskin-admin--notices #wpbody-content div.updated:not(.inline):not(.below-h2),
-body.js.wpskin-admin--notices #wpbody-content div.error:not(.inline):not(.below-h2),
-body.js.wpskin-admin--notices #wpbody-content div.update-nag {
+body.js.ubuntupress-admin--notices #wpbody-content div.notice:not(.inline):not(.below-h2),
+body.js.ubuntupress-admin--notices #wpbody-content div.updated:not(.inline):not(.below-h2),
+body.js.ubuntupress-admin--notices #wpbody-content div.error:not(.inline):not(.below-h2),
+body.js.ubuntupress-admin--notices #wpbody-content div.update-nag {
 	display: none !important;
 }
 
-/* Block: wpskin-notices-toggle (toolbar bell). */
-#wpadminbar .wpskin-notices-toggle > .ab-item {
+/* Block: ubuntupress-notices-toggle (toolbar bell). */
+#wpadminbar .ubuntupress-notices-toggle > .ab-item {
 	position: relative;
 	padding: 0 10px;
 }
 
-#wpadminbar .wpskin-notices-toggle .wpskin-notices-toggle__icon {
+#wpadminbar .ubuntupress-notices-toggle .ubuntupress-notices-toggle__icon {
 	margin-right: 0;
 }
 
-#wpadminbar .wpskin-notices-toggle .wpskin-notices-toggle__icon:before {
+#wpadminbar .ubuntupress-notices-toggle .ubuntupress-notices-toggle__icon:before {
 	content: "\f16d"; /* dashicons-bell */
 	top: 2px;
 }
 
-#wpadminbar .wpskin-notices-toggle--open > .ab-item {
+#wpadminbar .ubuntupress-notices-toggle--open > .ab-item {
 	background: #2c3338;
 	color: #72aee6;
 }
 
-#wpadminbar .wpskin-notices-toggle .wpskin-notices-toggle__count {
+#wpadminbar .ubuntupress-notices-toggle .ubuntupress-notices-toggle__count {
 	position: absolute;
 	top: 3px;
 	right: 2px;
@@ -45,16 +45,16 @@ body.js.wpskin-admin--notices #wpbody-content div.update-nag {
 	box-sizing: border-box;
 }
 
-#wpadminbar .wpskin-notices-toggle .wpskin-notices-toggle__count[hidden] {
+#wpadminbar .ubuntupress-notices-toggle .ubuntupress-notices-toggle__count[hidden] {
 	display: none;
 }
 
-#wpadminbar .wpskin-notices-toggle--error .wpskin-notices-toggle__count { background: #d63638; }
-#wpadminbar .wpskin-notices-toggle--warning .wpskin-notices-toggle__count { background: #dba617; color: #1d2327; }
-#wpadminbar .wpskin-notices-toggle--success .wpskin-notices-toggle__count { background: #00a32a; }
+#wpadminbar .ubuntupress-notices-toggle--error .ubuntupress-notices-toggle__count { background: #d63638; }
+#wpadminbar .ubuntupress-notices-toggle--warning .ubuntupress-notices-toggle__count { background: #dba617; color: #1d2327; }
+#wpadminbar .ubuntupress-notices-toggle--success .ubuntupress-notices-toggle__count { background: #00a32a; }
 
-/* Block: wpskin-notices-panel (full-width drop-down directly under the toolbar). */
-.wpskin-notices-panel {
+/* Block: ubuntupress-notices-panel (full-width drop-down directly under the toolbar). */
+.ubuntupress-notices-panel {
 	position: fixed;
 	top: 32px;
 	right: 0;
@@ -70,11 +70,11 @@ body.js.wpskin-admin--notices #wpbody-content div.update-nag {
 	overflow: hidden;
 }
 
-.wpskin-notices-panel[hidden] {
+.ubuntupress-notices-panel[hidden] {
 	display: none;
 }
 
-.wpskin-notices-panel__header {
+.ubuntupress-notices-panel__header {
 	display: flex;
 	flex: none;
 	align-items: center;
@@ -83,12 +83,12 @@ body.js.wpskin-admin--notices #wpbody-content div.update-nag {
 	border-bottom: 1px solid #f0f0f1;
 }
 
-.wpskin-notices-panel__title {
+.ubuntupress-notices-panel__title {
 	margin: 0;
 	font-size: 14px;
 }
 
-.wpskin-notices-panel__close {
+.ubuntupress-notices-panel__close {
 	display: flex;
 	padding: 4px;
 	border: 0;
@@ -98,13 +98,13 @@ body.js.wpskin-admin--notices #wpbody-content div.update-nag {
 	cursor: pointer;
 }
 
-.wpskin-notices-panel__close:hover,
-.wpskin-notices-panel__close:focus {
+.ubuntupress-notices-panel__close:hover,
+.ubuntupress-notices-panel__close:focus {
 	background: #f0f0f1;
 	color: #1d2327;
 }
 
-.wpskin-notices-panel__list {
+.ubuntupress-notices-panel__list {
 	flex: 1 1 auto;
 	min-height: 0;
 	padding: 12px 20px 16px;
@@ -117,7 +117,7 @@ body.js.wpskin-admin--notices #wpbody-content div.update-nag {
  * Plugin notices contain arbitrary markup: long words/URLs, rows of buttons,
  * fixed-width wrappers, images, tables. Make all of it fit the panel width.
  */
-.wpskin-notices-panel__list > div {
+.ubuntupress-notices-panel__list > div {
 	display: block;
 	margin: 0 0 8px;
 	box-shadow: none;
@@ -132,26 +132,26 @@ body.js.wpskin-admin--notices #wpbody-content div.update-nag {
 	overflow-x: auto; /* last resort for content that cannot shrink, e.g. wide tables */
 }
 
-.wpskin-notices-panel__list > div * {
+.ubuntupress-notices-panel__list > div * {
 	max-width: 100%;
 	min-width: 0;
 }
 
-.wpskin-notices-panel__list > div img,
-.wpskin-notices-panel__list > div video,
-.wpskin-notices-panel__list > div iframe {
+.ubuntupress-notices-panel__list > div img,
+.ubuntupress-notices-panel__list > div video,
+.ubuntupress-notices-panel__list > div iframe {
 	height: auto;
 }
 
-.wpskin-notices-panel__list > div pre,
-.wpskin-notices-panel__list > div code {
+.ubuntupress-notices-panel__list > div pre,
+.ubuntupress-notices-panel__list > div code {
 	white-space: pre-wrap;
 }
 
 /* Buttons stay inline but may wrap their label and drop to the next line. */
-.wpskin-notices-panel__list > div .button,
-.wpskin-notices-panel__list > div .button-primary,
-.wpskin-notices-panel__list > div .button-secondary {
+.ubuntupress-notices-panel__list > div .button,
+.ubuntupress-notices-panel__list > div .button-primary,
+.ubuntupress-notices-panel__list > div .button-secondary {
 	height: auto;
 	min-height: 30px;
 	margin: 2px 6px 2px 0;
@@ -163,24 +163,24 @@ body.js.wpskin-admin--notices #wpbody-content div.update-nag {
 	padding-bottom: 4px;
 }
 
-.wpskin-notices-panel__list > div [style*="display:flex"],
-.wpskin-notices-panel__list > div [style*="display: flex"] {
+.ubuntupress-notices-panel__list > div [style*="display:flex"],
+.ubuntupress-notices-panel__list > div [style*="display: flex"] {
 	flex-wrap: wrap;
 }
 
-.wpskin-notices-panel--empty .wpskin-notices-panel__list {
+.ubuntupress-notices-panel--empty .ubuntupress-notices-panel__list {
 	display: none;
 }
 
-.wpskin-notices-panel__list > div:last-child {
+.ubuntupress-notices-panel__list > div:last-child {
 	margin-bottom: 0;
 }
 
-.wpskin-notices-panel__list > div.hidden {
+.ubuntupress-notices-panel__list > div.hidden {
 	display: none;
 }
 
-.wpskin-notices-panel__empty {
+.ubuntupress-notices-panel__empty {
 	display: none;
 	margin: 0;
 	padding: 24px 16px;
@@ -188,43 +188,43 @@ body.js.wpskin-admin--notices #wpbody-content div.update-nag {
 	text-align: center;
 }
 
-.wpskin-notices-panel--empty .wpskin-notices-panel__empty {
+.ubuntupress-notices-panel--empty .ubuntupress-notices-panel__empty {
 	display: block;
 }
 
 @media screen and (max-width: 782px) {
-	#wpadminbar #wp-toolbar > ul > li.wpskin-notices-toggle {
+	#wpadminbar #wp-toolbar > ul > li.ubuntupress-notices-toggle {
 		display: block;
 	}
 
-	#wpadminbar .wpskin-notices-toggle > .ab-item {
+	#wpadminbar .ubuntupress-notices-toggle > .ab-item {
 		width: 52px;
 		padding: 0;
 		text-align: center;
 	}
 
-	#wpadminbar .wpskin-notices-toggle .wpskin-notices-toggle__icon:before {
+	#wpadminbar .ubuntupress-notices-toggle .ubuntupress-notices-toggle__icon:before {
 		top: 0;
 	}
 
-	#wpadminbar .wpskin-notices-toggle .wpskin-notices-toggle__count {
+	#wpadminbar .ubuntupress-notices-toggle .ubuntupress-notices-toggle__count {
 		top: 6px;
 		right: 6px;
 	}
 
-	.wpskin-notices-panel {
+	.ubuntupress-notices-panel {
 		top: 46px;
 		max-height: calc(100vh - 46px);
 	}
 
-	.wpskin-notices-panel__list {
+	.ubuntupress-notices-panel__list {
 		padding: 10px 12px 12px;
 	}
 }
 
 /* Below 600px core un-fixes the toolbar, so the panel scrolls with it. */
 @media screen and (max-width: 600px) {
-	.wpskin-notices-panel {
+	.ubuntupress-notices-panel {
 		position: absolute;
 	}
 }

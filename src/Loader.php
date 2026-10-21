@@ -2,10 +2,10 @@
 /**
  * Collects actions and filters, then registers them with WordPress.
  *
- * @package WPSkin
+ * @package UbuntuPress
  */
 
-namespace WPSkin;
+namespace UbuntuPress;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

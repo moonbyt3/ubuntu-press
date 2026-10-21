@@ -1,21 +1,21 @@
-/* WPSkin dark theme for classic admin screens (Yaru dark greys, WordPress blue accents). */
+/* UbuntuPress dark theme for classic admin screens (Yaru dark greys, WordPress blue accents). */
 
-/* Block: wpskin-admin (dark modifier) */
-body.wpskin-admin--dark {
-	--wpskin-dark-bg: #1e1e1e;
-	--wpskin-dark-surface: #2a2a2a;
-	--wpskin-dark-surface-alt: #262626;
-	--wpskin-dark-surface-hover: #333;
-	--wpskin-dark-field: #1a1a1a;
-	--wpskin-dark-border: #3d3d3d;
-	--wpskin-dark-field-border: #5c5c5c;
-	--wpskin-dark-fg: #e6e6e6;
-	--wpskin-dark-fg-muted: #a7a7a7;
-	--wpskin-dark-link: #72aee6;
-	--wpskin-dark-link-hover: #9ec2e6;
-	--wpskin-dark-danger: #f86368;
-	background: var(--wpskin-dark-bg);
-	color: var(--wpskin-dark-fg);
+/* Block: ubuntupress-admin (dark modifier) */
+body.ubuntupress-admin--dark {
+	--ubuntupress-dark-bg: #1e1e1e;
+	--ubuntupress-dark-surface: #2a2a2a;
+	--ubuntupress-dark-surface-alt: #262626;
+	--ubuntupress-dark-surface-hover: #333;
+	--ubuntupress-dark-field: #1a1a1a;
+	--ubuntupress-dark-border: #3d3d3d;
+	--ubuntupress-dark-field-border: #5c5c5c;
+	--ubuntupress-dark-fg: #e6e6e6;
+	--ubuntupress-dark-fg-muted: #a7a7a7;
+	--ubuntupress-dark-link: #72aee6;
+	--ubuntupress-dark-link-hover: #9ec2e6;
+	--ubuntupress-dark-danger: #f86368;
+	background: var(--ubuntupress-dark-bg);
+	color: var(--ubuntupress-dark-fg);
 	color-scheme: dark;
 }
 
@@ -24,8 +24,8 @@ body.wpskin-admin--dark {
  * The editor's ThemeProvider writes light values inline on its wrappers ([data-wpds-corner-radius]),
  * so these need !important to win.
  */
-body.wpskin-admin--dark,
-.wpskin-admin--dark [data-wpds-corner-radius] {
+body.ubuntupress-admin--dark,
+.ubuntupress-admin--dark [data-wpds-corner-radius] {
 	--wpds-color-background-surface-neutral: #232323 !important;
 	--wpds-color-background-surface-neutral-strong: #1e1e1e !important;
 	--wpds-color-background-surface-neutral-weak: #2a2a2a !important;
@@ -111,667 +111,667 @@ body.wpskin-admin--dark,
 }
 
 /* Admin-scheme blue is too dark for text on dark surfaces; lighten it for text-only buttons and links. */
-.wpskin-admin--dark .components-button:is(.is-tertiary, .is-link),
-.wpskin-admin--dark .components-external-link {
+.ubuntupress-admin--dark .components-button:is(.is-tertiary, .is-link),
+.ubuntupress-admin--dark .components-external-link {
 	--wp-components-color-accent: color-mix(in srgb, var(--wp-admin-theme-color, #3858e9) 50%, #fff);
 	--wp-components-color-accent-darker-10: color-mix(in srgb, var(--wp-admin-theme-color, #3858e9) 35%, #fff);
 	--wp-components-color-accent-darker-20: color-mix(in srgb, var(--wp-admin-theme-color, #3858e9) 25%, #fff);
 }
 
-.wpskin-admin--dark [data-wpds-corner-radius] {
+.ubuntupress-admin--dark [data-wpds-corner-radius] {
 	--wpds-color-foreground-interactive-brand: color-mix(in srgb, var(--wp-admin-theme-color, #3858e9) 50%, #fff) !important;
 }
 
 /* Text */
-.wpskin-admin--dark h1,
-.wpskin-admin--dark h2,
-.wpskin-admin--dark h3,
-.wpskin-admin--dark h4,
-.wpskin-admin--dark h5,
-.wpskin-admin--dark h6,
-.wpskin-admin--dark .form-table th,
-.wpskin-admin--dark .form-wrap label,
-.wpskin-admin--dark .subsubsub a.current {
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark h1,
+.ubuntupress-admin--dark h2,
+.ubuntupress-admin--dark h3,
+.ubuntupress-admin--dark h4,
+.ubuntupress-admin--dark h5,
+.ubuntupress-admin--dark h6,
+.ubuntupress-admin--dark .form-table th,
+.ubuntupress-admin--dark .form-wrap label,
+.ubuntupress-admin--dark .subsubsub a.current {
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .description,
-.wpskin-admin--dark .subsubsub,
-.wpskin-admin--dark .subsubsub a .count,
-.wpskin-admin--dark .tablenav .displaying-num,
-.wpskin-admin--dark #wpfooter {
-	color: var(--wpskin-dark-fg-muted);
+.ubuntupress-admin--dark .description,
+.ubuntupress-admin--dark .subsubsub,
+.ubuntupress-admin--dark .subsubsub a .count,
+.ubuntupress-admin--dark .tablenav .displaying-num,
+.ubuntupress-admin--dark #wpfooter {
+	color: var(--ubuntupress-dark-fg-muted);
 }
 
-.wpskin-admin--dark a,
-.wpskin-admin--dark a:focus {
-	color: var(--wpskin-dark-link);
+.ubuntupress-admin--dark a,
+.ubuntupress-admin--dark a:focus {
+	color: var(--ubuntupress-dark-link);
 }
 
-.wpskin-admin--dark a:hover,
-.wpskin-admin--dark a:active {
-	color: var(--wpskin-dark-link-hover);
+.ubuntupress-admin--dark a:hover,
+.ubuntupress-admin--dark a:active {
+	color: var(--ubuntupress-dark-link-hover);
 }
 
-.wpskin-admin--dark.wp-core-ui .button-link {
-	color: var(--wpskin-dark-link);
+.ubuntupress-admin--dark.wp-core-ui .button-link {
+	color: var(--ubuntupress-dark-link);
 }
 
-.wpskin-admin--dark.wp-core-ui .button-link-delete,
-.wpskin-admin--dark .row-actions .trash a,
-.wpskin-admin--dark .row-actions .delete a,
-.wpskin-admin--dark .row-actions .spam a,
-.wpskin-admin--dark a.submitdelete {
-	color: var(--wpskin-dark-danger);
+.ubuntupress-admin--dark.wp-core-ui .button-link-delete,
+.ubuntupress-admin--dark .row-actions .trash a,
+.ubuntupress-admin--dark .row-actions .delete a,
+.ubuntupress-admin--dark .row-actions .spam a,
+.ubuntupress-admin--dark a.submitdelete {
+	color: var(--ubuntupress-dark-danger);
 }
 
-.wpskin-admin--dark code,
-.wpskin-admin--dark kbd {
+.ubuntupress-admin--dark code,
+.ubuntupress-admin--dark kbd {
 	background: rgba(255, 255, 255, 0.08);
-	color: var(--wpskin-dark-fg);
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark hr {
-	border-top-color: var(--wpskin-dark-border);
+.ubuntupress-admin--dark hr {
+	border-top-color: var(--ubuntupress-dark-border);
 	border-bottom-color: transparent;
 }
 
 /* Surfaces: boxes, tables, notices */
-.wpskin-admin--dark .postbox,
-.wpskin-admin--dark .stuffbox,
-.wpskin-admin--dark .card,
-.wpskin-admin--dark .widefat,
-.wpskin-admin--dark .wp-filter,
-.wpskin-admin--dark .wp-tab-panel,
-.wpskin-admin--dark .categorydiv div.tabs-panel,
-.wpskin-admin--dark .customlinkdiv div.tabs-panel,
-.wpskin-admin--dark .posttypediv div.tabs-panel,
-.wpskin-admin--dark .taxonomydiv div.tabs-panel,
-.wpskin-admin--dark ul.cat-checklist {
-	border-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .postbox,
+.ubuntupress-admin--dark .stuffbox,
+.ubuntupress-admin--dark .card,
+.ubuntupress-admin--dark .widefat,
+.ubuntupress-admin--dark .wp-filter,
+.ubuntupress-admin--dark .wp-tab-panel,
+.ubuntupress-admin--dark .categorydiv div.tabs-panel,
+.ubuntupress-admin--dark .customlinkdiv div.tabs-panel,
+.ubuntupress-admin--dark .posttypediv div.tabs-panel,
+.ubuntupress-admin--dark .taxonomydiv div.tabs-panel,
+.ubuntupress-admin--dark ul.cat-checklist {
+	border-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface);
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .postbox .postbox-header,
-.wpskin-admin--dark .postbox .inside .hndle {
-	border-color: var(--wpskin-dark-border);
+.ubuntupress-admin--dark .postbox .postbox-header,
+.ubuntupress-admin--dark .postbox .inside .hndle {
+	border-color: var(--ubuntupress-dark-border);
 }
 
-.wpskin-admin--dark .widefat td,
-.wpskin-admin--dark .widefat th,
-.wpskin-admin--dark .widefat thead td,
-.wpskin-admin--dark .widefat thead th,
-.wpskin-admin--dark .widefat tfoot td,
-.wpskin-admin--dark .widefat tfoot th {
-	border-color: var(--wpskin-dark-border);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .widefat td,
+.ubuntupress-admin--dark .widefat th,
+.ubuntupress-admin--dark .widefat thead td,
+.ubuntupress-admin--dark .widefat thead th,
+.ubuntupress-admin--dark .widefat tfoot td,
+.ubuntupress-admin--dark .widefat tfoot th {
+	border-color: var(--ubuntupress-dark-border);
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .widefat p,
-.wpskin-admin--dark .widefat ol,
-.wpskin-admin--dark .widefat ul {
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .widefat p,
+.ubuntupress-admin--dark .widefat ol,
+.ubuntupress-admin--dark .widefat ul {
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .striped > tbody > :nth-child(odd),
-.wpskin-admin--dark ul.striped > :nth-child(odd),
-.wpskin-admin--dark .alternate {
-	background: var(--wpskin-dark-surface-alt);
+.ubuntupress-admin--dark .striped > tbody > :nth-child(odd),
+.ubuntupress-admin--dark ul.striped > :nth-child(odd),
+.ubuntupress-admin--dark .alternate {
+	background: var(--ubuntupress-dark-surface-alt);
 }
 
 /* Plugins screen rows (core paints the rows, including the header, white) */
-.wpskin-admin--dark .plugins tr {
-	background: var(--wpskin-dark-surface);
+.ubuntupress-admin--dark .plugins tr {
+	background: var(--ubuntupress-dark-surface);
 }
 
-.wpskin-admin--dark .plugins .active td,
-.wpskin-admin--dark .plugins .active th,
-.wpskin-admin--dark .plugin-update-tr.active td {
+.ubuntupress-admin--dark .plugins .active td,
+.ubuntupress-admin--dark .plugins .active th,
+.ubuntupress-admin--dark .plugin-update-tr.active td {
 	background: #263039;
 }
 
-.wpskin-admin--dark .plugins .inactive td,
-.wpskin-admin--dark .plugins .inactive th,
-.wpskin-admin--dark .plugin-update-tr td {
-	background: var(--wpskin-dark-surface);
+.ubuntupress-admin--dark .plugins .inactive td,
+.ubuntupress-admin--dark .plugins .inactive th,
+.ubuntupress-admin--dark .plugin-update-tr td {
+	background: var(--ubuntupress-dark-surface);
 }
 
-.wpskin-admin--dark .plugins td,
-.wpskin-admin--dark .plugins th {
-	box-shadow: inset 0 -1px 0 var(--wpskin-dark-border);
+.ubuntupress-admin--dark .plugins td,
+.ubuntupress-admin--dark .plugins th {
+	box-shadow: inset 0 -1px 0 var(--ubuntupress-dark-border);
 }
 
 /* Core draws a light separator where an active row is followed by an inactive one. */
-.wpskin-admin--dark .plugins tr.active + tr.inactive td,
-.wpskin-admin--dark .plugins tr.active + tr.inactive th {
-	box-shadow: inset 0 -1px 0 var(--wpskin-dark-border);
+.ubuntupress-admin--dark .plugins tr.active + tr.inactive td,
+.ubuntupress-admin--dark .plugins tr.active + tr.inactive th {
+	box-shadow: inset 0 -1px 0 var(--ubuntupress-dark-border);
 }
 
 /* Filter tabs (Featured, Popular, ...): core paints the current tab near-black */
-.wpskin-admin--dark .wp-filter .filter-links .current {
+.ubuntupress-admin--dark .wp-filter .filter-links .current {
 	color: var(--wp-admin-theme-color, #3858e9);
 }
 
 /* Add Plugins screen cards (core paints the card white and its footer light grey) */
-.wpskin-admin--dark .plugin-card {
-	border-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .plugin-card {
+	border-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface);
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .plugin-card-bottom {
-	border-top-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface-alt);
+.ubuntupress-admin--dark .plugin-card-bottom {
+	border-top-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface-alt);
 }
 
-.wpskin-admin--dark .plugin-card .name,
-.wpskin-admin--dark .plugin-card .desc p {
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .plugin-card .name,
+.ubuntupress-admin--dark .plugin-card .desc p {
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .plugin-card .authors,
-.wpskin-admin--dark .plugin-card .num-ratings,
-.wpskin-admin--dark .plugin-card .column-updated,
-.wpskin-admin--dark .plugin-card .column-downloaded,
-.wpskin-admin--dark .plugin-card .column-compatibility {
-	color: var(--wpskin-dark-fg-muted);
+.ubuntupress-admin--dark .plugin-card .authors,
+.ubuntupress-admin--dark .plugin-card .num-ratings,
+.ubuntupress-admin--dark .plugin-card .column-updated,
+.ubuntupress-admin--dark .plugin-card .column-downloaded,
+.ubuntupress-admin--dark .plugin-card .column-compatibility {
+	color: var(--ubuntupress-dark-fg-muted);
 }
 
 /* Menus screen: menu picker bar, "Add menu items" accordion, menu editor */
-.wpskin-admin--dark .manage-menus,
-.wpskin-admin--dark.nav-menus-php #post-body {
-	border-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .manage-menus,
+.ubuntupress-admin--dark.nav-menus-php #post-body {
+	border-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface);
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark #nav-menu-header,
-.wpskin-admin--dark #nav-menu-footer {
-	border-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface-alt);
+.ubuntupress-admin--dark #nav-menu-header,
+.ubuntupress-admin--dark #nav-menu-footer {
+	border-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface-alt);
 }
 
-.wpskin-admin--dark #nav-menu-footer {
-	box-shadow: 0 -1px 0 0 var(--wpskin-dark-border);
+.ubuntupress-admin--dark #nav-menu-footer {
+	box-shadow: 0 -1px 0 0 var(--ubuntupress-dark-border);
 }
 
-.wpskin-admin--dark #menu-management .menu-edit,
-.wpskin-admin--dark #menu-settings-column .accordion-container,
-.wpskin-admin--dark .menu-settings {
-	border-color: var(--wpskin-dark-border);
+.ubuntupress-admin--dark #menu-management .menu-edit,
+.ubuntupress-admin--dark #menu-settings-column .accordion-container,
+.ubuntupress-admin--dark .menu-settings {
+	border-color: var(--ubuntupress-dark-border);
 }
 
-.wpskin-admin--dark .accordion-section,
-.wpskin-admin--dark .accordion-section.open:hover,
-.wpskin-admin--dark .accordion-section-title,
-.wpskin-admin--dark .control-section.open .accordion-section-title {
-	border-color: var(--wpskin-dark-border);
+.ubuntupress-admin--dark .accordion-section,
+.ubuntupress-admin--dark .accordion-section.open:hover,
+.ubuntupress-admin--dark .accordion-section-title,
+.ubuntupress-admin--dark .control-section.open .accordion-section-title {
+	border-color: var(--ubuntupress-dark-border);
 }
 
-.wpskin-admin--dark .accordion-section-content,
-.wpskin-admin--dark .control-section .accordion-section-title {
-	background: var(--wpskin-dark-surface);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .accordion-section-content,
+.ubuntupress-admin--dark .control-section .accordion-section-title {
+	background: var(--ubuntupress-dark-surface);
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark.js .control-section:hover .accordion-section-title,
-.wpskin-admin--dark.js .control-section .accordion-section-title:hover,
-.wpskin-admin--dark.js .control-section.open .accordion-section-title,
-.wpskin-admin--dark.js .control-section .accordion-section-title:focus,
-.js .wpskin-admin--dark .control-section:hover .accordion-section-title,
-.js .wpskin-admin--dark .control-section .accordion-section-title:hover,
-.js .wpskin-admin--dark .control-section.open .accordion-section-title,
-.js .wpskin-admin--dark .control-section .accordion-section-title:focus {
-	background: var(--wpskin-dark-surface-hover);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark.js .control-section:hover .accordion-section-title,
+.ubuntupress-admin--dark.js .control-section .accordion-section-title:hover,
+.ubuntupress-admin--dark.js .control-section.open .accordion-section-title,
+.ubuntupress-admin--dark.js .control-section .accordion-section-title:focus,
+.js .ubuntupress-admin--dark .control-section:hover .accordion-section-title,
+.js .ubuntupress-admin--dark .control-section .accordion-section-title:hover,
+.js .ubuntupress-admin--dark .control-section.open .accordion-section-title,
+.js .ubuntupress-admin--dark .control-section .accordion-section-title:focus {
+	background: var(--ubuntupress-dark-surface-hover);
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .accordion-section-title button.accordion-trigger,
-.wpskin-admin--dark.nav-menus-php .metabox-holder .accordion-section-title button.accordion-trigger,
-.wpskin-admin--dark .accordion-section-title:hover span.dashicons.dashicons-arrow-down,
-.wpskin-admin--dark.nav-menus-php .metabox-holder .accordion-section-title:hover span.dashicons.dashicons-arrow-down {
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .accordion-section-title button.accordion-trigger,
+.ubuntupress-admin--dark.nav-menus-php .metabox-holder .accordion-section-title button.accordion-trigger,
+.ubuntupress-admin--dark .accordion-section-title:hover span.dashicons.dashicons-arrow-down,
+.ubuntupress-admin--dark.nav-menus-php .metabox-holder .accordion-section-title:hover span.dashicons.dashicons-arrow-down {
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .accordion-section-title span.dashicons.dashicons-arrow-down,
-.wpskin-admin--dark.nav-menus-php .metabox-holder .accordion-section-title span.dashicons.dashicons-arrow-down {
-	color: var(--wpskin-dark-fg-muted);
+.ubuntupress-admin--dark .accordion-section-title span.dashicons.dashicons-arrow-down,
+.ubuntupress-admin--dark.nav-menus-php .metabox-holder .accordion-section-title span.dashicons.dashicons-arrow-down {
+	color: var(--ubuntupress-dark-fg-muted);
 }
 
-.wpskin-admin--dark ul.category-tabs li.tabs,
-.wpskin-admin--dark ul.add-menu-item-tabs li.tabs,
-.wpskin-admin--dark .wp-tab-active {
-	border-color: var(--wpskin-dark-border);
-	border-bottom-color: var(--wpskin-dark-surface);
-	background-color: var(--wpskin-dark-surface);
+.ubuntupress-admin--dark ul.category-tabs li.tabs,
+.ubuntupress-admin--dark ul.add-menu-item-tabs li.tabs,
+.ubuntupress-admin--dark .wp-tab-active {
+	border-color: var(--ubuntupress-dark-border);
+	border-bottom-color: var(--ubuntupress-dark-surface);
+	background-color: var(--ubuntupress-dark-surface);
 }
 
-.wpskin-admin--dark #side-sortables .category-tabs .tabs a,
-.wpskin-admin--dark #side-sortables .add-menu-item-tabs .tabs a,
-.wpskin-admin--dark .wp-tab-bar .wp-tab-active a,
-.wpskin-admin--dark #post-body ul.category-tabs li.tabs a,
-.wpskin-admin--dark #post-body ul.add-menu-item-tabs li.tabs a {
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark #side-sortables .category-tabs .tabs a,
+.ubuntupress-admin--dark #side-sortables .add-menu-item-tabs .tabs a,
+.ubuntupress-admin--dark .wp-tab-bar .wp-tab-active a,
+.ubuntupress-admin--dark #post-body ul.category-tabs li.tabs a,
+.ubuntupress-admin--dark #post-body ul.add-menu-item-tabs li.tabs a {
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .menu-item-handle,
-.wpskin-admin--dark .menu-item-bar .menu-item-handle {
-	border-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface-alt);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .menu-item-handle,
+.ubuntupress-admin--dark .menu-item-bar .menu-item-handle {
+	border-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface-alt);
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .menu-item-bar .menu-item-handle:hover {
-	border-color: var(--wpskin-dark-field-border);
+.ubuntupress-admin--dark .menu-item-bar .menu-item-handle:hover {
+	border-color: var(--ubuntupress-dark-field-border);
 }
 
-.wpskin-admin--dark #menu-to-edit .menu-item-invalid .menu-item-handle {
+.ubuntupress-admin--dark #menu-to-edit .menu-item-invalid .menu-item-handle {
 	background: #432423;
 }
 
-.wpskin-admin--dark .menu-item-settings,
-.wpskin-admin--dark .link-to-original {
-	border-color: var(--wpskin-dark-border);
+.ubuntupress-admin--dark .menu-item-settings,
+.ubuntupress-admin--dark .link-to-original {
+	border-color: var(--ubuntupress-dark-border);
 }
 
-.wpskin-admin--dark .is-submenu,
-.wpskin-admin--dark .theme-location-set,
-.wpskin-admin--dark .link-to-original,
-.wpskin-admin--dark .menu-item-handle .menu-item-title.no-title,
-.wpskin-admin--dark .menu-settings-group-name {
-	color: var(--wpskin-dark-fg-muted);
+.ubuntupress-admin--dark .is-submenu,
+.ubuntupress-admin--dark .theme-location-set,
+.ubuntupress-admin--dark .link-to-original,
+.ubuntupress-admin--dark .menu-item-handle .menu-item-title.no-title,
+.ubuntupress-admin--dark .menu-settings-group-name {
+	color: var(--ubuntupress-dark-fg-muted);
 }
 
-.wpskin-admin--dark .bulk-select-button,
-.wpskin-admin--dark .bulk-selection .bulk-select-button,
-.wpskin-admin--dark label.bulk-select-button:hover,
-.wpskin-admin--dark label.bulk-select-button:active,
-.wpskin-admin--dark label.bulk-select-button:focus-within {
-	border-color: var(--wpskin-dark-field-border);
-	background: var(--wpskin-dark-surface-alt);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .bulk-select-button,
+.ubuntupress-admin--dark .bulk-selection .bulk-select-button,
+.ubuntupress-admin--dark label.bulk-select-button:hover,
+.ubuntupress-admin--dark label.bulk-select-button:active,
+.ubuntupress-admin--dark label.bulk-select-button:focus-within {
+	border-color: var(--ubuntupress-dark-field-border);
+	background: var(--ubuntupress-dark-surface-alt);
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .bulk-actions input.menu-items-delete,
-.wpskin-admin--dark .bulk-actions input.menu-items-delete:hover {
-	color: var(--wpskin-dark-danger);
+.ubuntupress-admin--dark .bulk-actions input.menu-items-delete,
+.ubuntupress-admin--dark .bulk-actions input.menu-items-delete:hover {
+	color: var(--ubuntupress-dark-danger);
 }
 
 /* Dashboard: welcome panel columns and the Activity widget */
-.wpskin-admin--dark .welcome-panel .welcome-panel-column-container {
-	border-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .welcome-panel .welcome-panel-column-container {
+	border-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface);
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark #dashboard_activity h3 {
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark #dashboard_activity h3 {
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .activity-block,
-.wpskin-admin--dark #dashboard_activity .subsubsub,
-.wpskin-admin--dark #activity-widget #the-comment-list .comment-item:first-child {
-	border-color: var(--wpskin-dark-border);
+.ubuntupress-admin--dark .activity-block,
+.ubuntupress-admin--dark #dashboard_activity .subsubsub,
+.ubuntupress-admin--dark #activity-widget #the-comment-list .comment-item:first-child {
+	border-color: var(--ubuntupress-dark-border);
 }
 
-.wpskin-admin--dark #future-posts li:nth-child(odd),
-.wpskin-admin--dark #published-posts li:nth-child(odd),
-.wpskin-admin--dark #activity-widget #the-comment-list .comment-item {
-	background-color: var(--wpskin-dark-surface-alt);
+.ubuntupress-admin--dark #future-posts li:nth-child(odd),
+.ubuntupress-admin--dark #published-posts li:nth-child(odd),
+.ubuntupress-admin--dark #activity-widget #the-comment-list .comment-item {
+	background-color: var(--ubuntupress-dark-surface-alt);
 }
 
-.wpskin-admin--dark #activity-widget #the-comment-list .unapproved {
+.ubuntupress-admin--dark #activity-widget #the-comment-list .unapproved {
 	background-color: #2e271c;
 }
 
-.wpskin-admin--dark #activity-widget #the-comment-list .comment,
-.wpskin-admin--dark #activity-widget #the-comment-list .pingback {
-	box-shadow: inset 0 1px 0 var(--wpskin-dark-border);
+.ubuntupress-admin--dark #activity-widget #the-comment-list .comment,
+.ubuntupress-admin--dark #activity-widget #the-comment-list .pingback {
+	box-shadow: inset 0 1px 0 var(--ubuntupress-dark-border);
 }
 
-.wpskin-admin--dark #future-posts li,
-.wpskin-admin--dark #published-posts li,
-.wpskin-admin--dark .activity-block .subsubsub li,
-.wpskin-admin--dark #dashboard_activity .subsubsub a .count,
-.wpskin-admin--dark #dashboard_activity .subsubsub a.current .count,
-.wpskin-admin--dark #dashboard_activity .no-activity p,
-.wpskin-admin--dark #latest-comments #the-comment-list .comment-meta,
-.wpskin-admin--dark #latest-comments #the-comment-list .row-actions {
-	color: var(--wpskin-dark-fg-muted);
+.ubuntupress-admin--dark #future-posts li,
+.ubuntupress-admin--dark #published-posts li,
+.ubuntupress-admin--dark .activity-block .subsubsub li,
+.ubuntupress-admin--dark #dashboard_activity .subsubsub a .count,
+.ubuntupress-admin--dark #dashboard_activity .subsubsub a.current .count,
+.ubuntupress-admin--dark #dashboard_activity .no-activity p,
+.ubuntupress-admin--dark #latest-comments #the-comment-list .comment-meta,
+.ubuntupress-admin--dark #latest-comments #the-comment-list .row-actions {
+	color: var(--ubuntupress-dark-fg-muted);
 }
 
 /* Events and News widget */
-.wpskin-admin--dark .community-events li {
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .community-events li {
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .community-events li:first-child,
-.wpskin-admin--dark .community-events li ~ li,
-.wpskin-admin--dark .community-events .activity-block.last,
-.wpskin-admin--dark .community-events-footer {
-	border-color: var(--wpskin-dark-border);
+.ubuntupress-admin--dark .community-events li:first-child,
+.ubuntupress-admin--dark .community-events li ~ li,
+.ubuntupress-admin--dark .community-events .activity-block.last,
+.ubuntupress-admin--dark .community-events-footer {
+	border-color: var(--ubuntupress-dark-border);
 }
 
 /* Keeps the theme-colour accent on the left. */
-.wpskin-admin--dark .community-events li.event-none {
-	border-top-color: var(--wpskin-dark-border);
+.ubuntupress-admin--dark .community-events li.event-none {
+	border-top-color: var(--ubuntupress-dark-border);
 }
 
-.wpskin-admin--dark .event-icon:before,
-.wpskin-admin--dark .community-events-footer,
-.wpskin-admin--dark .rssSummary,
-.wpskin-admin--dark #dashboard_primary .rss-widget span,
-.wpskin-admin--dark #dashboard_primary .rss-widget span.rss-date,
-.wpskin-admin--dark .rss-widget span.rss-date {
-	color: var(--wpskin-dark-fg-muted);
+.ubuntupress-admin--dark .event-icon:before,
+.ubuntupress-admin--dark .community-events-footer,
+.ubuntupress-admin--dark .rssSummary,
+.ubuntupress-admin--dark #dashboard_primary .rss-widget span,
+.ubuntupress-admin--dark #dashboard_primary .rss-widget span.rss-date,
+.ubuntupress-admin--dark .rss-widget span.rss-date {
+	color: var(--ubuntupress-dark-fg-muted);
 }
 
 /* Comment approve / unapprove links (dashboard and Comments screen): core's green and amber are too dark */
-.wpskin-admin--dark #the-comment-list .approve a {
+.ubuntupress-admin--dark #the-comment-list .approve a {
 	color: #68de7c;
 }
 
-.wpskin-admin--dark #the-comment-list .unapprove a {
+.ubuntupress-admin--dark #the-comment-list .unapprove a {
 	color: #f0c33c;
 }
 
 /* Connectors screen items (core paints them white with a light border) */
-.wpskin-admin--dark .connectors-page .components-item {
-	border-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .connectors-page .components-item {
+	border-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface);
+	color: var(--ubuntupress-dark-fg);
 }
 
 /* Connectors "Install the AI plugin" callout: same purple glow as core, on a dark base */
-.wpskin-admin--dark .connectors-page .ai-plugin-callout {
+.ubuntupress-admin--dark .connectors-page .ai-plugin-callout {
 	background-color: #2b2230;
 	background-image:
 		radial-gradient(ellipse 70% 120% at 18% 115%, rgba(122, 78, 128, 0.55) 0, rgba(122, 78, 128, 0) 60%),
 		radial-gradient(ellipse 55% 110% at 92% -15%, rgba(110, 76, 128, 0.5) 0, rgba(110, 76, 128, 0) 65%),
 		radial-gradient(ellipse 40% 85% at 58% -10%, rgba(90, 60, 110, 0.4) 0, rgba(90, 60, 110, 0) 70%);
-	color: var(--wpskin-dark-fg);
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark[dir="rtl"] .connectors-page .ai-plugin-callout,
-[dir="rtl"] .wpskin-admin--dark .connectors-page .ai-plugin-callout {
+.ubuntupress-admin--dark[dir="rtl"] .connectors-page .ai-plugin-callout,
+[dir="rtl"] .ubuntupress-admin--dark .connectors-page .ai-plugin-callout {
 	background-image:
 		radial-gradient(ellipse 70% 120% at 82% 115%, rgba(122, 78, 128, 0.55) 0, rgba(122, 78, 128, 0) 60%),
 		radial-gradient(ellipse 55% 110% at 8% -15%, rgba(110, 76, 128, 0.5) 0, rgba(110, 76, 128, 0) 65%),
 		radial-gradient(ellipse 40% 85% at 42% -10%, rgba(90, 60, 110, 0.4) 0, rgba(90, 60, 110, 0) 70%);
 }
 
-.wpskin-admin--dark .notice,
-.wpskin-admin--dark div.updated,
-.wpskin-admin--dark div.error,
-.wpskin-admin--dark .update-nag {
-	border-top-color: var(--wpskin-dark-border);
-	border-right-color: var(--wpskin-dark-border);
-	border-bottom-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface);
+.ubuntupress-admin--dark .notice,
+.ubuntupress-admin--dark div.updated,
+.ubuntupress-admin--dark div.error,
+.ubuntupress-admin--dark .update-nag {
+	border-top-color: var(--ubuntupress-dark-border);
+	border-right-color: var(--ubuntupress-dark-border);
+	border-bottom-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface);
 	box-shadow: none;
-	color: var(--wpskin-dark-fg);
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .notice p,
-.wpskin-admin--dark div.updated p,
-.wpskin-admin--dark div.error p,
-.wpskin-admin--dark .notice-title {
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .notice p,
+.ubuntupress-admin--dark div.updated p,
+.ubuntupress-admin--dark div.error p,
+.ubuntupress-admin--dark .notice-title {
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .notice.notice-alt {
-	background: var(--wpskin-dark-surface-alt);
+.ubuntupress-admin--dark .notice.notice-alt {
+	background: var(--ubuntupress-dark-surface-alt);
 }
 
 /* Screen Options / Help */
-.wpskin-admin--dark #screen-meta {
-	border-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface);
+.ubuntupress-admin--dark #screen-meta {
+	border-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface);
 	box-shadow: none;
 }
 
-.wpskin-admin--dark #screen-meta-links .show-settings {
-	border-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface);
-	color: var(--wpskin-dark-fg-muted);
+.ubuntupress-admin--dark #screen-meta-links .show-settings {
+	border-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface);
+	color: var(--ubuntupress-dark-fg-muted);
 }
 
-.wpskin-admin--dark #screen-meta-links .show-settings:hover,
-.wpskin-admin--dark #screen-meta-links .show-settings:focus {
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark #screen-meta-links .show-settings:hover,
+.ubuntupress-admin--dark #screen-meta-links .show-settings:focus {
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .contextual-help-tabs .active {
-	border-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface-hover);
+.ubuntupress-admin--dark .contextual-help-tabs .active {
+	border-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface-hover);
 }
 
 /* Privacy and Site Health screens (shared header, tabs, accordions) */
-.wpskin-admin--dark .privacy-settings-header,
-.wpskin-admin--dark .health-check-header {
-	border-bottom-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface);
+.ubuntupress-admin--dark .privacy-settings-header,
+.ubuntupress-admin--dark .health-check-header {
+	border-bottom-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface);
 }
 
-.wpskin-admin--dark .privacy-settings-tab:focus,
-.wpskin-admin--dark .health-check-tab:focus {
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .privacy-settings-tab:focus,
+.ubuntupress-admin--dark .health-check-tab:focus {
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .health-check-offscreen-nav .health-check-tab {
-	background: var(--wpskin-dark-surface);
+.ubuntupress-admin--dark .health-check-offscreen-nav .health-check-tab {
+	background: var(--ubuntupress-dark-surface);
 }
 
-.wpskin-admin--dark .health-check-offscreen-nav:before {
-	border-color: transparent transparent var(--wpskin-dark-surface);
+.ubuntupress-admin--dark .health-check-offscreen-nav:before {
+	border-color: transparent transparent var(--ubuntupress-dark-surface);
 }
 
-.wpskin-admin--dark .privacy-settings-accordion,
-.wpskin-admin--dark .health-check-accordion,
-.wpskin-admin--dark .privacy-settings-accordion-heading,
-.wpskin-admin--dark .health-check-accordion-heading {
-	border-color: var(--wpskin-dark-border);
+.ubuntupress-admin--dark .privacy-settings-accordion,
+.ubuntupress-admin--dark .health-check-accordion,
+.ubuntupress-admin--dark .privacy-settings-accordion-heading,
+.ubuntupress-admin--dark .health-check-accordion-heading {
+	border-color: var(--ubuntupress-dark-border);
 }
 
-.wpskin-admin--dark .privacy-settings-accordion-trigger,
-.wpskin-admin--dark .health-check-accordion-trigger,
-.wpskin-admin--dark .privacy-settings-accordion-panel,
-.wpskin-admin--dark .health-check-accordion-panel {
-	background: var(--wpskin-dark-surface);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .privacy-settings-accordion-trigger,
+.ubuntupress-admin--dark .health-check-accordion-trigger,
+.ubuntupress-admin--dark .privacy-settings-accordion-panel,
+.ubuntupress-admin--dark .health-check-accordion-panel {
+	background: var(--ubuntupress-dark-surface);
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .privacy-settings-accordion-trigger:hover,
-.wpskin-admin--dark .privacy-settings-accordion-trigger:active,
-.wpskin-admin--dark .privacy-settings-accordion-trigger:focus,
-.wpskin-admin--dark .health-check-accordion-trigger:hover,
-.wpskin-admin--dark .health-check-accordion-trigger:active,
-.wpskin-admin--dark .health-check-accordion-trigger:focus {
-	background: var(--wpskin-dark-surface-hover);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .privacy-settings-accordion-trigger:hover,
+.ubuntupress-admin--dark .privacy-settings-accordion-trigger:active,
+.ubuntupress-admin--dark .privacy-settings-accordion-trigger:focus,
+.ubuntupress-admin--dark .health-check-accordion-trigger:hover,
+.ubuntupress-admin--dark .health-check-accordion-trigger:active,
+.ubuntupress-admin--dark .health-check-accordion-trigger:focus {
+	background: var(--ubuntupress-dark-surface-hover);
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .privacy-settings-accordion-trigger .icon,
-.wpskin-admin--dark .privacy-settings-view-read .icon,
-.wpskin-admin--dark .health-check-accordion-trigger .icon,
-.wpskin-admin--dark .site-health-view-passed .icon {
-	border-color: var(--wpskin-dark-fg-muted);
+.ubuntupress-admin--dark .privacy-settings-accordion-trigger .icon,
+.ubuntupress-admin--dark .privacy-settings-view-read .icon,
+.ubuntupress-admin--dark .health-check-accordion-trigger .icon,
+.ubuntupress-admin--dark .site-health-view-passed .icon {
+	border-color: var(--ubuntupress-dark-fg-muted);
 }
 
-.wpskin-admin--dark .privacy-settings-accordion-trigger .badge,
-.wpskin-admin--dark .health-check-accordion-trigger .badge {
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .privacy-settings-accordion-trigger .badge,
+.ubuntupress-admin--dark .health-check-accordion-trigger .badge {
+	color: var(--ubuntupress-dark-fg);
 }
 
 /* Tabs */
-.wpskin-admin--dark .nav-tab-wrapper,
-.wpskin-admin--dark .wrap h2.nav-tab-wrapper {
-	border-bottom-color: var(--wpskin-dark-border);
+.ubuntupress-admin--dark .nav-tab-wrapper,
+.ubuntupress-admin--dark .wrap h2.nav-tab-wrapper {
+	border-bottom-color: var(--ubuntupress-dark-border);
 }
 
-.wpskin-admin--dark .nav-tab {
-	border-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface);
-	color: var(--wpskin-dark-fg-muted);
+.ubuntupress-admin--dark .nav-tab {
+	border-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface);
+	color: var(--ubuntupress-dark-fg-muted);
 }
 
-.wpskin-admin--dark .nav-tab:hover,
-.wpskin-admin--dark .nav-tab:focus {
-	background: var(--wpskin-dark-surface-hover);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .nav-tab:hover,
+.ubuntupress-admin--dark .nav-tab:focus {
+	background: var(--ubuntupress-dark-surface-hover);
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .nav-tab-active,
-.wpskin-admin--dark .nav-tab-active:hover,
-.wpskin-admin--dark .nav-tab-active:focus {
-	border-bottom-color: var(--wpskin-dark-bg);
-	background: var(--wpskin-dark-bg);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .nav-tab-active,
+.ubuntupress-admin--dark .nav-tab-active:hover,
+.ubuntupress-admin--dark .nav-tab-active:focus {
+	border-bottom-color: var(--ubuntupress-dark-bg);
+	background: var(--ubuntupress-dark-bg);
+	color: var(--ubuntupress-dark-fg);
 }
 
 /* Form fields */
-.wpskin-admin--dark input[type="text"],
-.wpskin-admin--dark input[type="search"],
-.wpskin-admin--dark input[type="email"],
-.wpskin-admin--dark input[type="url"],
-.wpskin-admin--dark input[type="password"],
-.wpskin-admin--dark input[type="number"],
-.wpskin-admin--dark input[type="tel"],
-.wpskin-admin--dark input[type="date"],
-.wpskin-admin--dark input[type="datetime-local"],
-.wpskin-admin--dark input[type="month"],
-.wpskin-admin--dark input[type="time"],
-.wpskin-admin--dark input[type="week"],
-.wpskin-admin--dark input[type="checkbox"],
-.wpskin-admin--dark input[type="radio"],
-.wpskin-admin--dark textarea,
-.wpskin-admin--dark.wp-core-ui select {
-	border-color: var(--wpskin-dark-field-border);
-	background-color: var(--wpskin-dark-field);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark input[type="text"],
+.ubuntupress-admin--dark input[type="search"],
+.ubuntupress-admin--dark input[type="email"],
+.ubuntupress-admin--dark input[type="url"],
+.ubuntupress-admin--dark input[type="password"],
+.ubuntupress-admin--dark input[type="number"],
+.ubuntupress-admin--dark input[type="tel"],
+.ubuntupress-admin--dark input[type="date"],
+.ubuntupress-admin--dark input[type="datetime-local"],
+.ubuntupress-admin--dark input[type="month"],
+.ubuntupress-admin--dark input[type="time"],
+.ubuntupress-admin--dark input[type="week"],
+.ubuntupress-admin--dark input[type="checkbox"],
+.ubuntupress-admin--dark input[type="radio"],
+.ubuntupress-admin--dark textarea,
+.ubuntupress-admin--dark.wp-core-ui select {
+	border-color: var(--ubuntupress-dark-field-border);
+	background-color: var(--ubuntupress-dark-field);
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark.wp-core-ui select {
+.ubuntupress-admin--dark.wp-core-ui select {
 	/* Core's arrow is dark grey; same shape, light grey. */
 	background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23a7a7a7%22%2F%3E%3C%2Fsvg%3E");
 }
 
-.wpskin-admin--dark.wp-core-ui select:hover {
-	color: var(--wpskin-dark-link);
+.ubuntupress-admin--dark.wp-core-ui select:hover {
+	color: var(--ubuntupress-dark-link);
 }
 
-.wpskin-admin--dark input:focus,
-.wpskin-admin--dark textarea:focus,
-.wpskin-admin--dark.wp-core-ui select:focus {
-	border-color: var(--wpskin-dark-link);
-	box-shadow: 0 0 0 1px var(--wpskin-dark-link);
+.ubuntupress-admin--dark input:focus,
+.ubuntupress-admin--dark textarea:focus,
+.ubuntupress-admin--dark.wp-core-ui select:focus {
+	border-color: var(--ubuntupress-dark-link);
+	box-shadow: 0 0 0 1px var(--ubuntupress-dark-link);
 }
 
-.wpskin-admin--dark input[disabled],
-.wpskin-admin--dark input[readonly],
-.wpskin-admin--dark textarea[disabled],
-.wpskin-admin--dark textarea[readonly],
-.wpskin-admin--dark.wp-core-ui select:disabled {
-	border-color: var(--wpskin-dark-border);
-	background-color: var(--wpskin-dark-surface);
-	color: var(--wpskin-dark-fg-muted);
+.ubuntupress-admin--dark input[disabled],
+.ubuntupress-admin--dark input[readonly],
+.ubuntupress-admin--dark textarea[disabled],
+.ubuntupress-admin--dark textarea[readonly],
+.ubuntupress-admin--dark.wp-core-ui select:disabled {
+	border-color: var(--ubuntupress-dark-border);
+	background-color: var(--ubuntupress-dark-surface);
+	color: var(--ubuntupress-dark-fg-muted);
 }
 
 /* Secondary buttons (primary buttons keep WordPress blue) */
-.wpskin-admin--dark .button:not(.button-primary):not(.button-link),
-.wpskin-admin--dark .wrap .page-title-action {
-	border-color: var(--wpskin-dark-link);
-	background: var(--wpskin-dark-surface);
-	color: var(--wpskin-dark-link);
+.ubuntupress-admin--dark .button:not(.button-primary):not(.button-link),
+.ubuntupress-admin--dark .wrap .page-title-action {
+	border-color: var(--ubuntupress-dark-link);
+	background: var(--ubuntupress-dark-surface);
+	color: var(--ubuntupress-dark-link);
 }
 
-.wpskin-admin--dark .button:not(.button-primary):not(.button-link):hover,
-.wpskin-admin--dark .button:not(.button-primary):not(.button-link):focus,
-.wpskin-admin--dark .wrap .page-title-action:hover,
-.wpskin-admin--dark .wrap .page-title-action:focus {
-	border-color: var(--wpskin-dark-link-hover);
-	background: var(--wpskin-dark-surface-hover);
-	color: var(--wpskin-dark-link-hover);
+.ubuntupress-admin--dark .button:not(.button-primary):not(.button-link):hover,
+.ubuntupress-admin--dark .button:not(.button-primary):not(.button-link):focus,
+.ubuntupress-admin--dark .wrap .page-title-action:hover,
+.ubuntupress-admin--dark .wrap .page-title-action:focus {
+	border-color: var(--ubuntupress-dark-link-hover);
+	background: var(--ubuntupress-dark-surface-hover);
+	color: var(--ubuntupress-dark-link-hover);
 }
 
-.wpskin-admin--dark .button:not(.button-primary):not(.button-link).disabled,
-.wpskin-admin--dark .button:not(.button-primary):not(.button-link):disabled {
-	border-color: var(--wpskin-dark-border) !important;
-	background: var(--wpskin-dark-surface) !important;
+.ubuntupress-admin--dark .button:not(.button-primary):not(.button-link).disabled,
+.ubuntupress-admin--dark .button:not(.button-primary):not(.button-link):disabled {
+	border-color: var(--ubuntupress-dark-border) !important;
+	background: var(--ubuntupress-dark-surface) !important;
 	color: #6b6b6b !important;
 }
 
-.wpskin-admin--dark.wp-core-ui .button-primary.disabled,
-.wpskin-admin--dark.wp-core-ui .button-primary:disabled {
-	border-color: var(--wpskin-dark-border) !important;
-	background: var(--wpskin-dark-surface) !important;
+.ubuntupress-admin--dark.wp-core-ui .button-primary.disabled,
+.ubuntupress-admin--dark.wp-core-ui .button-primary:disabled {
+	border-color: var(--ubuntupress-dark-border) !important;
+	background: var(--ubuntupress-dark-surface) !important;
 	color: #6b6b6b !important;
 }
 
 /* Colour picker swatch label */
-.wpskin-admin--dark .wp-color-result-text {
-	border-left-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface-alt);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .wp-color-result-text {
+	border-left-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface-alt);
+	color: var(--ubuntupress-dark-fg);
 }
 
 /* Customizer footer (styles from themes.css; the rest is in customize-dark.css) */
-.wpskin-admin--dark .wp-full-overlay-footer,
-.wpskin-admin--dark.expanded .wp-full-overlay-footer,
-.wpskin-admin--dark .expanded .wp-full-overlay-footer,
-.wpskin-admin--dark .wp-full-overlay-footer .devices {
-	border-top-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-bg);
+.ubuntupress-admin--dark .wp-full-overlay-footer,
+.ubuntupress-admin--dark.expanded .wp-full-overlay-footer,
+.ubuntupress-admin--dark .expanded .wp-full-overlay-footer,
+.ubuntupress-admin--dark .wp-full-overlay-footer .devices {
+	border-top-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-bg);
 }
 
-.wpskin-admin--dark .wp-full-overlay-footer .devices {
-	box-shadow: -20px 0 10px -5px var(--wpskin-dark-bg);
+.ubuntupress-admin--dark .wp-full-overlay-footer .devices {
+	box-shadow: -20px 0 10px -5px var(--ubuntupress-dark-bg);
 }
 
-.wpskin-admin--dark .wp-full-overlay-footer .devices button:before,
-.wpskin-admin--dark .wp-full-overlay-footer .devices .devices__preview-label {
-	color: var(--wpskin-dark-fg-muted);
+.ubuntupress-admin--dark .wp-full-overlay-footer .devices button:before,
+.ubuntupress-admin--dark .wp-full-overlay-footer .devices .devices__preview-label {
+	color: var(--ubuntupress-dark-fg-muted);
 }
 
-.wpskin-admin--dark .wp-full-overlay-footer .devices button.active:before {
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .wp-full-overlay-footer .devices button.active:before {
+	color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .wp-full-overlay-footer .devices button.active {
-	border-bottom-color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .wp-full-overlay-footer .devices button.active {
+	border-bottom-color: var(--ubuntupress-dark-fg);
 }
 
-.wpskin-admin--dark .wp-full-overlay-footer .devices button:focus {
-	background-color: var(--wpskin-dark-surface-hover);
+.ubuntupress-admin--dark .wp-full-overlay-footer .devices button:focus {
+	background-color: var(--ubuntupress-dark-surface-hover);
 }
 
-/* WPSkin notification panel */
-.wpskin-admin--dark .wpskin-notices-panel {
-	border-bottom-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface);
+/* UbuntuPress notification panel */
+.ubuntupress-admin--dark .ubuntupress-notices-panel {
+	border-bottom-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface);
 	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
-.wpskin-admin--dark .wpskin-notices-panel__header {
-	border-bottom-color: var(--wpskin-dark-border);
+.ubuntupress-admin--dark .ubuntupress-notices-panel__header {
+	border-bottom-color: var(--ubuntupress-dark-border);
 }
 
 /* Left border keeps the notice type colour. */
-.wpskin-admin--dark .wpskin-notices-panel__list > div {
-	border-top-color: var(--wpskin-dark-border);
-	border-right-color: var(--wpskin-dark-border);
-	border-bottom-color: var(--wpskin-dark-border);
-	background: var(--wpskin-dark-surface-alt);
+.ubuntupress-admin--dark .ubuntupress-notices-panel__list > div {
+	border-top-color: var(--ubuntupress-dark-border);
+	border-right-color: var(--ubuntupress-dark-border);
+	border-bottom-color: var(--ubuntupress-dark-border);
+	background: var(--ubuntupress-dark-surface-alt);
 }
 
-.wpskin-admin--dark .wpskin-notices-panel__close,
-.wpskin-admin--dark .wpskin-notices-panel__empty {
-	color: var(--wpskin-dark-fg-muted);
+.ubuntupress-admin--dark .ubuntupress-notices-panel__close,
+.ubuntupress-admin--dark .ubuntupress-notices-panel__empty {
+	color: var(--ubuntupress-dark-fg-muted);
 }
 
-.wpskin-admin--dark .wpskin-notices-panel__close:hover,
-.wpskin-admin--dark .wpskin-notices-panel__close:focus {
-	background: var(--wpskin-dark-surface-hover);
-	color: var(--wpskin-dark-fg);
+.ubuntupress-admin--dark .ubuntupress-notices-panel__close:hover,
+.ubuntupress-admin--dark .ubuntupress-notices-panel__close:focus {
+	background: var(--ubuntupress-dark-surface-hover);
+	color: var(--ubuntupress-dark-fg);
 }

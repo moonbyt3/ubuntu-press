@@ -1,18 +1,18 @@
 /**
- * WPSkin dashboard: GNOME-style app folders and type-to-search.
+ * UbuntuPress dashboard: GNOME-style app folders and type-to-search.
  */
 ( function () {
 	'use strict';
 
-	var root = document.querySelector( '.wpskin-dashboard' );
+	var root = document.querySelector( '.ubuntupress-dashboard' );
 	if ( ! root ) {
 		return;
 	}
 
-	var grid = root.querySelector( '.wpskin-dashboard__cards' );
-	var results = root.querySelector( '.wpskin-dashboard__results' );
-	var noResults = root.querySelector( '.wpskin-dashboard__no-results' );
-	var input = root.querySelector( '.wpskin-search__input' );
+	var grid = root.querySelector( '.ubuntupress-dashboard__cards' );
+	var results = root.querySelector( '.ubuntupress-dashboard__results' );
+	var noResults = root.querySelector( '.ubuntupress-dashboard__no-results' );
+	var input = root.querySelector( '.ubuntupress-search__input' );
 	var openFolder = null;
 	var opener = null;
 
@@ -22,7 +22,7 @@
 		openFolder = folder;
 		opener = trigger;
 		folder.hidden = false;
-		var first = folder.querySelector( '.wpskin-card' );
+		var first = folder.querySelector( '.ubuntupress-card' );
 		if ( first ) {
 			first.focus();
 		}
@@ -40,7 +40,7 @@
 	}
 
 	root.addEventListener( 'click', function ( event ) {
-		var trigger = event.target.closest( '.wpskin-card--folder' );
+		var trigger = event.target.closest( '.ubuntupress-card--folder' );
 		if ( trigger ) {
 			var folder = document.getElementById( trigger.getAttribute( 'aria-controls' ) );
 			if ( folder ) {
@@ -49,7 +49,7 @@
 			return;
 		}
 
-		if ( event.target.classList.contains( 'wpskin-folder__backdrop' ) ) {
+		if ( event.target.classList.contains( 'ubuntupress-folder__backdrop' ) ) {
 			hideFolder();
 		}
 	} );
@@ -59,7 +59,7 @@
 		if ( ! openFolder ) {
 			return;
 		}
-		var card = event.target.closest( '.wpskin-card' );
+		var card = event.target.closest( '.ubuntupress-card' );
 		if ( card && openFolder.contains( card ) && card !== document.activeElement ) {
 			card.focus( { preventScroll: true } );
 		}
@@ -68,7 +68,7 @@
 	/* Search */
 
 	function visibleResults() {
-		return Array.prototype.filter.call( results.querySelectorAll( '.wpskin-card' ), function ( card ) {
+		return Array.prototype.filter.call( results.querySelectorAll( '.ubuntupress-card' ), function ( card ) {
 			return ! card.hidden;
 		} );
 	}
@@ -80,7 +80,7 @@
 		grid.hidden = query !== '';
 		results.hidden = query === '';
 
-		Array.prototype.forEach.call( results.querySelectorAll( '.wpskin-card' ), function ( card ) {
+		Array.prototype.forEach.call( results.querySelectorAll( '.ubuntupress-card' ), function ( card ) {
 			var match = query !== '' && card.getAttribute( 'data-search' ).indexOf( query ) !== -1;
 			card.hidden = ! match;
 			if ( match ) {

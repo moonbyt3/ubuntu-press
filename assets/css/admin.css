@@ -1,68 +1,68 @@
-/* WPSkin settings screen: GNOME Settings (libadwaita / Yaru) preference groups. */
+/* UbuntuPress settings screen: GNOME Settings (libadwaita / Yaru) preference groups. */
 
 /*
- * Block: wpskin-settings (.wrap.* to beat core's .wrap and form-control rules).
+ * Block: ubuntupress-settings (.wrap.* to beat core's .wrap and form-control rules).
  * Core Settings screens share these tokens and layout when "Ubuntu style for Settings screens" is on
- * (body.wpskin-admin--prefs, see settings-pages.css).
+ * (body.ubuntupress-admin--prefs, see settings-pages.css).
  */
-.wrap.wpskin-settings,
-.wpskin-admin--prefs .wrap {
-	--wpskin-accent: #e95420;
-	--wpskin-accent-hover: #f0663a;
-	--wpskin-prefs-fg: #2e2e2e;
-	--wpskin-prefs-fg-muted: rgba(0, 0, 0, 0.55);
-	--wpskin-prefs-card: #fff;
-	--wpskin-prefs-card-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 1px 3px 1px rgba(0, 0, 0, 0.07), 0 2px 6px 2px rgba(0, 0, 0, 0.03);
-	--wpskin-prefs-separator: rgba(0, 0, 0, 0.07);
-	--wpskin-prefs-field: rgba(0, 0, 0, 0.06);
-	--wpskin-prefs-field-hover: rgba(0, 0, 0, 0.1);
-	--wpskin-prefs-switch-off: rgba(0, 0, 0, 0.15);
-	--wpskin-prefs-switch-off-hover: rgba(0, 0, 0, 0.2);
-	--wpskin-prefs-select-arrow: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M4%206l4%204%204-4%22%20fill%3D%22none%22%20stroke%3D%22%232e2e2e%22%20stroke-width%3D%221.5%22%2F%3E%3C%2Fsvg%3E");
+.wrap.ubuntupress-settings,
+.ubuntupress-admin--prefs .wrap {
+	--ubuntupress-accent: #e95420;
+	--ubuntupress-accent-hover: #f0663a;
+	--ubuntupress-prefs-fg: #2e2e2e;
+	--ubuntupress-prefs-fg-muted: rgba(0, 0, 0, 0.55);
+	--ubuntupress-prefs-card: #fff;
+	--ubuntupress-prefs-card-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 1px 3px 1px rgba(0, 0, 0, 0.07), 0 2px 6px 2px rgba(0, 0, 0, 0.03);
+	--ubuntupress-prefs-separator: rgba(0, 0, 0, 0.07);
+	--ubuntupress-prefs-field: rgba(0, 0, 0, 0.06);
+	--ubuntupress-prefs-field-hover: rgba(0, 0, 0, 0.1);
+	--ubuntupress-prefs-switch-off: rgba(0, 0, 0, 0.15);
+	--ubuntupress-prefs-switch-off-hover: rgba(0, 0, 0, 0.2);
+	--ubuntupress-prefs-select-arrow: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M4%206l4%204%204-4%22%20fill%3D%22none%22%20stroke%3D%22%232e2e2e%22%20stroke-width%3D%221.5%22%2F%3E%3C%2Fsvg%3E");
 	max-width: 680px;
 	margin: 24px auto 48px;
 	padding: 0 16px;
-	color: var(--wpskin-prefs-fg);
+	color: var(--ubuntupress-prefs-fg);
 	font-family: Ubuntu, "Ubuntu Sans", Cantarell, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-.wpskin-admin--dark .wrap.wpskin-settings,
-.wpskin-admin--dark.wpskin-admin--prefs .wrap {
-	--wpskin-prefs-fg: #fff;
-	--wpskin-prefs-fg-muted: rgba(255, 255, 255, 0.6);
-	--wpskin-prefs-card: #2e2e2e;
-	--wpskin-prefs-card-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 3px 1px rgba(0, 0, 0, 0.2), 0 2px 6px 2px rgba(0, 0, 0, 0.1);
-	--wpskin-prefs-separator: rgba(255, 255, 255, 0.07);
-	--wpskin-prefs-field: rgba(255, 255, 255, 0.1);
-	--wpskin-prefs-field-hover: rgba(255, 255, 255, 0.15);
-	--wpskin-prefs-switch-off: rgba(255, 255, 255, 0.2);
-	--wpskin-prefs-switch-off-hover: rgba(255, 255, 255, 0.25);
-	--wpskin-prefs-select-arrow: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M4%206l4%204%204-4%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.5%22%2F%3E%3C%2Fsvg%3E");
+.ubuntupress-admin--dark .wrap.ubuntupress-settings,
+.ubuntupress-admin--dark.ubuntupress-admin--prefs .wrap {
+	--ubuntupress-prefs-fg: #fff;
+	--ubuntupress-prefs-fg-muted: rgba(255, 255, 255, 0.6);
+	--ubuntupress-prefs-card: #2e2e2e;
+	--ubuntupress-prefs-card-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 3px 1px rgba(0, 0, 0, 0.2), 0 2px 6px 2px rgba(0, 0, 0, 0.1);
+	--ubuntupress-prefs-separator: rgba(255, 255, 255, 0.07);
+	--ubuntupress-prefs-field: rgba(255, 255, 255, 0.1);
+	--ubuntupress-prefs-field-hover: rgba(255, 255, 255, 0.15);
+	--ubuntupress-prefs-switch-off: rgba(255, 255, 255, 0.2);
+	--ubuntupress-prefs-switch-off-hover: rgba(255, 255, 255, 0.25);
+	--ubuntupress-prefs-select-arrow: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M4%206l4%204%204-4%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.5%22%2F%3E%3C%2Fsvg%3E");
 }
 
-.wrap.wpskin-settings .wpskin-settings__title {
+.wrap.ubuntupress-settings .ubuntupress-settings__title {
 	margin: 0 0 24px;
 	padding: 0;
-	color: var(--wpskin-prefs-fg);
+	color: var(--ubuntupress-prefs-fg);
 	font-family: inherit;
 	font-size: 22px;
 	font-weight: 700;
 	text-align: center;
 }
 
-.wpskin-settings__actions {
+.ubuntupress-settings__actions {
 	display: flex;
 	justify-content: flex-end;
 	margin-top: 24px;
 }
 
 /* GNOME "suggested action" pill button. */
-.wrap.wpskin-settings .wpskin-settings__save {
+.wrap.ubuntupress-settings .ubuntupress-settings__save {
 	min-height: 34px;
 	padding: 0 20px;
 	border: 0;
 	border-radius: 999px;
-	background: var(--wpskin-accent);
+	background: var(--ubuntupress-accent);
 	box-shadow: none;
 	color: #fff;
 	font-family: inherit;
@@ -70,41 +70,41 @@
 	font-weight: 700;
 }
 
-.wrap.wpskin-settings .wpskin-settings__save:hover,
-.wrap.wpskin-settings .wpskin-settings__save:focus {
-	background: var(--wpskin-accent-hover);
+.wrap.ubuntupress-settings .ubuntupress-settings__save:hover,
+.wrap.ubuntupress-settings .ubuntupress-settings__save:focus {
+	background: var(--ubuntupress-accent-hover);
 	color: #fff;
 }
 
-.wrap.wpskin-settings .wpskin-settings__save:focus-visible {
-	outline: 2px solid var(--wpskin-accent);
+.wrap.ubuntupress-settings .ubuntupress-settings__save:focus-visible {
+	outline: 2px solid var(--ubuntupress-accent);
 	outline-offset: 2px;
 	box-shadow: none;
 }
 
-/* Block: wpskin-prefs-group (AdwPreferencesGroup) */
-.wpskin-prefs-group + .wpskin-prefs-group {
+/* Block: ubuntupress-prefs-group (AdwPreferencesGroup) */
+.ubuntupress-prefs-group + .ubuntupress-prefs-group {
 	margin-top: 24px;
 }
 
-.wrap.wpskin-settings .wpskin-prefs-group__title {
+.wrap.ubuntupress-settings .ubuntupress-prefs-group__title {
 	margin: 0 0 10px;
 	padding: 0 2px;
-	color: var(--wpskin-prefs-fg);
+	color: var(--ubuntupress-prefs-fg);
 	font-family: inherit;
 	font-size: 15px;
 	font-weight: 700;
 }
 
-.wpskin-prefs-group__list {
+.ubuntupress-prefs-group__list {
 	overflow: hidden;
 	border-radius: 12px;
-	background: var(--wpskin-prefs-card);
-	box-shadow: var(--wpskin-prefs-card-shadow);
+	background: var(--ubuntupress-prefs-card);
+	box-shadow: var(--ubuntupress-prefs-card-shadow);
 }
 
-/* Block: wpskin-prefs-row (AdwActionRow) */
-.wpskin-prefs-row {
+/* Block: ubuntupress-prefs-row (AdwActionRow) */
+.ubuntupress-prefs-row {
 	display: flex;
 	align-items: center;
 	gap: 16px;
@@ -113,70 +113,70 @@
 	box-sizing: border-box;
 }
 
-.wpskin-prefs-row + .wpskin-prefs-row {
-	border-top: 1px solid var(--wpskin-prefs-separator);
+.ubuntupress-prefs-row + .ubuntupress-prefs-row {
+	border-top: 1px solid var(--ubuntupress-prefs-separator);
 }
 
-.wpskin-prefs-row__text {
+.ubuntupress-prefs-row__text {
 	flex: 1 1 auto;
 	min-width: 0;
 }
 
-.wpskin-prefs-row__title {
+.ubuntupress-prefs-row__title {
 	display: block;
-	color: var(--wpskin-prefs-fg);
+	color: var(--ubuntupress-prefs-fg);
 	font-size: 15px;
 	line-height: 1.35;
 	cursor: default;
 }
 
-.wrap.wpskin-settings .wpskin-prefs-row__subtitle {
+.wrap.ubuntupress-settings .ubuntupress-prefs-row__subtitle {
 	margin: 2px 0 0;
-	color: var(--wpskin-prefs-fg-muted);
+	color: var(--ubuntupress-prefs-fg-muted);
 	font-size: 13px;
 	line-height: 1.4;
 }
 
-.wpskin-prefs-row__control {
+.ubuntupress-prefs-row__control {
 	flex: none;
 }
 
 /* Dropdown (GtkDropDown): flat rounded button. */
-.wrap.wpskin-settings select.wpskin-prefs-row__select {
+.wrap.ubuntupress-settings select.ubuntupress-prefs-row__select {
 	min-height: 34px;
 	max-width: 220px;
 	padding: 0 32px 0 12px;
 	border: 0;
 	border-radius: 8px;
-	background: var(--wpskin-prefs-field) var(--wpskin-prefs-select-arrow) no-repeat right 10px center / 16px 16px;
+	background: var(--ubuntupress-prefs-field) var(--ubuntupress-prefs-select-arrow) no-repeat right 10px center / 16px 16px;
 	box-shadow: none;
-	color: var(--wpskin-prefs-fg);
+	color: var(--ubuntupress-prefs-fg);
 	font-family: inherit;
 	font-size: 14px;
 	cursor: pointer;
 }
 
 /* The native popup list takes the select's (translucent) background, which renders near-white. */
-.wrap.wpskin-settings select.wpskin-prefs-row__select option {
-	background-color: var(--wpskin-prefs-card);
-	color: var(--wpskin-prefs-fg);
+.wrap.ubuntupress-settings select.ubuntupress-prefs-row__select option {
+	background-color: var(--ubuntupress-prefs-card);
+	color: var(--ubuntupress-prefs-fg);
 }
 
-.wrap.wpskin-settings select.wpskin-prefs-row__select:hover {
-	background-color: var(--wpskin-prefs-field-hover);
-	color: var(--wpskin-prefs-fg);
+.wrap.ubuntupress-settings select.ubuntupress-prefs-row__select:hover {
+	background-color: var(--ubuntupress-prefs-field-hover);
+	color: var(--ubuntupress-prefs-fg);
 }
 
-.wrap.wpskin-settings select.wpskin-prefs-row__select:focus {
+.wrap.ubuntupress-settings select.ubuntupress-prefs-row__select:focus {
 	border: 0;
-	outline: 2px solid var(--wpskin-accent);
+	outline: 2px solid var(--ubuntupress-accent);
 	outline-offset: 1px;
 	box-shadow: none;
-	color: var(--wpskin-prefs-fg);
+	color: var(--ubuntupress-prefs-fg);
 }
 
-/* Block: wpskin-switch (GtkSwitch); ::before is the knob, replacing core's checkmark. */
-.wrap.wpskin-settings input.wpskin-switch {
+/* Block: ubuntupress-switch (GtkSwitch); ::before is the knob, replacing core's checkmark. */
+.wrap.ubuntupress-settings input.ubuntupress-switch {
 	position: relative;
 	width: 48px;
 	height: 26px;
@@ -184,7 +184,7 @@
 	padding: 0;
 	border: 0;
 	border-radius: 13px;
-	background: var(--wpskin-prefs-switch-off);
+	background: var(--ubuntupress-prefs-switch-off);
 	box-shadow: none;
 	vertical-align: middle;
 	cursor: pointer;
@@ -192,12 +192,12 @@
 	transition: background-color 0.15s ease;
 }
 
-.wrap.wpskin-settings input.wpskin-switch:hover {
-	background: var(--wpskin-prefs-switch-off-hover);
+.wrap.ubuntupress-settings input.ubuntupress-switch:hover {
+	background: var(--ubuntupress-prefs-switch-off-hover);
 }
 
-.wrap.wpskin-settings input.wpskin-switch::before,
-.wrap.wpskin-settings input.wpskin-switch:checked::before {
+.wrap.ubuntupress-settings input.ubuntupress-switch::before,
+.wrap.ubuntupress-settings input.ubuntupress-switch:checked::before {
 	content: "";
 	position: absolute;
 	top: 3px;
@@ -212,47 +212,47 @@
 	transition: transform 0.15s ease;
 }
 
-.wrap.wpskin-settings input.wpskin-switch:checked {
-	background: var(--wpskin-accent);
+.wrap.ubuntupress-settings input.ubuntupress-switch:checked {
+	background: var(--ubuntupress-accent);
 }
 
-.wrap.wpskin-settings input.wpskin-switch:checked:hover {
-	background: var(--wpskin-accent-hover);
+.wrap.ubuntupress-settings input.ubuntupress-switch:checked:hover {
+	background: var(--ubuntupress-accent-hover);
 }
 
-.wrap.wpskin-settings input.wpskin-switch:checked::before {
+.wrap.ubuntupress-settings input.ubuntupress-switch:checked::before {
 	transform: translateX(22px);
 }
 
-.wrap.wpskin-settings input.wpskin-switch:focus {
+.wrap.ubuntupress-settings input.ubuntupress-switch:focus {
 	border: 0;
 	outline: none;
 	box-shadow: none;
 }
 
-.wrap.wpskin-settings input.wpskin-switch:focus-visible {
-	outline: 2px solid var(--wpskin-accent);
+.wrap.ubuntupress-settings input.ubuntupress-switch:focus-visible {
+	outline: 2px solid var(--ubuntupress-accent);
 	outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.wrap.wpskin-settings input.wpskin-switch,
-	.wrap.wpskin-settings input.wpskin-switch::before {
+	.wrap.ubuntupress-settings input.ubuntupress-switch,
+	.wrap.ubuntupress-settings input.ubuntupress-switch::before {
 		transition: none;
 	}
 }
 
 @media screen and (max-width: 600px) {
 	/* Dropdowns move under their label; switches stay on the right. */
-	.wpskin-prefs-row:has(select) {
+	.ubuntupress-prefs-row:has(select) {
 		flex-wrap: wrap;
 	}
 
-	.wpskin-prefs-row:has(select) .wpskin-prefs-row__control {
+	.ubuntupress-prefs-row:has(select) .ubuntupress-prefs-row__control {
 		flex: 1 1 100%;
 	}
 
-	.wrap.wpskin-settings select.wpskin-prefs-row__select {
+	.wrap.ubuntupress-settings select.ubuntupress-prefs-row__select {
 		width: 100%;
 		max-width: none;
 	}

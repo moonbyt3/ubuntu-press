@@ -2,19 +2,19 @@
 /**
  * Main plugin class.
  *
- * @package WPSkin
+ * @package UbuntuPress
  */
 
-namespace WPSkin;
+namespace UbuntuPress;
 
-use WPSkin\Admin\Admin;
-use WPSkin\Admin\DashboardCards;
-use WPSkin\Admin\Notifications;
-use WPSkin\Admin\Settings;
-use WPSkin\Admin\SettingsPages;
-use WPSkin\Admin\Sidebar;
-use WPSkin\Admin\Theme;
-use WPSkin\Contracts\Hookable;
+use UbuntuPress\Admin\Admin;
+use UbuntuPress\Admin\DashboardCards;
+use UbuntuPress\Admin\Notifications;
+use UbuntuPress\Admin\Settings;
+use UbuntuPress\Admin\SettingsPages;
+use UbuntuPress\Admin\Sidebar;
+use UbuntuPress\Admin\Theme;
+use UbuntuPress\Contracts\Hookable;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -80,7 +80,7 @@ final class Plugin {
 
 		$this->loader->run();
 
-		do_action( 'wpskin_booted', $this );
+		do_action( 'ubuntupress_booted', $this );
 	}
 
 	/**
@@ -104,11 +104,11 @@ final class Plugin {
 		}
 
 		/**
-		 * Filters the list of service classes WPSkin instantiates on boot.
+		 * Filters the list of service classes UbuntuPress instantiates on boot.
 		 *
 		 * @param string[] $services Fully qualified class names.
 		 */
-		return apply_filters( 'wpskin_services', $services );
+		return apply_filters( 'ubuntupress_services', $services );
 	}
 
 	/**
@@ -126,7 +126,7 @@ final class Plugin {
 	}
 
 	public function version() {
-		return WPSKIN_VERSION;
+		return UBUNTUPRESS_VERSION;
 	}
 
 	/**
@@ -137,7 +137,7 @@ final class Plugin {
 	 * @return string
 	 */
 	public static function asset_version( $path ) {
-		$mtime = @filemtime( WPSKIN_PATH . $path ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
-		return $mtime ? (string) $mtime : WPSKIN_VERSION;
+		$mtime = @filemtime( UBUNTUPRESS_PATH . $path ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+		return $mtime ? (string) $mtime : UBUNTUPRESS_VERSION;
 	}
 }

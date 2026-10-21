@@ -2,14 +2,14 @@
 /**
  * Hides the default admin sidebar and adds a toolbar link back to the card dashboard.
  *
- * @package WPSkin
+ * @package UbuntuPress
  */
 
-namespace WPSkin\Admin;
+namespace UbuntuPress\Admin;
 
-use WPSkin\Contracts\Hookable;
-use WPSkin\Loader;
-use WPSkin\Plugin;
+use UbuntuPress\Contracts\Hookable;
+use UbuntuPress\Loader;
+use UbuntuPress\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -56,7 +56,7 @@ class Sidebar implements Hookable {
 	 * @return string
 	 */
 	public function body_class( $classes ) {
-		return $this->should_hide() ? $classes . ' wpskin-admin--no-sidebar' : $classes;
+		return $this->should_hide() ? $classes . ' ubuntupress-admin--no-sidebar' : $classes;
 	}
 
 	public function enqueue_assets() {
@@ -65,8 +65,8 @@ class Sidebar implements Hookable {
 		}
 
 		wp_enqueue_style(
-			'wpskin-sidebar',
-			WPSKIN_URL . 'assets/css/sidebar.css',
+			'ubuntupress-sidebar',
+			UBUNTUPRESS_URL . 'assets/css/sidebar.css',
 			array(),
 			Plugin::asset_version( 'assets/css/sidebar.css' )
 		);
@@ -84,12 +84,12 @@ class Sidebar implements Hookable {
 
 		$admin_bar->add_node(
 			array(
-				'id'    => 'wpskin-home',
-				'title' => '<span class="ab-icon wpskin-home-link__icon" aria-hidden="true"></span><span class="ab-label wpskin-home-link__label">' . esc_html__( 'Dashboard', 'wpskin' ) . '</span>',
+				'id'    => 'ubuntupress-home',
+				'title' => '<span class="ab-icon ubuntupress-home-link__icon" aria-hidden="true"></span><span class="ab-label ubuntupress-home-link__label">' . esc_html__( 'Dashboard', 'ubuntupress' ) . '</span>',
 				'href'  => admin_url(),
 				'meta'  => array(
-					'class' => 'wpskin-home-link',
-					'title' => __( 'Dashboard', 'wpskin' ),
+					'class' => 'ubuntupress-home-link',
+					'title' => __( 'Dashboard', 'ubuntupress' ),
 				),
 			)
 		);

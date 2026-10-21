@@ -1,1492 +1,1492 @@
 /*
- * WPSkin dark theme for the block editor UI. Generated from WordPress 7.1.3
+ * UbuntuPress dark theme for the block editor UI. Generated from WordPress 7.1.3
  * by bin/build-editor-dark.py; do not edit by hand.
  */
 
 /* components */
-:where(.wpskin-admin--dark) .components-badge:where(.is-default) {
+:where(.ubuntupress-admin--dark) .components-badge:where(.is-default) {
 	background-color: #2a2a2a;
 	color: #e0e0e0;
 }
 
-:where(.wpskin-admin--dark) .components-button-group .components-button {
+:where(.ubuntupress-admin--dark) .components-button-group .components-button {
 	color: #e6e6e6;
 	border-color: #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .components-checkbox-control__input[type=checkbox] {
+:where(.ubuntupress-admin--dark) .components-checkbox-control__input[type=checkbox] {
 	border: 1px solid #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .components-checkbox-control__input[type=checkbox][aria-disabled=true],
-:where(.wpskin-admin--dark) .components-checkbox-control__input[type=checkbox]:disabled {
+:where(.ubuntupress-admin--dark) .components-checkbox-control__input[type=checkbox][aria-disabled=true],
+:where(.ubuntupress-admin--dark) .components-checkbox-control__input[type=checkbox]:disabled {
 	background: #2a2a2a;
 	border-color: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .components-checkbox-control__input[type=checkbox] {
+:where(.ubuntupress-admin--dark) .components-checkbox-control__input[type=checkbox] {
 	background: #1e1e1e;
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .components-circular-option-picker__option:focus::after {
+:where(.ubuntupress-admin--dark) .components-circular-option-picker__option:focus::after {
 	box-shadow: inset 0 0 0 2px #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .components-circular-option-picker__button-action .components-circular-option-picker__option {
+:where(.ubuntupress-admin--dark) .components-circular-option-picker__button-action .components-circular-option-picker__option {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .component-color-indicator {
+:where(.ubuntupress-admin--dark) .component-color-indicator {
 	background: #1e1e1e linear-gradient(-45deg, transparent 48%, #3d3d3d 48%, #3d3d3d 52%, transparent 52%);
 }
 
-:where(.wpskin-admin--dark) .components-color-palette__custom-color-value {
+:where(.ubuntupress-admin--dark) .components-color-palette__custom-color-value {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .components-custom-gradient-picker__gradient-bar .components-custom-gradient-picker__insert-point-dropdown {
+:where(.ubuntupress-admin--dark) .components-custom-gradient-picker__gradient-bar .components-custom-gradient-picker__insert-point-dropdown {
 	background: #1e1e1e;
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .components-dropdown__content .components-menu-group + .components-menu-group {
+:where(.ubuntupress-admin--dark) .components-dropdown__content .components-menu-group + .components-menu-group {
 	border-top: 1px solid #4a4a4a;
 }
 
-:where(.wpskin-admin--dark) .components-dropdown__content.is-alternate .components-menu-group + .components-menu-group {
+:where(.ubuntupress-admin--dark) .components-dropdown__content.is-alternate .components-menu-group + .components-menu-group {
 	border-color: #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .components-dropdown-menu__menu .components-dropdown-menu__menu-item.is-active svg,
-:where(.wpskin-admin--dark) .components-dropdown-menu__menu .components-dropdown-menu__menu-item.is-active .dashicon,
-:where(.wpskin-admin--dark) .components-dropdown-menu__menu .components-menu-item.is-active svg,
-:where(.wpskin-admin--dark) .components-dropdown-menu__menu .components-menu-item.is-active .dashicon {
+:where(.ubuntupress-admin--dark) .components-dropdown-menu__menu .components-dropdown-menu__menu-item.is-active svg,
+:where(.ubuntupress-admin--dark) .components-dropdown-menu__menu .components-dropdown-menu__menu-item.is-active .dashicon,
+:where(.ubuntupress-admin--dark) .components-dropdown-menu__menu .components-menu-item.is-active svg,
+:where(.ubuntupress-admin--dark) .components-dropdown-menu__menu .components-menu-item.is-active .dashicon {
 	background: #454545;
 	box-shadow: 0 0 0 1px #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .components-duotone-picker__color-indicator > .components-button {
+:where(.ubuntupress-admin--dark) .components-duotone-picker__color-indicator > .components-button {
 	background: linear-gradient(-45deg, transparent 48%, #3d3d3d 48%, #3d3d3d 52%, transparent 52%);
 }
 
-:where(.wpskin-admin--dark) .components-duotone-picker__color-indicator > .components-button.is-pressed:hover:not(:disabled) {
+:where(.ubuntupress-admin--dark) .components-duotone-picker__color-indicator > .components-button.is-pressed:hover:not(:disabled) {
 	background: linear-gradient(-45deg, transparent 48%, #3d3d3d 48%, #3d3d3d 52%, transparent 52%);
 }
 
-:where(.wpskin-admin--dark) .components-form-toggle .components-form-toggle__track {
+:where(.ubuntupress-admin--dark) .components-form-toggle .components-form-toggle__track {
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .components-form-toggle .components-form-toggle__thumb {
+:where(.ubuntupress-admin--dark) .components-form-toggle .components-form-toggle__thumb {
 	background-color: #454545;
 }
 
-:where(.wpskin-admin--dark) .components-form-toggle.is-checked .components-form-toggle__thumb {
+:where(.ubuntupress-admin--dark) .components-form-toggle.is-checked .components-form-toggle__thumb {
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .components-form-toggle.is-disabled.is-checked .components-form-toggle__thumb,
-:where(.wpskin-admin--dark) .components-disabled .components-form-toggle.is-checked .components-form-toggle__thumb {
+:where(.ubuntupress-admin--dark) .components-form-toggle.is-disabled.is-checked .components-form-toggle__thumb,
+:where(.ubuntupress-admin--dark) .components-disabled .components-form-toggle.is-checked .components-form-toggle__thumb {
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .components-form-token-field__token {
+:where(.ubuntupress-admin--dark) .components-form-token-field__token {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .components-form-token-field__token.is-validating .components-form-token-field__token-text,
-:where(.wpskin-admin--dark) .components-form-token-field__token.is-validating .components-form-token-field__remove-token {
+:where(.ubuntupress-admin--dark) .components-form-token-field__token.is-validating .components-form-token-field__token-text,
+:where(.ubuntupress-admin--dark) .components-form-token-field__token.is-validating .components-form-token-field__remove-token {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .components-form-token-field__token.is-borderless .components-form-token-field__remove-token {
+:where(.ubuntupress-admin--dark) .components-form-token-field__token.is-borderless .components-form-token-field__remove-token {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .components-form-token-field__token.is-borderless.is-validating .components-form-token-field__token-text {
+:where(.ubuntupress-admin--dark) .components-form-token-field__token.is-borderless.is-validating .components-form-token-field__token-text {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .components-form-token-field__token-text,
-:where(.wpskin-admin--dark) .components-form-token-field__remove-token.components-button {
+:where(.ubuntupress-admin--dark) .components-form-token-field__token-text,
+:where(.ubuntupress-admin--dark) .components-form-token-field__remove-token.components-button {
 	background: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .components-form-token-field__remove-token.components-button {
+:where(.ubuntupress-admin--dark) .components-form-token-field__remove-token.components-button {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .components-form-token-field__remove-token.components-button:hover:not(:disabled) {
+:where(.ubuntupress-admin--dark) .components-form-token-field__remove-token.components-button:hover:not(:disabled) {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .components-menu-group + .components-menu-group {
+:where(.ubuntupress-admin--dark) .components-menu-group + .components-menu-group {
 	border-top: 1px solid #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .components-menu-group__label {
+:where(.ubuntupress-admin--dark) .components-menu-group__label {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .components-menu-item__info {
+:where(.ubuntupress-admin--dark) .components-menu-item__info {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .components-modal__frame {
+:where(.ubuntupress-admin--dark) .components-modal__frame {
 	background: #1e1e1e;
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .components-modal__frame h1,
-:where(.wpskin-admin--dark) .components-modal__frame h2,
-:where(.wpskin-admin--dark) .components-modal__frame h3 {
+:where(.ubuntupress-admin--dark) .components-modal__frame h1,
+:where(.ubuntupress-admin--dark) .components-modal__frame h2,
+:where(.ubuntupress-admin--dark) .components-modal__frame h3 {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .components-panel {
+:where(.ubuntupress-admin--dark) .components-panel {
 	background: #1e1e1e;
 	border: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .components-panel__body {
+:where(.ubuntupress-admin--dark) .components-panel__body {
 	border-top: 1px solid #3d3d3d;
 	border-bottom: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .components-panel__body > .components-panel__body-title:hover {
+:where(.ubuntupress-admin--dark) .components-panel__body > .components-panel__body-title:hover {
 	background: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .components-panel__body-toggle.components-button {
+:where(.ubuntupress-admin--dark) .components-panel__body-toggle.components-button {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .components-panel__body-toggle.components-button .components-panel__arrow {
+:where(.ubuntupress-admin--dark) .components-panel__body-toggle.components-button .components-panel__arrow {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .components-panel__icon {
+:where(.ubuntupress-admin--dark) .components-panel__icon {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .components-placeholder.components-placeholder {
+:where(.ubuntupress-admin--dark) .components-placeholder.components-placeholder {
 	color: #e6e6e6;
 	background-color: #1e1e1e;
 	box-shadow: inset 0 0 0 1px #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .components-popover__content {
+:where(.ubuntupress-admin--dark) .components-popover__content {
 	background: #1e1e1e;
 	box-shadow: 0 0 0 1px #4a4a4a, 0 2px 3px rgba(0, 0, 0, 0.05), 0 4px 5px rgba(0, 0, 0, 0.04), 0 12px 12px rgba(0, 0, 0, 0.03), 0 16px 16px rgba(0, 0, 0, 0.02);
 }
 
-:where(.wpskin-admin--dark) .is-alternate .components-popover__content {
+:where(.ubuntupress-admin--dark) .is-alternate .components-popover__content {
 	box-shadow: 0 0 0 1px #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .components-popover.is-expanded .components-popover__content {
+:where(.ubuntupress-admin--dark) .components-popover.is-expanded .components-popover__content {
 	box-shadow: 0 -1px 0 0 #4a4a4a;
 }
 
-:where(.wpskin-admin--dark) .components-popover.is-expanded.is-alternate .components-popover__content {
+:where(.ubuntupress-admin--dark) .components-popover.is-expanded.is-alternate .components-popover__content {
 	box-shadow: 0 -1px 0 #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .components-popover__header {
+:where(.ubuntupress-admin--dark) .components-popover__header {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .components-popover__arrow::before {
+:where(.ubuntupress-admin--dark) .components-popover__arrow::before {
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .components-radio-control__input[type=radio] {
+:where(.ubuntupress-admin--dark) .components-radio-control__input[type=radio] {
 	border: 1px solid #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .components-radio-control__input[type=radio]:checked::before {
+:where(.ubuntupress-admin--dark) .components-radio-control__input[type=radio]:checked::before {
 	background-color: #1e1e1e;
 	border: 4px solid #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .components-resizable-box__handle::after {
+:where(.ubuntupress-admin--dark) .components-resizable-box__handle::after {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .components-snackbar__action.components-button:focus,
-:where(.wpskin-admin--dark) .components-snackbar__action.components-external-link:focus {
+:where(.ubuntupress-admin--dark) .components-snackbar__action.components-button:focus,
+:where(.ubuntupress-admin--dark) .components-snackbar__action.components-external-link:focus {
 	outline: 1px dotted #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .components-tip {
+:where(.ubuntupress-admin--dark) .components-tip {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .components-tooltip {
+:where(.ubuntupress-admin--dark) .components-tooltip {
 	background: #454545;
 }
 
-:where(.wpskin-admin--dark) .components-validated-control__indicator.is-valid {
+:where(.ubuntupress-admin--dark) .components-validated-control__indicator.is-valid {
 	color: color-mix(in srgb, #e6e6e6 30%, #4ab866);
 }
 
 /* block-editor */
-:where(.wpskin-admin--dark) .block-editor-global-styles-background-panel__inspector-media-replace-container.is-open {
+:where(.ubuntupress-admin--dark) .block-editor-global-styles-background-panel__inspector-media-replace-container.is-open {
 	background-color: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .block-editor-global-styles-background-panel__image-tools-panel-item {
+:where(.ubuntupress-admin--dark) .block-editor-global-styles-background-panel__image-tools-panel-item {
 	border: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-global-styles-background-panel__image-tools-panel-item button.components-button {
+:where(.ubuntupress-admin--dark) .block-editor-global-styles-background-panel__image-tools-panel-item button.components-button {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .block-editor-global-styles-background-panel__inspector-image-indicator {
+:where(.ubuntupress-admin--dark) .block-editor-global-styles-background-panel__inspector-image-indicator {
 	background: #1e1e1e linear-gradient(-45deg, transparent 48%, #3d3d3d 48%, #3d3d3d 52%, transparent 52%);
 }
 
-:where(.wpskin-admin--dark) .block-editor-global-styles-background-panel__dropdown-content-wrapper .components-focal-point-picker-wrapper {
+:where(.ubuntupress-admin--dark) .block-editor-global-styles-background-panel__dropdown-content-wrapper .components-focal-point-picker-wrapper {
 	background-color: #2a2a2a;
 	border: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-inspector h2,
-:where(.wpskin-admin--dark) .block-editor-block-inspector h3 {
+:where(.ubuntupress-admin--dark) .block-editor-block-inspector h2,
+:where(.ubuntupress-admin--dark) .block-editor-block-inspector h3 {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-inspector .components-panel__body {
+:where(.ubuntupress-admin--dark) .block-editor-block-inspector .components-panel__body {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-inspector__no-blocks,
-:where(.wpskin-admin--dark) .block-editor-block-inspector__no-block-tools {
+:where(.ubuntupress-admin--dark) .block-editor-block-inspector__no-blocks,
+:where(.ubuntupress-admin--dark) .block-editor-block-inspector__no-block-tools {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-inspector__no-block-tools {
+:where(.ubuntupress-admin--dark) .block-editor-block-inspector__no-block-tools {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-list__empty-block-inserter .block-editor-inserter__toggle.components-button.has-icon,
-:where(.wpskin-admin--dark) .block-editor-block-list__insertion-point-inserter .block-editor-inserter__toggle.components-button.has-icon {
+:where(.ubuntupress-admin--dark) .block-editor-block-list__empty-block-inserter .block-editor-inserter__toggle.components-button.has-icon,
+:where(.ubuntupress-admin--dark) .block-editor-block-list__insertion-point-inserter .block-editor-inserter__toggle.components-button.has-icon {
 	background: #454545;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-list__insertion-point-inserter .block-editor-inserter__toggle.components-button.has-icon:hover {
+:where(.ubuntupress-admin--dark) .block-editor-block-list__insertion-point-inserter .block-editor-inserter__toggle.components-button.has-icon:hover {
 	background: #454545;
 }
 
-:where(.wpskin-admin--dark) .components-popover.block-editor-block-list__block-popover .block-editor-block-contextual-toolbar {
+:where(.ubuntupress-admin--dark) .components-popover.block-editor-block-list__block-popover .block-editor-block-contextual-toolbar {
 	border: 1px solid #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .components-popover.block-editor-block-list__block-popover .block-editor-block-toolbar .components-toolbar-group,
-:where(.wpskin-admin--dark) .components-popover.block-editor-block-list__block-popover .block-editor-block-toolbar .components-toolbar {
+:where(.ubuntupress-admin--dark) .components-popover.block-editor-block-list__block-popover .block-editor-block-toolbar .components-toolbar-group,
+:where(.ubuntupress-admin--dark) .components-popover.block-editor-block-list__block-popover .block-editor-block-toolbar .components-toolbar {
 	border-right-color: #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .components-popover.block-editor-block-list__block-popover .block-editor-block-parent-selector .block-editor-block-parent-selector__button {
+:where(.ubuntupress-admin--dark) .components-popover.block-editor-block-list__block-popover .block-editor-block-parent-selector .block-editor-block-parent-selector__button {
 	border: 1px solid #6b6b6b;
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .show-icon-labels .components-popover.block-editor-block-list__block-popover .block-editor-block-mover__move-button-container,
-:where(.wpskin-admin--dark) .show-icon-labels .components-popover.block-editor-block-list__block-popover .block-editor-block-toolbar__block-controls .block-editor-block-mover {
+:where(.ubuntupress-admin--dark) .show-icon-labels .components-popover.block-editor-block-list__block-popover .block-editor-block-mover__move-button-container,
+:where(.ubuntupress-admin--dark) .show-icon-labels .components-popover.block-editor-block-list__block-popover .block-editor-block-toolbar__block-controls .block-editor-block-mover {
 	border-left: 1px solid #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-lock-modal__checklist-item .block-editor-block-lock-modal__lock-icon {
+:where(.ubuntupress-admin--dark) .block-editor-block-lock-modal__checklist-item .block-editor-block-lock-modal__lock-icon {
 	fill: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-lock-modal__checklist-item:hover {
+:where(.ubuntupress-admin--dark) .block-editor-block-lock-modal__checklist-item:hover {
 	background-color: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-lock-modal__template-lock {
+:where(.ubuntupress-admin--dark) .block-editor-block-lock-modal__template-lock {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .show-icon-labels .block-editor-block-toolbar__block-controls .block-editor-block-lock-toolbar {
+:where(.ubuntupress-admin--dark) .show-icon-labels .block-editor-block-toolbar__block-controls .block-editor-block-lock-toolbar {
 	border-left: 1px solid #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-allowed-blocks-modal__actions {
+:where(.ubuntupress-admin--dark) .block-editor-block-allowed-blocks-modal__actions {
 	background-color: #1e1e1e;
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-breadcrumb__button.block-editor-block-breadcrumb__button,
-:where(.wpskin-admin--dark) .block-editor-block-breadcrumb__current {
+:where(.ubuntupress-admin--dark) .block-editor-block-breadcrumb__button.block-editor-block-breadcrumb__button,
+:where(.ubuntupress-admin--dark) .block-editor-block-breadcrumb__current {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-card {
+:where(.ubuntupress-admin--dark) .block-editor-block-card {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-compare__wrapper .block-editor-block-compare__converted {
+:where(.ubuntupress-admin--dark) .block-editor-block-compare__wrapper .block-editor-block-compare__converted {
 	border-left: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-compare__wrapper .block-editor-block-compare__html {
+:where(.ubuntupress-admin--dark) .block-editor-block-compare__wrapper .block-editor-block-compare__html {
 	color: #e6e6e6;
 	border-bottom: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-draggable-chip {
+:where(.ubuntupress-admin--dark) .block-editor-block-draggable-chip {
 	background-color: #454545;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-draggable-chip__disabled.block-editor-block-draggable-chip__disabled .block-editor-block-draggable-chip__disabled-icon {
+:where(.ubuntupress-admin--dark) .block-editor-block-draggable-chip__disabled.block-editor-block-draggable-chip__disabled .block-editor-block-draggable-chip__disabled-icon {
 	box-shadow: inset 0 0 0 1.5px #1e1e1e;
 	background: transparent linear-gradient(-45deg, transparent 47.5%, #1e1e1e 47.5%, #1e1e1e 52.5%, transparent 52.5%);
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-manager__category-title {
+:where(.ubuntupress-admin--dark) .block-editor-block-manager__category-title {
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-manager__category-title,
-:where(.wpskin-admin--dark) .block-editor-block-manager__checklist-item {
+:where(.ubuntupress-admin--dark) .block-editor-block-manager__category-title,
+:where(.ubuntupress-admin--dark) .block-editor-block-manager__checklist-item {
 	border-bottom: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-manager__checklist-item .block-editor-block-icon {
+:where(.ubuntupress-admin--dark) .block-editor-block-manager__checklist-item .block-editor-block-icon {
 	fill: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-manager__results {
+:where(.ubuntupress-admin--dark) .block-editor-block-manager__results {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-navigation__label {
+:where(.ubuntupress-admin--dark) .block-editor-block-navigation__label {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-patterns-list__item.is-selected .block-editor-block-preview__container::after {
+:where(.ubuntupress-admin--dark) .block-editor-block-patterns-list__item.is-selected .block-editor-block-preview__container::after {
 	outline-color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .block-editor-patterns__grid-pagination-wrapper .block-editor-patterns__grid-pagination {
+:where(.ubuntupress-admin--dark) .block-editor-patterns__grid-pagination-wrapper .block-editor-patterns__grid-pagination {
 	border-top: 1px solid #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-styles__variants button.components-button.block-editor-block-styles__item {
+:where(.ubuntupress-admin--dark) .block-editor-block-styles__variants button.components-button.block-editor-block-styles__item {
 	color: #e6e6e6;
 	border-color: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-styles__variants button.components-button.block-editor-block-styles__item:hover {
+:where(.ubuntupress-admin--dark) .block-editor-block-styles__variants button.components-button.block-editor-block-styles__item:hover {
 	box-shadow: inset 0 0 0 1px #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-styles__variants button.components-button.block-editor-block-styles__item.is-active,
-:where(.wpskin-admin--dark) .block-editor-block-styles__variants button.components-button.block-editor-block-styles__item.is-active:hover {
+:where(.ubuntupress-admin--dark) .block-editor-block-styles__variants button.components-button.block-editor-block-styles__item.is-active,
+:where(.ubuntupress-admin--dark) .block-editor-block-styles__variants button.components-button.block-editor-block-styles__item.is-active:hover {
 	background-color: #454545;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-switcher__popover-preview .components-popover__content {
+:where(.ubuntupress-admin--dark) .block-editor-block-switcher__popover-preview .components-popover__content {
 	border: 1px solid #6b6b6b;
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-switcher__no-transforms {
+:where(.ubuntupress-admin--dark) .block-editor-block-switcher__no-transforms {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-pattern-setup.view-mode-grid .block-editor-block-pattern-setup__container .block-editor-block-pattern-setup-list__list-item .block-editor-block-preview__container {
+:where(.ubuntupress-admin--dark) .block-editor-block-pattern-setup.view-mode-grid .block-editor-block-pattern-setup__container .block-editor-block-pattern-setup-list__list-item .block-editor-block-preview__container {
 	border: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-pattern-setup .block-editor-block-pattern-setup__toolbar {
+:where(.ubuntupress-admin--dark) .block-editor-block-pattern-setup .block-editor-block-pattern-setup__toolbar {
 	color: #e6e6e6;
 	background-color: #1e1e1e;
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-pattern-setup .block-editor-block-pattern-setup__container .carousel-container .pattern-slide {
+:where(.ubuntupress-admin--dark) .block-editor-block-pattern-setup .block-editor-block-pattern-setup__container .carousel-container .pattern-slide {
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .block-editor-panel-color-gradient-settings__color-indicator {
+:where(.ubuntupress-admin--dark) .block-editor-panel-color-gradient-settings__color-indicator {
 	background: linear-gradient(-45deg, transparent 48%, #3d3d3d 48%, #3d3d3d 52%, transparent 52%);
 }
 
-:where(.wpskin-admin--dark) .block-editor-color-gradient-item {
+:where(.ubuntupress-admin--dark) .block-editor-color-gradient-item {
 	border-left: 1px solid #3d3d3d;
 	border-right: 1px solid #3d3d3d;
 	border-bottom: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-color-gradient-item:nth-child(1 of .block-editor-color-gradient-item) {
+:where(.ubuntupress-admin--dark) .block-editor-color-gradient-item:nth-child(1 of .block-editor-color-gradient-item) {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-tools-panel-color-gradient-settings__dropdown > button.is-open {
+:where(.ubuntupress-admin--dark) .block-editor-tools-panel-color-gradient-settings__dropdown > button.is-open {
 	background: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .block-editor-date-format-picker__custom-format-select-control__custom-option {
+:where(.ubuntupress-admin--dark) .block-editor-date-format-picker__custom-format-select-control__custom-option {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-duotone-control__unset-indicator {
+:where(.ubuntupress-admin--dark) .block-editor-duotone-control__unset-indicator {
 	background: linear-gradient(-45deg, transparent 48%, #3d3d3d 48%, #3d3d3d 52%, transparent 52%);
 }
 
-:where(.wpskin-admin--dark) .components-font-appearance-control [role=option] {
+:where(.ubuntupress-admin--dark) .components-font-appearance-control [role=option] {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .block-editor-global-styles-filters-panel__dropdown,
-:where(.wpskin-admin--dark) .block-editor-global-styles__shadow-dropdown {
+:where(.ubuntupress-admin--dark) .block-editor-global-styles-filters-panel__dropdown,
+:where(.ubuntupress-admin--dark) .block-editor-global-styles__shadow-dropdown {
 	border: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-global-styles-filters-panel__dropdown-toggle.is-open,
-:where(.wpskin-admin--dark) .block-editor-global-styles__shadow-dropdown-toggle.is-open {
+:where(.ubuntupress-admin--dark) .block-editor-global-styles-filters-panel__dropdown-toggle.is-open,
+:where(.ubuntupress-admin--dark) .block-editor-global-styles__shadow-dropdown-toggle.is-open {
 	background-color: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .block-editor-global-styles__shadow-indicator {
+:where(.ubuntupress-admin--dark) .block-editor-global-styles__shadow-indicator {
 	color: #e0e0e0;
 	border: #3d3d3d 1px solid;
 }
 
-:where(.wpskin-admin--dark) .block-editor-global-styles__shadow-indicator.unset {
+:where(.ubuntupress-admin--dark) .block-editor-global-styles__shadow-indicator.unset {
 	background: linear-gradient(-45deg, transparent 48%, #3d3d3d 48%, #3d3d3d 52%, transparent 52%);
 }
 
 @media (min-width: 600px) {
-:where(.wpskin-admin--dark) .show-icon-labels .block-editor-grid-item-mover__move-horizontal-button-container::before {
+:where(.ubuntupress-admin--dark) .show-icon-labels .block-editor-grid-item-mover__move-horizontal-button-container::before {
 	background: #3d3d3d;
 }
 }
 
 @media (min-width: 782px) {
-:where(.wpskin-admin--dark) .show-icon-labels .block-editor-grid-item-mover__move-horizontal-button-container::before {
+:where(.ubuntupress-admin--dark) .show-icon-labels .block-editor-grid-item-mover__move-horizontal-button-container::before {
 	background: #454545;
 }
 }
 
 @media (min-width: 600px) {
-:where(.wpskin-admin--dark) .show-icon-labels .block-editor-grid-item-mover__move-vertical-button-container::before {
+:where(.ubuntupress-admin--dark) .show-icon-labels .block-editor-grid-item-mover__move-vertical-button-container::before {
 	background: #3d3d3d;
 }
 }
 
 @media (min-width: 782px) {
-:where(.wpskin-admin--dark) .show-icon-labels .block-editor-grid-item-mover__move-vertical-button-container::before {
+:where(.ubuntupress-admin--dark) .show-icon-labels .block-editor-grid-item-mover__move-vertical-button-container::before {
 	background: #454545;
 }
 }
 
-:where(.wpskin-admin--dark) .show-icon-labels .editor-collapsible-block-toolbar .block-editor-grid-item-mover__move-horizontal-button-container::before {
+:where(.ubuntupress-admin--dark) .show-icon-labels .editor-collapsible-block-toolbar .block-editor-grid-item-mover__move-horizontal-button-container::before {
 	background: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .show-icon-labels .editor-collapsible-block-toolbar .block-editor-grid-item-mover__move-vertical-button-container::before {
+:where(.ubuntupress-admin--dark) .show-icon-labels .editor-collapsible-block-toolbar .block-editor-grid-item-mover__move-vertical-button-container::before {
 	background: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .components-button.block-editor-block-types-list__item {
+:where(.ubuntupress-admin--dark) .components-button.block-editor-block-types-list__item {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-types-list__item-icon {
+:where(.ubuntupress-admin--dark) .block-editor-block-types-list__item-icon {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .block-editor-link-control__help {
+:where(.ubuntupress-admin--dark) .block-editor-link-control__help {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .block-editor-link-control__field .components-base-control__label {
+:where(.ubuntupress-admin--dark) .block-editor-link-control__field .components-base-control__label {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .block-editor-link-control__search-item .components-menu-item__shortcut {
+:where(.ubuntupress-admin--dark) .block-editor-link-control__search-item .components-menu-item__shortcut {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .block-editor-link-control__search-item[aria-selected] {
+:where(.ubuntupress-admin--dark) .block-editor-link-control__search-item[aria-selected] {
 	background: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .block-editor-link-control__preview .block-editor-link-control__link-information .block-editor-link-control__preview-info {
+:where(.ubuntupress-admin--dark) .block-editor-link-control__preview .block-editor-link-control__link-information .block-editor-link-control__preview-info {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .block-editor-link-control__preview .block-editor-link-control__preview-image,
-:where(.wpskin-admin--dark) .block-editor-link-control__preview .block-editor-link-control__preview-icon {
+:where(.ubuntupress-admin--dark) .block-editor-link-control__preview .block-editor-link-control__preview-image,
+:where(.ubuntupress-admin--dark) .block-editor-link-control__preview .block-editor-link-control__preview-icon {
 	background-color: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .block-editor-link-control__preview.is-fetching .block-editor-link-control__preview-icon::before {
+:where(.ubuntupress-admin--dark) .block-editor-link-control__preview.is-fetching .block-editor-link-control__preview-icon::before {
 	background-color: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .block-editor-link-control__setting .components-base-control__field .components-checkbox-control__label {
+:where(.ubuntupress-admin--dark) .block-editor-link-control__setting .components-base-control__field .components-checkbox-control__label {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .block-editor-link-control__tools .components-button.block-editor-link-control__drawer-toggle[aria-expanded=true] {
+:where(.ubuntupress-admin--dark) .block-editor-link-control__tools .components-button.block-editor-link-control__drawer-toggle[aria-expanded=true] {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .link-preview-button__title {
+:where(.ubuntupress-admin--dark) .link-preview-button__title {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .link-preview-button__hint {
+:where(.ubuntupress-admin--dark) .link-preview-button__hint {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .link-preview-button__icon {
+:where(.ubuntupress-admin--dark) .link-preview-button__icon {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .block-editor-list-view-leaf .block-editor-inserter__toggle {
+:where(.ubuntupress-admin--dark) .block-editor-list-view-leaf .block-editor-inserter__toggle {
 	background: #454545;
 }
 
-:where(.wpskin-admin--dark) .block-editor-list-view-leaf .block-editor-list-view-block-select-button__image:not(:only-child) {
+:where(.ubuntupress-admin--dark) .block-editor-list-view-leaf .block-editor-list-view-block-select-button__image:not(:only-child) {
 	box-shadow: 0 0 0 2px #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .list-view-appender .block-editor-inserter__toggle {
+:where(.ubuntupress-admin--dark) .list-view-appender .block-editor-inserter__toggle {
 	background-color: #454545;
 }
 
-:where(.wpskin-admin--dark) .block-editor-media-replace-flow__media-upload-menu:not(:empty) + .block-editor-media-flow__url-input {
+:where(.ubuntupress-admin--dark) .block-editor-media-replace-flow__media-upload-menu:not(:empty) + .block-editor-media-flow__url-input {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-media-replace-flow__options.is-variant-toolbar .block-editor-media-replace-flow__media-upload-menu:not(:empty) + .block-editor-media-flow__url-input {
+:where(.ubuntupress-admin--dark) .block-editor-media-replace-flow__options.is-variant-toolbar .block-editor-media-replace-flow__media-upload-menu:not(:empty) + .block-editor-media-flow__url-input {
 	border-top-color: #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .block-editor-responsive-block-control {
+:where(.ubuntupress-admin--dark) .block-editor-responsive-block-control {
 	border-bottom: 1px solid #4a4a4a;
 }
 
-:where(.wpskin-admin--dark) .block-editor-tabbed-sidebar {
+:where(.ubuntupress-admin--dark) .block-editor-tabbed-sidebar {
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .block-editor-tabbed-sidebar__tablist-and-close-button {
+:where(.ubuntupress-admin--dark) .block-editor-tabbed-sidebar__tablist-and-close-button {
 	border-bottom: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-tabbed-sidebar__close-button {
+:where(.ubuntupress-admin--dark) .block-editor-tabbed-sidebar__close-button {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .block-editor-url-input__suggestion {
+:where(.ubuntupress-admin--dark) .block-editor-url-input__suggestion {
 	color: #a7a7a7;
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .block-editor-url-input__suggestion:hover {
+:where(.ubuntupress-admin--dark) .block-editor-url-input__suggestion:hover {
 	background: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-url-input__button .block-editor-url-input__back::after {
+:where(.ubuntupress-admin--dark) .block-editor-url-input__button .block-editor-url-input__back::after {
 	background: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-url-input__button-modal {
+:where(.ubuntupress-admin--dark) .block-editor-url-input__button-modal {
 	border: 1px solid #3d3d3d;
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .block-editor-url-popover__additional-controls {
+:where(.ubuntupress-admin--dark) .block-editor-url-popover__additional-controls {
 	border-top: 1px solid #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .block-editor-url-popover__settings {
+:where(.ubuntupress-admin--dark) .block-editor-url-popover__settings {
 	border-top: 1px solid #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .block-editor-url-popover__expand-on-click .text p.description {
+:where(.ubuntupress-admin--dark) .block-editor-url-popover__expand-on-click .text p.description {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .block-editor-content-only-controls__link {
+:where(.ubuntupress-admin--dark) .block-editor-content-only-controls__link {
 	border-color: #4a4a4a;
 }
 
-:where(.wpskin-admin--dark) .block-editor-content-only-controls__media {
+:where(.ubuntupress-admin--dark) .block-editor-content-only-controls__media {
 	border-color: #4a4a4a;
 }
 
-:where(.wpskin-admin--dark) .block-editor-content-only-controls__media-placeholder {
+:where(.ubuntupress-admin--dark) .block-editor-content-only-controls__media-placeholder {
 	background: #1e1e1e linear-gradient(-45deg, transparent 48%, #3d3d3d 48%, #3d3d3d 52%, transparent 52%);
 }
 
-:where(.wpskin-admin--dark) .block-editor-content-only-controls__rich-text {
+:where(.ubuntupress-admin--dark) .block-editor-content-only-controls__rich-text {
 	background: #1e1e1e;
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .block-editor-content-only-controls__rich-text::-moz-placeholder {
+:where(.ubuntupress-admin--dark) .block-editor-content-only-controls__rich-text::-moz-placeholder {
 	color: color-mix(in srgb, #e6e6e6, transparent 38%);
 }
 
-:where(.wpskin-admin--dark) .block-editor-content-only-controls__rich-text::placeholder {
+:where(.ubuntupress-admin--dark) .block-editor-content-only-controls__rich-text::placeholder {
 	color: color-mix(in srgb, #e6e6e6, transparent 38%);
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-fields__container:first-of-type {
+:where(.ubuntupress-admin--dark) .block-editor-block-fields__container:first-of-type {
 	border-block-start: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-hooks__block-hooks .block-editor-hooks__block-hooks-helptext {
+:where(.ubuntupress-admin--dark) .block-editor-hooks__block-hooks .block-editor-hooks__block-hooks-helptext {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .block-editor-hooks__layout-constrained-helptext {
+:where(.ubuntupress-admin--dark) .block-editor-hooks__layout-constrained-helptext {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-toolbar .components-toolbar-group,
-:where(.wpskin-admin--dark) .block-editor-block-toolbar .components-toolbar {
+:where(.ubuntupress-admin--dark) .block-editor-block-toolbar .components-toolbar-group,
+:where(.ubuntupress-admin--dark) .block-editor-block-toolbar .components-toolbar {
 	border-right: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-toolbar .components-button.block-editor-block-toolbar__block-icon-button[aria-disabled=true] {
+:where(.ubuntupress-admin--dark) .block-editor-block-toolbar .components-button.block-editor-block-toolbar__block-icon-button[aria-disabled=true] {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-toolbar .components-button.block-editor-block-toolbar__block-icon-button[aria-disabled=true]:hover {
+:where(.ubuntupress-admin--dark) .block-editor-block-toolbar .components-button.block-editor-block-toolbar__block-icon-button[aria-disabled=true]:hover {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-contextual-toolbar {
+:where(.ubuntupress-admin--dark) .block-editor-block-contextual-toolbar {
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-contextual-toolbar .block-editor-block-toolbar::-webkit-scrollbar-thumb {
+:where(.ubuntupress-admin--dark) .block-editor-block-contextual-toolbar .block-editor-block-toolbar::-webkit-scrollbar-thumb {
 	background-color: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-contextual-toolbar .block-editor-block-parent-selector::after {
+:where(.ubuntupress-admin--dark) .block-editor-block-contextual-toolbar .block-editor-block-parent-selector::after {
 	background-color: #454545;
 }
 
 @media (min-width: 600px) {
-:where(.wpskin-admin--dark) .show-icon-labels .block-editor-block-mover:not(.is-horizontal) .block-editor-block-mover__move-button-container::before {
+:where(.ubuntupress-admin--dark) .show-icon-labels .block-editor-block-mover:not(.is-horizontal) .block-editor-block-mover__move-button-container::before {
 	background: #3d3d3d;
 }
 }
 
 @media (min-width: 782px) {
-:where(.wpskin-admin--dark) .show-icon-labels .block-editor-block-mover:not(.is-horizontal) .block-editor-block-mover__move-button-container::before {
+:where(.ubuntupress-admin--dark) .show-icon-labels .block-editor-block-mover:not(.is-horizontal) .block-editor-block-mover__move-button-container::before {
 	background: #454545;
 }
 }
 
-:where(.wpskin-admin--dark) .show-icon-labels .block-editor-block-toolbar__block-controls .block-editor-block-mover {
+:where(.ubuntupress-admin--dark) .show-icon-labels .block-editor-block-toolbar__block-controls .block-editor-block-mover {
 	border-left: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__popover.is-quick .components-popover__content .block-editor-inserter__quick-inserter > * {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__popover.is-quick .components-popover__content .block-editor-inserter__quick-inserter > * {
 	border-left: 1px solid #4a4a4a;
 	border-right: 1px solid #4a4a4a;
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__popover.is-quick .components-popover__content .block-editor-inserter__quick-inserter > *:first-child {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__popover.is-quick .components-popover__content .block-editor-inserter__quick-inserter > *:first-child {
 	border-top: 1px solid #4a4a4a;
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__popover.is-quick .components-popover__content .block-editor-inserter__quick-inserter > *:last-child {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__popover.is-quick .components-popover__content .block-editor-inserter__quick-inserter > *:last-child {
 	border-bottom: 1px solid #4a4a4a;
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__popover.is-quick .components-popover__content .block-editor-inserter__quick-inserter > *.components-button {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__popover.is-quick .components-popover__content .block-editor-inserter__quick-inserter > *.components-button {
 	border: 1px solid #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__menu.is-bottom::after {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__menu.is-bottom::after {
 	border-bottom-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__search {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__search {
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__search.is-scrolled {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__search.is-scrolled {
 	border-bottom-color: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__panel-title,
-:where(.wpskin-admin--dark) .block-editor-inserter__panel-title button {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__panel-title,
+:where(.ubuntupress-admin--dark) .block-editor-inserter__panel-title button {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__insertable-blocks-at-selection {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__insertable-blocks-at-selection {
 	border-bottom: 1px solid #3d3d3d;
 }
 
 @media (min-width: 782px) {
-:where(.wpskin-admin--dark) .block-editor-inserter__category-panel {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__category-panel {
 	border-left: 1px solid #3d3d3d;
 	background: #2a2a2a;
 	border-top: 1px solid #3d3d3d;
 }
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__patterns-filter-help {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__patterns-filter-help {
 	border-top: 1px solid #3d3d3d;
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__preview-content {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__preview-content {
 	background: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__preview-content-missing {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__preview-content-missing {
 	color: #a7a7a7;
 	background: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__tips {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__tips {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__quick-inserter-separator {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__quick-inserter-separator {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__quick-inserter-expand.components-button {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__quick-inserter-expand.components-button {
 	background: #454545;
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__media-list__list-item .block-editor-inserter__media-list__item-preview-options > button {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__media-list__list-item .block-editor-inserter__media-list__item-preview-options > button {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .block-editor-block-visibility-modal__description {
+:where(.ubuntupress-admin--dark) .block-editor-block-visibility-modal__description {
 	color: #a7a7a7;
 }
 
 /* editor */
-:where(.wpskin-admin--dark) .interface-complementary-area-header {
+:where(.ubuntupress-admin--dark) .interface-complementary-area-header {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .interface-complementary-area {
+:where(.ubuntupress-admin--dark) .interface-complementary-area {
 	background: #1e1e1e;
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .interface-complementary-area h2 {
+:where(.ubuntupress-admin--dark) .interface-complementary-area h2 {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .interface-complementary-area h3 {
+:where(.ubuntupress-admin--dark) .interface-complementary-area h3 {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .interface-complementary-area hr {
+:where(.ubuntupress-admin--dark) .interface-complementary-area hr {
 	border-bottom: 1px solid #2f2f2f;
 }
 
-:where(.wpskin-admin--dark) .interface-interface-skeleton__secondary-sidebar,
-:where(.wpskin-admin--dark) .interface-interface-skeleton__sidebar {
+:where(.ubuntupress-admin--dark) .interface-interface-skeleton__secondary-sidebar,
+:where(.ubuntupress-admin--dark) .interface-interface-skeleton__sidebar {
 	background: #1e1e1e;
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .interface-interface-skeleton__sidebar {
+:where(.ubuntupress-admin--dark) .interface-interface-skeleton__sidebar {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .interface-interface-skeleton__secondary-sidebar {
+:where(.ubuntupress-admin--dark) .interface-interface-skeleton__secondary-sidebar {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .interface-interface-skeleton__header {
+:where(.ubuntupress-admin--dark) .interface-interface-skeleton__header {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .interface-interface-skeleton__footer {
+:where(.ubuntupress-admin--dark) .interface-interface-skeleton__footer {
 	border-top: 1px solid #3d3d3d;
 	color: #e6e6e6;
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .interface-interface-skeleton__footer .block-editor-block-breadcrumb {
+:where(.ubuntupress-admin--dark) .interface-interface-skeleton__footer .block-editor-block-breadcrumb {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .interface-interface-skeleton__actions {
+:where(.ubuntupress-admin--dark) .interface-interface-skeleton__actions {
 	color: #e6e6e6;
 	background: #1e1e1e;
 }
 
 @media (min-width: 782px) {
-:where(.wpskin-admin--dark) .is-entity-save-view-open .interface-interface-skeleton__actions:focus,
-:where(.wpskin-admin--dark) .is-entity-save-view-open .interface-interface-skeleton__actions:focus-within {
+:where(.ubuntupress-admin--dark) .is-entity-save-view-open .interface-interface-skeleton__actions:focus,
+:where(.ubuntupress-admin--dark) .is-entity-save-view-open .interface-interface-skeleton__actions:focus-within {
 	border-left: 1px solid #3d3d3d;
 }
 }
 
-:where(.wpskin-admin--dark) .font-library__footer {
+:where(.ubuntupress-admin--dark) .font-library__footer {
 	border-top: 1px solid #3d3d3d;
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .font-library__font-card {
+:where(.ubuntupress-admin--dark) .font-library__font-card {
 	border: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .font-library__font-card:hover {
+:where(.ubuntupress-admin--dark) .font-library__font-card:hover {
 	background-color: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .font-library__font-card .font-library__font-card__count {
+:where(.ubuntupress-admin--dark) .font-library__font-card .font-library__font-card__count {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .font-library-modal__tablist-container {
+:where(.ubuntupress-admin--dark) .font-library-modal__tablist-container {
 	border-bottom: 1px solid #3d3d3d;
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) button.font-library__upload-area {
+:where(.ubuntupress-admin--dark) button.font-library__upload-area {
 	background-color: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .font-library__local-fonts .font-library__upload-area__text {
+:where(.ubuntupress-admin--dark) .font-library__local-fonts .font-library__upload-area__text {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui-screen-revisions__revision-item::before {
+:where(.ubuntupress-admin--dark) .global-styles-ui-screen-revisions__revision-item::before {
 	background: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui-screen-revisions__revision-item[aria-selected=true] .global-styles-ui-screen-revisions__changes > li,
-:where(.wpskin-admin--dark) .global-styles-ui-screen-revisions__revision-item[aria-selected=true] .global-styles-ui-screen-revisions__meta {
+:where(.ubuntupress-admin--dark) .global-styles-ui-screen-revisions__revision-item[aria-selected=true] .global-styles-ui-screen-revisions__changes > li,
+:where(.ubuntupress-admin--dark) .global-styles-ui-screen-revisions__revision-item[aria-selected=true] .global-styles-ui-screen-revisions__meta {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui-screen-revisions__revision-item::after {
+:where(.ubuntupress-admin--dark) .global-styles-ui-screen-revisions__revision-item::after {
 	border: 0.5px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui-screen-revisions__changes,
-:where(.wpskin-admin--dark) .global-styles-ui-screen-revisions__meta {
+:where(.ubuntupress-admin--dark) .global-styles-ui-screen-revisions__changes,
+:where(.ubuntupress-admin--dark) .global-styles-ui-screen-revisions__meta {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui-screen-revisions__pagination.global-styles-ui-screen-revisions__pagination .components-button.is-tertiary {
+:where(.ubuntupress-admin--dark) .global-styles-ui-screen-revisions__pagination.global-styles-ui-screen-revisions__pagination .components-button.is-tertiary {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui-screen-revisions__footer {
+:where(.ubuntupress-admin--dark) .global-styles-ui-screen-revisions__footer {
 	background: #1e1e1e;
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui-variations_item.is-active .global-styles-ui-variations_item-preview,
-:where(.wpskin-admin--dark) .global-styles-ui-variations_item:focus-visible .global-styles-ui-variations_item-preview {
+:where(.ubuntupress-admin--dark) .global-styles-ui-variations_item.is-active .global-styles-ui-variations_item-preview,
+:where(.ubuntupress-admin--dark) .global-styles-ui-variations_item:focus-visible .global-styles-ui-variations_item-preview {
 	outline-color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui-typography-preview {
+:where(.ubuntupress-admin--dark) .global-styles-ui-typography-preview {
 	background: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui-font-size__item-value {
+:where(.ubuntupress-admin--dark) .global-styles-ui-font-size__item-value {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui-screen-typography__font-variants-count {
+:where(.ubuntupress-admin--dark) .global-styles-ui-screen-typography__font-variants-count {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui-section-title {
+:where(.ubuntupress-admin--dark) .global-styles-ui-section-title {
 	color: #e0e0e0;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui__block-preview-panel {
+:where(.ubuntupress-admin--dark) .global-styles-ui__block-preview-panel {
 	border: #3d3d3d 1px solid;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui__shadow-preview-panel {
+:where(.ubuntupress-admin--dark) .global-styles-ui__shadow-preview-panel {
 	border: #3d3d3d 1px solid;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui__shadow-preview-panel .global-styles-ui__shadow-preview-block {
+:where(.ubuntupress-admin--dark) .global-styles-ui__shadow-preview-panel .global-styles-ui__shadow-preview-block {
 	border: #3d3d3d 1px solid;
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui__shadow-editor__dropdown-toggle.is-open {
+:where(.ubuntupress-admin--dark) .global-styles-ui__shadow-editor__dropdown-toggle.is-open {
 	background: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui-screen-variations {
+:where(.ubuntupress-admin--dark) .global-styles-ui-screen-variations {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .global-styles-ui-color-palette__tablist-container {
+:where(.ubuntupress-admin--dark) .global-styles-ui-color-palette__tablist-container {
 	border-bottom: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .dataviews__view-actions--infinite-scroll {
+:where(.ubuntupress-admin--dark) .dataviews__view-actions--infinite-scroll {
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-single-selection {
+:where(.ubuntupress-admin--dark) .dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-single-selection {
 	border: 1px solid #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-single-selection:checked::before {
+:where(.ubuntupress-admin--dark) .dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-single-selection:checked::before {
 	background-color: #1e1e1e;
 	border: 4px solid #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-multi-selection {
+:where(.ubuntupress-admin--dark) .dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-multi-selection {
 	border: 1px solid #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-multi-selection[aria-disabled=true],
-:where(.wpskin-admin--dark) .dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-multi-selection:disabled {
+:where(.ubuntupress-admin--dark) .dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-multi-selection[aria-disabled=true],
+:where(.ubuntupress-admin--dark) .dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-multi-selection:disabled {
 	background: #2a2a2a;
 	border-color: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .fields-create-template-part-modal__area-radio-wrapper {
+:where(.ubuntupress-admin--dark) .fields-create-template-part-modal__area-radio-wrapper {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .fields-create-template-part-modal__area-radio-description {
+:where(.ubuntupress-admin--dark) .fields-create-template-part-modal__area-radio-description {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) fieldset.fields__media-edit .components-base-control__label {
+:where(.ubuntupress-admin--dark) fieldset.fields__media-edit .components-base-control__label {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) fieldset.fields__media-edit .fields__media-edit-compact-group .fields__media-edit-compact:not(:last-child) {
+:where(.ubuntupress-admin--dark) fieldset.fields__media-edit .fields__media-edit-compact-group .fields__media-edit-compact:not(:last-child) {
 	border-bottom: 1px solid #2f2f2f;
 }
 
-:where(.wpskin-admin--dark) fieldset.fields__media-edit .fields__media-edit-compact .fields__media-edit-compact-movers {
+:where(.ubuntupress-admin--dark) fieldset.fields__media-edit .fields__media-edit-compact .fields__media-edit-compact-movers {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) fieldset.fields__media-edit .fields__media-edit-expanded .fields__media-edit-expanded-actions {
+:where(.ubuntupress-admin--dark) fieldset.fields__media-edit .fields__media-edit-expanded .fields__media-edit-expanded-actions {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .fields-controls__featured-image-placeholder {
+:where(.ubuntupress-admin--dark) .fields-controls__featured-image-placeholder {
 	background: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .media-editor-preview__file-info {
+:where(.ubuntupress-admin--dark) .media-editor-preview__file-info {
 	background: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .media-editor-preview__mime-type {
+:where(.ubuntupress-admin--dark) .media-editor-preview__mime-type {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .media-editor-preview--error,
-:where(.wpskin-admin--dark) .media-editor-preview--empty {
+:where(.ubuntupress-admin--dark) .media-editor-preview--error,
+:where(.ubuntupress-admin--dark) .media-editor-preview--empty {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .wp-media-editor-image-editor__dimensions-tooltip {
+:where(.ubuntupress-admin--dark) .wp-media-editor-image-editor__dimensions-tooltip {
 	background: #1e1e1e;
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .wp-media-editor-image-editor__stencil-rect {
+:where(.ubuntupress-admin--dark) .wp-media-editor-image-editor__stencil-rect {
 	border: 1px solid #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .wp-media-editor-image-editor__handle {
+:where(.ubuntupress-admin--dark) .wp-media-editor-image-editor__handle {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .media-editor .media-editor__canvas-toolbar {
+:where(.ubuntupress-admin--dark) .media-editor .media-editor__canvas-toolbar {
 	background: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .media-editor .media-editor__canvas-area {
+:where(.ubuntupress-admin--dark) .media-editor .media-editor__canvas-area {
 	background: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .media-editor-modal.components-modal__frame .media-editor-modal__footer {
+:where(.ubuntupress-admin--dark) .media-editor-modal.components-modal__frame .media-editor-modal__footer {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .media-editor-canvas__error {
+:where(.ubuntupress-admin--dark) .media-editor-canvas__error {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .media-editor-keyboard-shortcuts-modal .media-editor-keyboard-shortcuts-modal__note {
+:where(.ubuntupress-admin--dark) .media-editor-keyboard-shortcuts-modal .media-editor-keyboard-shortcuts-modal__note {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .media-editor-keyboard-shortcuts-modal .media-editor-keyboard-shortcuts-modal__shortcut {
+:where(.ubuntupress-admin--dark) .media-editor-keyboard-shortcuts-modal .media-editor-keyboard-shortcuts-modal__shortcut {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .media-editor-keyboard-shortcuts-modal .media-editor-keyboard-shortcuts-modal__shortcut:last-child {
+:where(.ubuntupress-admin--dark) .media-editor-keyboard-shortcuts-modal .media-editor-keyboard-shortcuts-modal__shortcut:last-child {
 	border-bottom: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .rotation-ruler {
+:where(.ubuntupress-admin--dark) .rotation-ruler {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .rotation-ruler__active-label {
+:where(.ubuntupress-admin--dark) .rotation-ruler__active-label {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .rotation-ruler__active-label::before {
+:where(.ubuntupress-admin--dark) .rotation-ruler__active-label::before {
 	background: linear-gradient(to right, transparent 0, #3d3d3d 12px, #3d3d3d calc(100% - 12px), transparent 100%);
 }
 
-:where(.wpskin-admin--dark) .editor-autocompleters__user:not(.is-primary) .editor-autocompleters__user-slug {
+:where(.ubuntupress-admin--dark) .editor-autocompleters__user:not(.is-primary) .editor-autocompleters__user-slug {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .editor-collab-sidebar-panel__thread,
-:where(.wpskin-admin--dark) .editor-collab-sidebar-panel__add-note {
+:where(.ubuntupress-admin--dark) .editor-collab-sidebar-panel__thread,
+:where(.ubuntupress-admin--dark) .editor-collab-sidebar-panel__add-note {
 	border: 1px solid #3d3d3d;
 	background-color: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .editor-collab-sidebar-panel__thread.is-selected,
-:where(.wpskin-admin--dark) .editor-collab-sidebar-panel__add-note.is-selected {
+:where(.ubuntupress-admin--dark) .editor-collab-sidebar-panel__thread.is-selected,
+:where(.ubuntupress-admin--dark) .editor-collab-sidebar-panel__add-note.is-selected {
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .editor-collab-sidebar-panel__user-name {
+:where(.ubuntupress-admin--dark) .editor-collab-sidebar-panel__user-name {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .editor-collab-sidebar-panel__user-time {
+:where(.ubuntupress-admin--dark) .editor-collab-sidebar-panel__user-time {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .editor-collab-sidebar-panel__user-avatar {
+:where(.ubuntupress-admin--dark) .editor-collab-sidebar-panel__user-avatar {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .editor-collab-sidebar-panel__more-reply-separator::before,
-:where(.wpskin-admin--dark) .editor-collab-sidebar-panel__more-reply-separator::after,
-:where(.wpskin-admin--dark) .editor-collab-sidebar-panel__status-separator::before,
-:where(.wpskin-admin--dark) .editor-collab-sidebar-panel__status-separator::after {
+:where(.ubuntupress-admin--dark) .editor-collab-sidebar-panel__more-reply-separator::before,
+:where(.ubuntupress-admin--dark) .editor-collab-sidebar-panel__more-reply-separator::after,
+:where(.ubuntupress-admin--dark) .editor-collab-sidebar-panel__status-separator::before,
+:where(.ubuntupress-admin--dark) .editor-collab-sidebar-panel__status-separator::after {
 	background-color: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-collab-sidebar-panel__deleted-block-notice {
+:where(.ubuntupress-admin--dark) .editor-collab-sidebar-panel__deleted-block-notice {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .editor-collab-sidebar-panel__note-form [role=textbox] code {
+:where(.ubuntupress-admin--dark) .editor-collab-sidebar-panel__note-form [role=textbox] code {
 	background: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .editor-collab-sidebar-panel__skip-to-note,
-:where(.wpskin-admin--dark) .editor-collab-sidebar-panel__skip-to-block {
+:where(.ubuntupress-admin--dark) .editor-collab-sidebar-panel__skip-to-note,
+:where(.ubuntupress-admin--dark) .editor-collab-sidebar-panel__skip-to-block {
 	background: #1e1e1e !important;
 }
 
-:where(.wpskin-admin--dark) .editor-note-indicator__avatar {
+:where(.ubuntupress-admin--dark) .editor-note-indicator__avatar {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .editor-avatar__status-indicator {
+:where(.ubuntupress-admin--dark) .editor-avatar__status-indicator {
 	color: #e6e6e6;
 	fill: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .editor-avatar-group__overflow {
+:where(.ubuntupress-admin--dark) .editor-avatar-group__overflow {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .editor-collaborators-presence__list.components-popover .components-popover__content {
+:where(.ubuntupress-admin--dark) .editor-collaborators-presence__list.components-popover .components-popover__content {
 	border: 1px solid #3d3d3d;
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .editor-collaborators-presence__list.components-popover .editor-collaborators-presence__list-header-title span {
+:where(.ubuntupress-admin--dark) .editor-collaborators-presence__list.components-popover .editor-collaborators-presence__list-header-title span {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .editor-collaborators-presence__list.components-popover .editor-collaborators-presence__list-header-action button {
+:where(.ubuntupress-admin--dark) .editor-collaborators-presence__list.components-popover .editor-collaborators-presence__list-header-action button {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .editor-collaborators-presence__list.components-popover .editor-collaborators-presence__list-item-name {
+:where(.ubuntupress-admin--dark) .editor-collaborators-presence__list.components-popover .editor-collaborators-presence__list-item-name {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .editor-collaborators-presence {
+:where(.ubuntupress-admin--dark) .editor-collaborators-presence {
 	background: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .editor-collaborators-presence:hover {
+:where(.ubuntupress-admin--dark) .editor-collaborators-presence:hover {
 	background-color: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-collaborators-presence:has(.is-pressed) {
+:where(.ubuntupress-admin--dark) .editor-collaborators-presence:has(.is-pressed) {
 	background-color: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-collaborators-presence__button.editor-collaborators-presence__button.components-button {
+:where(.ubuntupress-admin--dark) .editor-collaborators-presence__button.editor-collaborators-presence__button.components-button {
 	color: #e0e0e0;
 }
 
-:where(.wpskin-admin--dark) .editor-collaborators-presence__button.editor-collaborators-presence__button.components-button:hover {
+:where(.ubuntupress-admin--dark) .editor-collaborators-presence__button.editor-collaborators-presence__button.components-button:hover {
 	color: #e0e0e0;
 }
 
-:where(.wpskin-admin--dark) .editor-collaborators-presence__button.editor-collaborators-presence__button.components-button.is-pressed,
-:where(.wpskin-admin--dark) .editor-collaborators-presence__button.editor-collaborators-presence__button.components-button.is-pressed:hover {
+:where(.ubuntupress-admin--dark) .editor-collaborators-presence__button.editor-collaborators-presence__button.components-button.is-pressed,
+:where(.ubuntupress-admin--dark) .editor-collaborators-presence__button.editor-collaborators-presence__button.components-button.is-pressed:hover {
 	color: #e0e0e0;
 }
 
-:where(.wpskin-admin--dark) .editor-collapsible-block-toolbar::after {
+:where(.ubuntupress-admin--dark) .editor-collapsible-block-toolbar::after {
 	background-color: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-collapsible-block-toolbar .components-toolbar-group::after,
-:where(.wpskin-admin--dark) .editor-collapsible-block-toolbar .components-toolbar::after {
+:where(.ubuntupress-admin--dark) .editor-collapsible-block-toolbar .components-toolbar-group::after,
+:where(.ubuntupress-admin--dark) .editor-collapsible-block-toolbar .components-toolbar::after {
 	background-color: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-block-visibility__disabled-blocks-count {
+:where(.ubuntupress-admin--dark) .editor-block-visibility__disabled-blocks-count {
 	border: 1px solid #3d3d3d;
 	box-shadow: -32px 0 0 0 #1e1e1e, 32px 0 0 0 #1e1e1e;
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .editor-document-bar {
+:where(.ubuntupress-admin--dark) .editor-document-bar {
 	background: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .editor-document-bar:hover {
+:where(.ubuntupress-admin--dark) .editor-document-bar:hover {
 	background-color: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-document-bar .components-button:hover {
+:where(.ubuntupress-admin--dark) .editor-document-bar .components-button:hover {
 	background: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-document-bar__title {
+:where(.ubuntupress-admin--dark) .editor-document-bar__title {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .editor-document-bar__post-type-label {
+:where(.ubuntupress-admin--dark) .editor-document-bar__post-type-label {
 	color: #e0e0e0;
 }
 
-:where(.wpskin-admin--dark) .editor-document-bar__back.components-button.has-icon.has-text {
+:where(.ubuntupress-admin--dark) .editor-document-bar__back.components-button.has-icon.has-text {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .editor-document-bar__back.components-button.has-icon.has-text:hover {
+:where(.ubuntupress-admin--dark) .editor-document-bar__back.components-button.has-icon.has-text:hover {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .document-outline__button {
+:where(.ubuntupress-admin--dark) .document-outline__button {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .document-outline__button[aria-disabled=true],
-:where(.wpskin-admin--dark) .document-outline__button:disabled {
+:where(.ubuntupress-admin--dark) .document-outline__button[aria-disabled=true],
+:where(.ubuntupress-admin--dark) .document-outline__button:disabled {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .document-outline__level {
+:where(.ubuntupress-admin--dark) .document-outline__level {
 	background: #3d3d3d;
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .editor-document-outline.has-no-headings {
+:where(.ubuntupress-admin--dark) .editor-document-outline.has-no-headings {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .editor-document-tools .editor-document-tools__left > .components-button.has-icon.is-pressed,
-:where(.wpskin-admin--dark) .editor-document-tools .editor-document-tools__left > .components-dropdown > .components-button.has-icon.is-pressed {
+:where(.ubuntupress-admin--dark) .editor-document-tools .editor-document-tools__left > .components-button.has-icon.is-pressed,
+:where(.ubuntupress-admin--dark) .editor-document-tools .editor-document-tools__left > .components-dropdown > .components-button.has-icon.is-pressed {
 	background: #454545;
 }
 
-:where(.wpskin-admin--dark) .entities-saved-states__panel-header {
+:where(.ubuntupress-admin--dark) .entities-saved-states__panel-header {
 	background: #1e1e1e;
 	border-bottom: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-error-boundary {
+:where(.ubuntupress-admin--dark) .editor-error-boundary {
 	border: 1px solid #6b6b6b;
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .editor-global-styles-sidebar__blocks-group {
+:where(.ubuntupress-admin--dark) .editor-global-styles-sidebar__blocks-group {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-header {
+:where(.ubuntupress-admin--dark) .editor-header {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .show-icon-labels .editor-header__toolbar .block-editor-block-mover::before {
+:where(.ubuntupress-admin--dark) .show-icon-labels .editor-header__toolbar .block-editor-block-mover::before {
 	background-color: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .show-icon-labels .editor-header__toolbar .block-editor-block-mover .block-editor-block-mover__move-button-container::before {
+:where(.ubuntupress-admin--dark) .show-icon-labels .editor-header__toolbar .block-editor-block-mover .block-editor-block-mover__move-button-container::before {
 	background: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .show-icon-labels.interface-pinned-items {
+:where(.ubuntupress-admin--dark) .show-icon-labels.interface-pinned-items {
 	border-bottom: 1px solid #4a4a4a;
 }
 
-:where(.wpskin-admin--dark) .editor-editor-interface.is-distraction-free .editor-header {
+:where(.ubuntupress-admin--dark) .editor-editor-interface.is-distraction-free .editor-header {
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .editor-keyboard-shortcut-help-modal__shortcut {
+:where(.ubuntupress-admin--dark) .editor-keyboard-shortcut-help-modal__shortcut {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-keyboard-shortcut-help-modal__shortcut:last-child {
+:where(.ubuntupress-admin--dark) .editor-keyboard-shortcut-help-modal__shortcut:last-child {
 	border-bottom: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-list-view-sidebar__outline {
+:where(.ubuntupress-admin--dark) .editor-list-view-sidebar__outline {
 	border-bottom: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-list-view-sidebar__outline > div > span {
+:where(.ubuntupress-admin--dark) .editor-list-view-sidebar__outline > div > span {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .editor-post-card-panel .editor-post-card-panel__description {
+:where(.ubuntupress-admin--dark) .editor-post-card-panel .editor-post-card-panel__description {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .editor-post-content-information {
+:where(.ubuntupress-admin--dark) .editor-post-content-information {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .editor-post-featured-image__toggle,
-:where(.wpskin-admin--dark) .editor-post-featured-image__preview {
+:where(.ubuntupress-admin--dark) .editor-post-featured-image__toggle,
+:where(.ubuntupress-admin--dark) .editor-post-featured-image__preview {
 	border-color: #4a4a4a;
 }
 
-:where(.wpskin-admin--dark) .editor-post-last-edited-panel {
+:where(.ubuntupress-admin--dark) .editor-post-last-edited-panel {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .editor-post-last-revision__title.components-button.has-icon:hover,
-:where(.wpskin-admin--dark) .editor-post-last-revision__title.components-button.has-icon:active {
+:where(.ubuntupress-admin--dark) .editor-post-last-revision__title.components-button.has-icon:hover,
+:where(.ubuntupress-admin--dark) .editor-post-last-revision__title.components-button.has-icon:active {
 	background: #2a2a2a;
 }
 
-:where(.wpskin-admin--dark) .editor-post-publish-panel__header {
+:where(.ubuntupress-admin--dark) .editor-post-publish-panel__header {
 	background: #1e1e1e;
 	border-bottom: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .components-site-home {
+:where(.ubuntupress-admin--dark) .components-site-home {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .editor-post-publish-panel__prepublish strong {
+:where(.ubuntupress-admin--dark) .editor-post-publish-panel__prepublish strong {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .editor-post-publish-panel__prepublish .components-panel__body {
+:where(.ubuntupress-admin--dark) .editor-post-publish-panel__prepublish .components-panel__body {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .post-publish-panel__postpublish .components-panel__body {
+:where(.ubuntupress-admin--dark) .post-publish-panel__postpublish .components-panel__body {
 	border-bottom: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .post-publish-panel__postpublish-post-address-container input[readonly] {
+:where(.ubuntupress-admin--dark) .post-publish-panel__postpublish-post-address-container input[readonly] {
 	background: #2a2a2a;
 	border-color: #4a4a4a;
 }
 
-:where(.wpskin-admin--dark) .editor-post-publish-panel {
+:where(.ubuntupress-admin--dark) .editor-post-publish-panel {
 	background: #1e1e1e;
 }
 
 @media (min-width: 782px) {
-:where(.wpskin-admin--dark) .editor-post-publish-panel {
+:where(.ubuntupress-admin--dark) .editor-post-publish-panel {
 	border-left: 1px solid #3d3d3d;
 }
 }
 
-:where(.wpskin-admin--dark) .editor-revisions-header__no-revisions {
+:where(.ubuntupress-admin--dark) .editor-revisions-header__no-revisions {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .revision-diff-markers .revision-diff-marker:focus {
+:where(.ubuntupress-admin--dark) .revision-diff-markers .revision-diff-marker:focus {
 	outline: 2px solid #6b6b6b;
 }
 
-:where(.wpskin-admin--dark) .editor-post-saved-state {
+:where(.ubuntupress-admin--dark) .editor-post-saved-state {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .editor-post-saved-state.is-saving[aria-disabled=true],
-:where(.wpskin-admin--dark) .editor-post-saved-state.is-saving[aria-disabled=true]:hover,
-:where(.wpskin-admin--dark) .editor-post-saved-state.is-saved[aria-disabled=true],
-:where(.wpskin-admin--dark) .editor-post-saved-state.is-saved[aria-disabled=true]:hover {
+:where(.ubuntupress-admin--dark) .editor-post-saved-state.is-saving[aria-disabled=true],
+:where(.ubuntupress-admin--dark) .editor-post-saved-state.is-saving[aria-disabled=true]:hover,
+:where(.ubuntupress-admin--dark) .editor-post-saved-state.is-saved[aria-disabled=true],
+:where(.ubuntupress-admin--dark) .editor-post-saved-state.is-saved[aria-disabled=true]:hover {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .editor-change-status__password-fieldset,
-:where(.wpskin-admin--dark) .editor-change-status__publish-date-wrapper {
+:where(.ubuntupress-admin--dark) .editor-change-status__password-fieldset,
+:where(.ubuntupress-admin--dark) .editor-change-status__publish-date-wrapper {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-post-sticky__checkbox-control {
+:where(.ubuntupress-admin--dark) .editor-post-sticky__checkbox-control {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-sync-connection-error-modal__retry-countdown {
+:where(.ubuntupress-admin--dark) .editor-sync-connection-error-modal__retry-countdown {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .editor-post-template__swap-template-modal .editor-post-template__swap-template-search {
+:where(.ubuntupress-admin--dark) .editor-post-template__swap-template-modal .editor-post-template__swap-template-search {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .editor-layout__toggle-publish-panel,
-:where(.wpskin-admin--dark) .editor-layout__toggle-sidebar-panel,
-:where(.wpskin-admin--dark) .editor-layout__toggle-entities-saved-states-panel {
+:where(.ubuntupress-admin--dark) .editor-layout__toggle-publish-panel,
+:where(.ubuntupress-admin--dark) .editor-layout__toggle-sidebar-panel,
+:where(.ubuntupress-admin--dark) .editor-layout__toggle-entities-saved-states-panel {
 	background-color: #1e1e1e;
 	border: 1px dotted #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-start-page-options__modal .editor-start-page-options__modal__actions {
+:where(.ubuntupress-admin--dark) .editor-start-page-options__modal .editor-start-page-options__modal__actions {
 	background-color: #1e1e1e;
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-start-template-options__modal .editor-start-template-options__modal__actions {
+:where(.ubuntupress-admin--dark) .editor-start-template-options__modal .editor-start-template-options__modal__actions {
 	background-color: #1e1e1e;
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-sidebar__revisions-block-message {
+:where(.ubuntupress-admin--dark) .editor-sidebar__revisions-block-message {
 	color: #a7a7a7;
 }
 
-:where(.wpskin-admin--dark) .fields-controls__password {
+:where(.ubuntupress-admin--dark) .fields-controls__password {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .editor-style-book__tablist-container {
+:where(.ubuntupress-admin--dark) .editor-style-book__tablist-container {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .editor-styles-canvas__section {
+:where(.ubuntupress-admin--dark) .editor-styles-canvas__section {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .editor-styles-canvas__close-button {
+:where(.ubuntupress-admin--dark) .editor-styles-canvas__close-button {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .table-of-contents__count {
+:where(.ubuntupress-admin--dark) .table-of-contents__count {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .table-of-contents__number,
-:where(.wpskin-admin--dark) .table-of-contents__popover .word-count {
+:where(.ubuntupress-admin--dark) .table-of-contents__number,
+:where(.ubuntupress-admin--dark) .table-of-contents__popover .word-count {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .editor-text-editor {
+:where(.ubuntupress-admin--dark) .editor-text-editor {
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .editor-text-editor__toolbar h2 {
+:where(.ubuntupress-admin--dark) .editor-text-editor__toolbar h2 {
 	color: #e6e6e6;
 }
 
-:where(.wpskin-admin--dark) .editor-push-changes-to-global-styles-modal__value {
+:where(.ubuntupress-admin--dark) .editor-push-changes-to-global-styles-modal__value {
 	color: #e6e6e6;
 }
 
 /* edit-post */
-:where(.wpskin-admin--dark) .edit-post-meta-boxes-main {
+:where(.ubuntupress-admin--dark) .edit-post-meta-boxes-main {
 	background-color: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .edit-post-meta-boxes-main__presenter {
+:where(.ubuntupress-admin--dark) .edit-post-meta-boxes-main__presenter {
 	box-shadow: 0 1px #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .edit-post-meta-boxes-main__presenter > button[role=separator]::before {
+:where(.ubuntupress-admin--dark) .edit-post-meta-boxes-main__presenter > button[role=separator]::before {
 	background-color: #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .edit-post-meta-boxes-area .postbox-header {
+:where(.ubuntupress-admin--dark) .edit-post-meta-boxes-area .postbox-header {
 	border-top: 1px solid #3d3d3d;
 }
 
-body:where(.wpskin-admin--dark).js.block-editor-page {
+body:where(.ubuntupress-admin--dark).js.block-editor-page {
 	background: #1e1e1e;
 }
 
-body:where(.wpskin-admin--dark).js.block-editor-page ul#adminmenu a.wp-has-current-submenu::after,
-body:where(.wpskin-admin--dark).js.block-editor-page ul#adminmenu > li.current > a.current::after {
+body:where(.ubuntupress-admin--dark).js.block-editor-page ul#adminmenu a.wp-has-current-submenu::after,
+body:where(.ubuntupress-admin--dark).js.block-editor-page ul#adminmenu > li.current > a.current::after {
 	border-right-color: #1e1e1e;
 }
 
 /* customize-widgets */
-:where(.wpskin-admin--dark) #customize-theme-controls .customize-pane-child.accordion-section-content.customize-widgets-layout__inspector {
+:where(.ubuntupress-admin--dark) #customize-theme-controls .customize-pane-child.accordion-section-content.customize-widgets-layout__inspector {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .customize-widgets-header {
+:where(.ubuntupress-admin--dark) .customize-widgets-header {
 	background: #2a2a2a;
 	border-bottom: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .customize-widgets-header-toolbar .customize-widgets-header-toolbar__inserter-toggle.components-button.has-icon.is-pressed {
+:where(.ubuntupress-admin--dark) .customize-widgets-header-toolbar .customize-widgets-header-toolbar__inserter-toggle.components-button.has-icon.is-pressed {
 	background: #454545;
 }
 
-:where(.wpskin-admin--dark) .customize-widgets-layout__inserter-panel {
+:where(.ubuntupress-admin--dark) .customize-widgets-layout__inserter-panel {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .customize-widgets-layout__inserter-panel-header {
+:where(.ubuntupress-admin--dark) .customize-widgets-layout__inserter-panel-header {
 	border-bottom: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .block-editor-inserter__quick-inserter .block-editor-inserter__panel-content {
+:where(.ubuntupress-admin--dark) .block-editor-inserter__quick-inserter .block-editor-inserter__panel-content {
 	background: #1e1e1e;
 }
 
-:where(.wpskin-admin--dark) .customize-widgets-keyboard-shortcut-help-modal__shortcut {
+:where(.ubuntupress-admin--dark) .customize-widgets-keyboard-shortcut-help-modal__shortcut {
 	border-top: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) .customize-widgets-keyboard-shortcut-help-modal__shortcut:last-child {
+:where(.ubuntupress-admin--dark) .customize-widgets-keyboard-shortcut-help-modal__shortcut:last-child {
 	border-bottom: 1px solid #3d3d3d;
 }
 
-:where(.wpskin-admin--dark) #customize-theme-controls .customize-pane-child.customize-widgets__sidebar-section {
+:where(.ubuntupress-admin--dark) #customize-theme-controls .customize-pane-child.customize-widgets__sidebar-section {
 	background-color: #1e1e1e;
 }

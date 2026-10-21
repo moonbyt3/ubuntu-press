@@ -3,14 +3,14 @@
  * Replaces the default Dashboard screen with an Ubuntu / GNOME style
  * application grid built from the admin sidebar menu.
  *
- * @package WPSkin
+ * @package UbuntuPress
  */
 
-namespace WPSkin\Admin;
+namespace UbuntuPress\Admin;
 
-use WPSkin\Contracts\Hookable;
-use WPSkin\Loader;
-use WPSkin\Plugin;
+use UbuntuPress\Contracts\Hookable;
+use UbuntuPress\Loader;
+use UbuntuPress\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -37,7 +37,7 @@ class DashboardCards implements Hookable {
 	/**
 	 * Query arg that shows the default WordPress Dashboard instead of the cards.
 	 */
-	const CLASSIC_ARG = 'wpskin_classic';
+	const CLASSIC_ARG = 'ubuntupress_classic';
 
 	public function register_hooks( Loader $loader ) {
 		$loader->add_action( 'load-index.php', array( $this, 'take_over' ) );
@@ -54,7 +54,7 @@ class DashboardCards implements Hookable {
 
 		global $title, $parent_file, $submenu_file;
 
-		$title        = __( 'Dashboard', 'wpskin' );
+		$title        = __( 'Dashboard', 'ubuntupress' );
 		$parent_file  = 'index.php';
 		$submenu_file = 'index.php';
 
@@ -72,20 +72,20 @@ class DashboardCards implements Hookable {
 	 * @return string
 	 */
 	public function body_class( $classes ) {
-		return $classes . ' wpskin-admin--dashboard';
+		return $classes . ' ubuntupress-admin--dashboard';
 	}
 
 	public function enqueue_assets() {
 		wp_enqueue_style(
-			'wpskin-dashboard',
-			WPSKIN_URL . 'assets/css/dashboard.css',
+			'ubuntupress-dashboard',
+			UBUNTUPRESS_URL . 'assets/css/dashboard.css',
 			array( 'dashicons' ),
 			Plugin::asset_version( 'assets/css/dashboard.css' )
 		);
 
 		wp_enqueue_script(
-			'wpskin-dashboard',
-			WPSKIN_URL . 'assets/js/dashboard.js',
+			'ubuntupress-dashboard',
+			UBUNTUPRESS_URL . 'assets/js/dashboard.js',
 			array(),
 			Plugin::asset_version( 'assets/js/dashboard.js' ),
 			true
@@ -95,47 +95,47 @@ class DashboardCards implements Hookable {
 	private function render() {
 		$cards = $this->get_cards();
 		?>
-		<div class="wrap wpskin-dashboard">
-			<h1 class="wpskin-dashboard__title screen-reader-text"><?php esc_html_e( 'Dashboard', 'wpskin' ); ?></h1>
+		<div class="wrap ubuntupress-dashboard">
+			<h1 class="ubuntupress-dashboard__title screen-reader-text"><?php esc_html_e( 'Dashboard', 'ubuntupress' ); ?></h1>
 
-			<div class="wpskin-dashboard__search wpskin-search" role="search">
-				<span class="wpskin-search__icon dashicons dashicons-search" aria-hidden="true"></span>
+			<div class="ubuntupress-dashboard__search ubuntupress-search" role="search">
+				<span class="ubuntupress-search__icon dashicons dashicons-search" aria-hidden="true"></span>
 				<input
 					type="search"
-					class="wpskin-search__input"
-					placeholder="<?php esc_attr_e( 'Type to search', 'wpskin' ); ?>"
-					aria-label="<?php esc_attr_e( 'Search admin pages', 'wpskin' ); ?>"
+					class="ubuntupress-search__input"
+					placeholder="<?php esc_attr_e( 'Type to search', 'ubuntupress' ); ?>"
+					aria-label="<?php esc_attr_e( 'Search admin pages', 'ubuntupress' ); ?>"
 					autocomplete="off"
 				/>
 			</div>
 
-			<div class="wpskin-dashboard__cards wpskin-cards">
+			<div class="ubuntupress-dashboard__cards ubuntupress-cards">
 				<?php
 				foreach ( $cards as $card ) {
 					if ( count( $card['children'] ) > 1 ) {
 						$this->render_folder_card( $card );
 					} else {
-						$this->render_card( $card, 'wpskin-cards__item' );
+						$this->render_card( $card, 'ubuntupress-cards__item' );
 					}
 				}
 				?>
 			</div>
 
-			<div class="wpskin-dashboard__results wpskin-cards wpskin-cards--results" hidden>
+			<div class="ubuntupress-dashboard__results ubuntupress-cards ubuntupress-cards--results" hidden>
 				<?php
 				foreach ( $cards as $card ) {
 					if ( count( $card['children'] ) > 1 ) {
 						foreach ( $card['children'] as $child ) {
-							$this->render_card( $child, 'wpskin-cards__item', $card['name'] );
+							$this->render_card( $child, 'ubuntupress-cards__item', $card['name'] );
 						}
 					} else {
-						$this->render_card( $card, 'wpskin-cards__item' );
+						$this->render_card( $card, 'ubuntupress-cards__item' );
 					}
 				}
 				?>
 			</div>
 
-			<p class="wpskin-dashboard__no-results" hidden><?php esc_html_e( 'No results found.', 'wpskin' ); ?></p>
+			<p class="ubuntupress-dashboard__no-results" hidden><?php esc_html_e( 'No results found.', 'ubuntupress' ); ?></p>
 
 			<?php
 			foreach ( $cards as $card ) {
@@ -159,18 +159,18 @@ class DashboardCards implements Hookable {
 		$search = strtolower( $card['name'] . ' ' . (string) $context );
 		?>
 		<a
-			class="<?php echo esc_attr( $classes ); ?> wpskin-card"
+			class="<?php echo esc_attr( $classes ); ?> ubuntupress-card"
 			href="<?php echo esc_url( $card['url'] ); ?>"
-			style="--wpskin-card-color: <?php echo esc_attr( $card['color'] ); ?>"
+			style="--ubuntupress-card-color: <?php echo esc_attr( $card['color'] ); ?>"
 			data-search="<?php echo esc_attr( $search ); ?>"
 		>
-			<span class="wpskin-card__icon">
-				<?php $this->render_glyph( $card['icon'], 'wpskin-card__glyph' ); ?>
+			<span class="ubuntupress-card__icon">
+				<?php $this->render_glyph( $card['icon'], 'ubuntupress-card__glyph' ); ?>
 				<?php $this->render_badge( $card['count'] ); ?>
 			</span>
-			<span class="wpskin-card__name"><?php echo esc_html( $card['name'] ); ?></span>
+			<span class="ubuntupress-card__name"><?php echo esc_html( $card['name'] ); ?></span>
 			<?php if ( $context ) : ?>
-				<span class="wpskin-card__context"><?php echo esc_html( $context ); ?></span>
+				<span class="ubuntupress-card__context"><?php echo esc_html( $context ); ?></span>
 			<?php endif; ?>
 		</a>
 		<?php
@@ -185,19 +185,19 @@ class DashboardCards implements Hookable {
 		?>
 		<button
 			type="button"
-			class="wpskin-cards__item wpskin-card wpskin-card--folder"
+			class="ubuntupress-cards__item ubuntupress-card ubuntupress-card--folder"
 			aria-haspopup="dialog"
 			aria-controls="<?php echo esc_attr( $this->folder_id( $card ) ); ?>"
 		>
-			<span class="wpskin-card__icon wpskin-card__icon--folder">
+			<span class="ubuntupress-card__icon ubuntupress-card__icon--folder">
 				<?php foreach ( array_slice( $card['children'], 0, 4 ) as $child ) : ?>
-					<span class="wpskin-card__preview" style="--wpskin-card-color: <?php echo esc_attr( $child['color'] ); ?>">
-						<?php $this->render_glyph( $child['icon'], 'wpskin-card__preview-glyph' ); ?>
+					<span class="ubuntupress-card__preview" style="--ubuntupress-card-color: <?php echo esc_attr( $child['color'] ); ?>">
+						<?php $this->render_glyph( $child['icon'], 'ubuntupress-card__preview-glyph' ); ?>
 					</span>
 				<?php endforeach; ?>
 				<?php $this->render_badge( $card['count'] ); ?>
 			</span>
-			<span class="wpskin-card__name"><?php echo esc_html( $card['name'] ); ?></span>
+			<span class="ubuntupress-card__name"><?php echo esc_html( $card['name'] ); ?></span>
 		</button>
 		<?php
 	}
@@ -210,14 +210,14 @@ class DashboardCards implements Hookable {
 	private function render_folder_dialog( array $card ) {
 		$id = $this->folder_id( $card );
 		?>
-		<div class="wpskin-folder" id="<?php echo esc_attr( $id ); ?>" role="dialog" aria-modal="true" aria-labelledby="<?php echo esc_attr( $id ); ?>-title" hidden>
-			<div class="wpskin-folder__backdrop"></div>
-			<div class="wpskin-folder__dialog">
-				<h2 class="wpskin-folder__title" id="<?php echo esc_attr( $id ); ?>-title"><?php echo esc_html( $card['name'] ); ?></h2>
-				<div class="wpskin-folder__cards wpskin-cards wpskin-cards--folder">
+		<div class="ubuntupress-folder" id="<?php echo esc_attr( $id ); ?>" role="dialog" aria-modal="true" aria-labelledby="<?php echo esc_attr( $id ); ?>-title" hidden>
+			<div class="ubuntupress-folder__backdrop"></div>
+			<div class="ubuntupress-folder__dialog">
+				<h2 class="ubuntupress-folder__title" id="<?php echo esc_attr( $id ); ?>-title"><?php echo esc_html( $card['name'] ); ?></h2>
+				<div class="ubuntupress-folder__cards ubuntupress-cards ubuntupress-cards--folder">
 					<?php
 					foreach ( $card['children'] as $child ) {
-						$this->render_card( $child, 'wpskin-cards__item' );
+						$this->render_card( $child, 'ubuntupress-cards__item' );
 					}
 					?>
 				</div>
@@ -227,14 +227,14 @@ class DashboardCards implements Hookable {
 	}
 
 	private function folder_id( array $card ) {
-		return 'wpskin-folder-' . $card['id'];
+		return 'ubuntupress-folder-' . $card['id'];
 	}
 
 	private function render_badge( $count ) {
 		if ( ! $count ) {
 			return;
 		}
-		printf( '<span class="wpskin-card__badge">%s</span>', esc_html( number_format_i18n( $count ) ) );
+		printf( '<span class="ubuntupress-card__badge">%s</span>', esc_html( number_format_i18n( $count ) ) );
 	}
 
 	/**
@@ -271,7 +271,7 @@ class DashboardCards implements Hookable {
 		foreach ( (array) $menu as $item ) {
 			$slug = isset( $item[2] ) ? $item[2] : '';
 
-			// WPSkin's own menu item is skipped: settings_card() adds it last instead.
+			// UbuntuPress's own menu item is skipped: settings_card() adds it last instead.
 			if ( '' === $slug || 'index.php' === $slug || Settings::PAGE === $slug || false !== strpos( $item[4], 'wp-menu-separator' ) ) {
 				continue;
 			}
@@ -325,11 +325,11 @@ class DashboardCards implements Hookable {
 		}
 
 		/**
-		 * Filters the cards shown on the WPSkin dashboard.
+		 * Filters the cards shown on the UbuntuPress dashboard.
 		 *
 		 * @param array[] $cards Card data.
 		 */
-		$cards = apply_filters( 'wpskin_dashboard_cards', $cards );
+		$cards = apply_filters( 'ubuntupress_dashboard_cards', $cards );
 
 		// Added after the filter so these shortcuts always stay last.
 		$cards[] = $this->classic_dashboard_card();
@@ -349,7 +349,7 @@ class DashboardCards implements Hookable {
 	private function classic_dashboard_card() {
 		return array(
 			'id'       => 'wordpress-dashboard',
-			'name'     => __( 'WordPress Dashboard', 'wpskin' ),
+			'name'     => __( 'WordPress Dashboard', 'ubuntupress' ),
 			'url'      => add_query_arg( self::CLASSIC_ARG, '1', admin_url( 'index.php' ) ),
 			'icon'     => 'dashicons-dashboard',
 			'color'    => self::PALETTE[6],
@@ -359,14 +359,14 @@ class DashboardCards implements Hookable {
 	}
 
 	/**
-	 * Shortcut card to the WPSkin settings page.
+	 * Shortcut card to the UbuntuPress settings page.
 	 *
 	 * @return array
 	 */
 	private function settings_card() {
 		return array(
-			'id'       => 'wpskin-settings',
-			'name'     => __( 'WPSkin', 'wpskin' ),
+			'id'       => 'ubuntupress-settings',
+			'name'     => __( 'UbuntuPress', 'ubuntupress' ),
 			'url'      => Settings::url(),
 			'icon'     => 'dashicons-admin-appearance',
 			'color'    => self::PALETTE[0],

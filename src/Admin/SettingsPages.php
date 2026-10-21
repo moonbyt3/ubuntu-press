@@ -2,14 +2,14 @@
 /**
  * Optional Ubuntu (GNOME Settings) styling for WordPress' own Settings screens.
  *
- * @package WPSkin
+ * @package UbuntuPress
  */
 
-namespace WPSkin\Admin;
+namespace UbuntuPress\Admin;
 
-use WPSkin\Contracts\Hookable;
-use WPSkin\Loader;
-use WPSkin\Plugin;
+use UbuntuPress\Contracts\Hookable;
+use UbuntuPress\Loader;
+use UbuntuPress\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -52,7 +52,7 @@ class SettingsPages implements Hookable {
 	 * @return string
 	 */
 	public function body_class( $classes ) {
-		return $this->applies() ? $classes . ' wpskin-admin--prefs' : $classes;
+		return $this->applies() ? $classes . ' ubuntupress-admin--prefs' : $classes;
 	}
 
 	public function enqueue_assets() {
@@ -60,18 +60,18 @@ class SettingsPages implements Hookable {
 			return;
 		}
 
-		// Shared tokens and switch / dropdown styles from the WPSkin settings screen.
+		// Shared tokens and switch / dropdown styles from the UbuntuPress settings screen.
 		wp_enqueue_style(
-			'wpskin-admin',
-			WPSKIN_URL . 'assets/css/admin.css',
+			'ubuntupress-admin',
+			UBUNTUPRESS_URL . 'assets/css/admin.css',
 			array(),
 			Plugin::asset_version( 'assets/css/admin.css' )
 		);
 
 		wp_enqueue_style(
-			'wpskin-settings-pages',
-			WPSKIN_URL . 'assets/css/settings-pages.css',
-			array( 'wpskin-admin' ),
+			'ubuntupress-settings-pages',
+			UBUNTUPRESS_URL . 'assets/css/settings-pages.css',
+			array( 'ubuntupress-admin' ),
 			Plugin::asset_version( 'assets/css/settings-pages.css' )
 		);
 	}

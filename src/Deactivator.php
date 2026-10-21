@@ -2,10 +2,10 @@
 /**
  * Runs on plugin deactivation.
  *
- * @package WPSkin
+ * @package UbuntuPress
  */
 
-namespace WPSkin;
+namespace UbuntuPress;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

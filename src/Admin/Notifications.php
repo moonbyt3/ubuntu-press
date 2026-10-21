@@ -2,14 +2,14 @@
 /**
  * Collects admin notices into a toolbar notification popup with a counter.
  *
- * @package WPSkin
+ * @package UbuntuPress
  */
 
-namespace WPSkin\Admin;
+namespace UbuntuPress\Admin;
 
-use WPSkin\Contracts\Hookable;
-use WPSkin\Loader;
-use WPSkin\Plugin;
+use UbuntuPress\Contracts\Hookable;
+use UbuntuPress\Loader;
+use UbuntuPress\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -33,7 +33,7 @@ class Notifications implements Hookable {
 	 * @return string
 	 */
 	public function body_class( $classes ) {
-		return $this->is_enabled() ? $classes . ' wpskin-admin--notices' : $classes;
+		return $this->is_enabled() ? $classes . ' ubuntupress-admin--notices' : $classes;
 	}
 
 	public function enqueue_assets() {
@@ -42,29 +42,29 @@ class Notifications implements Hookable {
 		}
 
 		wp_enqueue_style(
-			'wpskin-notifications',
-			WPSKIN_URL . 'assets/css/notifications.css',
+			'ubuntupress-notifications',
+			UBUNTUPRESS_URL . 'assets/css/notifications.css',
 			array( 'dashicons' ),
 			Plugin::asset_version( 'assets/css/notifications.css' )
 		);
 
 		// Must load after "common": it relocates every notice on DOM ready.
 		wp_enqueue_script(
-			'wpskin-notifications',
-			WPSKIN_URL . 'assets/js/notifications.js',
+			'ubuntupress-notifications',
+			UBUNTUPRESS_URL . 'assets/js/notifications.js',
 			array( 'jquery', 'common' ),
 			Plugin::asset_version( 'assets/js/notifications.js' ),
 			true
 		);
 
 		wp_localize_script(
-			'wpskin-notifications',
-			'wpskinNotices',
+			'ubuntupress-notifications',
+			'ubuntupressNotices',
 			array(
 				/* translators: %d: number of notifications (always 1). */
-				'one'  => __( '%d notification', 'wpskin' ),
+				'one'  => __( '%d notification', 'ubuntupress' ),
 				/* translators: %d: number of notifications. */
-				'many' => __( '%d notifications', 'wpskin' ),
+				'many' => __( '%d notifications', 'ubuntupress' ),
 			)
 		);
 	}
@@ -81,15 +81,15 @@ class Notifications implements Hookable {
 
 		$admin_bar->add_node(
 			array(
-				'id'     => 'wpskin-notices',
+				'id'     => 'ubuntupress-notices',
 				'parent' => 'top-secondary',
-				'title'  => '<span class="ab-icon wpskin-notices-toggle__icon" aria-hidden="true"></span>'
-					. '<span class="wpskin-notices-toggle__count" hidden>0</span>'
-					. '<span class="screen-reader-text">' . esc_html__( 'Notifications', 'wpskin' ) . '</span>',
-				'href'   => '#wpskin-notices-panel',
+				'title'  => '<span class="ab-icon ubuntupress-notices-toggle__icon" aria-hidden="true"></span>'
+					. '<span class="ubuntupress-notices-toggle__count" hidden>0</span>'
+					. '<span class="screen-reader-text">' . esc_html__( 'Notifications', 'ubuntupress' ) . '</span>',
+				'href'   => '#ubuntupress-notices-panel',
 				'meta'   => array(
-					'class' => 'wpskin-notices-toggle',
-					'title' => __( 'Notifications', 'wpskin' ),
+					'class' => 'ubuntupress-notices-toggle',
+					'title' => __( 'Notifications', 'ubuntupress' ),
 				),
 			)
 		);
@@ -100,16 +100,16 @@ class Notifications implements Hookable {
 			return;
 		}
 		?>
-		<div id="wpskin-notices-panel" class="wpskin-notices-panel" role="dialog" aria-labelledby="wpskin-notices-title" hidden>
-			<div class="wpskin-notices-panel__header">
-				<h2 id="wpskin-notices-title" class="wpskin-notices-panel__title"><?php esc_html_e( 'Notifications', 'wpskin' ); ?></h2>
-				<button type="button" class="wpskin-notices-panel__close">
-					<span class="wpskin-notices-panel__close-icon dashicons dashicons-no-alt" aria-hidden="true"></span>
-					<span class="screen-reader-text"><?php esc_html_e( 'Close notifications', 'wpskin' ); ?></span>
+		<div id="ubuntupress-notices-panel" class="ubuntupress-notices-panel" role="dialog" aria-labelledby="ubuntupress-notices-title" hidden>
+			<div class="ubuntupress-notices-panel__header">
+				<h2 id="ubuntupress-notices-title" class="ubuntupress-notices-panel__title"><?php esc_html_e( 'Notifications', 'ubuntupress' ); ?></h2>
+				<button type="button" class="ubuntupress-notices-panel__close">
+					<span class="ubuntupress-notices-panel__close-icon dashicons dashicons-no-alt" aria-hidden="true"></span>
+					<span class="screen-reader-text"><?php esc_html_e( 'Close notifications', 'ubuntupress' ); ?></span>
 				</button>
 			</div>
-			<div class="wpskin-notices-panel__list"></div>
-			<p class="wpskin-notices-panel__empty"><?php esc_html_e( 'No notifications.', 'wpskin' ); ?></p>
+			<div class="ubuntupress-notices-panel__list"></div>
+			<p class="ubuntupress-notices-panel__empty"><?php esc_html_e( 'No notifications.', 'ubuntupress' ); ?></p>
 		</div>
 		<?php
 	}

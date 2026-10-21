@@ -1,5 +1,5 @@
 /**
- * WPSkin notification center: moves admin notices into a toolbar popup.
+ * UbuntuPress notification center: moves admin notices into a toolbar popup.
  */
 ( function ( $ ) {
 	'use strict';
@@ -13,13 +13,13 @@
 	];
 
 	$( function () {
-		var $panel = $( '.wpskin-notices-panel' );
-		var $list = $panel.find( '.wpskin-notices-panel__list' );
-		var $node = $( '.wpskin-notices-toggle' );
+		var $panel = $( '.ubuntupress-notices-panel' );
+		var $list = $panel.find( '.ubuntupress-notices-panel__list' );
+		var $node = $( '.ubuntupress-notices-toggle' );
 		var $button = $node.children( '.ab-item' );
-		var $count = $node.find( '.wpskin-notices-toggle__count' );
+		var $count = $node.find( '.ubuntupress-notices-toggle__count' );
 		var content = document.getElementById( 'wpbody-content' );
-		var l10n = window.wpskinNotices || { one: '%d notification', many: '%d notifications' };
+		var l10n = window.ubuntupressNotices || { one: '%d notification', many: '%d notifications' };
 
 		if ( ! $panel.length || ! $node.length ) {
 			return;
@@ -30,7 +30,7 @@
 			role: 'button',
 			'aria-haspopup': 'dialog',
 			'aria-expanded': 'false',
-			'aria-controls': 'wpskin-notices-panel'
+			'aria-controls': 'ubuntupress-notices-panel'
 		} );
 
 		/**
@@ -70,17 +70,17 @@
 
 			$count.text( total > 99 ? '99+' : total ).prop( 'hidden', total === 0 );
 			$.each( SEVERITY, function ( i, pair ) {
-				$node.toggleClass( 'wpskin-notices-toggle--' + pair[ 0 ], pair[ 0 ] === level );
+				$node.toggleClass( 'ubuntupress-notices-toggle--' + pair[ 0 ], pair[ 0 ] === level );
 			} );
 			$button.attr( 'aria-label', ( total === 1 ? l10n.one : l10n.many ).replace( '%d', total ) );
-			$panel.toggleClass( 'wpskin-notices-panel--empty', total === 0 );
+			$panel.toggleClass( 'ubuntupress-notices-panel--empty', total === 0 );
 		}
 
 		function open() {
 			$panel.prop( 'hidden', false );
-			$node.addClass( 'wpskin-notices-toggle--open' );
+			$node.addClass( 'ubuntupress-notices-toggle--open' );
 			$button.attr( 'aria-expanded', 'true' );
-			$panel.find( '.wpskin-notices-panel__close' ).trigger( 'focus' );
+			$panel.find( '.ubuntupress-notices-panel__close' ).trigger( 'focus' );
 		}
 
 		function close( returnFocus ) {
@@ -88,7 +88,7 @@
 				return;
 			}
 			$panel.prop( 'hidden', true );
-			$node.removeClass( 'wpskin-notices-toggle--open' );
+			$node.removeClass( 'ubuntupress-notices-toggle--open' );
 			$button.attr( 'aria-expanded', 'false' );
 			if ( returnFocus ) {
 				$button.trigger( 'focus' );
@@ -104,12 +104,12 @@
 			}
 		} );
 
-		$panel.on( 'click', '.wpskin-notices-panel__close', function () {
+		$panel.on( 'click', '.ubuntupress-notices-panel__close', function () {
 			close( true );
 		} );
 
 		$( document ).on( 'click', function ( event ) {
-			if ( ! $( event.target ).closest( '.wpskin-notices-panel, .wpskin-notices-toggle' ).length ) {
+			if ( ! $( event.target ).closest( '.ubuntupress-notices-panel, .ubuntupress-notices-toggle' ).length ) {
 				close( false );
 			}
 		} ).on( 'keydown', function ( event ) {

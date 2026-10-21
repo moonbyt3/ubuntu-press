@@ -2,12 +2,12 @@
 /**
  * Loads the plugin text domain.
  *
- * @package WPSkin
+ * @package UbuntuPress
  */
 
-namespace WPSkin;
+namespace UbuntuPress;
 
-use WPSkin\Contracts\Hookable;
+use UbuntuPress\Contracts\Hookable;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -20,6 +20,6 @@ class I18n implements Hookable {
 	}
 
 	public function load_textdomain() {
-		load_plugin_textdomain( 'wpskin', false, dirname( WPSKIN_BASENAME ) . '/languages' );
+		load_plugin_textdomain( 'ubuntupress', false, dirname( UBUNTUPRESS_BASENAME ) . '/languages' );
 	}
 }

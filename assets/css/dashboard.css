@@ -1,11 +1,11 @@
-/* WPSkin dashboard: Ubuntu (GNOME / Yaru) application grid. */
+/* UbuntuPress dashboard: Ubuntu (GNOME / Yaru) application grid. */
 
-/* Block: wpskin-admin (page-level modifier) */
-body.wpskin-admin--dashboard {
+/* Block: ubuntupress-admin (page-level modifier) */
+body.ubuntupress-admin--dashboard {
 	background: #fafafa;
 }
 
-body.wpskin-admin--dashboard #wpwrap {
+body.ubuntupress-admin--dashboard #wpwrap {
 	/* Ubuntu wallpaper washed out to white: light theme overview background. */
 	background:
 		linear-gradient(rgba(250, 250, 250, 0.82), rgba(250, 250, 250, 0.82)),
@@ -15,11 +15,11 @@ body.wpskin-admin--dashboard #wpwrap {
 	background-attachment: fixed;
 }
 
-body.wpskin-admin--dashboard.wpskin-admin--dark {
+body.ubuntupress-admin--dashboard.ubuntupress-admin--dark {
 	background: #1d1d1d;
 }
 
-body.wpskin-admin--dashboard.wpskin-admin--dark #wpwrap {
+body.ubuntupress-admin--dashboard.ubuntupress-admin--dark #wpwrap {
 	/* Dimmed Ubuntu wallpaper: aubergine with an orange glow, like the blurred overview background. */
 	background:
 		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -29,139 +29,139 @@ body.wpskin-admin--dashboard.wpskin-admin--dark #wpwrap {
 	background-attachment: fixed;
 }
 
-body.wpskin-admin--dashboard #wpfooter,
-body.wpskin-admin--dashboard #screen-meta-links {
+body.ubuntupress-admin--dashboard #wpfooter,
+body.ubuntupress-admin--dashboard #screen-meta-links {
 	display: none;
 }
 
-/* Block: wpskin-dashboard (.wrap.* to beat core's .wrap margins) */
-.wrap.wpskin-dashboard {
-	--wpskin-icon-size: 88px;
-	--wpskin-card-radius: 20px;
-	--wpskin-card-name-size: 14px;
+/* Block: ubuntupress-dashboard (.wrap.* to beat core's .wrap margins) */
+.wrap.ubuntupress-dashboard {
+	--ubuntupress-icon-size: 88px;
+	--ubuntupress-card-radius: 20px;
+	--ubuntupress-card-name-size: 14px;
 	/* Light theme (Yaru) colours. */
-	--wpskin-fg: #3d3d3d;
-	--wpskin-fg-muted: rgba(0, 0, 0, 0.6);
-	--wpskin-fg-subtle: rgba(0, 0, 0, 0.45);
-	--wpskin-hover-bg: rgba(0, 0, 0, 0.07);
-	--wpskin-focus-bg: rgba(0, 0, 0, 0.11);
-	--wpskin-active-bg: rgba(0, 0, 0, 0.15);
-	--wpskin-field-bg: rgba(0, 0, 0, 0.06);
-	--wpskin-field-hover-bg: rgba(0, 0, 0, 0.09);
-	--wpskin-field-focus-bg: #fff;
-	--wpskin-field-border: rgba(0, 0, 0, 0.08);
-	--wpskin-folder-bg: rgba(0, 0, 0, 0.08);
-	--wpskin-folder-border: rgba(0, 0, 0, 0.04);
-	--wpskin-dialog-bg: rgba(250, 250, 250, 0.97);
-	--wpskin-dialog-border: rgba(0, 0, 0, 0.08);
-	--wpskin-backdrop: rgba(0, 0, 0, 0.25);
-	--wpskin-label-shadow: none;
-	--wpskin-cancel-filter: none;
+	--ubuntupress-fg: #3d3d3d;
+	--ubuntupress-fg-muted: rgba(0, 0, 0, 0.6);
+	--ubuntupress-fg-subtle: rgba(0, 0, 0, 0.45);
+	--ubuntupress-hover-bg: rgba(0, 0, 0, 0.07);
+	--ubuntupress-focus-bg: rgba(0, 0, 0, 0.11);
+	--ubuntupress-active-bg: rgba(0, 0, 0, 0.15);
+	--ubuntupress-field-bg: rgba(0, 0, 0, 0.06);
+	--ubuntupress-field-hover-bg: rgba(0, 0, 0, 0.09);
+	--ubuntupress-field-focus-bg: #fff;
+	--ubuntupress-field-border: rgba(0, 0, 0, 0.08);
+	--ubuntupress-folder-bg: rgba(0, 0, 0, 0.08);
+	--ubuntupress-folder-border: rgba(0, 0, 0, 0.04);
+	--ubuntupress-dialog-bg: rgba(250, 250, 250, 0.97);
+	--ubuntupress-dialog-border: rgba(0, 0, 0, 0.08);
+	--ubuntupress-backdrop: rgba(0, 0, 0, 0.25);
+	--ubuntupress-label-shadow: none;
+	--ubuntupress-cancel-filter: none;
 	max-width: 1180px;
 	margin: 0 auto;
 	padding: 28px 0 48px;
-	color: var(--wpskin-fg);
+	color: var(--ubuntupress-fg);
 	font-family: Ubuntu, "Ubuntu Sans", Cantarell, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-.wpskin-admin--dark .wrap.wpskin-dashboard {
-	--wpskin-fg: #fff;
-	--wpskin-fg-muted: rgba(255, 255, 255, 0.7);
-	--wpskin-fg-subtle: rgba(255, 255, 255, 0.55);
-	--wpskin-hover-bg: rgba(255, 255, 255, 0.1);
-	--wpskin-focus-bg: rgba(255, 255, 255, 0.17);
-	--wpskin-active-bg: rgba(255, 255, 255, 0.22);
-	--wpskin-field-bg: rgba(255, 255, 255, 0.1);
-	--wpskin-field-hover-bg: rgba(255, 255, 255, 0.14);
-	--wpskin-field-focus-bg: rgba(255, 255, 255, 0.16);
-	--wpskin-field-border: rgba(255, 255, 255, 0.06);
-	--wpskin-folder-bg: rgba(255, 255, 255, 0.12);
-	--wpskin-folder-border: rgba(255, 255, 255, 0.05);
-	--wpskin-dialog-bg: rgba(54, 54, 54, 0.96);
-	--wpskin-dialog-border: rgba(255, 255, 255, 0.06);
-	--wpskin-backdrop: rgba(0, 0, 0, 0.45);
-	--wpskin-label-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-	--wpskin-cancel-filter: invert(1);
+.ubuntupress-admin--dark .wrap.ubuntupress-dashboard {
+	--ubuntupress-fg: #fff;
+	--ubuntupress-fg-muted: rgba(255, 255, 255, 0.7);
+	--ubuntupress-fg-subtle: rgba(255, 255, 255, 0.55);
+	--ubuntupress-hover-bg: rgba(255, 255, 255, 0.1);
+	--ubuntupress-focus-bg: rgba(255, 255, 255, 0.17);
+	--ubuntupress-active-bg: rgba(255, 255, 255, 0.22);
+	--ubuntupress-field-bg: rgba(255, 255, 255, 0.1);
+	--ubuntupress-field-hover-bg: rgba(255, 255, 255, 0.14);
+	--ubuntupress-field-focus-bg: rgba(255, 255, 255, 0.16);
+	--ubuntupress-field-border: rgba(255, 255, 255, 0.06);
+	--ubuntupress-folder-bg: rgba(255, 255, 255, 0.12);
+	--ubuntupress-folder-border: rgba(255, 255, 255, 0.05);
+	--ubuntupress-dialog-bg: rgba(54, 54, 54, 0.96);
+	--ubuntupress-dialog-border: rgba(255, 255, 255, 0.06);
+	--ubuntupress-backdrop: rgba(0, 0, 0, 0.45);
+	--ubuntupress-label-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+	--ubuntupress-cancel-filter: invert(1);
 }
 
-.wpskin-dashboard__search {
+.ubuntupress-dashboard__search {
 	margin: 0 auto 40px;
 }
 
-.wpskin-dashboard__no-results {
+.ubuntupress-dashboard__no-results {
 	margin: 48px 0;
-	color: var(--wpskin-fg-muted);
+	color: var(--ubuntupress-fg-muted);
 	font-size: 18px;
 	text-align: center;
 }
 
-/* Block: wpskin-search (GNOME overview search entry) */
-.wpskin-search {
+/* Block: ubuntupress-search (GNOME overview search entry) */
+.ubuntupress-search {
 	position: relative;
 	width: 320px;
 	max-width: 100%;
 }
 
-.wpskin-search__icon {
+.ubuntupress-search__icon {
 	position: absolute;
 	top: 50%;
 	left: 12px;
-	color: var(--wpskin-fg-muted);
+	color: var(--ubuntupress-fg-muted);
 	transform: translateY(-50%);
 	pointer-events: none;
 }
 
-.wrap.wpskin-dashboard .wpskin-search__input {
+.wrap.ubuntupress-dashboard .ubuntupress-search__input {
 	width: 100%;
 	min-height: 38px;
 	margin: 0;
 	padding: 6px 16px 6px 40px;
 	border: 0;
 	border-radius: 19px;
-	background: var(--wpskin-field-bg);
-	box-shadow: inset 0 0 0 1px var(--wpskin-field-border);
-	color: var(--wpskin-fg);
+	background: var(--ubuntupress-field-bg);
+	box-shadow: inset 0 0 0 1px var(--ubuntupress-field-border);
+	color: var(--ubuntupress-fg);
 	font-family: inherit;
 	font-size: 15px;
 	transition: background-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.wrap.wpskin-dashboard .wpskin-search__input::placeholder {
-	color: var(--wpskin-fg-subtle);
+.wrap.ubuntupress-dashboard .ubuntupress-search__input::placeholder {
+	color: var(--ubuntupress-fg-subtle);
 }
 
-.wrap.wpskin-dashboard .wpskin-search__input:hover {
-	background: var(--wpskin-field-hover-bg);
+.wrap.ubuntupress-dashboard .ubuntupress-search__input:hover {
+	background: var(--ubuntupress-field-hover-bg);
 }
 
-.wrap.wpskin-dashboard .wpskin-search__input:focus {
-	background: var(--wpskin-field-focus-bg);
+.wrap.ubuntupress-dashboard .ubuntupress-search__input:focus {
+	background: var(--ubuntupress-field-focus-bg);
 	box-shadow: inset 0 0 0 2px #e95420;
 	outline: none;
 }
 
-.wrap.wpskin-dashboard .wpskin-search__input::-webkit-search-cancel-button {
-	filter: var(--wpskin-cancel-filter);
+.wrap.ubuntupress-dashboard .ubuntupress-search__input::-webkit-search-cancel-button {
+	filter: var(--ubuntupress-cancel-filter);
 }
 
-/* Block: wpskin-cards (grid) */
-.wpskin-cards {
+/* Block: ubuntupress-cards (grid) */
+.ubuntupress-cards {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
 	gap: 12px;
 	justify-items: center;
 }
 
-.wpskin-cards[hidden] {
+.ubuntupress-cards[hidden] {
 	display: none;
 }
 
-.wpskin-cards--folder {
+.ubuntupress-cards--folder {
 	grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
 }
 
-/* Block: wpskin-card (GNOME overview tile) */
-.wpskin-card {
+/* Block: ubuntupress-card (GNOME overview tile) */
+.ubuntupress-card {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -171,10 +171,10 @@ body.wpskin-admin--dashboard #screen-meta-links {
 	margin: 0;
 	padding: 14px 8px 12px;
 	border: 0;
-	border-radius: var(--wpskin-card-radius);
+	border-radius: var(--ubuntupress-card-radius);
 	background: transparent;
 	box-sizing: border-box;
-	color: var(--wpskin-fg);
+	color: var(--ubuntupress-fg);
 	font: inherit;
 	text-align: center;
 	text-decoration: none;
@@ -182,45 +182,45 @@ body.wpskin-admin--dashboard #screen-meta-links {
 	transition: background-color 0.15s ease;
 }
 
-.wpskin-card[hidden] {
+.ubuntupress-card[hidden] {
 	display: none;
 }
 
 /* Beats generic link colours (core, dark theme) without overriding the size rules above. */
-.wpskin-dashboard .wpskin-card {
-	color: var(--wpskin-fg);
+.ubuntupress-dashboard .ubuntupress-card {
+	color: var(--ubuntupress-fg);
 }
 
 /* Focus looks like hover; also undoes core's a:focus (color, radius, ring). */
-.wpskin-dashboard .wpskin-card:hover,
-.wpskin-dashboard .wpskin-card:focus {
-	border-radius: var(--wpskin-card-radius);
-	background: var(--wpskin-hover-bg);
+.ubuntupress-dashboard .ubuntupress-card:hover,
+.ubuntupress-dashboard .ubuntupress-card:focus {
+	border-radius: var(--ubuntupress-card-radius);
+	background: var(--ubuntupress-hover-bg);
 	box-shadow: none;
-	color: var(--wpskin-fg);
+	color: var(--ubuntupress-fg);
 	outline: none;
 }
 
-.wpskin-dashboard .wpskin-card:focus-visible {
-	background: var(--wpskin-focus-bg);
-	color: var(--wpskin-fg);
+.ubuntupress-dashboard .ubuntupress-card:focus-visible {
+	background: var(--ubuntupress-focus-bg);
+	color: var(--ubuntupress-fg);
 }
 
-.wpskin-dashboard .wpskin-card:active {
-	background: var(--wpskin-active-bg);
+.ubuntupress-dashboard .ubuntupress-card:active {
+	background: var(--ubuntupress-active-bg);
 }
 
-.wpskin-card__icon {
+.ubuntupress-card__icon {
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: var(--wpskin-icon-size);
-	height: var(--wpskin-icon-size);
+	width: var(--ubuntupress-icon-size);
+	height: var(--ubuntupress-icon-size);
 	border-radius: 22%;
 	background:
 		linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 55%),
-		var(--wpskin-card-color, #e95420);
+		var(--ubuntupress-card-color, #e95420);
 	box-shadow:
 		0 2px 4px rgba(0, 0, 0, 0.35),
 		inset 0 1px 0 rgba(255, 255, 255, 0.25),
@@ -228,13 +228,13 @@ body.wpskin-admin--dashboard #screen-meta-links {
 	transition: transform 0.15s ease;
 }
 
-.wpskin-card:hover .wpskin-card__icon,
-.wpskin-card:focus .wpskin-card__icon {
+.ubuntupress-card:hover .ubuntupress-card__icon,
+.ubuntupress-card:focus .ubuntupress-card__icon {
 	transform: scale(1.04);
 }
 
-.wpskin-card__glyph,
-.wpskin-card__glyph.dashicons {
+.ubuntupress-card__glyph,
+.ubuntupress-card__glyph.dashicons {
 	display: block;
 	width: 50%;
 	height: 50%;
@@ -242,26 +242,26 @@ body.wpskin-admin--dashboard #screen-meta-links {
 	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
-.wpskin-card__glyph.dashicons,
-.wpskin-card__glyph.dashicons:before {
-	font-size: calc(var(--wpskin-icon-size) * 0.5);
+.ubuntupress-card__glyph.dashicons,
+.ubuntupress-card__glyph.dashicons:before {
+	font-size: calc(var(--ubuntupress-icon-size) * 0.5);
 	line-height: 1;
 }
 
-.wpskin-card__glyph--svg,
-.wpskin-card__glyph--image {
+.ubuntupress-card__glyph--svg,
+.ubuntupress-card__glyph--image {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
 }
 
 /* Admin menu SVGs are grey; render them white like the dashicons. */
-.wpskin-card__glyph--svg {
+.ubuntupress-card__glyph--svg {
 	filter: brightness(0) invert(1);
 }
 
 /* Folder tile: translucent square holding a 2x2 preview of its apps. */
-.wpskin-card__icon--folder {
+.ubuntupress-card__icon--folder {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	grid-template-rows: repeat(2, minmax(0, 1fr));
@@ -270,70 +270,70 @@ body.wpskin-admin--dashboard #screen-meta-links {
 	gap: 8%;
 	padding: 12%;
 	border-radius: 24%;
-	background: var(--wpskin-folder-bg);
-	box-shadow: inset 0 0 0 1px var(--wpskin-folder-border);
+	background: var(--ubuntupress-folder-bg);
+	box-shadow: inset 0 0 0 1px var(--ubuntupress-folder-border);
 	box-sizing: border-box;
 }
 
-.wpskin-card__preview {
+.ubuntupress-card__preview {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	border-radius: 22%;
 	background:
 		linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 55%),
-		var(--wpskin-card-color, #e95420);
+		var(--ubuntupress-card-color, #e95420);
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.wpskin-card__preview-glyph,
-.wpskin-card__preview-glyph.dashicons {
+.ubuntupress-card__preview-glyph,
+.ubuntupress-card__preview-glyph.dashicons {
 	display: block;
 	width: 55%;
 	height: 55%;
 	color: #fff;
 }
 
-.wpskin-card__preview-glyph.dashicons,
-.wpskin-card__preview-glyph.dashicons:before {
-	font-size: calc(var(--wpskin-icon-size) * 0.16);
+.ubuntupress-card__preview-glyph.dashicons,
+.ubuntupress-card__preview-glyph.dashicons:before {
+	font-size: calc(var(--ubuntupress-icon-size) * 0.16);
 	line-height: 1;
 }
 
-.wpskin-card__preview-glyph--svg,
-.wpskin-card__preview-glyph--image {
+.ubuntupress-card__preview-glyph--svg,
+.ubuntupress-card__preview-glyph--image {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
 }
 
-.wpskin-card__preview-glyph--svg {
+.ubuntupress-card__preview-glyph--svg {
 	filter: brightness(0) invert(1);
 }
 
-.wpskin-card__name {
+.ubuntupress-card__name {
 	display: block;
 	max-width: 100%;
-	font-size: var(--wpskin-card-name-size);
+	font-size: var(--ubuntupress-card-name-size);
 	font-weight: 400;
 	line-height: 1.3;
-	text-shadow: var(--wpskin-label-shadow);
+	text-shadow: var(--ubuntupress-label-shadow);
 	overflow-wrap: anywhere;
 }
 
-.wpskin-card__context {
+.ubuntupress-card__context {
 	display: block;
 	max-width: 100%;
 	margin-top: -6px;
 	overflow: hidden;
-	color: var(--wpskin-fg-muted);
+	color: var(--ubuntupress-fg-muted);
 	font-size: 12px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 
 /* Ubuntu Dock style count badge. */
-.wpskin-card__badge {
+.ubuntupress-card__badge {
 	position: absolute;
 	top: -6px;
 	right: -6px;
@@ -351,8 +351,8 @@ body.wpskin-admin--dashboard #screen-meta-links {
 	text-align: center;
 }
 
-/* Block: wpskin-folder (GNOME app folder dialog) */
-.wpskin-folder {
+/* Block: ubuntupress-folder (GNOME app folder dialog) */
+.ubuntupress-folder {
 	position: fixed;
 	inset: 0;
 	z-index: 9999;
@@ -362,45 +362,45 @@ body.wpskin-admin--dashboard #screen-meta-links {
 	padding: 48px 16px 16px;
 }
 
-.wpskin-folder[hidden] {
+.ubuntupress-folder[hidden] {
 	display: none;
 }
 
-.wpskin-folder__backdrop {
+.ubuntupress-folder__backdrop {
 	position: absolute;
 	inset: 0;
-	background: var(--wpskin-backdrop);
-	animation: wpskin-fade-in 0.2s ease;
+	background: var(--ubuntupress-backdrop);
+	animation: ubuntupress-fade-in 0.2s ease;
 }
 
-.wpskin-folder__dialog {
+.ubuntupress-folder__dialog {
 	position: relative;
 	width: 680px;
 	max-width: 100%;
 	max-height: calc(100vh - 96px);
 	padding: 20px 20px 24px;
 	border-radius: 32px;
-	background: var(--wpskin-dialog-bg);
-	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 0 0 1px var(--wpskin-dialog-border);
+	background: var(--ubuntupress-dialog-bg);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 0 0 1px var(--ubuntupress-dialog-border);
 	box-sizing: border-box;
 	overflow-y: auto;
-	animation: wpskin-zoom-in 0.2s ease;
+	animation: ubuntupress-zoom-in 0.2s ease;
 }
 
-.wpskin-dashboard .wpskin-folder__title {
+.ubuntupress-dashboard .ubuntupress-folder__title {
 	margin: 0 0 16px;
-	color: var(--wpskin-fg);
+	color: var(--ubuntupress-fg);
 	font-family: inherit;
 	font-size: 22px;
 	font-weight: 700;
 	text-align: center;
 }
 
-@keyframes wpskin-fade-in {
+@keyframes ubuntupress-fade-in {
 	from { opacity: 0; }
 }
 
-@keyframes wpskin-zoom-in {
+@keyframes ubuntupress-zoom-in {
 	from {
 		opacity: 0;
 		transform: scale(0.9);
@@ -408,39 +408,39 @@ body.wpskin-admin--dashboard #screen-meta-links {
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.wpskin-card,
-	.wpskin-card__icon,
-	.wpskin-folder__backdrop,
-	.wpskin-folder__dialog {
+	.ubuntupress-card,
+	.ubuntupress-card__icon,
+	.ubuntupress-folder__backdrop,
+	.ubuntupress-folder__dialog {
 		transition: none;
 		animation: none;
 	}
 }
 
 @media screen and (max-width: 782px) {
-	.wrap.wpskin-dashboard {
-		--wpskin-icon-size: 64px;
-		--wpskin-card-radius: 16px;
-		--wpskin-card-name-size: 13px;
+	.wrap.ubuntupress-dashboard {
+		--ubuntupress-icon-size: 64px;
+		--ubuntupress-card-radius: 16px;
+		--ubuntupress-card-name-size: 13px;
 		padding-top: 16px;
 	}
 
-	.wpskin-dashboard__search {
+	.ubuntupress-dashboard__search {
 		margin-bottom: 24px;
 	}
 
-	.wpskin-cards,
-	.wpskin-cards--folder {
+	.ubuntupress-cards,
+	.ubuntupress-cards--folder {
 		grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
 		gap: 4px;
 	}
 
-	.wpskin-card {
+	.ubuntupress-card {
 		width: 104px;
 		padding: 10px 4px;
 	}
 
-	.wpskin-folder__dialog {
+	.ubuntupress-folder__dialog {
 		padding: 16px 8px;
 		border-radius: 24px;
 	}

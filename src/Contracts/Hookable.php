@@ -2,12 +2,12 @@
 /**
  * Contract for services that register WordPress hooks.
  *
- * @package WPSkin
+ * @package UbuntuPress
  */
 
-namespace WPSkin\Contracts;
+namespace UbuntuPress\Contracts;
 
-use WPSkin\Loader;
+use UbuntuPress\Loader;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

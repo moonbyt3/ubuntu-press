@@ -2,13 +2,13 @@
 /**
  * Settings page built on the WordPress Settings API.
  *
- * @package WPSkin
+ * @package UbuntuPress
  */
 
-namespace WPSkin\Admin;
+namespace UbuntuPress\Admin;
 
-use WPSkin\Contracts\Hookable;
-use WPSkin\Loader;
+use UbuntuPress\Contracts\Hookable;
+use UbuntuPress\Loader;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -16,9 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Settings implements Hookable {
 
-	const OPTION = 'wpskin_settings';
-	const PAGE   = 'wpskin';
-	const GROUP  = 'wpskin_settings_group';
+	const OPTION = 'ubuntupress_settings';
+	const PAGE   = 'ubuntupress';
+	const GROUP  = 'ubuntupress_settings_group';
 
 	/**
 	 * Default option values.
@@ -48,15 +48,15 @@ class Settings implements Hookable {
 	}
 
 	public function register_hooks( Loader $loader ) {
-		// Late priority: a menu item without a position is appended, so this keeps WPSkin last.
+		// Late priority: a menu item without a position is appended, so this keeps UbuntuPress last.
 		$loader->add_action( 'admin_menu', array( $this, 'add_page' ), PHP_INT_MAX );
 		$loader->add_action( 'admin_init', array( $this, 'register_settings' ) );
 	}
 
 	public function add_page() {
 		add_menu_page(
-			__( 'WPSkin', 'wpskin' ),
-			__( 'WPSkin', 'wpskin' ),
+			__( 'UbuntuPress', 'ubuntupress' ),
+			__( 'UbuntuPress', 'ubuntupress' ),
 			'manage_options',
 			self::PAGE,
 			array( $this, 'render_page' ),
@@ -111,51 +111,51 @@ class Settings implements Hookable {
 	private function groups() {
 		return array(
 			array(
-				'title' => __( 'Appearance', 'wpskin' ),
+				'title' => __( 'Appearance', 'ubuntupress' ),
 				'rows'  => array(
 					array(
 						'key'      => 'theme',
-						'title'    => __( 'Style', 'wpskin' ),
-						'subtitle' => __( 'Applies to the Dashboard and all admin screens, including the block editor.', 'wpskin' ),
+						'title'    => __( 'Style', 'ubuntupress' ),
+						'subtitle' => __( 'Applies to the Dashboard and all admin screens, including the block editor.', 'ubuntupress' ),
 						'choices'  => array(
-							'light' => __( 'Light', 'wpskin' ),
-							'dark'  => __( 'Dark', 'wpskin' ),
+							'light' => __( 'Light', 'ubuntupress' ),
+							'dark'  => __( 'Dark', 'ubuntupress' ),
 						),
 					),
 					array(
 						'key'      => 'settings_pages',
-						'title'    => __( 'Ubuntu style for Settings screens', 'wpskin' ),
-						'subtitle' => __( 'Give General, Writing, Reading, Discussion, Media and Permalinks the same look as this screen.', 'wpskin' ),
+						'title'    => __( 'Ubuntu style for Settings screens', 'ubuntupress' ),
+						'subtitle' => __( 'Give General, Writing, Reading, Discussion, Media and Permalinks the same look as this screen.', 'ubuntupress' ),
 					),
 				),
 			),
 			array(
-				'title' => __( 'Dashboard', 'wpskin' ),
+				'title' => __( 'Dashboard', 'ubuntupress' ),
 				'rows'  => array(
 					array(
 						'key'      => 'dashboard_cards',
-						'title'    => __( 'Dashboard cards', 'wpskin' ),
-						'subtitle' => __( 'Replace the Dashboard with large cards built from the admin menu.', 'wpskin' ),
+						'title'    => __( 'Dashboard cards', 'ubuntupress' ),
+						'subtitle' => __( 'Replace the Dashboard with large cards built from the admin menu.', 'ubuntupress' ),
 					),
 					array(
 						'key'      => 'hide_sidebar',
-						'title'    => __( 'Hide admin sidebar', 'wpskin' ),
-						'subtitle' => __( 'Only applies while Dashboard cards are enabled. A "Dashboard" link is added to the toolbar for navigation.', 'wpskin' ),
+						'title'    => __( 'Hide admin sidebar', 'ubuntupress' ),
+						'subtitle' => __( 'Only applies while Dashboard cards are enabled. A "Dashboard" link is added to the toolbar for navigation.', 'ubuntupress' ),
 						'choices'  => array(
-							'everywhere' => __( 'On all admin screens', 'wpskin' ),
-							'dashboard'  => __( 'On the Dashboard only', 'wpskin' ),
-							'never'      => __( 'Never', 'wpskin' ),
+							'everywhere' => __( 'On all admin screens', 'ubuntupress' ),
+							'dashboard'  => __( 'On the Dashboard only', 'ubuntupress' ),
+							'never'      => __( 'Never', 'ubuntupress' ),
 						),
 					),
 				),
 			),
 			array(
-				'title' => __( 'Notifications', 'wpskin' ),
+				'title' => __( 'Notifications', 'ubuntupress' ),
 				'rows'  => array(
 					array(
 						'key'      => 'notification_center',
-						'title'    => __( 'Notification center', 'wpskin' ),
-						'subtitle' => __( 'Collect admin notices into a toolbar popup with a counter.', 'wpskin' ),
+						'title'    => __( 'Notification center', 'ubuntupress' ),
+						'subtitle' => __( 'Collect admin notices into a toolbar popup with a counter.', 'ubuntupress' ),
 					),
 				),
 			),
@@ -168,17 +168,17 @@ class Settings implements Hookable {
 	 * @param array $row Row definition from groups().
 	 */
 	private function render_row( array $row ) {
-		$id   = 'wpskin-setting-' . $row['key'];
+		$id   = 'ubuntupress-setting-' . $row['key'];
 		$name = self::OPTION . '[' . $row['key'] . ']';
 		?>
-		<div class="wpskin-prefs-row">
-			<div class="wpskin-prefs-row__text">
-				<label class="wpskin-prefs-row__title" for="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $row['title'] ); ?></label>
-				<p class="wpskin-prefs-row__subtitle" id="<?php echo esc_attr( $id ); ?>-description"><?php echo esc_html( $row['subtitle'] ); ?></p>
+		<div class="ubuntupress-prefs-row">
+			<div class="ubuntupress-prefs-row__text">
+				<label class="ubuntupress-prefs-row__title" for="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $row['title'] ); ?></label>
+				<p class="ubuntupress-prefs-row__subtitle" id="<?php echo esc_attr( $id ); ?>-description"><?php echo esc_html( $row['subtitle'] ); ?></p>
 			</div>
-			<div class="wpskin-prefs-row__control">
+			<div class="ubuntupress-prefs-row__control">
 				<?php if ( isset( $row['choices'] ) ) : ?>
-					<select class="wpskin-prefs-row__select" id="<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $name ); ?>" aria-describedby="<?php echo esc_attr( $id ); ?>-description">
+					<select class="ubuntupress-prefs-row__select" id="<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $name ); ?>" aria-describedby="<?php echo esc_attr( $id ); ?>-description">
 						<?php foreach ( $row['choices'] as $value => $label ) : ?>
 							<option value="<?php echo esc_attr( $value ); ?>" <?php selected( self::get( $row['key'] ), $value ); ?>><?php echo esc_html( $label ); ?></option>
 						<?php endforeach; ?>
@@ -187,7 +187,7 @@ class Settings implements Hookable {
 					<input
 						type="checkbox"
 						role="switch"
-						class="wpskin-switch"
+						class="ubuntupress-switch"
 						id="<?php echo esc_attr( $id ); ?>"
 						name="<?php echo esc_attr( $name ); ?>"
 						value="1"
@@ -205,16 +205,16 @@ class Settings implements Hookable {
 			return;
 		}
 		?>
-		<div class="wrap wpskin-settings">
-			<h1 class="wpskin-settings__title"><?php echo esc_html( get_admin_page_title() ); ?></h1>
+		<div class="wrap ubuntupress-settings">
+			<h1 class="ubuntupress-settings__title"><?php echo esc_html( get_admin_page_title() ); ?></h1>
 			<?php settings_errors(); ?>
-			<form class="wpskin-settings__form" action="options.php" method="post">
+			<form class="ubuntupress-settings__form" action="options.php" method="post">
 				<?php settings_fields( self::GROUP ); ?>
 
 				<?php foreach ( $this->groups() as $group ) : ?>
-					<section class="wpskin-prefs-group">
-						<h2 class="wpskin-prefs-group__title"><?php echo esc_html( $group['title'] ); ?></h2>
-						<div class="wpskin-prefs-group__list">
+					<section class="ubuntupress-prefs-group">
+						<h2 class="ubuntupress-prefs-group__title"><?php echo esc_html( $group['title'] ); ?></h2>
+						<div class="ubuntupress-prefs-group__list">
 							<?php
 							foreach ( $group['rows'] as $row ) {
 								$this->render_row( $row );
@@ -224,8 +224,8 @@ class Settings implements Hookable {
 					</section>
 				<?php endforeach; ?>
 
-				<div class="wpskin-settings__actions">
-					<?php submit_button( __( 'Save Changes', 'wpskin' ), 'primary wpskin-settings__save', 'submit', false ); ?>
+				<div class="ubuntupress-settings__actions">
+					<?php submit_button( __( 'Save Changes', 'ubuntupress' ), 'primary ubuntupress-settings__save', 'submit', false ); ?>
 				</div>
 			</form>
 		</div>

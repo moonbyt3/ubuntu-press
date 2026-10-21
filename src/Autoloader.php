@@ -1,11 +1,11 @@
 <?php
 /**
- * PSR-4 autoloader for the WPSkin namespace.
+ * PSR-4 autoloader for the UbuntuPress namespace.
  *
- * @package WPSkin
+ * @package UbuntuPress
  */
 
-namespace WPSkin;
+namespace UbuntuPress;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 final class Autoloader {
 
-	const PREFIX = 'WPSkin\\';
+	const PREFIX = 'UbuntuPress\\';
 
 	/**
 	 * Registers the autoloader with SPL.
@@ -23,7 +23,7 @@ final class Autoloader {
 	}
 
 	/**
-	 * Maps WPSkin\Foo\Bar to src/Foo/Bar.php.
+	 * Maps UbuntuPress\Foo\Bar to src/Foo/Bar.php.
 	 *
 	 * @param string $class Fully qualified class name.
 	 */

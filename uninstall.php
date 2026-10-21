@@ -1,13 +1,13 @@
 <?php
 /**
- * Removes plugin data when WPSkin is deleted from the Plugins screen.
+ * Removes plugin data when UbuntuPress is deleted from the Plugins screen.
  *
- * @package WPSkin
+ * @package UbuntuPress
  */
 
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
-delete_option( 'wpskin_settings' );
-delete_option( 'wpskin_version' );
+delete_option( 'ubuntupress_settings' );
+delete_option( 'ubuntupress_version' );

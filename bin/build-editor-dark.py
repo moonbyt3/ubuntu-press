@@ -5,7 +5,7 @@ and assets/css/customize-dark.css from core's Customizer styles.
 
 Both UIs hardcode light greys instead of using CSS variables, so this copies
 every rule that sets one of those colours, swaps the colour for its dark
-counterpart and scopes the rule to body.wpskin-admin--dark with :where(),
+counterpart and scopes the rule to body.ubuntupress-admin--dark with :where(),
 which keeps core's specificity (hover / pressed states still win).
 
 Usage (re-run after WordPress updates):
@@ -16,7 +16,7 @@ import re
 import sys
 from pathlib import Path
 
-SCOPE = ':where(.wpskin-admin--dark)'
+SCOPE = ':where(.ubuntupress-admin--dark)'
 
 # Light editor greys -> dark equivalents, per property group.
 BACKGROUNDS = {
@@ -208,7 +208,7 @@ def main():
 	for spec in TARGETS:
 		parts = [
 			'/*',
-			f' * WPSkin dark theme for {spec["title"]}. Generated from WordPress {version}',
+			f' * UbuntuPress dark theme for {spec["title"]}. Generated from WordPress {version}',
 			' * by bin/build-editor-dark.py; do not edit by hand.',
 			' */',
 		]

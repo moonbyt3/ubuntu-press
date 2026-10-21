@@ -2,14 +2,14 @@
 /**
  * Admin-side behaviour: assets and plugin action links.
  *
- * @package WPSkin
+ * @package UbuntuPress
  */
 
-namespace WPSkin\Admin;
+namespace UbuntuPress\Admin;
 
-use WPSkin\Contracts\Hookable;
-use WPSkin\Loader;
-use WPSkin\Plugin;
+use UbuntuPress\Contracts\Hookable;
+use UbuntuPress\Loader;
+use UbuntuPress\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -19,7 +19,7 @@ class Admin implements Hookable {
 
 	public function register_hooks( Loader $loader ) {
 		$loader->add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
-		$loader->add_filter( 'plugin_action_links_' . WPSKIN_BASENAME, array( $this, 'action_links' ) );
+		$loader->add_filter( 'plugin_action_links_' . UBUNTUPRESS_BASENAME, array( $this, 'action_links' ) );
 	}
 
 	/**
@@ -33,15 +33,15 @@ class Admin implements Hookable {
 		}
 
 		wp_enqueue_style(
-			'wpskin-admin',
-			WPSKIN_URL . 'assets/css/admin.css',
+			'ubuntupress-admin',
+			UBUNTUPRESS_URL . 'assets/css/admin.css',
 			array(),
 			Plugin::asset_version( 'assets/css/admin.css' )
 		);
 
 		wp_enqueue_script(
-			'wpskin-admin',
-			WPSKIN_URL . 'assets/js/admin.js',
+			'ubuntupress-admin',
+			UBUNTUPRESS_URL . 'assets/js/admin.js',
 			array(),
 			Plugin::asset_version( 'assets/js/admin.js' ),
 			true
@@ -55,7 +55,7 @@ class Admin implements Hookable {
 	 * @return string[]
 	 */
 	public function action_links( $links ) {
-		array_unshift( $links, sprintf( '<a href="%s">%s</a>', esc_url( Settings::url() ), esc_html__( 'Settings', 'wpskin' ) ) );
+		array_unshift( $links, sprintf( '<a href="%s">%s</a>', esc_url( Settings::url() ), esc_html__( 'Settings', 'ubuntupress' ) ) );
 		return $links;
 	}
 }

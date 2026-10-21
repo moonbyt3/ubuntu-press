@@ -2,14 +2,14 @@
 /**
  * Light / dark colour theme for the admin.
  *
- * @package WPSkin
+ * @package UbuntuPress
  */
 
-namespace WPSkin\Admin;
+namespace UbuntuPress\Admin;
 
-use WPSkin\Contracts\Hookable;
-use WPSkin\Loader;
-use WPSkin\Plugin;
+use UbuntuPress\Contracts\Hookable;
+use UbuntuPress\Loader;
+use UbuntuPress\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -48,7 +48,7 @@ class Theme implements Hookable {
 	 * @return string
 	 */
 	public function body_class( $classes ) {
-		return self::is_dark() ? $classes . ' wpskin-admin--dark' : $classes;
+		return self::is_dark() ? $classes . ' ubuntupress-admin--dark' : $classes;
 	}
 
 	public function enqueue_assets() {
@@ -57,8 +57,8 @@ class Theme implements Hookable {
 		}
 
 		wp_enqueue_style(
-			'wpskin-theme-dark',
-			WPSKIN_URL . 'assets/css/theme-dark.css',
+			'ubuntupress-theme-dark',
+			UBUNTUPRESS_URL . 'assets/css/theme-dark.css',
 			array(),
 			Plugin::asset_version( 'assets/css/theme-dark.css' )
 		);
@@ -66,9 +66,9 @@ class Theme implements Hookable {
 		if ( $this->is_block_editor() ) {
 			// Depends on the editor styles so it loads after them and wins at equal specificity.
 			wp_enqueue_style(
-				'wpskin-editor-dark',
-				WPSKIN_URL . 'assets/css/editor-dark.css',
-				array( 'wpskin-theme-dark', 'wp-components', 'wp-block-editor', 'wp-editor', 'wp-edit-post' ),
+				'ubuntupress-editor-dark',
+				UBUNTUPRESS_URL . 'assets/css/editor-dark.css',
+				array( 'ubuntupress-theme-dark', 'wp-components', 'wp-block-editor', 'wp-editor', 'wp-edit-post' ),
 				Plugin::asset_version( 'assets/css/editor-dark.css' )
 			);
 		}
@@ -80,25 +80,25 @@ class Theme implements Hookable {
 		}
 
 		wp_enqueue_style(
-			'wpskin-theme-dark',
-			WPSKIN_URL . 'assets/css/theme-dark.css',
+			'ubuntupress-theme-dark',
+			UBUNTUPRESS_URL . 'assets/css/theme-dark.css',
 			array(),
 			Plugin::asset_version( 'assets/css/theme-dark.css' )
 		);
 
 		wp_enqueue_style(
-			'wpskin-customize-dark',
-			WPSKIN_URL . 'assets/css/customize-dark.css',
-			array( 'wpskin-theme-dark', 'customize-controls' ),
+			'ubuntupress-customize-dark',
+			UBUNTUPRESS_URL . 'assets/css/customize-dark.css',
+			array( 'ubuntupress-theme-dark', 'customize-controls' ),
 			Plugin::asset_version( 'assets/css/customize-dark.css' )
 		);
 
 		// The block-based widgets editor runs inside the Customizer when it is enabled.
 		if ( wp_style_is( 'wp-customize-widgets' ) ) {
 			wp_enqueue_style(
-				'wpskin-editor-dark',
-				WPSKIN_URL . 'assets/css/editor-dark.css',
-				array( 'wpskin-theme-dark', 'wp-customize-widgets' ),
+				'ubuntupress-editor-dark',
+				UBUNTUPRESS_URL . 'assets/css/editor-dark.css',
+				array( 'ubuntupress-theme-dark', 'wp-customize-widgets' ),
 				Plugin::asset_version( 'assets/css/editor-dark.css' )
 			);
 		}
@@ -116,7 +116,7 @@ class Theme implements Hookable {
 		<script>
 		new MutationObserver( function ( mutations, observer ) {
 			if ( document.body ) {
-				document.body.classList.add( 'wpskin-admin--dark' );
+				document.body.classList.add( 'ubuntupress-admin--dark' );
 				observer.disconnect();
 			}
 		} ).observe( document.documentElement, { childList: true } );
@@ -133,8 +133,8 @@ class Theme implements Hookable {
 		}
 
 		wp_enqueue_style(
-			'wpskin-editor-canvas-dark',
-			WPSKIN_URL . 'assets/css/editor-canvas-dark.css',
+			'ubuntupress-editor-canvas-dark',
+			UBUNTUPRESS_URL . 'assets/css/editor-canvas-dark.css',
 			array(),
 			Plugin::asset_version( 'assets/css/editor-canvas-dark.css' )
 		);
