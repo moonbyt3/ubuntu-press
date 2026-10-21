@@ -398,6 +398,84 @@ body.wpskin-admin--dark,
 	color: var(--wpskin-dark-danger);
 }
 
+/* Dashboard: welcome panel columns and the Activity widget */
+.wpskin-admin--dark .welcome-panel .welcome-panel-column-container {
+	border-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface);
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark #dashboard_activity h3 {
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .activity-block,
+.wpskin-admin--dark #dashboard_activity .subsubsub,
+.wpskin-admin--dark #activity-widget #the-comment-list .comment-item:first-child {
+	border-color: var(--wpskin-dark-border);
+}
+
+.wpskin-admin--dark #future-posts li:nth-child(odd),
+.wpskin-admin--dark #published-posts li:nth-child(odd),
+.wpskin-admin--dark #activity-widget #the-comment-list .comment-item {
+	background-color: var(--wpskin-dark-surface-alt);
+}
+
+.wpskin-admin--dark #activity-widget #the-comment-list .unapproved {
+	background-color: #2e271c;
+}
+
+.wpskin-admin--dark #activity-widget #the-comment-list .comment,
+.wpskin-admin--dark #activity-widget #the-comment-list .pingback {
+	box-shadow: inset 0 1px 0 var(--wpskin-dark-border);
+}
+
+.wpskin-admin--dark #future-posts li,
+.wpskin-admin--dark #published-posts li,
+.wpskin-admin--dark .activity-block .subsubsub li,
+.wpskin-admin--dark #dashboard_activity .subsubsub a .count,
+.wpskin-admin--dark #dashboard_activity .subsubsub a.current .count,
+.wpskin-admin--dark #dashboard_activity .no-activity p,
+.wpskin-admin--dark #latest-comments #the-comment-list .comment-meta,
+.wpskin-admin--dark #latest-comments #the-comment-list .row-actions {
+	color: var(--wpskin-dark-fg-muted);
+}
+
+/* Events and News widget */
+.wpskin-admin--dark .community-events li {
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .community-events li:first-child,
+.wpskin-admin--dark .community-events li ~ li,
+.wpskin-admin--dark .community-events .activity-block.last,
+.wpskin-admin--dark .community-events-footer {
+	border-color: var(--wpskin-dark-border);
+}
+
+/* Keeps the theme-colour accent on the left. */
+.wpskin-admin--dark .community-events li.event-none {
+	border-top-color: var(--wpskin-dark-border);
+}
+
+.wpskin-admin--dark .event-icon:before,
+.wpskin-admin--dark .community-events-footer,
+.wpskin-admin--dark .rssSummary,
+.wpskin-admin--dark #dashboard_primary .rss-widget span,
+.wpskin-admin--dark #dashboard_primary .rss-widget span.rss-date,
+.wpskin-admin--dark .rss-widget span.rss-date {
+	color: var(--wpskin-dark-fg-muted);
+}
+
+/* Comment approve / unapprove links (dashboard and Comments screen): core's green and amber are too dark */
+.wpskin-admin--dark #the-comment-list .approve a {
+	color: #68de7c;
+}
+
+.wpskin-admin--dark #the-comment-list .unapprove a {
+	color: #f0c33c;
+}
+
 /* Connectors screen items (core paints them white with a light border) */
 .wpskin-admin--dark .connectors-page .components-item {
 	border-color: var(--wpskin-dark-border);
