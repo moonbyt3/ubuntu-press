@@ -1,18 +1,21 @@
-/* WPSkin dashboard tiles. */
+/* WPSkin dashboard cards. */
 
-.wpskin-dashboard h1 {
+/* Block: wpskin-dashboard */
+.wpskin-dashboard__title {
 	margin-bottom: 24px;
 	font-size: 28px;
 }
 
-.wpskin-tiles {
+/* Block: wpskin-cards (grid) */
+.wpskin-cards {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 	gap: 20px;
 	align-items: start;
 }
 
-.wpskin-tile {
+/* Block: wpskin-card */
+.wpskin-card {
 	background: #fff;
 	border: 1px solid #dcdcde;
 	border-radius: 8px;
@@ -20,12 +23,12 @@
 	transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
-.wpskin-tile:hover {
+.wpskin-card:hover {
 	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 	transform: translateY(-2px);
 }
 
-.wpskin-tile__main {
+.wpskin-card__link {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -39,30 +42,30 @@
 	text-align: center;
 }
 
-.wpskin-tile__main:hover,
-.wpskin-tile__main:focus {
+.wpskin-card__link:hover,
+.wpskin-card__link:focus {
 	color: var(--wp-admin-theme-color, #2271b1);
 	background: #f6f7f7;
 }
 
-.wpskin-tile__main:focus {
+.wpskin-card__link:focus {
 	outline: 2px solid var(--wp-admin-theme-color, #2271b1);
 	outline-offset: -2px;
 	box-shadow: none;
 }
 
-.wpskin-tile__icon.dashicons {
+.wpskin-card__icon.dashicons {
 	width: 56px;
 	height: 56px;
 	font-size: 56px;
 	color: #50575e;
 }
 
-.wpskin-tile__main:hover .wpskin-tile__icon.dashicons {
+.wpskin-card__link:hover .wpskin-card__icon.dashicons {
 	color: var(--wp-admin-theme-color, #2271b1);
 }
 
-.wpskin-tile__icon--img {
+.wpskin-card__icon--image {
 	display: block;
 	width: 56px;
 	height: 56px;
@@ -71,12 +74,12 @@
 	background-size: contain;
 }
 
-.wpskin-tile__name {
+.wpskin-card__name {
 	font-size: 17px;
 	font-weight: 600;
 }
 
-.wpskin-tile__badge {
+.wpskin-card__badge {
 	position: absolute;
 	top: 12px;
 	right: 12px;
@@ -91,7 +94,7 @@
 	box-sizing: border-box;
 }
 
-.wpskin-tile__badge--small {
+.wpskin-card__badge--small {
 	position: static;
 	min-width: 18px;
 	margin-left: 4px;
@@ -100,42 +103,42 @@
 	line-height: 16px;
 }
 
-.wpskin-tile__sub {
+.wpskin-card__submenu {
 	margin: 0;
 	padding: 8px 0;
 	border-top: 1px solid #f0f0f1;
 	list-style: none;
 }
 
-.wpskin-tile__sub li {
+.wpskin-card__submenu-item {
 	margin: 0;
 }
 
-.wpskin-tile__sub a {
+.wpskin-card__submenu-link {
 	display: block;
 	padding: 5px 16px;
 	color: #50575e;
 	text-decoration: none;
 }
 
-.wpskin-tile__sub a:hover,
-.wpskin-tile__sub a:focus {
+.wpskin-card__submenu-link:hover,
+.wpskin-card__submenu-link:focus {
 	color: var(--wp-admin-theme-color, #2271b1);
 	background: #f6f7f7;
 }
 
 @media screen and (max-width: 600px) {
-	.wpskin-tiles {
+	.wpskin-cards {
 		grid-template-columns: repeat(2, 1fr);
 		gap: 12px;
 	}
 
-	.wpskin-tile__main {
+	.wpskin-card__link {
 		min-height: 120px;
 	}
 
-	.wpskin-tile__icon.dashicons,
-	.wpskin-tile__icon--img {
+	.wpskin-card__icon.dashicons,
+	.wpskin-card__icon--image {
 		width: 40px;
 		height: 40px;
 		font-size: 40px;

@@ -1,6 +1,6 @@
 <?php
 /**
- * Replaces the default Dashboard screen with a grid of large tiles
+ * Replaces the default Dashboard screen with a grid of large cards
  * built from the admin sidebar menu.
  *
  * @package WPSkin
@@ -15,17 +15,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class DashboardTiles implements Hookable {
+class DashboardCards implements Hookable {
 
 	public function register_hooks( Loader $loader ) {
 		$loader->add_action( 'load-index.php', array( $this, 'take_over' ) );
 	}
 
 	/**
-	 * Renders the tile screen in place of wp-admin/index.php.
+	 * Renders the card screen in place of wp-admin/index.php.
 	 */
 	public function take_over() {
-		if ( ! Settings::get( 'dashboard_tiles' ) || is_network_admin() || is_user_admin() ) {
+		if ( ! Settings::get( 'dashboard_cards' ) || is_network_admin() || is_user_admin() ) {
 			return;
 		}
 
@@ -54,35 +54,35 @@ class DashboardTiles implements Hookable {
 
 	private function render() {
 		$user  = wp_get_current_user();
-		$tiles = $this->get_tiles();
+		$cards = $this->get_cards();
 		?>
 		<div class="wrap wpskin-dashboard">
-			<h1>
+			<h1 class="wpskin-dashboard__title">
 				<?php
 				/* translators: %s: user display name. */
 				printf( esc_html__( 'Welcome, %s', 'wpskin' ), esc_html( $user->display_name ) );
 				?>
 			</h1>
 
-			<div class="wpskin-tiles">
-				<?php foreach ( $tiles as $tile ) : ?>
-					<div class="wpskin-tile">
-						<a class="wpskin-tile__main" href="<?php echo esc_url( $tile['url'] ); ?>">
-							<?php $this->render_icon( $tile['icon'] ); ?>
-							<span class="wpskin-tile__name"><?php echo esc_html( $tile['name'] ); ?></span>
-							<?php if ( $tile['count'] ) : ?>
-								<span class="wpskin-tile__badge"><?php echo esc_html( number_format_i18n( $tile['count'] ) ); ?></span>
+			<div class="wpskin-dashboard__cards wpskin-cards">
+				<?php foreach ( $cards as $card ) : ?>
+					<div class="wpskin-cards__item wpskin-card">
+						<a class="wpskin-card__link" href="<?php echo esc_url( $card['url'] ); ?>">
+							<?php $this->render_icon( $card['icon'] ); ?>
+							<span class="wpskin-card__name"><?php echo esc_html( $card['name'] ); ?></span>
+							<?php if ( $card['count'] ) : ?>
+								<span class="wpskin-card__badge"><?php echo esc_html( number_format_i18n( $card['count'] ) ); ?></span>
 							<?php endif; ?>
 						</a>
 
-						<?php if ( count( $tile['children'] ) > 1 ) : ?>
-							<ul class="wpskin-tile__sub">
-								<?php foreach ( $tile['children'] as $child ) : ?>
-									<li>
-										<a href="<?php echo esc_url( $child['url'] ); ?>">
+						<?php if ( count( $card['children'] ) > 1 ) : ?>
+							<ul class="wpskin-card__submenu">
+								<?php foreach ( $card['children'] as $child ) : ?>
+									<li class="wpskin-card__submenu-item">
+										<a class="wpskin-card__submenu-link" href="<?php echo esc_url( $child['url'] ); ?>">
 											<?php echo esc_html( $child['name'] ); ?>
 											<?php if ( $child['count'] ) : ?>
-												<span class="wpskin-tile__badge wpskin-tile__badge--small"><?php echo esc_html( number_format_i18n( $child['count'] ) ); ?></span>
+												<span class="wpskin-card__badge wpskin-card__badge--small"><?php echo esc_html( number_format_i18n( $child['count'] ) ); ?></span>
 											<?php endif; ?>
 										</a>
 									</li>
@@ -97,14 +97,14 @@ class DashboardTiles implements Hookable {
 	}
 
 	/**
-	 * Builds tile data from the global admin menu, filtered by user capabilities.
+	 * Builds card data from the global admin menu, filtered by user capabilities.
 	 *
 	 * @return array[]
 	 */
-	private function get_tiles() {
+	private function get_cards() {
 		global $menu, $submenu;
 
-		$tiles = array();
+		$cards = array();
 
 		foreach ( (array) $menu as $item ) {
 			$slug = isset( $item[2] ) ? $item[2] : '';
@@ -131,7 +131,7 @@ class DashboardTiles implements Hookable {
 				}
 			}
 
-			$tiles[] = array(
+			$cards[] = array(
 				'name'     => $this->clean_title( $item[0] ),
 				'url'      => $children ? $children[0]['url'] : $this->menu_url( $slug, 'admin.php' ),
 				'icon'     => isset( $item[6] ) ? $item[6] : '',
@@ -141,11 +141,11 @@ class DashboardTiles implements Hookable {
 		}
 
 		/**
-		 * Filters the tiles shown on the WPSkin dashboard.
+		 * Filters the cards shown on the WPSkin dashboard.
 		 *
-		 * @param array[] $tiles Tile data.
+		 * @param array[] $cards Card data.
 		 */
-		return apply_filters( 'wpskin_dashboard_tiles', $tiles );
+		return apply_filters( 'wpskin_dashboard_cards', $cards );
 	}
 
 	/**
@@ -210,11 +210,11 @@ class DashboardTiles implements Hookable {
 	 */
 	private function render_icon( $icon ) {
 		if ( 0 === strpos( $icon, 'data:image' ) || preg_match( '#^https?://#', $icon ) ) {
-			printf( '<span class="wpskin-tile__icon wpskin-tile__icon--img" style="background-image:url(\'%s\')"></span>', esc_attr( $icon ) );
+			printf( '<span class="wpskin-card__icon wpskin-card__icon--image" style="background-image:url(\'%s\')"></span>', esc_attr( $icon ) );
 			return;
 		}
 
 		$class = 0 === strpos( $icon, 'dashicons-' ) ? $icon : 'dashicons-admin-generic';
-		printf( '<span class="wpskin-tile__icon dashicons %s" aria-hidden="true"></span>', esc_attr( $class ) );
+		printf( '<span class="wpskin-card__icon dashicons %s" aria-hidden="true"></span>', esc_attr( $class ) );
 	}
 }

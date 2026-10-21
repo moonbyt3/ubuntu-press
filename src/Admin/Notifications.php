@@ -32,7 +32,7 @@ class Notifications implements Hookable {
 	 * @return string
 	 */
 	public function body_class( $classes ) {
-		return $this->is_enabled() ? $classes . ' wpskin-notices' : $classes;
+		return $this->is_enabled() ? $classes . ' wpskin-admin--notices' : $classes;
 	}
 
 	public function enqueue_assets() {
@@ -82,11 +82,14 @@ class Notifications implements Hookable {
 			array(
 				'id'     => 'wpskin-notices',
 				'parent' => 'top-secondary',
-				'title'  => '<span class="ab-icon" aria-hidden="true"></span>'
-					. '<span class="wpskin-notices-count" hidden>0</span>'
+				'title'  => '<span class="ab-icon wpskin-notices-toggle__icon" aria-hidden="true"></span>'
+					. '<span class="wpskin-notices-toggle__count" hidden>0</span>'
 					. '<span class="screen-reader-text">' . esc_html__( 'Notifications', 'wpskin' ) . '</span>',
 				'href'   => '#wpskin-notices-panel',
-				'meta'   => array( 'title' => __( 'Notifications', 'wpskin' ) ),
+				'meta'   => array(
+					'class' => 'wpskin-notices-toggle',
+					'title' => __( 'Notifications', 'wpskin' ),
+				),
 			)
 		);
 	}
@@ -98,9 +101,9 @@ class Notifications implements Hookable {
 		?>
 		<div id="wpskin-notices-panel" class="wpskin-notices-panel" role="dialog" aria-labelledby="wpskin-notices-title" hidden>
 			<div class="wpskin-notices-panel__header">
-				<h2 id="wpskin-notices-title"><?php esc_html_e( 'Notifications', 'wpskin' ); ?></h2>
+				<h2 id="wpskin-notices-title" class="wpskin-notices-panel__title"><?php esc_html_e( 'Notifications', 'wpskin' ); ?></h2>
 				<button type="button" class="wpskin-notices-panel__close">
-					<span class="dashicons dashicons-no-alt" aria-hidden="true"></span>
+					<span class="wpskin-notices-panel__close-icon dashicons dashicons-no-alt" aria-hidden="true"></span>
 					<span class="screen-reader-text"><?php esc_html_e( 'Close notifications', 'wpskin' ); ?></span>
 				</button>
 			</div>

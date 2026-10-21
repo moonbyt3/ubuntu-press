@@ -8,7 +8,7 @@
 namespace WPSkin;
 
 use WPSkin\Admin\Admin;
-use WPSkin\Admin\DashboardTiles;
+use WPSkin\Admin\DashboardCards;
 use WPSkin\Admin\Notifications;
 use WPSkin\Admin\Settings;
 use WPSkin\Admin\Sidebar;
@@ -96,7 +96,7 @@ final class Plugin {
 		if ( is_admin() ) {
 			$services[] = Admin::class;
 			$services[] = Settings::class;
-			$services[] = DashboardTiles::class;
+			$services[] = DashboardCards::class;
 			$services[] = Sidebar::class;
 			$services[] = Notifications::class;
 		}

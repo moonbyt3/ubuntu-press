@@ -1,6 +1,6 @@
 <?php
 /**
- * Hides the default admin sidebar and adds a toolbar link back to the tile dashboard.
+ * Hides the default admin sidebar and adds a toolbar link back to the card dashboard.
  *
  * @package WPSkin
  */
@@ -27,12 +27,12 @@ class Sidebar implements Hookable {
 	/**
 	 * Whether the sidebar should be hidden on the current screen.
 	 *
-	 * Never hides it when the tile dashboard is off, otherwise users would be left without navigation.
+	 * Never hides it when the card dashboard is off, otherwise users would be left without navigation.
 	 *
 	 * @return bool
 	 */
 	private function should_hide() {
-		if ( ! Settings::get( 'dashboard_tiles' ) || is_network_admin() || is_user_admin() ) {
+		if ( ! Settings::get( 'dashboard_cards' ) || is_network_admin() || is_user_admin() ) {
 			return false;
 		}
 
@@ -55,7 +55,7 @@ class Sidebar implements Hookable {
 	 * @return string
 	 */
 	public function body_class( $classes ) {
-		return $this->should_hide() ? $classes . ' wpskin-no-sidebar' : $classes;
+		return $this->should_hide() ? $classes . ' wpskin-admin--no-sidebar' : $classes;
 	}
 
 	public function enqueue_assets() {
@@ -84,9 +84,12 @@ class Sidebar implements Hookable {
 		$admin_bar->add_node(
 			array(
 				'id'    => 'wpskin-home',
-				'title' => '<span class="ab-icon" aria-hidden="true"></span><span class="ab-label">' . esc_html__( 'Dashboard', 'wpskin' ) . '</span>',
+				'title' => '<span class="ab-icon wpskin-home-link__icon" aria-hidden="true"></span><span class="ab-label wpskin-home-link__label">' . esc_html__( 'Dashboard', 'wpskin' ) . '</span>',
 				'href'  => admin_url(),
-				'meta'  => array( 'title' => __( 'Dashboard', 'wpskin' ) ),
+				'meta'  => array(
+					'class' => 'wpskin-home-link',
+					'title' => __( 'Dashboard', 'wpskin' ),
+				),
 			)
 		);
 	}
