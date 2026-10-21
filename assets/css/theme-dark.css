@@ -19,6 +19,109 @@ body.wpskin-admin--dark {
 	color-scheme: dark;
 }
 
+/*
+ * WordPress design-system tokens (block editor, DataViews). Brand colours keep the admin scheme.
+ * The editor's ThemeProvider writes light values inline on its wrappers ([data-wpds-corner-radius]),
+ * so these need !important to win.
+ */
+body.wpskin-admin--dark,
+.wpskin-admin--dark [data-wpds-corner-radius] {
+	--wpds-color-background-surface-neutral: #232323 !important;
+	--wpds-color-background-surface-neutral-strong: #1e1e1e !important;
+	--wpds-color-background-surface-neutral-weak: #2a2a2a !important;
+	--wpds-color-background-surface-brand: #252b3d !important;
+	--wpds-color-background-surface-success: #1f3a24 !important;
+	--wpds-color-background-surface-success-weak: #1b2a1d !important;
+	--wpds-color-background-surface-info: #1f2f44 !important;
+	--wpds-color-background-surface-info-weak: #1b2532 !important;
+	--wpds-color-background-surface-warning: #3d3020 !important;
+	--wpds-color-background-surface-warning-weak: #2e271c !important;
+	--wpds-color-background-surface-caution: #3b3518 !important;
+	--wpds-color-background-surface-caution-weak: #2c2916 !important;
+	--wpds-color-background-surface-error: #432423 !important;
+	--wpds-color-background-surface-error-weak: #2f1f1e !important;
+	--wpds-color-background-interactive-neutral-strong: #e0e0e0 !important;
+	--wpds-color-background-interactive-neutral-strong-active: #fff !important;
+	--wpds-color-background-interactive-neutral-strong-disabled: #3d3d3d !important;
+	--wpds-color-background-interactive-neutral-weak-active: #333 !important;
+	--wpds-color-background-interactive-brand-strong-disabled: #3d3d3d !important;
+	--wpds-color-background-interactive-brand-weak-active: #2a3147 !important;
+	--wpds-color-background-interactive-error-active: #2f1f1e !important;
+	--wpds-color-background-interactive-error-strong-disabled: #3d3d3d !important;
+	--wpds-color-background-interactive-error-weak-active: #432423 !important;
+	--wpds-color-background-track-neutral-weak: #2a2a2a !important;
+	--wpds-color-background-track-neutral: #3d3d3d !important;
+	--wpds-color-background-thumb-neutral-weak: #6e6e6e !important;
+	--wpds-color-background-thumb-neutral-weak-active: #8d8d8d !important;
+	--wpds-color-background-thumb-brand-disabled: #3d3d3d !important;
+	--wpds-color-background-thumb-neutral-weak-disabled: #3d3d3d !important;
+	--wpds-color-foreground-content-neutral: #e6e6e6 !important;
+	--wpds-color-foreground-content-neutral-weak: #a7a7a7 !important;
+	--wpds-color-foreground-content-success: #c6f7cd !important;
+	--wpds-color-foreground-content-success-weak: #6fcf83 !important;
+	--wpds-color-foreground-content-info: #deebfa !important;
+	--wpds-color-foreground-content-info-weak: #72aee6 !important;
+	--wpds-color-foreground-content-warning: #fde6be !important;
+	--wpds-color-foreground-content-warning-weak: #e1bc7c !important;
+	--wpds-color-foreground-content-caution: #fee995 !important;
+	--wpds-color-foreground-content-caution-weak: #cfc28d !important;
+	--wpds-color-foreground-content-error: #f6e6e3 !important;
+	--wpds-color-foreground-content-error-weak: #f86368 !important;
+	--wpds-color-foreground-interactive-neutral: #e6e6e6 !important;
+	--wpds-color-foreground-interactive-neutral-active: #fff !important;
+	--wpds-color-foreground-interactive-neutral-disabled: #6e6e6e !important;
+	--wpds-color-foreground-interactive-neutral-strong: #1e1e1e !important;
+	--wpds-color-foreground-interactive-neutral-strong-active: #1e1e1e !important;
+	--wpds-color-foreground-interactive-neutral-strong-disabled: #6e6e6e !important;
+	--wpds-color-foreground-interactive-neutral-weak: #a7a7a7 !important;
+	--wpds-color-foreground-interactive-neutral-weak-active: #e6e6e6 !important;
+	--wpds-color-foreground-interactive-neutral-weak-disabled: #6e6e6e !important;
+	--wpds-color-foreground-interactive-brand-active: #9ec2e6 !important;
+	--wpds-color-foreground-interactive-brand-disabled: #6e6e6e !important;
+	--wpds-color-foreground-interactive-brand-strong-disabled: #6e6e6e !important;
+	--wpds-color-foreground-interactive-error: #f86368 !important;
+	--wpds-color-foreground-interactive-error-active: #ff8a8e !important;
+	--wpds-color-foreground-interactive-error-disabled: #6e6e6e !important;
+	--wpds-color-foreground-interactive-error-strong-disabled: #6e6e6e !important;
+	--wpds-color-stroke-surface-neutral: #3d3d3d !important;
+	--wpds-color-stroke-surface-neutral-weak: #2f2f2f !important;
+	--wpds-color-stroke-surface-neutral-strong: #6e6e6e !important;
+	--wpds-color-stroke-surface-brand: #3a4566 !important;
+	--wpds-color-stroke-surface-success: #2f5a37 !important;
+	--wpds-color-stroke-surface-info: #34506f !important;
+	--wpds-color-stroke-surface-warning: #6b5530 !important;
+	--wpds-color-stroke-surface-caution: #625a32 !important;
+	--wpds-color-stroke-surface-error: #6b3a36 !important;
+	--wpds-color-stroke-interactive-neutral: #6e6e6e !important;
+	--wpds-color-stroke-interactive-neutral-active: #8d8d8d !important;
+	--wpds-color-stroke-interactive-neutral-disabled: #3d3d3d !important;
+	--wpds-color-stroke-interactive-neutral-strong: #8d8d8d !important;
+	--wpds-color-stroke-interactive-brand-disabled: #3d3d3d !important;
+	--wpds-color-stroke-interactive-error-disabled: #3d3d3d !important;
+
+	/* Older @wordpress/components variables (used with light fallbacks). */
+	--wp-components-color-background: #1e1e1e !important;
+	--wp-components-color-foreground: #e6e6e6 !important;
+	--wp-components-color-foreground-inverted: #1e1e1e !important;
+	--wp-components-color-gray-100: #2a2a2a !important;
+	--wp-components-color-gray-400: #5c5c5c !important;
+	--wp-components-color-gray-600: #8d8d8d !important;
+	--wp-components-color-gray-700: #a7a7a7 !important;
+	--wp-components-color-gray-800: #d0d0d0 !important;
+}
+
+/* Admin-scheme blue is too dark for text on dark surfaces; lighten it for text-only buttons and links. */
+.wpskin-admin--dark .components-button:is(.is-tertiary, .is-link),
+.wpskin-admin--dark .components-external-link {
+	--wp-components-color-accent: color-mix(in srgb, var(--wp-admin-theme-color, #3858e9) 50%, #fff);
+	--wp-components-color-accent-darker-10: color-mix(in srgb, var(--wp-admin-theme-color, #3858e9) 35%, #fff);
+	--wp-components-color-accent-darker-20: color-mix(in srgb, var(--wp-admin-theme-color, #3858e9) 25%, #fff);
+}
+
+.wpskin-admin--dark [data-wpds-corner-radius] {
+	--wpds-color-foreground-interactive-brand: color-mix(in srgb, var(--wp-admin-theme-color, #3858e9) 50%, #fff) !important;
+}
+
 /* Text */
 .wpskin-admin--dark h1,
 .wpskin-admin--dark h2,
@@ -102,13 +205,23 @@ body.wpskin-admin--dark {
 	color: var(--wpskin-dark-fg);
 }
 
+.wpskin-admin--dark .widefat p,
+.wpskin-admin--dark .widefat ol,
+.wpskin-admin--dark .widefat ul {
+	color: var(--wpskin-dark-fg);
+}
+
 .wpskin-admin--dark .striped > tbody > :nth-child(odd),
 .wpskin-admin--dark ul.striped > :nth-child(odd),
 .wpskin-admin--dark .alternate {
 	background: var(--wpskin-dark-surface-alt);
 }
 
-/* Plugins screen row states */
+/* Plugins screen rows (core paints the rows, including the header, white) */
+.wpskin-admin--dark .plugins tr {
+	background: var(--wpskin-dark-surface);
+}
+
 .wpskin-admin--dark .plugins .active td,
 .wpskin-admin--dark .plugins .active th,
 .wpskin-admin--dark .plugin-update-tr.active td {
@@ -126,6 +239,12 @@ body.wpskin-admin--dark {
 	box-shadow: inset 0 -1px 0 var(--wpskin-dark-border);
 }
 
+/* Core draws a light separator where an active row is followed by an inactive one. */
+.wpskin-admin--dark .plugins tr.active + tr.inactive td,
+.wpskin-admin--dark .plugins tr.active + tr.inactive th {
+	box-shadow: inset 0 -1px 0 var(--wpskin-dark-border);
+}
+
 .wpskin-admin--dark .notice,
 .wpskin-admin--dark div.updated,
 .wpskin-admin--dark div.error,
@@ -135,6 +254,13 @@ body.wpskin-admin--dark {
 	border-bottom-color: var(--wpskin-dark-border);
 	background: var(--wpskin-dark-surface);
 	box-shadow: none;
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .notice p,
+.wpskin-admin--dark div.updated p,
+.wpskin-admin--dark div.error p,
+.wpskin-admin--dark .notice-title {
 	color: var(--wpskin-dark-fg);
 }
 
@@ -163,6 +289,63 @@ body.wpskin-admin--dark {
 .wpskin-admin--dark .contextual-help-tabs .active {
 	border-color: var(--wpskin-dark-border);
 	background: var(--wpskin-dark-surface-hover);
+}
+
+/* Privacy and Site Health screens (shared header, tabs, accordions) */
+.wpskin-admin--dark .privacy-settings-header,
+.wpskin-admin--dark .health-check-header {
+	border-bottom-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface);
+}
+
+.wpskin-admin--dark .privacy-settings-tab:focus,
+.wpskin-admin--dark .health-check-tab:focus {
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .health-check-offscreen-nav .health-check-tab {
+	background: var(--wpskin-dark-surface);
+}
+
+.wpskin-admin--dark .health-check-offscreen-nav:before {
+	border-color: transparent transparent var(--wpskin-dark-surface);
+}
+
+.wpskin-admin--dark .privacy-settings-accordion,
+.wpskin-admin--dark .health-check-accordion,
+.wpskin-admin--dark .privacy-settings-accordion-heading,
+.wpskin-admin--dark .health-check-accordion-heading {
+	border-color: var(--wpskin-dark-border);
+}
+
+.wpskin-admin--dark .privacy-settings-accordion-trigger,
+.wpskin-admin--dark .health-check-accordion-trigger,
+.wpskin-admin--dark .privacy-settings-accordion-panel,
+.wpskin-admin--dark .health-check-accordion-panel {
+	background: var(--wpskin-dark-surface);
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .privacy-settings-accordion-trigger:hover,
+.wpskin-admin--dark .privacy-settings-accordion-trigger:active,
+.wpskin-admin--dark .privacy-settings-accordion-trigger:focus,
+.wpskin-admin--dark .health-check-accordion-trigger:hover,
+.wpskin-admin--dark .health-check-accordion-trigger:active,
+.wpskin-admin--dark .health-check-accordion-trigger:focus {
+	background: var(--wpskin-dark-surface-hover);
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .privacy-settings-accordion-trigger .icon,
+.wpskin-admin--dark .privacy-settings-view-read .icon,
+.wpskin-admin--dark .health-check-accordion-trigger .icon,
+.wpskin-admin--dark .site-health-view-passed .icon {
+	border-color: var(--wpskin-dark-fg-muted);
+}
+
+.wpskin-admin--dark .privacy-settings-accordion-trigger .badge,
+.wpskin-admin--dark .health-check-accordion-trigger .badge {
+	color: var(--wpskin-dark-fg);
 }
 
 /* Tabs */

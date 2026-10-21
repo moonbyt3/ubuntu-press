@@ -149,7 +149,7 @@ class Settings implements Hookable {
 		echo '</select>';
 		printf(
 			'<p class="description">%s</p>',
-			esc_html__( 'Applies to the Dashboard and all admin screens except the block editor.', 'wpskin' )
+			esc_html__( 'Applies to the Dashboard and all admin screens, including the block editor.', 'wpskin' )
 		);
 	}
 
