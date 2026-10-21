@@ -34,6 +34,11 @@ class DashboardCards implements Hookable {
 		'#da3450', // Red.
 	);
 
+	/**
+	 * Query arg that shows the default WordPress Dashboard instead of the cards.
+	 */
+	const CLASSIC_ARG = 'wpskin_classic';
+
 	public function register_hooks( Loader $loader ) {
 		$loader->add_action( 'load-index.php', array( $this, 'take_over' ) );
 	}
@@ -42,7 +47,8 @@ class DashboardCards implements Hookable {
 	 * Renders the card screen in place of wp-admin/index.php.
 	 */
 	public function take_over() {
-		if ( ! Settings::get( 'dashboard_cards' ) || is_network_admin() || is_user_admin() ) {
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only view switch.
+		if ( ! Settings::get( 'dashboard_cards' ) || is_network_admin() || is_user_admin() || isset( $_GET[ self::CLASSIC_ARG ] ) ) {
 			return;
 		}
 
@@ -316,12 +322,31 @@ class DashboardCards implements Hookable {
 		 */
 		$cards = apply_filters( 'wpskin_dashboard_cards', $cards );
 
-		// Added after the filter so the settings shortcut always stays last.
+		// Added after the filter so these shortcuts always stay last.
+		$cards[] = $this->classic_dashboard_card();
+
 		if ( current_user_can( 'manage_options' ) ) {
 			$cards[] = $this->settings_card();
 		}
 
 		return $cards;
+	}
+
+	/**
+	 * Shortcut card to the default WordPress Dashboard that the cards replace.
+	 *
+	 * @return array
+	 */
+	private function classic_dashboard_card() {
+		return array(
+			'id'       => 'wordpress-dashboard',
+			'name'     => __( 'WordPress Dashboard', 'wpskin' ),
+			'url'      => add_query_arg( self::CLASSIC_ARG, '1', admin_url( 'index.php' ) ),
+			'icon'     => 'dashicons-dashboard',
+			'color'    => self::PALETTE[6],
+			'count'    => 0,
+			'children' => array(),
+		);
 	}
 
 	/**
