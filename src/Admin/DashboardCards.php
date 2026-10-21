@@ -290,13 +290,19 @@ class DashboardCards implements Hookable {
 				}
 			}
 
+			// Some bubbles (e.g. Site Health) live only on a submenu item; fall back to their total.
+			$count = $this->extract_count( $item[0] );
+			if ( ! $count ) {
+				$count = array_sum( wp_list_pluck( $children, 'count' ) );
+			}
+
 			$cards[] = array(
 				'id'       => sanitize_html_class( sanitize_title( $slug ) ),
 				'name'     => $this->clean_title( $item[0] ),
 				'url'      => $children ? $children[0]['url'] : $this->menu_url( $slug, 'admin.php' ),
 				'icon'     => $icon,
 				'color'    => $this->color_for( $slug ),
-				'count'    => $this->extract_count( $item[0] ),
+				'count'    => $count,
 				'children' => $children,
 			);
 		}
