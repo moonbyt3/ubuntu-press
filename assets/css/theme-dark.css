@@ -184,6 +184,9 @@ body.wpskin-admin--dark,
 .wpskin-admin--dark .wp-filter,
 .wpskin-admin--dark .wp-tab-panel,
 .wpskin-admin--dark .categorydiv div.tabs-panel,
+.wpskin-admin--dark .customlinkdiv div.tabs-panel,
+.wpskin-admin--dark .posttypediv div.tabs-panel,
+.wpskin-admin--dark .taxonomydiv div.tabs-panel,
 .wpskin-admin--dark ul.cat-checklist {
 	border-color: var(--wpskin-dark-border);
 	background: var(--wpskin-dark-surface);
@@ -273,6 +276,126 @@ body.wpskin-admin--dark,
 .wpskin-admin--dark .plugin-card .column-downloaded,
 .wpskin-admin--dark .plugin-card .column-compatibility {
 	color: var(--wpskin-dark-fg-muted);
+}
+
+/* Menus screen: menu picker bar, "Add menu items" accordion, menu editor */
+.wpskin-admin--dark .manage-menus,
+.wpskin-admin--dark.nav-menus-php #post-body {
+	border-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface);
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark #nav-menu-header,
+.wpskin-admin--dark #nav-menu-footer {
+	border-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface-alt);
+}
+
+.wpskin-admin--dark #nav-menu-footer {
+	box-shadow: 0 -1px 0 0 var(--wpskin-dark-border);
+}
+
+.wpskin-admin--dark #menu-management .menu-edit,
+.wpskin-admin--dark #menu-settings-column .accordion-container,
+.wpskin-admin--dark .menu-settings {
+	border-color: var(--wpskin-dark-border);
+}
+
+.wpskin-admin--dark .accordion-section,
+.wpskin-admin--dark .accordion-section.open:hover,
+.wpskin-admin--dark .accordion-section-title,
+.wpskin-admin--dark .control-section.open .accordion-section-title {
+	border-color: var(--wpskin-dark-border);
+}
+
+.wpskin-admin--dark .accordion-section-content,
+.wpskin-admin--dark .control-section .accordion-section-title {
+	background: var(--wpskin-dark-surface);
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark.js .control-section:hover .accordion-section-title,
+.wpskin-admin--dark.js .control-section .accordion-section-title:hover,
+.wpskin-admin--dark.js .control-section.open .accordion-section-title,
+.wpskin-admin--dark.js .control-section .accordion-section-title:focus,
+.js .wpskin-admin--dark .control-section:hover .accordion-section-title,
+.js .wpskin-admin--dark .control-section .accordion-section-title:hover,
+.js .wpskin-admin--dark .control-section.open .accordion-section-title,
+.js .wpskin-admin--dark .control-section .accordion-section-title:focus {
+	background: var(--wpskin-dark-surface-hover);
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .accordion-section-title button.accordion-trigger,
+.wpskin-admin--dark.nav-menus-php .metabox-holder .accordion-section-title button.accordion-trigger,
+.wpskin-admin--dark .accordion-section-title:hover span.dashicons.dashicons-arrow-down,
+.wpskin-admin--dark.nav-menus-php .metabox-holder .accordion-section-title:hover span.dashicons.dashicons-arrow-down {
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .accordion-section-title span.dashicons.dashicons-arrow-down,
+.wpskin-admin--dark.nav-menus-php .metabox-holder .accordion-section-title span.dashicons.dashicons-arrow-down {
+	color: var(--wpskin-dark-fg-muted);
+}
+
+.wpskin-admin--dark ul.category-tabs li.tabs,
+.wpskin-admin--dark ul.add-menu-item-tabs li.tabs,
+.wpskin-admin--dark .wp-tab-active {
+	border-color: var(--wpskin-dark-border);
+	border-bottom-color: var(--wpskin-dark-surface);
+	background-color: var(--wpskin-dark-surface);
+}
+
+.wpskin-admin--dark #side-sortables .category-tabs .tabs a,
+.wpskin-admin--dark #side-sortables .add-menu-item-tabs .tabs a,
+.wpskin-admin--dark .wp-tab-bar .wp-tab-active a,
+.wpskin-admin--dark #post-body ul.category-tabs li.tabs a,
+.wpskin-admin--dark #post-body ul.add-menu-item-tabs li.tabs a {
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .menu-item-handle,
+.wpskin-admin--dark .menu-item-bar .menu-item-handle {
+	border-color: var(--wpskin-dark-border);
+	background: var(--wpskin-dark-surface-alt);
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .menu-item-bar .menu-item-handle:hover {
+	border-color: var(--wpskin-dark-field-border);
+}
+
+.wpskin-admin--dark #menu-to-edit .menu-item-invalid .menu-item-handle {
+	background: #432423;
+}
+
+.wpskin-admin--dark .menu-item-settings,
+.wpskin-admin--dark .link-to-original {
+	border-color: var(--wpskin-dark-border);
+}
+
+.wpskin-admin--dark .is-submenu,
+.wpskin-admin--dark .theme-location-set,
+.wpskin-admin--dark .link-to-original,
+.wpskin-admin--dark .menu-item-handle .menu-item-title.no-title,
+.wpskin-admin--dark .menu-settings-group-name {
+	color: var(--wpskin-dark-fg-muted);
+}
+
+.wpskin-admin--dark .bulk-select-button,
+.wpskin-admin--dark .bulk-selection .bulk-select-button,
+.wpskin-admin--dark label.bulk-select-button:hover,
+.wpskin-admin--dark label.bulk-select-button:active,
+.wpskin-admin--dark label.bulk-select-button:focus-within {
+	border-color: var(--wpskin-dark-field-border);
+	background: var(--wpskin-dark-surface-alt);
+	color: var(--wpskin-dark-fg);
+}
+
+.wpskin-admin--dark .bulk-actions input.menu-items-delete,
+.wpskin-admin--dark .bulk-actions input.menu-items-delete:hover {
+	color: var(--wpskin-dark-danger);
 }
 
 /* Connectors screen items (core paints them white with a light border) */
