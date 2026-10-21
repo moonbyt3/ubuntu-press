@@ -279,14 +279,18 @@ class DashboardCards implements Hookable {
 				continue;
 			}
 
-			$icon     = isset( $item[6] ) ? $item[6] : '';
-			$children = array();
+			$icon       = isset( $item[6] ) ? $item[6] : '';
+			$children   = array();
+			$self_index = 0;
 
 			if ( ! empty( $submenu[ $slug ] ) ) {
 				foreach ( $submenu[ $slug ] as $sub ) {
 					$name = $this->clean_title( $sub[0] );
 					if ( '' === $name || ! current_user_can( $sub[1] ) ) {
 						continue;
+					}
+					if ( $sub[2] === $slug ) {
+						$self_index = count( $children );
 					}
 					$children[] = array(
 						'name'  => $name,
@@ -299,9 +303,14 @@ class DashboardCards implements Hookable {
 			}
 
 			// Some bubbles (e.g. Site Health) live only on a submenu item; fall back to their total.
-			$count = $this->extract_count( $item[0] );
+			$count       = $this->extract_count( $item[0] );
+			$child_count = array_sum( wp_list_pluck( $children, 'count' ) );
 			if ( ! $count ) {
-				$count = array_sum( wp_list_pluck( $children, 'count' ) );
+				$count = $child_count;
+			} elseif ( $children && ! $child_count ) {
+				// Others (e.g. Plugins, Comments) live only on the top-level item; show them on the
+				// child that opens the same page so the folder's badge can be traced inside it.
+				$children[ $self_index ]['count'] = $count;
 			}
 
 			$cards[] = array(
