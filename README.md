@@ -30,6 +30,12 @@ Requires WordPress 6.0+ and PHP 7.4+.
 
 
 - **Personal preferences.** Each user can pick their own Style, Accent color, Dashboard background and Dock (on/off, position, auto-hide, apps) in the **UbuntuPress** section of their **Profile** screen, saved with *Update Profile*. Only the choices they change are stored; everything else keeps following the site settings, which act as defaults. A "Reset these settings to the site defaults" checkbox clears them. Admins can turn this off under *Users › Personal preferences* on the UbuntuPress page.
+Admin preferences:
+<img width="1919" height="928" alt="Preferences (global)" src="https://github.com/user-attachments/assets/35ae5ed5-ae74-47c2-b0bf-e2dd9d1a6b9b" />
+
+User preferences - WP Profile edit screen:
+<img width="1919" height="928" alt="image" src="https://github.com/user-attachments/assets/8da55d57-fc2b-4956-83fb-aecb57f56105" />
+
 
 Deleting the plugin removes its settings and every user's preferences.
 
