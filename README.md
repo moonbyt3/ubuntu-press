@@ -15,7 +15,7 @@ Requires WordPress 6.0+ and PHP 7.4+.
 - **Notification center.** Admin notices no longer pile up at the top of the page. They're collected in a popup behind a bell icon in the toolbar, with a counter. On by default.
 <img width="1919" height="928" alt="Dashboard notifications" src="https://github.com/user-attachments/assets/ced5c98e-6b71-4b5d-ae64-5ee85c5adba1" />
 
-- **Ubuntu-style Settings screens.** Optionally, General, Writing, Reading, Discussion, Media and Permalinks get the same look as the UbuntuPress settings page.
+- **Ubuntu-style Settings screens.** Optionally, General, Writing, Reading, Discussion, Media, Permalinks and the Profile / Edit User screens get the same look as the UbuntuPress settings page.
 <img width="1919" height="928" alt="UbuntuPress Plugin Settings" src="https://github.com/user-attachments/assets/701bcdcd-3fec-498c-9b2f-323c50b3cea6" />
 
 

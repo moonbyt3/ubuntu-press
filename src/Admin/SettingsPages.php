@@ -19,7 +19,8 @@ class SettingsPages implements Hookable {
 
 	/**
 	 * Core screens built from .form-table rows. Privacy has its own layout, plugin pages
-	 * under Settings use arbitrary markup, so neither is included.
+	 * under Settings use arbitrary markup, so neither is included. Profile and Edit User
+	 * share the same markup and carry the UbuntuPress preferences section.
 	 */
 	const SCREENS = array(
 		'options-general',
@@ -28,6 +29,8 @@ class SettingsPages implements Hookable {
 		'options-discussion',
 		'options-media',
 		'options-permalink',
+		'profile',
+		'user-edit',
 	);
 
 	public function register_hooks( Loader $loader ) {

@@ -283,13 +283,16 @@
 	gap: 8px;
 }
 
-/* The same picker in the UbuntuPress section of the Profile screen (Preferences.php). */
-#your-profile {
+/*
+ * The same picker in the UbuntuPress section of the Profile screen (Preferences.php).
+ * With Settings screens styled, the prefs tokens already apply and the rows sit on cards.
+ */
+body:not(.ubuntupress-admin--prefs) #your-profile {
 	--ubuntupress-prefs-card: #f0f0f1;
 	--ubuntupress-prefs-fg: #1d2327;
 }
 
-.ubuntupress-admin--dark #your-profile {
+.ubuntupress-admin--dark:not(.ubuntupress-admin--prefs) #your-profile {
 	--ubuntupress-prefs-card: var(--ubuntupress-dark-bg, #1e1e1e);
 	--ubuntupress-prefs-fg: var(--ubuntupress-dark-fg, #e6e6e6);
 }

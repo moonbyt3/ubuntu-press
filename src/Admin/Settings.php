@@ -223,7 +223,7 @@ class Settings implements Hookable {
 					array(
 						'key'      => 'settings_pages',
 						'title'    => __( 'Ubuntu style for Settings screens', 'ubuntupress' ),
-						'subtitle' => __( 'Give General, Writing, Reading, Discussion, Media and Permalinks the same look as this screen.', 'ubuntupress' ),
+						'subtitle' => __( 'Give General, Writing, Reading, Discussion, Media, Permalinks and Profile the same look as this screen.', 'ubuntupress' ),
 					),
 				),
 			),
