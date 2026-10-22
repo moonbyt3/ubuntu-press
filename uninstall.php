@@ -11,3 +11,4 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 
 delete_option( 'ubuntupress_settings' );
 delete_option( 'ubuntupress_version' );
+delete_metadata( 'user', 0, 'ubuntupress_preferences', '', true );

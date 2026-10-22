@@ -50,10 +50,49 @@
 	text-align: center;
 }
 
+.wrap.ubuntupress-settings .ubuntupress-settings__intro {
+	margin: -12px 0 24px;
+	color: var(--ubuntupress-prefs-fg-muted);
+	font-size: 14px;
+	text-align: center;
+}
+
+.wrap.ubuntupress-settings .ubuntupress-settings__intro a {
+	color: var(--ubuntupress-accent);
+}
+
 .ubuntupress-settings__actions {
 	display: flex;
 	justify-content: flex-end;
+	gap: 12px;
 	margin-top: 24px;
+}
+
+/* GNOME flat pill button; sits left of Save though it follows it in the markup. */
+.wrap.ubuntupress-settings .ubuntupress-settings__reset {
+	order: -1;
+	min-height: 34px;
+	padding: 0 20px;
+	border: 0;
+	border-radius: 999px;
+	background: var(--ubuntupress-prefs-field);
+	box-shadow: none;
+	color: var(--ubuntupress-prefs-fg);
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.wrap.ubuntupress-settings .ubuntupress-settings__reset:hover,
+.wrap.ubuntupress-settings .ubuntupress-settings__reset:focus {
+	background: var(--ubuntupress-prefs-field-hover);
+	color: var(--ubuntupress-prefs-fg);
+}
+
+.wrap.ubuntupress-settings .ubuntupress-settings__reset:focus-visible {
+	outline: 2px solid var(--ubuntupress-accent);
+	outline-offset: 2px;
+	box-shadow: none;
 }
 
 /* GNOME "suggested action" pill button. */

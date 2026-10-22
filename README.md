@@ -27,7 +27,9 @@ Requires WordPress 6.0+ and PHP 7.4+.
 <img width="1919" height="928" alt="WordPress Ubuntu Dock" src="https://github.com/user-attachments/assets/70078abb-c175-4c99-96e2-2087ad615e21" />
 
 
-Deleting the plugin removes its settings.
+- **Personal preferences.** Each user can pick their own Style and Dock (on/off, position, auto-hide, apps) on **Users › Preferences** (**Profile › Preferences** for non-admins, also in the toolbar account menu and as a Dashboard card). Only the choices they change are stored; everything else keeps following the site settings, which act as defaults. "Reset to Site Defaults" clears them. Admins can turn this off under *Users › Personal preferences* on the UbuntuPress page.
+
+Deleting the plugin removes its settings and every user's preferences.
 
 ## Structure
 
@@ -42,7 +44,8 @@ src/
   I18n.php              Text domain
   Activator.php / Deactivator.php
   Admin/Admin.php       Admin assets + "Settings" link on Plugins screen
-  Admin/Settings.php    UbuntuPress settings page, last in the admin menu (Settings API)
+  Admin/Settings.php    UbuntuPress settings page, last in the admin menu (Settings API); site defaults + per-user lookup
+  Admin/Preferences.php  Users › Preferences: a user's own Style and Dock, stored in user meta
   Admin/Theme.php       Light / dark style for the admin, block editor and Customizer
   Admin/AdminMenu.php   Reads the admin menu (names, URLs, icons, badges); shared by cards and dock
   Admin/DashboardCards.php  Card-based Dashboard built from the admin menu
@@ -82,6 +85,7 @@ class Shortcode implements Hookable {
 
 - `ubuntupress()` — plugin instance
 - `ubuntupress()->get( SomeClass::class )` — booted service instance
-- `UbuntuPress\Admin\Settings::get( 'dashboard_cards' )` — read a setting
+- `UbuntuPress\Admin\Settings::get( 'dashboard_cards' )` — read a setting for the current user (their own choice for personal keys, else the site value)
+- `UbuntuPress\Admin\Settings::site_values()` — site-wide settings only
 - Filter `ubuntupress_dock_items` — apps shown in the dock
 - Action `ubuntupress_booted` fires after all services are registered

@@ -302,6 +302,10 @@ class DashboardCards implements Hookable {
 		// Added after the filter so these shortcuts always stay last.
 		$cards[] = $this->classic_dashboard_card();
 
+		if ( Settings::personal_allowed() ) {
+			$cards[] = $this->preferences_card();
+		}
+
 		if ( current_user_can( 'manage_options' ) ) {
 			$cards[] = $this->settings_card();
 		}
@@ -321,6 +325,23 @@ class DashboardCards implements Hookable {
 			'url'      => add_query_arg( self::CLASSIC_ARG, '1', admin_url( 'index.php' ) ),
 			'icon'     => 'dashicons-dashboard',
 			'color'    => self::PALETTE[6],
+			'count'    => 0,
+			'children' => array(),
+		);
+	}
+
+	/**
+	 * Shortcut card to the user's Preferences page, which otherwise sits inside the Users / Profile folder.
+	 *
+	 * @return array
+	 */
+	private function preferences_card() {
+		return array(
+			'id'       => 'ubuntupress-preferences',
+			'name'     => __( 'Preferences', 'ubuntupress' ),
+			'url'      => Preferences::url(),
+			'icon'     => 'dashicons-admin-generic',
+			'color'    => self::PALETTE[7],
 			'count'    => 0,
 			'children' => array(),
 		);

@@ -11,6 +11,7 @@ use UbuntuPress\Admin\Admin;
 use UbuntuPress\Admin\DashboardCards;
 use UbuntuPress\Admin\Dock;
 use UbuntuPress\Admin\Notifications;
+use UbuntuPress\Admin\Preferences;
 use UbuntuPress\Admin\Settings;
 use UbuntuPress\Admin\SettingsPages;
 use UbuntuPress\Admin\Sidebar;
@@ -97,6 +98,7 @@ final class Plugin {
 		if ( is_admin() ) {
 			$services[] = Admin::class;
 			$services[] = Settings::class;
+			$services[] = Preferences::class;
 			$services[] = Theme::class;
 			$services[] = SettingsPages::class;
 			$services[] = DashboardCards::class;
