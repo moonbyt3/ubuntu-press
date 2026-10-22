@@ -2,30 +2,38 @@
 
 /* Block: ubuntupress-admin (page-level modifier) */
 body.ubuntupress-admin--dashboard {
+	/* The chosen background; Background::css() overrides these. Defaults to the Aubergine preset. */
+	--ubuntupress-background:
+		radial-gradient(ellipse 70% 60% at 85% 100%, #e95420 0%, rgba(233, 84, 32, 0) 70%),
+		radial-gradient(ellipse 80% 70% at 10% 0%, #77216f 0%, rgba(119, 33, 111, 0) 70%);
+	--ubuntupress-background-base: #2c001e;
+	/* Light theme: the background washed out to white, like the overview. */
+	--ubuntupress-background-veil: rgba(250, 250, 250, 0.82);
+	--ubuntupress-background-fill: #fafafa;
 	background: #fafafa;
 }
 
-body.ubuntupress-admin--dashboard #wpwrap {
-	/* Ubuntu wallpaper washed out to white: light theme overview background. */
-	background:
-		linear-gradient(rgba(250, 250, 250, 0.82), rgba(250, 250, 250, 0.82)),
-		radial-gradient(ellipse 70% 60% at 85% 100%, #e95420 0%, rgba(233, 84, 32, 0) 70%),
-		radial-gradient(ellipse 80% 70% at 10% 0%, #77216f 0%, rgba(119, 33, 111, 0) 70%),
-		#fafafa;
-	background-attachment: fixed;
+/* Photos keep more of their colour than the soft presets. */
+body.ubuntupress-admin--dashboard.ubuntupress-admin--background-image {
+	--ubuntupress-background-veil: rgba(250, 250, 250, 0.7);
 }
 
 body.ubuntupress-admin--dashboard.ubuntupress-admin--dark {
+	/* Dark theme: the background dimmed, like the blurred overview. */
+	--ubuntupress-background-veil: rgba(0, 0, 0, 0.5);
+	--ubuntupress-background-fill: var(--ubuntupress-background-base);
 	background: #1d1d1d;
 }
 
-body.ubuntupress-admin--dashboard.ubuntupress-admin--dark #wpwrap {
-	/* Dimmed Ubuntu wallpaper: aubergine with an orange glow, like the blurred overview background. */
+body.ubuntupress-admin--dashboard.ubuntupress-admin--dark.ubuntupress-admin--background-image {
+	--ubuntupress-background-veil: rgba(0, 0, 0, 0.55);
+}
+
+body.ubuntupress-admin--dashboard #wpwrap {
 	background:
-		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-		radial-gradient(ellipse 70% 60% at 85% 100%, #e95420 0%, rgba(233, 84, 32, 0) 70%),
-		radial-gradient(ellipse 80% 70% at 10% 0%, #77216f 0%, rgba(119, 33, 111, 0) 70%),
-		#2c001e;
+		linear-gradient(var(--ubuntupress-background-veil), var(--ubuntupress-background-veil)),
+		var(--ubuntupress-background),
+		var(--ubuntupress-background-fill);
 	background-attachment: fixed;
 }
 

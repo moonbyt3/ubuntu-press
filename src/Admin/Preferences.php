@@ -1,6 +1,6 @@
 <?php
 /**
- * Each user's own Style, Accent color and Dock, in an "UbuntuPress" section of their Profile screen.
+ * Each user's own Style, Accent color, Dashboard background and Dock, in an "UbuntuPress" section of their Profile screen.
  * Stored in user meta on top of the site settings.
  *
  * @package UbuntuPress
@@ -50,7 +50,9 @@ class Preferences implements Hookable {
 			return;
 		}
 
-		// Accent swatches.
+		Background::enqueue_media();
+
+		// Accent swatches and background thumbnails.
 		wp_enqueue_style(
 			'ubuntupress-admin',
 			UBUNTUPRESS_URL . 'assets/css/admin.css',
@@ -58,7 +60,7 @@ class Preferences implements Hookable {
 			Plugin::asset_version( 'assets/css/admin.css' )
 		);
 
-		// Live accent preview.
+		// Live accent preview and the background's "Choose Image" button.
 		wp_enqueue_script(
 			'ubuntupress-admin',
 			UBUNTUPRESS_URL . 'assets/js/admin.js',
@@ -210,6 +212,15 @@ class Preferences implements Hookable {
 								/>
 							<?php endforeach; ?>
 						</div>
+						<p class="description"><?php echo esc_html( $row['subtitle'] ); ?></p>
+					</fieldset>
+				</td>
+			<?php elseif ( 'background' === $type ) : ?>
+				<th scope="row"><?php echo esc_html( $row['title'] ); ?></th>
+				<td>
+					<fieldset>
+						<legend class="screen-reader-text"><?php echo esc_html( $row['title'] ); ?></legend>
+						<?php Background::render_picker( self::FIELD, $value, Settings::get( 'background_image' ) ); ?>
 						<p class="description"><?php echo esc_html( $row['subtitle'] ); ?></p>
 					</fieldset>
 				</td>

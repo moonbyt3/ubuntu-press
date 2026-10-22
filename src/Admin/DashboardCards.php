@@ -61,7 +61,8 @@ class DashboardCards implements Hookable {
 	 * @return string
 	 */
 	public function body_class( $classes ) {
-		return $classes . ' ubuntupress-admin--dashboard';
+		$classes .= ' ubuntupress-admin--dashboard';
+		return Background::current()['image'] ? $classes . ' ubuntupress-admin--background-image' : $classes;
 	}
 
 	public function enqueue_assets() {
@@ -71,6 +72,7 @@ class DashboardCards implements Hookable {
 			array( 'dashicons' ),
 			Plugin::asset_version( 'assets/css/dashboard.css' )
 		);
+		wp_add_inline_style( 'ubuntupress-dashboard', Background::css() );
 
 		wp_enqueue_script(
 			'ubuntupress-dashboard',

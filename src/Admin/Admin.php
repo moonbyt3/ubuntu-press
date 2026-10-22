@@ -32,6 +32,8 @@ class Admin implements Hookable {
 			return;
 		}
 
+		Background::enqueue_media();
+
 		wp_enqueue_style(
 			'ubuntupress-admin',
 			UBUNTUPRESS_URL . 'assets/css/admin.css',

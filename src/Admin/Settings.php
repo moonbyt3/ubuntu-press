@@ -28,7 +28,7 @@ class Settings implements Hookable {
 	/**
 	 * Settings each user can change for themselves. Everything else is site-wide only.
 	 */
-	const PERSONAL = array( 'theme', 'accent', 'dock', 'dock_position', 'dock_autohide', 'dock_items' );
+	const PERSONAL = array( 'theme', 'accent', 'background', 'background_image', 'dock', 'dock_position', 'dock_autohide', 'dock_items' );
 
 	/**
 	 * Default option values.
@@ -41,6 +41,8 @@ class Settings implements Hookable {
 			'accent'               => 'orange',
 			'settings_pages'       => 0,
 			'dashboard_cards'      => 1,
+			'background'           => 'aubergine',
+			'background_image'     => 0,
 			'hide_sidebar'         => 'everywhere',
 			'notification_center'  => 1,
 			'dock'                 => 0,
@@ -163,6 +165,10 @@ class Settings implements Hookable {
 				: self::defaults()['accent'],
 			'settings_pages'       => empty( $input['settings_pages'] ) ? 0 : 1,
 			'dashboard_cards'      => empty( $input['dashboard_cards'] ) ? 0 : 1,
+			'background'           => isset( $input['background'] ) && Background::is_choice( $input['background'] )
+				? $input['background']
+				: self::defaults()['background'],
+			'background_image'     => isset( $input['background_image'] ) ? Background::sanitize_image( $input['background_image'] ) : 0,
 			'hide_sidebar'         => isset( $input['hide_sidebar'] ) && in_array( $input['hide_sidebar'], Sidebar::MODES, true )
 				? $input['hide_sidebar']
 				: self::defaults()['hide_sidebar'],
@@ -177,6 +183,13 @@ class Settings implements Hookable {
 				: array(),
 			'personal_preferences' => empty( $input['personal_preferences'] ) ? 0 : 1,
 		);
+
+		// A preset replaces the image instead of keeping it on offer.
+		if ( Background::IMAGE !== $values['background'] ) {
+			$values['background_image'] = 0;
+		} elseif ( ! $values['background_image'] ) {
+			$values['background'] = self::defaults()['background'];
+		}
 
 		return array_intersect_key( $values, array_flip( $keys ) );
 	}
@@ -234,6 +247,12 @@ class Settings implements Hookable {
 						'key'      => 'dashboard_cards',
 						'title'    => __( 'Dashboard cards', 'ubuntupress' ),
 						'subtitle' => __( 'Replace the Dashboard with large cards built from the admin menu.', 'ubuntupress' ),
+					),
+					array(
+						'key'      => 'background',
+						'type'     => 'background',
+						'title'    => __( 'Background', 'ubuntupress' ),
+						'subtitle' => __( 'Shown behind the Dashboard cards. Pick a preset or an image from the Media Library.', 'ubuntupress' ),
 					),
 					array(
 						'key'      => 'hide_sidebar',
@@ -294,7 +313,7 @@ class Settings implements Hookable {
 					array(
 						'key'      => 'personal_preferences',
 						'title'    => __( 'Personal preferences', 'ubuntupress' ),
-						'subtitle' => __( 'Let each user choose their own Style, Accent color and Dock in an UbuntuPress section of their Profile screen. The values on this page are their defaults.', 'ubuntupress' ),
+						'subtitle' => __( 'Let each user choose their own Style, Accent color, Dashboard background and Dock in an UbuntuPress section of their Profile screen. The values on this page are their defaults.', 'ubuntupress' ),
 					),
 				),
 			),
@@ -364,6 +383,11 @@ class Settings implements Hookable {
 
 		if ( isset( $row['type'] ) && 'accent' === $row['type'] ) {
 			$this->render_accent_row( $row, $values, $name );
+			return;
+		}
+
+		if ( isset( $row['type'] ) && 'background' === $row['type'] ) {
+			$this->render_background_row( $row, $values, $name );
 			return;
 		}
 
@@ -439,6 +463,28 @@ class Settings implements Hookable {
 	}
 
 	/**
+	 * Outputs the background picker under its label, as it is too wide to sit beside it.
+	 *
+	 * @param array  $row    Row definition from groups().
+	 * @param array  $values Current values, keyed by setting.
+	 * @param string $name   Form field name the values are submitted under.
+	 */
+	private function render_background_row( array $row, array $values, $name ) {
+		$id = 'ubuntupress-setting-' . $row['key'];
+		?>
+		<div class="ubuntupress-prefs-row ubuntupress-prefs-row--background">
+			<div class="ubuntupress-prefs-row__text">
+				<span class="ubuntupress-prefs-row__title" id="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $row['title'] ); ?></span>
+				<p class="ubuntupress-prefs-row__subtitle" id="<?php echo esc_attr( $id ); ?>-description"><?php echo esc_html( $row['subtitle'] ); ?></p>
+			</div>
+			<div class="ubuntupress-prefs-row__control" role="radiogroup" aria-labelledby="<?php echo esc_attr( $id ); ?>" aria-describedby="<?php echo esc_attr( $id ); ?>-description">
+				<?php Background::render_picker( $name, $values['background'], $values['background_image'] ); ?>
+			</div>
+		</div>
+		<?php
+	}
+
+	/**
 	 * Outputs an expander row (AdwExpanderRow) holding a switch for every top-level admin menu item.
 	 *
 	 * @param array  $row    Row definition from groups().
@@ -498,7 +544,7 @@ class Settings implements Hookable {
 					<?php
 					printf(
 						/* translators: %s: link to the user's Profile screen. */
-						esc_html__( 'These settings apply to everyone. Users can change Style, Accent color and Dock for themselves on their %s.', 'ubuntupress' ),
+						esc_html__( 'These settings apply to everyone. Users can change Style, Accent color, Dashboard background and Dock for themselves on their %s.', 'ubuntupress' ),
 						'<a href="' . esc_url( Preferences::url() ) . '">' . esc_html__( 'Profile', 'ubuntupress' ) . '</a>'
 					);
 					?>
