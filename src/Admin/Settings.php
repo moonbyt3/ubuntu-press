@@ -34,6 +34,7 @@ class Settings implements Hookable {
 			'notification_center' => 1,
 			'dock'                => 0,
 			'dock_position'       => 'left',
+			'dock_autohide'       => 1,
 			'dock_items'          => Dock::DEFAULT_ITEMS,
 		);
 	}
@@ -107,6 +108,7 @@ class Settings implements Hookable {
 			'dock_position'       => isset( $input['dock_position'] ) && in_array( $input['dock_position'], Dock::POSITIONS, true )
 				? $input['dock_position']
 				: self::defaults()['dock_position'],
+			'dock_autohide'       => empty( $input['dock_autohide'] ) ? 0 : 1,
 			'dock_items'          => isset( $input['dock_items'] ) && is_array( $input['dock_items'] )
 				? array_values( array_unique( array_map( 'sanitize_text_field', $input['dock_items'] ) ) )
 				: array(),
@@ -175,7 +177,7 @@ class Settings implements Hookable {
 					array(
 						'key'      => 'dock',
 						'title'    => __( 'Dock', 'ubuntupress' ),
-						'subtitle' => __( 'An Ubuntu Dock that slides in when the pointer touches the edge of the screen.', 'ubuntupress' ),
+						'subtitle' => __( 'An Ubuntu Dock along the edge of the screen with the admin screens you use most.', 'ubuntupress' ),
 					),
 					array(
 						'key'      => 'dock_position',
@@ -186,6 +188,11 @@ class Settings implements Hookable {
 							'bottom' => __( 'Bottom', 'ubuntupress' ),
 							'right'  => __( 'Right', 'ubuntupress' ),
 						),
+					),
+					array(
+						'key'      => 'dock_autohide',
+						'title'    => __( 'Auto-hide the Dock', 'ubuntupress' ),
+						'subtitle' => __( 'The Dock hides until the pointer reaches the screen edge. When off, it stays visible and admin screens make room for it.', 'ubuntupress' ),
 					),
 					array(
 						'key'      => 'dock_items',

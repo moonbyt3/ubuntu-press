@@ -22,7 +22,7 @@ Requires WordPress 6.0+ and PHP 7.4+.
 - **Hidden sidebar.** You can hide the admin sidebar on every screen, on the Dashboard only, or never. When it's hidden, a "Dashboard" link appears in the toolbar so you can still get around. The sidebar only hides while Dashboard cards are on, so you're never left without navigation.
 <img width="1919" height="928" alt="WordPress Sidebar settings" src="https://github.com/user-attachments/assets/59926e18-7baf-404d-97f4-18b4175eb70e" />
 
-- **Dock.** An Ubuntu Dock that stays out of sight until the pointer touches the left, bottom or right edge of the screen, then slides in. You choose which admin menu items it holds. It mirrors Ubuntu Dock's timing: a 250 ms show delay, a 200 ms ease-out slide, a 200 ms hide delay, app name labels that fade in after 300 ms, and the GNOME zoom-out effect when you launch an app. The current screen gets the orange running dot, and update counts show as badges. Off by default; works in the block editor too.
+- **Dock.** An Ubuntu Dock that stays out of sight until the pointer touches the left, bottom or right edge of the screen, then slides in. You choose which admin menu items it holds. It mirrors Ubuntu Dock's timing: a 250 ms show delay, a 200 ms ease-out slide, a 200 ms hide delay, app name labels that fade in after 300 ms, and the GNOME zoom-out effect when you launch an app. While it's hidden, a small pill marks its edge and turns orange as the dock is about to appear. With *Auto-hide the Dock* off, it stays visible and admin screens make room for it. The current screen gets the orange running dot, and update counts show as badges. Off by default; works in the block editor too.
 
 Deleting the plugin removes its settings.
 

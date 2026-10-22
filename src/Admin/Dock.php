@@ -38,6 +38,7 @@ class Dock implements Hookable {
 	);
 
 	public function register_hooks( Loader $loader ) {
+		$loader->add_filter( 'admin_body_class', array( $this, 'body_class' ) );
 		$loader->add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 		$loader->add_action( 'admin_footer', array( $this, 'render' ) );
 	}
@@ -58,6 +59,26 @@ class Dock implements Hookable {
 	private function position() {
 		$position = Settings::get( 'dock_position' );
 		return in_array( $position, self::POSITIONS, true ) ? $position : self::POSITIONS[0];
+	}
+
+	/**
+	 * @return bool False when the dock stays visible.
+	 */
+	private function autohide() {
+		return (bool) Settings::get( 'dock_autohide' );
+	}
+
+	/**
+	 * An always-visible dock reserves its edge of the screen, like Ubuntu's fixed dock shrinks windows.
+	 *
+	 * @param string $classes Space-separated body classes.
+	 * @return string
+	 */
+	public function body_class( $classes ) {
+		if ( ! $this->is_enabled() || $this->autohide() ) {
+			return $classes;
+		}
+		return $classes . ' ubuntupress-admin--dock-fixed ubuntupress-admin--dock-fixed-' . $this->position();
 	}
 
 	public function enqueue_assets() {
@@ -130,11 +151,22 @@ class Dock implements Hookable {
 		}
 
 		$position = $this->position();
+		$autohide = $this->autohide();
 		$screen   = get_current_screen();
+		$classes  = 'ubuntupress-dock ubuntupress-dock--' . $position;
+		if ( ! $autohide ) {
+			// Rendered already shown, so the fixed dock doesn't slide in on every page load.
+			$classes .= ' ubuntupress-dock--fixed ubuntupress-dock--visible';
+		}
 		?>
-		<div class="ubuntupress-dock ubuntupress-dock--<?php echo esc_attr( $position ); ?>" data-position="<?php echo esc_attr( $position ); ?>">
-			<div class="ubuntupress-dock__edge" aria-hidden="true"></div>
+		<div class="<?php echo esc_attr( $classes ); ?>" data-position="<?php echo esc_attr( $position ); ?>" data-autohide="<?php echo $autohide ? '1' : '0'; ?>">
+			<?php if ( $autohide ) : ?>
+				<div class="ubuntupress-dock__edge" aria-hidden="true"></div>
+			<?php endif; ?>
 			<div class="ubuntupress-dock__track">
+				<?php if ( $autohide ) : ?>
+					<div class="ubuntupress-dock__hint" aria-hidden="true"></div>
+				<?php endif; ?>
 				<nav class="ubuntupress-dock__panel" aria-label="<?php esc_attr_e( 'Dock', 'ubuntupress' ); ?>">
 					<ul class="ubuntupress-dock__list">
 						<?php foreach ( $items as $item ) : ?>

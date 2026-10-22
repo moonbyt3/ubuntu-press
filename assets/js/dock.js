@@ -23,6 +23,7 @@
 	var EASE_OUT_QUAD = 'cubic-bezier(0.25, 0.46, 0.45, 0.94)';
 
 	var position = dock.getAttribute( 'data-position' );
+	var autohide = '1' === dock.getAttribute( 'data-autohide' );
 	var vertical = 'bottom' !== position;
 	var track = dock.querySelector( '.ubuntupress-dock__track' );
 	var panel = dock.querySelector( '.ubuntupress-dock__panel' );
@@ -30,9 +31,12 @@
 	var apps = dock.querySelectorAll( '.ubuntupress-dock__app' );
 	var reducedMotion = window.matchMedia( '(prefers-reduced-motion: reduce)' );
 
-	/* Auto-hide: a small state machine mirroring dash-to-dock's HIDDEN / SHOWING / SHOWN / HIDING. */
+	/*
+	 * Auto-hide: a small state machine mirroring dash-to-dock's HIDDEN / SHOWING / SHOWN / HIDING.
+	 * An always-visible dock is rendered shown and never leaves that state.
+	 */
 
-	var visible = false;
+	var visible = ! autohide;
 	var changedAt = 0;
 	var overEdge = false;
 	var overPanel = false;
@@ -54,6 +58,10 @@
 	}
 
 	function update() {
+		if ( ! autohide ) {
+			return;
+		}
+
 		if ( overEdge || overPanel || focusInside ) {
 			clearTimeout( hideTimer );
 			hideTimer = 0;
@@ -103,8 +111,10 @@
 	}
 
 	function setOverEdge( value ) {
-		if ( value !== overEdge ) {
+		if ( autohide && value !== overEdge ) {
 			overEdge = value;
+			// Lights up the hidden-dock hint while show-delay runs.
+			dock.classList.toggle( 'ubuntupress-dock--near', value );
 			update();
 		}
 	}
@@ -306,8 +316,14 @@
 			dock.style.setProperty( '--ubuntupress-dock-icon', ICON_SIZES[ i ] + 'px' );
 			var length = ( vertical ? list.scrollHeight : list.scrollWidth ) + panelPadding;
 			if ( length <= available ) {
-				return;
+				break;
 			}
+		}
+
+		// The space an always-visible dock reserves follows its icon size (see dock.css).
+		if ( ! autohide ) {
+			var thickness = ( vertical ? panel.offsetWidth : panel.offsetHeight ) + 2 * margin;
+			document.documentElement.style.setProperty( '--ubuntupress-dock-space', thickness + 'px' );
 		}
 	}
 

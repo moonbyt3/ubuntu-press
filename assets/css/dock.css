@@ -81,6 +81,57 @@
 }
 
 /*
+ * Hint: a small pill on the edge while the dock is hidden. Near the edge it stretches and turns
+ * orange over the show-delay, then fades out as the dock slides in.
+ */
+.ubuntupress-dock__hint {
+	position: absolute;
+	border-radius: 99px;
+	background: rgba(128, 128, 128, 0.5);
+	transition:
+		opacity var(--ubuntupress-dock-time) var(--ubuntupress-dock-ease),
+		transform 250ms var(--ubuntupress-dock-ease),
+		background-color 250ms var(--ubuntupress-dock-ease);
+}
+
+.ubuntupress-dock--left .ubuntupress-dock__hint,
+.ubuntupress-dock--right .ubuntupress-dock__hint {
+	top: 50%;
+	width: 4px;
+	height: 40px;
+	margin-top: -20px;
+}
+
+.ubuntupress-dock--left .ubuntupress-dock__hint {
+	left: 3px;
+}
+
+.ubuntupress-dock--right .ubuntupress-dock__hint {
+	right: 3px;
+}
+
+.ubuntupress-dock--bottom .ubuntupress-dock__hint {
+	bottom: 3px;
+	left: 50%;
+	width: 40px;
+	height: 4px;
+	margin-left: -20px;
+}
+
+.ubuntupress-dock--near .ubuntupress-dock__hint {
+	background: #e95420;
+	transform: scaleY(1.6);
+}
+
+.ubuntupress-dock--bottom.ubuntupress-dock--near .ubuntupress-dock__hint {
+	transform: scaleX(1.6);
+}
+
+.ubuntupress-dock--visible .ubuntupress-dock__hint {
+	opacity: 0;
+}
+
+/*
  * Hidden: slid past the edge. Visibility flips after the slide so hidden apps can't take focus;
  * an interrupted slide reverses from where it is, like Clutter transitions do.
  */
@@ -317,6 +368,54 @@
 	pointer-events: none;
 }
 
+/*
+ * Always visible (Auto-hide off): admin screens make room along the dock's edge.
+ * --ubuntupress-dock-space is the dock's thickness plus margins, kept current by dock.js.
+ */
+@media (hover: hover) {
+	/* Core sets width: 100%, which the padding below would overflow. */
+	body.ubuntupress-admin--dock-fixed #wpwrap {
+		box-sizing: border-box;
+	}
+
+	body.ubuntupress-admin--dock-fixed-left #wpwrap {
+		padding-left: var(--ubuntupress-dock-space, 84px);
+	}
+
+	body.ubuntupress-admin--dock-fixed-right #wpwrap {
+		padding-right: var(--ubuntupress-dock-space, 84px);
+	}
+
+	body.ubuntupress-admin--dock-fixed-left #wpfooter {
+		left: var(--ubuntupress-dock-space, 84px);
+	}
+
+	body.ubuntupress-admin--dock-fixed-right #wpfooter {
+		right: var(--ubuntupress-dock-space, 84px);
+	}
+
+	body.ubuntupress-admin--dock-fixed-bottom #wpbody-content {
+		padding-bottom: calc(65px + var(--ubuntupress-dock-space, 84px));
+	}
+
+	body.ubuntupress-admin--dock-fixed-bottom #wpfooter {
+		bottom: var(--ubuntupress-dock-space, 84px);
+	}
+
+	/* Block editor / site editor frame: fixed to the viewport, so it is inset with margins. */
+	body.ubuntupress-admin--dock-fixed-left .interface-interface-skeleton {
+		margin-left: var(--ubuntupress-dock-space, 84px);
+	}
+
+	body.ubuntupress-admin--dock-fixed-right .interface-interface-skeleton {
+		margin-right: var(--ubuntupress-dock-space, 84px);
+	}
+
+	body.ubuntupress-admin--dock-fixed-bottom .interface-interface-skeleton {
+		margin-bottom: var(--ubuntupress-dock-space, 84px);
+	}
+}
+
 /* No pointer to hover with on touch screens. */
 @media (hover: none) {
 	.ubuntupress-dock {
@@ -328,6 +427,7 @@
 	.ubuntupress-dock__panel,
 	.ubuntupress-dock--visible .ubuntupress-dock__panel,
 	.ubuntupress-dock .ubuntupress-dock__app,
+	.ubuntupress-dock__hint,
 	.ubuntupress-dock__label {
 		transition: none;
 	}
