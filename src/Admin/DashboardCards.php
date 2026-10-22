@@ -21,18 +21,7 @@ class DashboardCards implements Hookable {
 	/**
 	 * Yaru accent colours, used for app icon backgrounds.
 	 */
-	const PALETTE = array(
-		'#e95420', // Orange.
-		'#787859', // Bark.
-		'#657b69', // Sage.
-		'#4b8501', // Olive.
-		'#03875b', // Viridian.
-		'#308280', // Prussian green.
-		'#0073e5', // Blue.
-		'#7764d8', // Purple.
-		'#b34cb3', // Magenta.
-		'#da3450', // Red.
-	);
+	const PALETTE = AdminMenu::PALETTE;
 
 	/**
 	 * Query arg that shows the default WordPress Dashboard instead of the cards.
@@ -165,7 +154,7 @@ class DashboardCards implements Hookable {
 			data-search="<?php echo esc_attr( $search ); ?>"
 		>
 			<span class="ubuntupress-card__icon">
-				<?php $this->render_glyph( $card['icon'], 'ubuntupress-card__glyph' ); ?>
+				<?php AdminMenu::render_glyph( $card['icon'], 'ubuntupress-card__glyph' ); ?>
 				<?php $this->render_badge( $card['count'] ); ?>
 			</span>
 			<span class="ubuntupress-card__name"><?php echo esc_html( $card['name'] ); ?></span>
@@ -192,7 +181,7 @@ class DashboardCards implements Hookable {
 			<span class="ubuntupress-card__icon ubuntupress-card__icon--folder">
 				<?php foreach ( array_slice( $card['children'], 0, 4 ) as $child ) : ?>
 					<span class="ubuntupress-card__preview" style="--ubuntupress-card-color: <?php echo esc_attr( $child['color'] ); ?>">
-						<?php $this->render_glyph( $child['icon'], 'ubuntupress-card__preview-glyph' ); ?>
+						<?php AdminMenu::render_glyph( $child['icon'], 'ubuntupress-card__preview-glyph' ); ?>
 					</span>
 				<?php endforeach; ?>
 				<?php $this->render_badge( $card['count'] ); ?>
@@ -238,27 +227,6 @@ class DashboardCards implements Hookable {
 	}
 
 	/**
-	 * Outputs a menu icon as a white glyph: dashicon, SVG data URI, image URL, or fallback.
-	 *
-	 * @param string $icon  Icon value from the menu item.
-	 * @param string $class Element class.
-	 */
-	private function render_glyph( $icon, $class ) {
-		if ( 0 === strpos( $icon, 'data:image/svg' ) ) {
-			printf( '<span class="%1$s %1$s--svg" style="background-image:url(\'%2$s\')" aria-hidden="true"></span>', esc_attr( $class ), esc_attr( $icon ) );
-			return;
-		}
-
-		if ( 0 === strpos( $icon, 'data:image' ) || preg_match( '#^https?://#', $icon ) ) {
-			printf( '<span class="%1$s %1$s--image" style="background-image:url(\'%2$s\')" aria-hidden="true"></span>', esc_attr( $class ), esc_attr( $icon ) );
-			return;
-		}
-
-		$dashicon = 0 === strpos( $icon, 'dashicons-' ) ? $icon : 'dashicons-admin-generic';
-		printf( '<span class="%s dashicons %s" aria-hidden="true"></span>', esc_attr( $class ), esc_attr( $dashicon ) );
-	}
-
-	/**
 	 * Builds card data from the global admin menu, filtered by user capabilities.
 	 *
 	 * @return array[]
@@ -285,7 +253,7 @@ class DashboardCards implements Hookable {
 
 			if ( ! empty( $submenu[ $slug ] ) ) {
 				foreach ( $submenu[ $slug ] as $sub ) {
-					$name = $this->clean_title( $sub[0] );
+					$name = AdminMenu::clean_title( $sub[0] );
 					if ( '' === $name || ! current_user_can( $sub[1] ) ) {
 						continue;
 					}
@@ -294,16 +262,16 @@ class DashboardCards implements Hookable {
 					}
 					$children[] = array(
 						'name'  => $name,
-						'url'   => $this->menu_url( $sub[2], $slug ),
+						'url'   => AdminMenu::menu_url( $sub[2], $slug ),
 						'icon'  => $icon,
-						'color' => $this->color_for( $slug . '|' . $sub[2] ),
-						'count' => $this->extract_count( $sub[0] ),
+						'color' => AdminMenu::color_for( $slug . '|' . $sub[2] ),
+						'count' => AdminMenu::extract_count( $sub[0] ),
 					);
 				}
 			}
 
 			// Some bubbles (e.g. Site Health) live only on a submenu item; fall back to their total.
-			$count       = $this->extract_count( $item[0] );
+			$count       = AdminMenu::extract_count( $item[0] );
 			$child_count = array_sum( wp_list_pluck( $children, 'count' ) );
 			if ( ! $count ) {
 				$count = $child_count;
@@ -315,10 +283,10 @@ class DashboardCards implements Hookable {
 
 			$cards[] = array(
 				'id'       => sanitize_html_class( sanitize_title( $slug ) ),
-				'name'     => $this->clean_title( $item[0] ),
-				'url'      => $children ? $children[0]['url'] : $this->menu_url( $slug, 'admin.php' ),
+				'name'     => AdminMenu::clean_title( $item[0] ),
+				'url'      => $children ? $children[0]['url'] : AdminMenu::menu_url( $slug, 'admin.php' ),
 				'icon'     => $icon,
-				'color'    => $this->color_for( $slug ),
+				'color'    => AdminMenu::color_for( $slug ),
 				'count'    => $count,
 				'children' => $children,
 			);
@@ -373,70 +341,5 @@ class DashboardCards implements Hookable {
 			'count'    => 0,
 			'children' => array(),
 		);
-	}
-
-	/**
-	 * Picks a stable palette colour for a menu slug.
-	 *
-	 * @param string $key Menu slug.
-	 * @return string Hex colour.
-	 */
-	private function color_for( $key ) {
-		return self::PALETTE[ abs( crc32( $key ) ) % count( self::PALETTE ) ];
-	}
-
-	/**
-	 * Resolves a menu slug to a URL, mirroring wp-admin/menu-header.php.
-	 *
-	 * @param string $slug   Menu or submenu slug.
-	 * @param string $parent Parent slug.
-	 * @return string
-	 */
-	private function menu_url( $slug, $parent ) {
-		if ( preg_match( '#^https?://#', $slug ) ) {
-			return $slug;
-		}
-
-		$file           = $this->strip_query( $slug );
-		$is_plugin_page = get_plugin_page_hook( $slug, $parent )
-			|| ( 'index.php' !== $slug && file_exists( WP_PLUGIN_DIR . "/$file" ) && ! file_exists( ABSPATH . "wp-admin/$file" ) );
-
-		if ( ! $is_plugin_page ) {
-			return admin_url( $slug );
-		}
-
-		$parent_file = $this->strip_query( $parent );
-		if ( $parent !== $slug && 'admin.php' !== $parent_file
-			&& file_exists( ABSPATH . "wp-admin/$parent_file" ) && ! file_exists( WP_PLUGIN_DIR . "/$parent_file" ) ) {
-			return add_query_arg( 'page', $slug, admin_url( $parent ) );
-		}
-
-		return add_query_arg( 'page', $slug, admin_url( 'admin.php' ) );
-	}
-
-	private function strip_query( $slug ) {
-		$pos = strpos( $slug, '?' );
-		return false === $pos ? $slug : substr( $slug, 0, $pos );
-	}
-
-	/**
-	 * Removes notification bubbles and markup from a menu title.
-	 *
-	 * @param string $title Raw menu title.
-	 * @return string
-	 */
-	private function clean_title( $title ) {
-		$name = trim( wp_strip_all_tags( preg_replace( '/<span.*$/s', '', $title ) ) );
-		return '' !== $name ? $name : trim( wp_strip_all_tags( $title ) );
-	}
-
-	/**
-	 * Pulls the number out of a "count-N" notification bubble.
-	 *
-	 * @param string $title Raw menu title.
-	 * @return int
-	 */
-	private function extract_count( $title ) {
-		return preg_match( '/count-(\d+)/', $title, $m ) ? (int) $m[1] : 0;
 	}
 }

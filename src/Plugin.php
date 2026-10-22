@@ -9,6 +9,7 @@ namespace UbuntuPress;
 
 use UbuntuPress\Admin\Admin;
 use UbuntuPress\Admin\DashboardCards;
+use UbuntuPress\Admin\Dock;
 use UbuntuPress\Admin\Notifications;
 use UbuntuPress\Admin\Settings;
 use UbuntuPress\Admin\SettingsPages;
@@ -101,6 +102,7 @@ final class Plugin {
 			$services[] = DashboardCards::class;
 			$services[] = Sidebar::class;
 			$services[] = Notifications::class;
+			$services[] = Dock::class;
 		}
 
 		/**

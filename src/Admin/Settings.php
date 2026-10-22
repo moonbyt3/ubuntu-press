@@ -32,6 +32,9 @@ class Settings implements Hookable {
 			'dashboard_cards'     => 1,
 			'hide_sidebar'        => 'everywhere',
 			'notification_center' => 1,
+			'dock'                => 0,
+			'dock_position'       => 'left',
+			'dock_items'          => Dock::DEFAULT_ITEMS,
 		);
 	}
 
@@ -100,6 +103,13 @@ class Settings implements Hookable {
 				? $input['hide_sidebar']
 				: self::defaults()['hide_sidebar'],
 			'notification_center' => empty( $input['notification_center'] ) ? 0 : 1,
+			'dock'                => empty( $input['dock'] ) ? 0 : 1,
+			'dock_position'       => isset( $input['dock_position'] ) && in_array( $input['dock_position'], Dock::POSITIONS, true )
+				? $input['dock_position']
+				: self::defaults()['dock_position'],
+			'dock_items'          => isset( $input['dock_items'] ) && is_array( $input['dock_items'] )
+				? array_values( array_unique( array_map( 'sanitize_text_field', $input['dock_items'] ) ) )
+				: array(),
 		);
 	}
 
@@ -159,6 +169,32 @@ class Settings implements Hookable {
 					),
 				),
 			),
+			array(
+				'title' => __( 'Dock', 'ubuntupress' ),
+				'rows'  => array(
+					array(
+						'key'      => 'dock',
+						'title'    => __( 'Dock', 'ubuntupress' ),
+						'subtitle' => __( 'An Ubuntu Dock that slides in when the pointer touches the edge of the screen.', 'ubuntupress' ),
+					),
+					array(
+						'key'      => 'dock_position',
+						'title'    => __( 'Position on screen', 'ubuntupress' ),
+						'subtitle' => __( 'The screen edge the Dock appears from.', 'ubuntupress' ),
+						'choices'  => array(
+							'left'   => __( 'Left', 'ubuntupress' ),
+							'bottom' => __( 'Bottom', 'ubuntupress' ),
+							'right'  => __( 'Right', 'ubuntupress' ),
+						),
+					),
+					array(
+						'key'      => 'dock_items',
+						'type'     => 'apps',
+						'title'    => __( 'Apps in the Dock', 'ubuntupress' ),
+						'subtitle' => __( 'Choose which admin menu items to keep in the Dock.', 'ubuntupress' ),
+					),
+				),
+			),
 		);
 	}
 
@@ -168,6 +204,11 @@ class Settings implements Hookable {
 	 * @param array $row Row definition from groups().
 	 */
 	private function render_row( array $row ) {
+		if ( isset( $row['type'] ) && 'apps' === $row['type'] ) {
+			$this->render_apps_row( $row );
+			return;
+		}
+
 		$id   = 'ubuntupress-setting-' . $row['key'];
 		$name = self::OPTION . '[' . $row['key'] . ']';
 		?>
@@ -197,6 +238,52 @@ class Settings implements Hookable {
 				<?php endif; ?>
 			</div>
 		</div>
+		<?php
+	}
+
+	/**
+	 * Outputs an expander row (AdwExpanderRow) holding a switch for every top-level admin menu item.
+	 *
+	 * @param array $row Row definition from groups().
+	 */
+	private function render_apps_row( array $row ) {
+		$id       = 'ubuntupress-setting-' . $row['key'];
+		$name     = self::OPTION . '[' . $row['key'] . '][]';
+		$selected = (array) self::get( $row['key'], array() );
+		?>
+		<details class="ubuntupress-prefs-row ubuntupress-prefs-expander" id="<?php echo esc_attr( $id ); ?>">
+			<summary class="ubuntupress-prefs-expander__header">
+				<span class="ubuntupress-prefs-row__text">
+					<span class="ubuntupress-prefs-row__title"><?php echo esc_html( $row['title'] ); ?></span>
+					<span class="ubuntupress-prefs-row__subtitle"><?php echo esc_html( $row['subtitle'] ); ?></span>
+				</span>
+				<span class="ubuntupress-prefs-expander__arrow" aria-hidden="true"></span>
+			</summary>
+			<div class="ubuntupress-prefs-expander__list">
+				<?php foreach ( AdminMenu::items() as $index => $item ) : ?>
+					<?php $item_id = $id . '-' . $index; ?>
+					<div class="ubuntupress-prefs-row ubuntupress-prefs-row--app">
+						<span class="ubuntupress-prefs-row__icon" style="--ubuntupress-app-color: <?php echo esc_attr( $item['color'] ); ?>">
+							<?php AdminMenu::render_glyph( $item['icon'], 'ubuntupress-prefs-row__glyph' ); ?>
+						</span>
+						<div class="ubuntupress-prefs-row__text">
+							<label class="ubuntupress-prefs-row__title" for="<?php echo esc_attr( $item_id ); ?>"><?php echo esc_html( $item['name'] ); ?></label>
+						</div>
+						<div class="ubuntupress-prefs-row__control">
+							<input
+								type="checkbox"
+								role="switch"
+								class="ubuntupress-switch"
+								id="<?php echo esc_attr( $item_id ); ?>"
+								name="<?php echo esc_attr( $name ); ?>"
+								value="<?php echo esc_attr( $item['slug'] ); ?>"
+								<?php checked( in_array( $item['slug'], $selected, true ) ); ?>
+							/>
+						</div>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		</details>
 		<?php
 	}
 

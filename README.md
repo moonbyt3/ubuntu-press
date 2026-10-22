@@ -22,6 +22,7 @@ Requires WordPress 6.0+ and PHP 7.4+.
 - **Hidden sidebar.** You can hide the admin sidebar on every screen, on the Dashboard only, or never. When it's hidden, a "Dashboard" link appears in the toolbar so you can still get around. The sidebar only hides while Dashboard cards are on, so you're never left without navigation.
 <img width="1919" height="928" alt="WordPress Sidebar settings" src="https://github.com/user-attachments/assets/59926e18-7baf-404d-97f4-18b4175eb70e" />
 
+- **Dock.** An Ubuntu Dock that stays out of sight until the pointer touches the left, bottom or right edge of the screen, then slides in. You choose which admin menu items it holds. It mirrors Ubuntu Dock's timing: a 250 ms show delay, a 200 ms ease-out slide, a 200 ms hide delay, app name labels that fade in after 300 ms, and the GNOME zoom-out effect when you launch an app. The current screen gets the orange running dot, and update counts show as badges. Off by default; works in the block editor too.
 
 Deleting the plugin removes its settings.
 
@@ -40,7 +41,9 @@ src/
   Admin/Admin.php       Admin assets + "Settings" link on Plugins screen
   Admin/Settings.php    UbuntuPress settings page, last in the admin menu (Settings API)
   Admin/Theme.php       Light / dark style for the admin, block editor and Customizer
+  Admin/AdminMenu.php   Reads the admin menu (names, URLs, icons, badges); shared by cards and dock
   Admin/DashboardCards.php  Card-based Dashboard built from the admin menu
+  Admin/Dock.php        Auto-hiding Ubuntu Dock with apps picked from the admin menu
   Admin/Sidebar.php     Hides the admin sidebar, adds a toolbar "Dashboard" link
   Admin/Notifications.php  Collects admin notices into a toolbar popup
   Admin/SettingsPages.php  Ubuntu styling for core Settings screens
@@ -77,4 +80,5 @@ class Shortcode implements Hookable {
 - `ubuntupress()` — plugin instance
 - `ubuntupress()->get( SomeClass::class )` — booted service instance
 - `UbuntuPress\Admin\Settings::get( 'dashboard_cards' )` — read a setting
+- Filter `ubuntupress_dock_items` — apps shown in the dock
 - Action `ubuntupress_booted` fires after all services are registered

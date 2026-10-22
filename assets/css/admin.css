@@ -235,9 +235,112 @@
 	outline-offset: 2px;
 }
 
+/* Block: ubuntupress-prefs-expander (AdwExpanderRow): a row that reveals nested rows. */
+.ubuntupress-prefs-expander.ubuntupress-prefs-row {
+	display: block;
+	padding: 0;
+}
+
+.ubuntupress-prefs-expander__header {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	min-height: 56px;
+	padding: 10px 14px 10px 16px;
+	box-sizing: border-box;
+	list-style: none;
+	cursor: pointer;
+	transition: background-color 0.15s ease;
+}
+
+.ubuntupress-prefs-expander__header::-webkit-details-marker {
+	display: none;
+}
+
+.ubuntupress-prefs-expander__header:hover {
+	background: var(--ubuntupress-prefs-field);
+}
+
+.ubuntupress-prefs-expander__header:focus-visible {
+	outline: 2px solid var(--ubuntupress-accent);
+	outline-offset: -2px;
+}
+
+.ubuntupress-prefs-expander .ubuntupress-prefs-row__title {
+	cursor: inherit;
+}
+
+.wrap.ubuntupress-settings .ubuntupress-prefs-expander .ubuntupress-prefs-row__subtitle {
+	display: block;
+}
+
+/* Chevron pointing down, flipped when open. */
+.ubuntupress-prefs-expander__arrow {
+	flex: none;
+	width: 16px;
+	height: 16px;
+	background: var(--ubuntupress-prefs-select-arrow) no-repeat center / 16px 16px;
+	transition: transform 0.2s ease;
+}
+
+.ubuntupress-prefs-expander[open] .ubuntupress-prefs-expander__arrow {
+	transform: rotate(180deg);
+}
+
+.ubuntupress-prefs-expander__list {
+	border-top: 1px solid var(--ubuntupress-prefs-separator);
+	background: var(--ubuntupress-prefs-field);
+}
+
+.ubuntupress-prefs-row--app {
+	min-height: 52px;
+}
+
+/* App icon: a small version of the Dashboard card / Dock tile. */
+.ubuntupress-prefs-row__icon {
+	display: flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 22%;
+	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 55%),
+		var(--ubuntupress-app-color, #e95420);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.ubuntupress-prefs-row__glyph,
+.ubuntupress-prefs-row__glyph.dashicons {
+	display: block;
+	width: 18px;
+	height: 18px;
+	color: #fff;
+}
+
+.ubuntupress-prefs-row__glyph.dashicons,
+.ubuntupress-prefs-row__glyph.dashicons:before {
+	font-size: 18px;
+	line-height: 1;
+}
+
+.ubuntupress-prefs-row__glyph--svg,
+.ubuntupress-prefs-row__glyph--image {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.ubuntupress-prefs-row__glyph--svg {
+	filter: brightness(0) invert(1);
+}
+
 @media (prefers-reduced-motion: reduce) {
 	.wrap.ubuntupress-settings input.ubuntupress-switch,
-	.wrap.ubuntupress-settings input.ubuntupress-switch::before {
+	.wrap.ubuntupress-settings input.ubuntupress-switch::before,
+	.ubuntupress-prefs-expander__header,
+	.ubuntupress-prefs-expander__arrow {
 		transition: none;
 	}
 }
