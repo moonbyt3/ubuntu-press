@@ -6,11 +6,22 @@ Requires WordPress 6.0+ and PHP 7.4+.
 
 ## Features
 
+- **Dashboard cards.** The usual Dashboard is replaced by a grid of large app icons built from your admin menu. Icons use the Yaru accent colours, and update and comment counts show as badges. Submenus become app folders with a 2×2 preview, and you can *type to search* everything at once. The classic Dashboard is still available from its own card.
 - **Light and dark styles.** A colour theme for the whole admin. Dark mode also covers the block editor, the editor canvas and the Customizer, including the block-based widgets editor.
-- **Dashboard cards.** The usual Dashboard is replaced by a grid of large app icons built from your admin menu. Icons use the Yaru accent colours, and update and comment counts show as badges. Submenus become app folders with a 2×2 preview, and you can type to search everything at once. The classic Dashboard is still available from its own card.
-- **Hidden sidebar.** You can hide the admin sidebar on every screen, on the Dashboard only, or never. When it's hidden, a "Dashboard" link appears in the toolbar so you can still get around. The sidebar only hides while Dashboard cards are on, so you're never left without navigation.
+<img width="1919" height="928" alt="Dashboard Cards (light)" src="https://github.com/user-attachments/assets/6e62eff6-dfee-4fda-a8ff-fc0c6a48ff73" />
+<img width="1919" height="928" alt="Dashboard Cards (dark)" src="https://github.com/user-attachments/assets/a8bc0d14-d33d-4647-9af5-8f1f82d7d8de" />
+
 - **Notification center.** Admin notices no longer pile up at the top of the page. They're collected in a popup behind a bell icon in the toolbar, with a counter. On by default.
+<img width="1919" height="928" alt="Dashboard notifications" src="https://github.com/user-attachments/assets/ced5c98e-6b71-4b5d-ae64-5ee85c5adba1" />
+
 - **Ubuntu-style Settings screens.** Optionally, General, Writing, Reading, Discussion, Media and Permalinks get the same look as the UbuntuPress settings page.
+<img width="1919" height="928" alt="Dashboard settings" src="https://github.com/user-attachments/assets/4509fdeb-e383-4378-8b8d-51d8d871eca7" />
+
+<img width="1919" height="928" alt="General Settings WordPress dashboard" src="https://github.com/user-attachments/assets/e49c9e3e-89ff-4558-b1f3-dc2c45bcddd2" />
+
+- **Hidden sidebar.** You can hide the admin sidebar on every screen, on the Dashboard only, or never. When it's hidden, a "Dashboard" link appears in the toolbar so you can still get around. The sidebar only hides while Dashboard cards are on, so you're never left without navigation.
+<img width="1919" height="928" alt="WordPress Sidebar settings" src="https://github.com/user-attachments/assets/59926e18-7baf-404d-97f4-18b4175eb70e" />
+
 
 Deleting the plugin removes its settings.
 
