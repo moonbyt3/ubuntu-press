@@ -81,8 +81,8 @@
 }
 
 /*
- * Hint: a small pill on the edge while the dock is hidden. Near the edge it stretches and turns
- * orange over the show-delay, then fades out as the dock slides in.
+ * Hint: a small pill on the edge while the dock is hidden. Near the edge it stretches and takes
+ * the accent colour over the show-delay, then fades out as the dock slides in.
  */
 .ubuntupress-dock__hint {
 	position: absolute;
@@ -119,7 +119,7 @@
 }
 
 .ubuntupress-dock--near .ubuntupress-dock__hint {
-	background: #e95420;
+	background: var(--ubuntupress-accent, #e95420);
 	transform: scaleY(1.6);
 }
 
@@ -225,7 +225,7 @@
 }
 
 .ubuntupress-dock .ubuntupress-dock__app:focus-visible {
-	box-shadow: inset 0 0 0 2px #e95420;
+	box-shadow: inset 0 0 0 2px var(--ubuntupress-accent, #e95420);
 }
 
 /* App icon tile, same look as the Dashboard cards. */
@@ -294,7 +294,7 @@
 	height: 20px;
 	padding: 0 6px;
 	border-radius: 10px;
-	background: #e95420;
+	background: var(--ubuntupress-accent, #e95420);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 	box-sizing: border-box;
 	color: #fff;
@@ -304,14 +304,14 @@
 	text-align: center;
 }
 
-/* Running indicator: an orange dot on the screen-edge side of the current app. */
+/* Running indicator: an accent-coloured dot on the screen-edge side of the current app. */
 .ubuntupress-dock__dot {
 	position: absolute;
 	display: none;
 	width: 5px;
 	height: 5px;
 	border-radius: 50%;
-	background: #e95420;
+	background: var(--ubuntupress-accent, #e95420);
 }
 
 .ubuntupress-dock__app--current .ubuntupress-dock__dot {

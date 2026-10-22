@@ -28,7 +28,7 @@ class Settings implements Hookable {
 	/**
 	 * Settings each user can change for themselves. Everything else is site-wide only.
 	 */
-	const PERSONAL = array( 'theme', 'dock', 'dock_position', 'dock_autohide', 'dock_items' );
+	const PERSONAL = array( 'theme', 'accent', 'dock', 'dock_position', 'dock_autohide', 'dock_items' );
 
 	/**
 	 * Default option values.
@@ -38,6 +38,7 @@ class Settings implements Hookable {
 	public static function defaults() {
 		return array(
 			'theme'                => 'light',
+			'accent'               => 'orange',
 			'settings_pages'       => 0,
 			'dashboard_cards'      => 1,
 			'hide_sidebar'         => 'everywhere',
@@ -157,6 +158,9 @@ class Settings implements Hookable {
 			'theme'                => isset( $input['theme'] ) && in_array( $input['theme'], Theme::MODES, true )
 				? $input['theme']
 				: self::defaults()['theme'],
+			'accent'               => isset( $input['accent'] ) && isset( Theme::ACCENTS[ $input['accent'] ] )
+				? $input['accent']
+				: self::defaults()['accent'],
 			'settings_pages'       => empty( $input['settings_pages'] ) ? 0 : 1,
 			'dashboard_cards'      => empty( $input['dashboard_cards'] ) ? 0 : 1,
 			'hide_sidebar'         => isset( $input['hide_sidebar'] ) && in_array( $input['hide_sidebar'], Sidebar::MODES, true )
@@ -191,10 +195,29 @@ class Settings implements Hookable {
 					array(
 						'key'      => 'theme',
 						'title'    => __( 'Style', 'ubuntupress' ),
-						'subtitle' => __( 'Applies to the Dashboard and all admin screens, including the block editor.', 'ubuntupress' ),
+						'subtitle' => __( 'Applies to the Dashboard and all admin screens, including the block editor. Automatic follows your device\'s light or dark setting.', 'ubuntupress' ),
 						'choices'  => array(
 							'light' => __( 'Light', 'ubuntupress' ),
 							'dark'  => __( 'Dark', 'ubuntupress' ),
+							'auto'  => __( 'Automatic', 'ubuntupress' ),
+						),
+					),
+					array(
+						'key'      => 'accent',
+						'type'     => 'accent',
+						'title'    => __( 'Accent color', 'ubuntupress' ),
+						'subtitle' => __( 'Used for switches, buttons, focus outlines, badges and the Dock.', 'ubuntupress' ),
+						'choices'  => array(
+							'orange'         => __( 'Orange', 'ubuntupress' ),
+							'bark'           => __( 'Bark', 'ubuntupress' ),
+							'sage'           => __( 'Sage', 'ubuntupress' ),
+							'olive'          => __( 'Olive', 'ubuntupress' ),
+							'viridian'       => __( 'Viridian', 'ubuntupress' ),
+							'prussian-green' => __( 'Prussian green', 'ubuntupress' ),
+							'blue'           => __( 'Blue', 'ubuntupress' ),
+							'purple'         => __( 'Purple', 'ubuntupress' ),
+							'magenta'        => __( 'Magenta', 'ubuntupress' ),
+							'red'            => __( 'Red', 'ubuntupress' ),
 						),
 					),
 					array(
@@ -271,7 +294,7 @@ class Settings implements Hookable {
 					array(
 						'key'      => 'personal_preferences',
 						'title'    => __( 'Personal preferences', 'ubuntupress' ),
-						'subtitle' => __( 'Let each user choose their own Style and Dock on their Preferences page, under Users or Profile. The values on this page are their defaults.', 'ubuntupress' ),
+						'subtitle' => __( 'Let each user choose their own Style, Accent color and Dock in an UbuntuPress section of their Profile screen. The values on this page are their defaults.', 'ubuntupress' ),
 					),
 				),
 			),
@@ -339,6 +362,11 @@ class Settings implements Hookable {
 			return;
 		}
 
+		if ( isset( $row['type'] ) && 'accent' === $row['type'] ) {
+			$this->render_accent_row( $row, $values, $name );
+			return;
+		}
+
 		$id    = 'ubuntupress-setting-' . $row['key'];
 		$value = isset( $values[ $row['key'] ] ) ? $values[ $row['key'] ] : null;
 		$name  = $name . '[' . $row['key'] . ']';
@@ -367,6 +395,44 @@ class Settings implements Hookable {
 						<?php checked( 1, (int) $value ); ?>
 					/>
 				<?php endif; ?>
+			</div>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Outputs a row of round colour swatches (radio buttons) that preview the accent as you pick.
+	 *
+	 * @param array  $row    Row definition from groups().
+	 * @param array  $values Current values, keyed by setting.
+	 * @param string $name   Form field name the values are submitted under.
+	 */
+	private function render_accent_row( array $row, array $values, $name ) {
+		$id    = 'ubuntupress-setting-' . $row['key'];
+		$value = isset( $values[ $row['key'] ] ) ? $values[ $row['key'] ] : null;
+		$name  = $name . '[' . $row['key'] . ']';
+		?>
+		<div class="ubuntupress-prefs-row ubuntupress-prefs-row--accent">
+			<div class="ubuntupress-prefs-row__text">
+				<span class="ubuntupress-prefs-row__title" id="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $row['title'] ); ?></span>
+				<p class="ubuntupress-prefs-row__subtitle" id="<?php echo esc_attr( $id ); ?>-description"><?php echo esc_html( $row['subtitle'] ); ?></p>
+			</div>
+			<div class="ubuntupress-prefs-row__control ubuntupress-swatches" role="radiogroup" aria-labelledby="<?php echo esc_attr( $id ); ?>" aria-describedby="<?php echo esc_attr( $id ); ?>-description">
+				<?php foreach ( $row['choices'] as $choice => $label ) : ?>
+					<?php $color = Theme::ACCENTS[ $choice ]; ?>
+					<input
+						type="radio"
+						class="ubuntupress-swatch"
+						name="<?php echo esc_attr( $name ); ?>"
+						value="<?php echo esc_attr( $choice ); ?>"
+						style="--ubuntupress-swatch: <?php echo esc_attr( $color ); ?>"
+						data-color="<?php echo esc_attr( $color ); ?>"
+						data-hover="<?php echo esc_attr( Theme::hover_shade( $color ) ); ?>"
+						aria-label="<?php echo esc_attr( $label ); ?>"
+						title="<?php echo esc_attr( $label ); ?>"
+						<?php checked( $value, $choice ); ?>
+					/>
+				<?php endforeach; ?>
 			</div>
 		</div>
 		<?php
@@ -431,9 +497,9 @@ class Settings implements Hookable {
 				<p class="ubuntupress-settings__intro">
 					<?php
 					printf(
-						/* translators: %s: link to the Preferences page. */
-						esc_html__( 'These settings apply to everyone. Users can change Style and Dock for themselves on %s.', 'ubuntupress' ),
-						'<a href="' . esc_url( Preferences::url() ) . '">' . esc_html__( 'Users › Preferences', 'ubuntupress' ) . '</a>'
+						/* translators: %s: link to the user's Profile screen. */
+						esc_html__( 'These settings apply to everyone. Users can change Style, Accent color and Dock for themselves on their %s.', 'ubuntupress' ),
+						'<a href="' . esc_url( Preferences::url() ) . '">' . esc_html__( 'Profile', 'ubuntupress' ) . '</a>'
 					);
 					?>
 				</p>

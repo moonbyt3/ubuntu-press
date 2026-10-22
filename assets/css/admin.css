@@ -4,11 +4,10 @@
  * Block: ubuntupress-settings (.wrap.* to beat core's .wrap and form-control rules).
  * Core Settings screens share these tokens and layout when "Ubuntu style for Settings screens" is on
  * (body.ubuntupress-admin--prefs, see settings-pages.css).
+ * --ubuntupress-accent / --ubuntupress-accent-hover come from :root, printed by Theme::print_head().
  */
 .wrap.ubuntupress-settings,
 .ubuntupress-admin--prefs .wrap {
-	--ubuntupress-accent: #e95420;
-	--ubuntupress-accent-hover: #f0663a;
 	--ubuntupress-prefs-fg: #2e2e2e;
 	--ubuntupress-prefs-fg-muted: rgba(0, 0, 0, 0.55);
 	--ubuntupress-prefs-card: #fff;
@@ -68,8 +67,11 @@
 	margin-top: 24px;
 }
 
-/* GNOME flat pill button; sits left of Save though it follows it in the markup. */
-.wrap.ubuntupress-settings .ubuntupress-settings__reset {
+/*
+ * GNOME flat pill button; sits left of Save though it follows it in the markup.
+ * input.button.* outranks the dark theme's secondary button colours.
+ */
+.wrap.ubuntupress-settings input.button.ubuntupress-settings__reset {
 	order: -1;
 	min-height: 34px;
 	padding: 0 20px;
@@ -83,13 +85,13 @@
 	font-weight: 700;
 }
 
-.wrap.ubuntupress-settings .ubuntupress-settings__reset:hover,
-.wrap.ubuntupress-settings .ubuntupress-settings__reset:focus {
+.wrap.ubuntupress-settings input.button.ubuntupress-settings__reset:hover,
+.wrap.ubuntupress-settings input.button.ubuntupress-settings__reset:focus {
 	background: var(--ubuntupress-prefs-field-hover);
 	color: var(--ubuntupress-prefs-fg);
 }
 
-.wrap.ubuntupress-settings .ubuntupress-settings__reset:focus-visible {
+.wrap.ubuntupress-settings input.button.ubuntupress-settings__reset:focus-visible {
 	outline: 2px solid var(--ubuntupress-accent);
 	outline-offset: 2px;
 	box-shadow: none;
@@ -274,6 +276,78 @@
 	outline-offset: 2px;
 }
 
+/* Block: ubuntupress-swatches (accent colour picker): round radio buttons, the checked one ringed. */
+.ubuntupress-swatches {
+	display: grid;
+	grid-template-columns: repeat(5, 24px);
+	gap: 8px;
+}
+
+/* The same picker in the UbuntuPress section of the Profile screen (Preferences.php). */
+#your-profile {
+	--ubuntupress-prefs-card: #f0f0f1;
+	--ubuntupress-prefs-fg: #1d2327;
+}
+
+.ubuntupress-admin--dark #your-profile {
+	--ubuntupress-prefs-card: var(--ubuntupress-dark-bg, #1e1e1e);
+	--ubuntupress-prefs-fg: var(--ubuntupress-dark-fg, #e6e6e6);
+}
+
+#your-profile .ubuntupress-swatches {
+	margin: 4px 4px 8px;
+}
+
+:is(.wrap.ubuntupress-settings, #your-profile) input.ubuntupress-swatch {
+	position: relative;
+	width: 24px;
+	height: 24px;
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	background: var(--ubuntupress-swatch);
+	box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	appearance: none;
+	transition: box-shadow 0.15s ease;
+}
+
+/* Replaces core's radio dot with a white check mark. */
+:is(.wrap.ubuntupress-settings, #your-profile) input.ubuntupress-swatch::before {
+	content: none;
+}
+
+:is(.wrap.ubuntupress-settings, #your-profile) input.ubuntupress-swatch:checked {
+	box-shadow: 0 0 0 2px var(--ubuntupress-prefs-card), 0 0 0 4px var(--ubuntupress-swatch);
+}
+
+:is(.wrap.ubuntupress-settings, #your-profile) input.ubuntupress-swatch:checked::before {
+	content: "";
+	position: absolute;
+	top: 6px;
+	left: 9px;
+	float: none;
+	width: 5px;
+	height: 9px;
+	margin: 0;
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+	border-radius: 0;
+	background: none;
+	transform: rotate(45deg);
+}
+
+:is(.wrap.ubuntupress-settings, #your-profile) input.ubuntupress-swatch:focus {
+	outline: none;
+}
+
+:is(.wrap.ubuntupress-settings, #your-profile) input.ubuntupress-swatch:focus-visible {
+	outline: 2px solid var(--ubuntupress-prefs-fg);
+	outline-offset: 4px;
+}
+
 /* Block: ubuntupress-prefs-expander (AdwExpanderRow): a row that reveals nested rows. */
 .ubuntupress-prefs-expander.ubuntupress-prefs-row {
 	display: block;
@@ -378,6 +452,7 @@
 @media (prefers-reduced-motion: reduce) {
 	.wrap.ubuntupress-settings input.ubuntupress-switch,
 	.wrap.ubuntupress-settings input.ubuntupress-switch::before,
+	:is(.wrap.ubuntupress-settings, #your-profile) input.ubuntupress-swatch,
 	.ubuntupress-prefs-expander__header,
 	.ubuntupress-prefs-expander__arrow {
 		transition: none;
@@ -386,11 +461,13 @@
 
 @media screen and (max-width: 600px) {
 	/* Dropdowns move under their label; switches stay on the right. */
-	.ubuntupress-prefs-row:has(select) {
+	.ubuntupress-prefs-row:has(select),
+	.ubuntupress-prefs-row--accent {
 		flex-wrap: wrap;
 	}
 
-	.ubuntupress-prefs-row:has(select) .ubuntupress-prefs-row__control {
+	.ubuntupress-prefs-row:has(select) .ubuntupress-prefs-row__control,
+	.ubuntupress-prefs-row--accent .ubuntupress-prefs-row__control {
 		flex: 1 1 100%;
 	}
 

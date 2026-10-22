@@ -7,7 +7,8 @@ Requires WordPress 6.0+ and PHP 7.4+.
 ## Features
 
 - **Dashboard cards.** The usual Dashboard is replaced by a grid of large app icons built from your admin menu. Icons use the Yaru accent colours, and update and comment counts show as badges. Submenus become app folders with a 2×2 preview, and you can *type to search* everything at once. The classic Dashboard is still available from its own card.
-- **Light and dark styles.** A colour theme for the whole admin. Dark mode also covers the block editor, the editor canvas and the Customizer, including the block-based widgets editor.
+- **Light, dark and automatic styles.** A colour theme for the whole admin. Automatic follows the device's light or dark setting and switches live when it changes. Dark mode also covers the block editor, the editor canvas and the Customizer, including the block-based widgets editor.
+- **Accent color.** Pick one of ten Yaru accent colours for switches, buttons, focus outlines, badges and the Dock; swatches preview it as you choose.
 <img width="1919" height="928" alt="Dashboard Cards (light)" src="https://github.com/user-attachments/assets/6e62eff6-dfee-4fda-a8ff-fc0c6a48ff73" />
 <img width="1919" height="928" alt="Dashboard Cards (dark)" src="https://github.com/user-attachments/assets/a8bc0d14-d33d-4647-9af5-8f1f82d7d8de" />
 
@@ -27,7 +28,7 @@ Requires WordPress 6.0+ and PHP 7.4+.
 <img width="1919" height="928" alt="WordPress Ubuntu Dock" src="https://github.com/user-attachments/assets/70078abb-c175-4c99-96e2-2087ad615e21" />
 
 
-- **Personal preferences.** Each user can pick their own Style and Dock (on/off, position, auto-hide, apps) on **Users › Preferences** (**Profile › Preferences** for non-admins, also in the toolbar account menu and as a Dashboard card). Only the choices they change are stored; everything else keeps following the site settings, which act as defaults. "Reset to Site Defaults" clears them. Admins can turn this off under *Users › Personal preferences* on the UbuntuPress page.
+- **Personal preferences.** Each user can pick their own Style, Accent color and Dock (on/off, position, auto-hide, apps) in the **UbuntuPress** section of their **Profile** screen, saved with *Update Profile*. Only the choices they change are stored; everything else keeps following the site settings, which act as defaults. A "Reset these settings to the site defaults" checkbox clears them. Admins can turn this off under *Users › Personal preferences* on the UbuntuPress page.
 
 Deleting the plugin removes its settings and every user's preferences.
 
@@ -45,7 +46,7 @@ src/
   Activator.php / Deactivator.php
   Admin/Admin.php       Admin assets + "Settings" link on Plugins screen
   Admin/Settings.php    UbuntuPress settings page, last in the admin menu (Settings API); site defaults + per-user lookup
-  Admin/Preferences.php  Users › Preferences: a user's own Style and Dock, stored in user meta
+  Admin/Preferences.php  UbuntuPress section on the Profile screen: a user's own Style, accent and Dock, stored in user meta
   Admin/Theme.php       Light / dark style for the admin, block editor and Customizer
   Admin/AdminMenu.php   Reads the admin menu (names, URLs, icons, badges); shared by cards and dock
   Admin/DashboardCards.php  Card-based Dashboard built from the admin menu

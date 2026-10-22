@@ -1,6 +1,7 @@
 <?php
 /**
- * Users › Preferences: each user's own Style and Dock, stored in user meta on top of the site settings.
+ * Each user's own Style, Accent color and Dock, in an "UbuntuPress" section of their Profile screen.
+ * Stored in user meta on top of the site settings.
  *
  * @package UbuntuPress
  */
@@ -17,120 +18,77 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Preferences implements Hookable {
 
-	const PAGE   = 'ubuntupress-preferences';
-	const ACTION = 'ubuntupress_save_preferences';
-
 	/**
 	 * Form field name the values are submitted under.
 	 */
 	const FIELD = 'ubuntupress_preferences';
 
 	/**
-	 * @var string Page hook suffix.
+	 * Section anchor on the Profile screen.
 	 */
-	private $hook = '';
+	const ANCHOR = 'ubuntupress';
 
 	public function register_hooks( Loader $loader ) {
-		$loader->add_action( 'admin_menu', array( $this, 'add_page' ) );
+		// Own profile only: the Dock apps offered depend on what the current user can open.
+		$loader->add_action( 'show_user_profile', array( $this, 'render_section' ) );
+		$loader->add_action( 'personal_options_update', array( $this, 'save' ) );
 		$loader->add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
-		// After core fills the account menu (priority 0).
-		$loader->add_action( 'admin_bar_menu', array( $this, 'toolbar_link' ), 20 );
 	}
 
 	/**
-	 * Under Users for those who can edit users, under Profile for everyone else.
-	 */
-	public function add_page() {
-		if ( ! Settings::personal_allowed() ) {
-			return;
-		}
-
-		$this->hook = add_users_page(
-			__( 'Preferences', 'ubuntupress' ),
-			__( 'Preferences', 'ubuntupress' ),
-			'read',
-			self::PAGE,
-			array( $this, 'render_page' )
-		);
-
-		// Saved on the page's own load hook, where the admin menu (and so the user's apps) is known.
-		add_action( 'load-' . $this->hook, array( $this, 'save' ) );
-	}
-
-	/**
-	 * @return string Preferences page URL for the current user.
+	 * @return string Profile screen URL, scrolled to the UbuntuPress section.
 	 */
 	public static function url() {
-		$parent = current_user_can( 'edit_users' ) ? 'users.php' : 'profile.php';
-		return admin_url( $parent . '?page=' . self::PAGE );
-	}
-
-	/**
-	 * Adds "Preferences" to the toolbar account menu, between Edit Profile and Log Out.
-	 *
-	 * @param \WP_Admin_Bar $admin_bar Toolbar instance.
-	 */
-	public function toolbar_link( $admin_bar ) {
-		if ( ! is_admin() || ! Settings::personal_allowed() || ! $admin_bar->get_node( 'user-actions' ) ) {
-			return;
-		}
-
-		// Log Out is re-added after the new item so it stays last.
-		$logout = $admin_bar->get_node( 'logout' );
-		if ( $logout ) {
-			$admin_bar->remove_node( 'logout' );
-		}
-
-		$admin_bar->add_node(
-			array(
-				'parent' => 'user-actions',
-				'id'     => 'ubuntupress-preferences',
-				'title'  => __( 'Preferences', 'ubuntupress' ),
-				'href'   => self::url(),
-			)
-		);
-
-		if ( $logout ) {
-			$admin_bar->add_node( (array) $logout );
-		}
+		return admin_url( 'profile.php#' . self::ANCHOR );
 	}
 
 	/**
 	 * @param string $hook Current admin page hook suffix.
 	 */
 	public function enqueue_assets( $hook ) {
-		if ( ! $this->hook || $this->hook !== $hook ) {
+		if ( 'profile.php' !== $hook || ! Settings::personal_allowed() ) {
 			return;
 		}
 
+		// Accent swatches.
 		wp_enqueue_style(
 			'ubuntupress-admin',
 			UBUNTUPRESS_URL . 'assets/css/admin.css',
 			array(),
 			Plugin::asset_version( 'assets/css/admin.css' )
 		);
+
+		// Live accent preview.
+		wp_enqueue_script(
+			'ubuntupress-admin',
+			UBUNTUPRESS_URL . 'assets/js/admin.js',
+			array(),
+			Plugin::asset_version( 'assets/js/admin.js' ),
+			true
+		);
 	}
 
 	/**
 	 * Stores only the values that differ from the site settings, so everything else keeps
-	 * following the defaults when an admin changes them.
+	 * following the defaults when an admin changes them. WordPress has already checked the
+	 * profile form's nonce when this runs.
+	 *
+	 * @param int $user_id User being saved; always the current user on this hook.
 	 */
-	public function save() {
-		if ( 'POST' !== $_SERVER['REQUEST_METHOD'] || ! isset( $_POST['action'] ) || self::ACTION !== $_POST['action'] ) {
+	public function save( $user_id ) {
+		// phpcs:disable WordPress.Security.NonceVerification.Missing -- Verified by wp-admin/user-edit.php.
+		if ( ! isset( $_POST[ self::FIELD ] ) || ! is_array( $_POST[ self::FIELD ] ) || ! current_user_can( 'edit_user', $user_id ) ) {
 			return;
 		}
 
-		check_admin_referer( self::ACTION );
-
-		$user_id = get_current_user_id();
-
-		if ( isset( $_POST['reset'] ) ) {
+		if ( ! empty( $_POST[ self::FIELD ]['reset'] ) ) {
 			delete_user_meta( $user_id, Settings::USER_META );
-			wp_safe_redirect( add_query_arg( 'reset', '1', self::url() ) );
-			exit;
+			return;
 		}
 
-		$input  = isset( $_POST[ self::FIELD ] ) && is_array( $_POST[ self::FIELD ] ) ? wp_unslash( $_POST[ self::FIELD ] ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized below.
+		$input = wp_unslash( $_POST[ self::FIELD ] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized below.
+		// phpcs:enable
+
 		$values = Settings::sanitize_values( $input, Settings::PERSONAL );
 		$site   = Settings::site_values();
 		$own    = array();
@@ -146,9 +104,6 @@ class Preferences implements Hookable {
 		} else {
 			delete_user_meta( $user_id, Settings::USER_META );
 		}
-
-		wp_safe_redirect( add_query_arg( 'updated', '1', self::url() ) );
-		exit;
 	}
 
 	/**
@@ -171,47 +126,115 @@ class Preferences implements Hookable {
 		return $site === $value;
 	}
 
-	public function render_page() {
+	/**
+	 * Outputs the section as a standard form table, using the rows defined for the settings page.
+	 */
+	public function render_section() {
 		$settings = ubuntupress()->get( Settings::class );
-		if ( ! $settings ) {
+		if ( ! $settings || ! Settings::personal_allowed() ) {
 			return;
 		}
-
-		$values = array();
-		foreach ( Settings::PERSONAL as $key ) {
-			$values[ $key ] = Settings::get( $key );
-		}
-
-		// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Read-only status flags after a redirect.
-		$updated = isset( $_GET['updated'] );
-		$reset   = isset( $_GET['reset'] );
-		// phpcs:enable
 		?>
-		<div class="wrap ubuntupress-settings">
-			<h1 class="ubuntupress-settings__title"><?php echo esc_html( get_admin_page_title() ); ?></h1>
-			<p class="ubuntupress-settings__intro"><?php esc_html_e( 'Your own Style and Dock. Anything you leave as it is follows the site defaults.', 'ubuntupress' ); ?></p>
-
-			<?php if ( $updated || $reset ) : ?>
-				<div class="notice notice-success is-dismissible">
-					<p><?php echo $reset ? esc_html__( 'Your preferences were reset to the site defaults.', 'ubuntupress' ) : esc_html__( 'Preferences saved.', 'ubuntupress' ); ?></p>
-				</div>
+		<h2 id="<?php echo esc_attr( self::ANCHOR ); ?>"><?php esc_html_e( 'UbuntuPress', 'ubuntupress' ); ?></h2>
+		<p><?php esc_html_e( 'Settings you leave unchanged follow the site defaults.', 'ubuntupress' ); ?></p>
+		<table class="form-table" role="presentation">
+			<?php
+			foreach ( $settings->groups( Settings::PERSONAL ) as $group ) {
+				foreach ( $group['rows'] as $row ) {
+					$this->render_row( $row, Settings::get( $row['key'] ) );
+				}
+			}
+			?>
+			<?php if ( Settings::user_values() ) : ?>
+				<tr>
+					<th scope="row"><?php esc_html_e( 'Site defaults', 'ubuntupress' ); ?></th>
+					<td>
+						<label for="ubuntupress-reset">
+							<input type="checkbox" id="ubuntupress-reset" name="<?php echo esc_attr( self::FIELD ); ?>[reset]" value="1" />
+							<?php esc_html_e( 'Reset these settings to the site defaults', 'ubuntupress' ); ?>
+						</label>
+					</td>
+				</tr>
 			<?php endif; ?>
+		</table>
+		<?php
+	}
 
-			<form class="ubuntupress-settings__form" method="post">
-				<input type="hidden" name="action" value="<?php echo esc_attr( self::ACTION ); ?>" />
-				<?php wp_nonce_field( self::ACTION ); ?>
-
-				<?php $settings->render_groups( $settings->groups( Settings::PERSONAL ), $values, self::FIELD ); ?>
-
-				<div class="ubuntupress-settings__actions">
-					<?php // Save comes first so Enter saves; CSS shows Reset to its left. ?>
-					<?php submit_button( __( 'Save Changes', 'ubuntupress' ), 'primary ubuntupress-settings__save', 'submit', false ); ?>
-					<?php if ( Settings::user_values() ) : ?>
-						<?php submit_button( __( 'Reset to Site Defaults', 'ubuntupress' ), 'ubuntupress-settings__reset', 'reset', false ); ?>
-					<?php endif; ?>
-				</div>
-			</form>
-		</div>
+	/**
+	 * @param array $row   Row definition from Settings::groups().
+	 * @param mixed $value Current value.
+	 */
+	private function render_row( array $row, $value ) {
+		$id   = 'ubuntupress-' . $row['key'];
+		$name = self::FIELD . '[' . $row['key'] . ']';
+		$type = isset( $row['type'] ) ? $row['type'] : ( isset( $row['choices'] ) ? 'select' : 'checkbox' );
+		?>
+		<tr>
+			<?php if ( 'select' === $type ) : ?>
+				<th scope="row"><label for="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $row['title'] ); ?></label></th>
+				<td>
+					<select id="<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $name ); ?>" aria-describedby="<?php echo esc_attr( $id ); ?>-description">
+						<?php foreach ( $row['choices'] as $choice => $label ) : ?>
+							<option value="<?php echo esc_attr( $choice ); ?>" <?php selected( $value, $choice ); ?>><?php echo esc_html( $label ); ?></option>
+						<?php endforeach; ?>
+					</select>
+					<p class="description" id="<?php echo esc_attr( $id ); ?>-description"><?php echo esc_html( $row['subtitle'] ); ?></p>
+				</td>
+			<?php elseif ( 'checkbox' === $type ) : ?>
+				<th scope="row"><?php echo esc_html( $row['title'] ); ?></th>
+				<td>
+					<label for="<?php echo esc_attr( $id ); ?>">
+						<input type="checkbox" id="<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $name ); ?>" value="1" <?php checked( 1, (int) $value ); ?> />
+						<?php echo esc_html( $row['subtitle'] ); ?>
+					</label>
+				</td>
+			<?php elseif ( 'accent' === $type ) : ?>
+				<th scope="row"><?php echo esc_html( $row['title'] ); ?></th>
+				<td>
+					<fieldset>
+						<legend class="screen-reader-text"><?php echo esc_html( $row['title'] ); ?></legend>
+						<div class="ubuntupress-swatches">
+							<?php foreach ( $row['choices'] as $choice => $label ) : ?>
+								<?php $color = Theme::ACCENTS[ $choice ]; ?>
+								<input
+									type="radio"
+									class="ubuntupress-swatch"
+									name="<?php echo esc_attr( $name ); ?>"
+									value="<?php echo esc_attr( $choice ); ?>"
+									style="--ubuntupress-swatch: <?php echo esc_attr( $color ); ?>"
+									data-color="<?php echo esc_attr( $color ); ?>"
+									data-hover="<?php echo esc_attr( Theme::hover_shade( $color ) ); ?>"
+									aria-label="<?php echo esc_attr( $label ); ?>"
+									title="<?php echo esc_attr( $label ); ?>"
+									<?php checked( $value, $choice ); ?>
+								/>
+							<?php endforeach; ?>
+						</div>
+						<p class="description"><?php echo esc_html( $row['subtitle'] ); ?></p>
+					</fieldset>
+				</td>
+			<?php elseif ( 'apps' === $type ) : ?>
+				<th scope="row"><?php echo esc_html( $row['title'] ); ?></th>
+				<td>
+					<fieldset>
+						<legend class="screen-reader-text"><?php echo esc_html( $row['title'] ); ?></legend>
+						<?php foreach ( AdminMenu::items() as $index => $item ) : ?>
+							<label for="<?php echo esc_attr( $id . '-' . $index ); ?>">
+								<input
+									type="checkbox"
+									id="<?php echo esc_attr( $id . '-' . $index ); ?>"
+									name="<?php echo esc_attr( $name ); ?>[]"
+									value="<?php echo esc_attr( $item['slug'] ); ?>"
+									<?php checked( in_array( $item['slug'], (array) $value, true ) ); ?>
+								/>
+								<?php echo esc_html( $item['name'] ); ?>
+							</label><br />
+						<?php endforeach; ?>
+						<p class="description"><?php echo esc_html( $row['subtitle'] ); ?></p>
+					</fieldset>
+				</td>
+			<?php endif; ?>
+		</tr>
 		<?php
 	}
 }
