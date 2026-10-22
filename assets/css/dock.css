@@ -273,7 +273,7 @@
 	filter: brightness(0) invert(1);
 }
 
-/* "Show Apps": a bare 3x3 dot grid, no tile. */
+/* "Show Dashboard": a bare 3x3 dot grid, no tile. */
 .ubuntupress-dock__icon--show-apps {
 	background: none;
 	box-shadow: none;

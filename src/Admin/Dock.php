@@ -196,7 +196,7 @@ class Dock implements Hookable {
 								<a
 									class="ubuntupress-dock__app ubuntupress-dock__app--show-apps<?php echo $current ? ' ubuntupress-dock__app--checked' : ''; ?>"
 									href="<?php echo esc_url( admin_url() ); ?>"
-									data-label="<?php esc_attr_e( 'Show Apps', 'ubuntupress' ); ?>"
+									data-label="<?php esc_attr_e( 'Show Dashboard', 'ubuntupress' ); ?>"
 								>
 									<span class="ubuntupress-dock__icon ubuntupress-dock__icon--show-apps">
 										<svg class="ubuntupress-dock__grid" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
@@ -207,7 +207,7 @@ class Dock implements Hookable {
 											<?php endforeach; ?>
 										</svg>
 									</span>
-									<span class="screen-reader-text"><?php esc_html_e( 'Show Apps', 'ubuntupress' ); ?></span>
+									<span class="screen-reader-text"><?php esc_html_e( 'Show Dashboard', 'ubuntupress' ); ?></span>
 								</a>
 							</li>
 						<?php endif; ?>
