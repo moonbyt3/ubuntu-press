@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       UbuntuPress
- * Description:       Object-oriented base plugin for WordPress.
+ * Description:       Gives the WordPress admin an Ubuntu look: light and dark styles, a card-based Dashboard, an optional hidden sidebar and a notification center in the toolbar.
  * Version:           1.0.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
